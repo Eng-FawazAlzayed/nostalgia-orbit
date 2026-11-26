@@ -21,3 +21,13 @@
 **Sync**
 * All devices share the same channels, catalog and schedule. Favourites, settings and remembered broken links stay on each device.
 * Jellyfin/Emby imports, Plex/WebDAV and Real-Debrid/TorBox tokens are stored on the device that uses them, never in GitHub.
+
+## Real-Debrid and TorBox (optional, paid)
+
+- Sign in from **Setup → Real-Debrid: sign in** or **TorBox: sign in**. The TV shows a short code; enter it on your phone at the address shown. You can also paste a token. The token is stored only on that device and is sent only to the provider's own API.
+- The app only reads files that are **already in your account**. It never adds torrents, never searches torrent sites and does not treat "available on a debrid service" as permission to watch.
+- File choice prefers small H.264/AAC MP4 at 480p–720p within the size targets (11 min: 40–100 MB, 22 min: 80–220 MB, 45 min: 200–450 MB, movies: 400–900 MB). HEVC, AV1 and 10-bit files are skipped unless you turn on "This device plays HEVC/10-bit files". Up to two alternatives are kept per episode.
+- Codec, resolution, audio and language come from file names. Real-Debrid's media-info endpoint is not called for every file, to stay within its 250 requests/minute limit. Exact length is learned the first time a file plays; until then the show's usual length is used.
+- Links are made fresh just before each programme (the next one is prepared a minute early). A failed link is refreshed once, then the next copy is tried, then the channel moves on.
+- Browser web views must be allowed to call the provider APIs (CORS). If a scan fails with "network" on one device, try the Android or Windows app.
+- TorBox's documentation doesn't publish the field names of its file list or device-login responses; the app accepts the common names. If a TorBox scan finds nothing, tell me and I'll adjust it against a real response.

@@ -124,27 +124,50 @@
       var c = cfg(); if (!c.davUrl) { return cb(new Error('webdav-not-set')); }
       cb(null, c.davUrl.replace(/\/$/, '') + '/' + s.r.replace(/^\//, ''));
     },
-    torbox: function (s, cb) { // s.r = "torrentId:fileId" of a torrent in YOUR TorBox account
-      var c = cfg(); if (!c.torboxToken) { return cb(new Error('torbox-not-set')); }
-      var p = s.r.split(':');
-      cb(null, 'https://api.torbox.app/v1/api/torrents/requestdl?token=' + encodeURIComponent(c.torboxToken) +
-        '&torrent_id=' + p[0] + '&file_id=' + p[1] + '&redirect=true');
+    // TorBox: s.r = "t:torrentId:fileId" (u: usenet, w: web download; old "torrentId:fileId" still works).
+    // The redirect link is a permalink, generated fresh for every play.
+    torbox: function (s, cb) {
+      var D = root.NODebrid; if (!D) { return cb(new Error('torbox-not-set')); }
+      D.tbToken(function (err, tok) {
+        if (err) { return cb(err); }
+        var p = s.r.split(':'); if (p.length === 2) { p.unshift('t'); }
+        var kind = { t: ['torrents', 'torrent_id'], u: ['usenet', 'usenet_id'], w: ['webdl', 'web_id'] }[p[0]] || ['torrents', 'torrent_id'];
+        cb(null, 'https://api.torbox.app/v1/api/' + kind[0] + '/requestdl?token=' + encodeURIComponent(tok) + '&' + kind[1] + '=' + p[1] + '&file_id=' + p[2] + '&redirect=true');
+      });
     },
-    rd: function (s, cb) { // s.r = hoster link you are entitled to; Real-Debrid unrestricts it
-      var c = cfg(); if (!c.rdToken) { return cb(new Error('realdebrid-not-set')); }
-      var x = new XMLHttpRequest();
-      x.open('POST', 'https://api.real-debrid.com/rest/1.0/unrestrict/link');
-      x.setRequestHeader('Authorization', 'Bearer ' + c.rdToken);
-      x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      x.timeout = 10000;
-      x.onload = function () {
-        try { var j = JSON.parse(x.responseText); if (j.download) { return cb(null, j.download); } } catch (e) {}
-        cb(new Error('rd' + x.status));
-      };
-      x.onerror = x.ontimeout = function () { cb(new Error('rd-net')); };
-      x.send('link=' + encodeURIComponent(s.r));
+    // Real-Debrid: s.r = the hoster link from YOUR torrent; unrestricted fresh before playing.
+    // If the file name that comes back isn't the one we matched, it isn't played.
+    rd: function (s, cb) {
+      var D = root.NODebrid; if (!D) { return cb(new Error('realdebrid-not-set')); }
+      D.rdToken(function (err, tok) {
+        if (err) { return cb(err); }
+        D.xhr('POST', 'https://api.real-debrid.com/rest/1.0/unrestrict/link', { timeout: 12000,
+          headers: { Authorization: 'Bearer ' + tok, 'Content-Type': 'application/x-www-form-urlencoded' }, body: D.form({ link: s.r }) },
+        function (e2, j) {
+          if (e2 || !j || !j.download) { var er = new Error('rd-' + (e2 ? e2.status : 'nolink')); er.permanent = e2 && (e2.status === 404 || e2.status === 451); return cb(er); }
+          if (s.n && j.filename && j.filename !== s.n) { var mm = new Error('rd-mismatch'); mm.permanent = true; return cb(mm); }
+          cb(null, j.download);
+        });
+      });
     }
   };
+
+  // Playback links made just before a programme starts are kept a few minutes,
+  // so the next episode can be prepared while this one plays.
+  var resolved = {};
+  function resolveSrc(s, force, cb) {
+    var key = s.p + ':' + s.r, hit = resolved[key];
+    if (!force && hit && hit.exp > Date.now()) { return cb(null, hit.url); }
+    (resolvers[s.p] || resolvers.mp4)(s, function (err, url) {
+      if (!err && url && (s.p === 'rd' || s.p === 'torbox')) { resolved[key] = { url: url, exp: Date.now() + 10 * 60000 }; }
+      cb(err, url);
+    });
+  }
+  function prefetch(s) { if (s && (s.p === 'rd' || s.p === 'torbox')) { resolveSrc(s, false, function () {}); } }
+  function position() {
+    try { if (current && current.kind === 'yt' && yt.player) { return yt.player.getCurrentTime() || 0; } } catch (e) {}
+    return vid && !isNaN(vid.currentTime) ? vid.currentTime : 0;
+  }
 
   /* ---------- the single player ---------- */
   var current = null; // {kind, token}
@@ -204,15 +227,15 @@
       return;
     }
 
-    var resolve = resolvers[s.p] || resolvers.mp4;
-    resolve(s, function (err, url) {
+    resolveSrc(s, !!h.fresh, function (err, url) {
       if (my !== token) { return; }
-      if (err) { return onError(err.message, true); }
+      if (err) { return onError(err.message, err.permanent !== false && !/net|rd-0|rd-5|rd-429|timeout/.test(err.message)); }
       vid.style.visibility = 'visible';
       vid.muted = !!h.muted;
       var seekTo = (s.k === 'live') ? 0 : offset + (s.o || 0);
       vid.onloadedmetadata = function () {
         if (seekTo > 1 && isFinite(vid.duration) && seekTo < vid.duration) { try { vid.currentTime = seekTo; } catch (e) {} }
+        if ((s.p === 'rd' || s.p === 'torbox') && root.NODebrid && isFinite(vid.duration)) { root.NODebrid.rememberDuration(s.r, vid.duration); }
         var p = vid.play(); if (p && p.catch) { p.catch(function () {}); }
       };
       vid.onplaying = playing;
@@ -241,5 +264,5 @@
 
   function caps() { return { yt: true, hls: true, file: true, region: 'KW' }; }
 
-  root.NOPlayer = { play: play, stop: stopAll, env: env, caps: caps, resolvers: resolvers };
+  root.NOPlayer = { play: play, stop: stopAll, env: env, caps: caps, resolvers: resolvers, prefetch: prefetch, position: position };
 }(this));

@@ -41,7 +41,50 @@
     return (a.sn || 0) - (b.sn || 0) || (a.ep || 0) - (b.ep || 0) || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
   }
 
-  function Index(catalog) {
+  function kuwaitMonth(ms) { return new Date(ms + KWT_OFFSET).getUTCMonth() + 1; } // 1-12
+
+  // Lay a day's blocks out minute by minute: a block limited to certain weekdays or months
+  // (Cartoon Cartoon Fridays, Halloween nights) wins over the everyday block it overlaps.
+  function segments(blocks, base) {
+    var wd = kuwaitWeekday(base + 12 * 3600000), mo = kuwaitMonth(base + 12 * 3600000);
+    var owner = [], i, m, b, f, t, rank;
+    var best = [];
+    for (i = 0; i < blocks.length; i++) {
+      b = blocks[i];
+      if (b.days && b.days.indexOf(wd) < 0) { continue; }
+      if (b.months && b.months.indexOf(mo) < 0) { continue; }
+      rank = (b.months ? 2 : 0) + (b.days ? 1 : 0);
+      f = blockOffset(b.f) / 60000; t = blockOffset(b.t) / 60000;
+      if (t <= f) { t += 1440; }
+      if (t > 1440) { t = 1440; }
+      for (m = f; m < t; m++) { if (owner[m] === undefined || rank >= best[m]) { owner[m] = i; best[m] = rank; } }
+    }
+    var out = [], cur = -1, start = 0;
+    for (m = 0; m <= 1440; m++) {
+      var o = m < 1440 && owner[m] !== undefined ? owner[m] : -1;
+      if (o !== cur) {
+        if (cur >= 0) { out.push({ b: blocks[cur], s: base + start * 60000, e: base + m * 60000 }); }
+        cur = o; start = m;
+      }
+    }
+    return out;
+  }
+
+  function hashStr(str) { var h = 2166136261, i; for (i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = (h * 16777619) >>> 0; } return h; }
+  function shuffled(arr, seed) { // deterministic Fisher-Yates
+    var a = arr.slice(), i, j, t, x = seed || 1;
+    for (i = a.length - 1; i > 0; i--) { x = (x * 1103515245 + 12345) >>> 0; j = x % (i + 1); t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+  function inYears(sy, ys) { // series year can be 2004 or [1999, 2005]
+    if (!ys) { return true; }
+    if (sy == null) { return false; }
+    var a = sy.length ? sy[0] : sy, z = sy.length ? sy[1] || sy[0] : sy;
+    return a <= ys[1] && z >= ys[0];
+  }
+
+  function Index(catalog, opts) {
+    this.opts = opts || {};
     this.catalog = catalog;
     this.channels = {};
     this.channelList = [];
@@ -92,8 +135,11 @@
 
   // Episodes for one channel block tag, mixed like real TV: one episode of each
   // show in turn, each show in episode order.
-  Index.prototype.playlist = function (channelId, tag) {
-    var key = channelId + '|' + tag;
+  Index.prototype.playlist = function (channelId, tag, blk) {
+    var q = blk && blk.q ? blk.q : '', ys = blk && blk.years ? blk.years : null;
+    var mode = (this.opts.modes && this.opts.modes[channelId]) || (this.channels[channelId] || {}).mode || 'classic';
+    var key = channelId + '|' + tag + '|' + q + '|' + (ys ? ys.join('-') : '') + '|' + mode;
+    var re = null; if (q) { try { re = new RegExp(q, 'i'); } catch (e) { re = null; } }
     if (this.playlists[key]) { return this.playlists[key]; }
     var series = this.catalog.series || {};
     var ids = [], sid, tags, lists = [], i, j, longest = 0, out = [], live = [];
@@ -103,15 +149,25 @@
       if (!series.hasOwnProperty(sid) || series[sid].fill) { continue; } // bumpers and ads only go in breaks
       tags = series[sid].ch && series[sid].ch[channelId];
       if (!tags) { continue; }
-      if (tag === '*all' || tags.indexOf(tag) >= 0 || tags.indexOf('*') >= 0 || tags.indexOf('*all') >= 0) { ids.push(sid); }
+      if (tag === '*all' || tags.indexOf(tag) >= 0 || tags.indexOf('*') >= 0 || tags.indexOf('*all') >= 0) {
+        if (ys && !inYears(series[sid].y, ys)) { continue; }
+        ids.push(sid);
+      }
     }
     ids.sort();
+    if (mode === 'random') { ids = shuffled(ids, hashStr(channelId)); }
     for (i = 0; i < ids.length; i++) {
       var list = this.episodesBySeries[ids[i]] || [];
-      var vod = [];
+      var vod = [], st = series[ids[i]].t || {};
+      var stitle = (st.en || '') + ' ' + (st.ar || '') + ' ' + (st.ja || '');
       for (j = 0; j < list.length; j++) {
+        var et = list[j].t || {};
+        if (re && !re.test(stitle + ' ' + (et.en || '') + ' ' + (et.ar || '') + ' ' + (et.ja || ''))) { continue; } // e.g. Halloween specials
         if (list[j].d > 0) { vod.push(list[j]); } else { live.push(list[j]); }
       }
+      // Random Nostalgia: episodes shuffled, but the whole list is used before anything repeats,
+      // so nothing comes back for days when there's enough to watch.
+      if (mode === 'random') { vod = shuffled(vod, hashStr(channelId + ids[i])); }
       if (vod.length) { lists.push(vod); if (vod.length > longest) { longest = vod.length; } }
     }
     for (j = 0; j < longest; j++) {
@@ -130,6 +186,17 @@
 
   // How many ms of a given tag have aired on this channel before (day, block)?
   // Used so each day picks up the rotation where the previous day stopped.
+  // Marathon block: one show for the whole block, a different show each day, continuing in order.
+  Index.prototype.marathon = function (channelId, blk, pl, dayIdx) {
+    var bySeries = {}, ids = [], i, e;
+    for (i = 0; i < pl.items.length; i++) { e = pl.items[i]; if (!bySeries[e.s]) { bySeries[e.s] = []; ids.push(e.s); } bySeries[e.s].push(e); }
+    ids.sort();
+    var pick = ids[(hashStr(channelId) + dayIdx) % ids.length];
+    var items = bySeries[pick].slice().sort(cmpEp), starts = [], t = 0;
+    for (i = 0; i < items.length; i++) { starts.push(t); t += items[i].d * 1000; }
+    return { items: items, starts: starts, total: t, live: [] };
+  };
+
   // A mixed channel (e.g. 108 Random Nostalgia): everything from other channels, picked by
   // weight with smooth weighted round-robin so it is deterministic and never clumps.
   Index.prototype.mixPlaylist = function (mix) {
@@ -175,14 +242,11 @@
     if (!ch) { return []; }
     var base = dayStartMs(dayIdx);
     var items = [];
-    var wd = kuwaitWeekday(base);
-    var blocks = (ch.blocks || []).filter(function (b) {
-      return !b.days || b.days.indexOf(wd) >= 0; // e.g. Thursday-night specials
-    }).sort(function (a, b) { return blockOffset(a.f) - blockOffset(b.f); });
+    var blocks = segments(ch.blocks || [], base);
     var cursor = base, i, j, self = this;
     // Gaps get the channel's own bumpers and period commercials, then a station ident.
     var pool = this.pools[channelId] || (ch.global_fill ? this.pool : []);
-    var BREAK = (ch.break_s || 75) * 1000;
+    var BREAK = (ch.break_s != null ? +ch.break_s : 75) * 1000;
     // A short break of the channel's own bumpers and period ads after each episode.
     function brk(s0, e0) {
       var t0 = s0, n = pool.length, g = 0, k0;
@@ -213,18 +277,17 @@
     }
     var tagSeen = {};
     for (i = 0; i < blocks.length; i++) {
-      var b = blocks[i];
-      var bs = base + blockOffset(b.f);
-      var be = base + blockOffset(b.t);
-      if (be <= bs) { be += DAY; }
-      if (be > base + DAY) { be = base + DAY; }
+      var b = blocks[i].b;
+      var bs = blocks[i].s, be = blocks[i].e;
       if (bs > cursor) { gap(cursor, bs); }
       if (b.off) {
         items.push({ type: 'offair', s: bs, e: be, label: b.label || '' });
         cursor = be;
         continue;
       }
-      var pl = this.playlist(channelId, b.g);
+      var pl = this.playlist(channelId, b.g, b);
+      if (b.marathon && pl.items.length) { pl = this.marathon(channelId, b, pl, dayIdx); } // one show back to back
+      if (!pl.total && !pl.live.length && (b.q || b.years)) { pl = this.playlist(channelId, b.g); } // nothing matches the theme yet
       if (!pl.total && !pl.live.length && b.g !== '*all') { pl = this.playlist(channelId, '*all'); } // nothing tagged for this block yet
       var len = be - bs;
       var tl = tagLengths(ch, b.g);
@@ -244,12 +307,12 @@
           var d = ep.d * 1000;
           if (t + d > be) {
             if (placed === 0) { // one long item (a play) overruns: clip it to the block
-              items.push({ type: 'ep', s: t, e: be, ep: ep, clipped: true });
+              items.push({ type: 'ep', s: t, e: be, ep: ep, clipped: true, lbl: b.label });
               t = be;
             }
             break;
           }
-          items.push({ type: 'ep', s: t, e: t + d, ep: ep });
+          items.push({ type: 'ep', s: t, e: t + d, ep: ep, lbl: b.label });
           t += d; placed++;
           t = brk(t, Math.min(be, t + BREAK));
           k = (k + 1) % pl.items.length;

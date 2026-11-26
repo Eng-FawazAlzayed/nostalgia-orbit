@@ -17,11 +17,14 @@
   var defaults = {
     crt: 'light', lowperf: P.env.tizen, lang: 'en', names: 'ours', lastCh: null, prevCh: null, favs: [],
     catalogUrl: window.NO_CATALOG_URL || '', jfUrl: '', jfToken: '', embyUrl: '', embyToken: '',
-    plexUrl: '', plexToken: '', davUrl: '', rdToken: '', torboxToken: ''
+    plexUrl: '', plexToken: '', davUrl: '', rdToken: '', torboxToken: '', rdAuth: null,
+    modes: {}, breaks: 'auto', hevc: false, follow: [], seqPos: {}, seqTurn: 0, dog: true
   };
   var cfg = load('settings', {});
   for (var dk in defaults) { if (defaults.hasOwnProperty(dk) && !(dk in cfg)) { cfg[dk] = defaults[dk]; } }
   window.NOConfig = function () { return cfg; };
+  window.NOStore = { load: load, save: save };
+  window.NOSetConfig = function (k, v) { cfg[k] = v; saveCfg(); };
   function saveCfg() { save('settings', cfg); }
 
   /* ---------------- catalog: bundled snapshot, cached update, nightly online copy ---------------- */
@@ -30,14 +33,37 @@
   if (cached && cached.generated && (!catalog.generated || cached.generated > catalog.generated)) { catalog = cached; }
   var local = load('library', null); // media the user imported from their own Jellyfin/Emby
   var idx;
+  // My Shows (channel 100): the shows you follow, in order, carrying on where you left off.
+  var MY_SHOWS = { id: 'my-shows', n: '100', name: 'MY SHOWS', ar: 'برامجي', work: 'Shows I follow, in order', theme: 'vhs', seq: true, blocks: [] };
   function buildIndex() {
-    var c = catalog;
-    if (local && local.episodes && local.episodes.length) {
-      c = { generated: catalog.generated, channels: catalog.channels.concat([local.channel]), series: {}, episodes: catalog.episodes.concat(local.episodes) };
-      var k; for (k in catalog.series) { if (catalog.series.hasOwnProperty(k)) { c.series[k] = catalog.series[k]; } }
-      for (k in local.series) { if (local.series.hasOwnProperty(k)) { c.series[k] = local.series[k]; } }
+    var c = { generated: catalog.generated, channels: [], series: {}, episodes: catalog.episodes };
+    var k, i;
+    for (k in catalog.series) { if (catalog.series.hasOwnProperty(k)) { c.series[k] = catalog.series[k]; } }
+    // ad-break length from Setup overrides each channel's own
+    var br = cfg.breaks === 'off' ? 0 : (cfg.breaks === 'auto' ? null : +cfg.breaks);
+    for (i = 0; i < catalog.channels.length; i++) {
+      var ch = catalog.channels[i];
+      if (br !== null) { var cc = {}; for (k in ch) { if (ch.hasOwnProperty(k)) { cc[k] = ch[k]; } } cc.break_s = br; ch = cc; }
+      c.channels.push(ch);
     }
-    idx = new S.Index(c);
+    var overlays = [local, load('debridOverlay', null)], hasLib = false;
+    for (i = 0; i < overlays.length; i++) {
+      var ov = overlays[i]; if (!ov) { continue; }
+      if (ov.extra) { // your own copies of episodes already on the channels: offered first
+        var eps = [];
+        for (var j = 0; j < c.episodes.length; j++) {
+          var e = c.episodes[j], x = ov.extra[e.id];
+          if (x) { var ne = {}; for (k in e) { if (e.hasOwnProperty(k)) { ne[k] = e[k]; } } ne.src = x.concat(e.src || []); e = ne; }
+          eps.push(e);
+        }
+        c.episodes = eps;
+      }
+      if (ov.episodes && ov.episodes.length) { c.episodes = c.episodes.concat(ov.episodes); }
+      for (k in ov.series || {}) { if (ov.series.hasOwnProperty(k)) { c.series[k] = ov.series[k]; hasLib = true; } }
+    }
+    if (hasLib) { c.channels.push((local && local.channel) || (load('debridOverlay', {}) || {}).channel); }
+    c.channels.push(MY_SHOWS);
+    idx = new S.Index(c, { modes: cfg.modes });
   }
   buildIndex();
 
@@ -58,6 +84,7 @@
       if (err || !c || !c.episodes) { if (force) { toast(T('updateFail')); } return; }
       if (c.generated && c.generated <= (catalog.generated || '')) { if (force) { toast(T('upToDate')); } return; }
       catalog = c;
+      if (window.NODebrid) { NODebrid.rematch(catalog, { hevc: cfg.hevc, lang: cfg.lang === 'ar' ? 'ar' : 'en' }); }
       if (!save('catalog', c)) { try { localStorage.removeItem('no.catalog'); } catch (e) {} }
       var keep = channels()[chIdx] && channels()[chIdx].id;
       buildIndex();
@@ -69,8 +96,8 @@
 
   /* ---------------- words (English / Arabic menus) ---------------- */
   var WORDS = {
-    en: { now: 'NOW', next: 'NEXT', all: 'ALL CHANNELS', favs: 'FAVOURITES', guide: 'TV GUIDE · KUWAIT', setup: 'SETUP', noSignal: 'NO SIGNAL', nextAt: 'Next', offair: 'Off air', scrambled: 'SCRAMBLED', ident: 'Coming up', updated: 'Channel list updated', upToDate: 'Already up to date', updateFail: 'Could not reach the update', favOn: 'Added to favourites', favOff: 'Removed from favourites', retry: 'Trying another copy…' },
-    ar: { now: 'الآن', next: 'التالي', all: 'كل القنوات', favs: 'المفضلة', guide: 'دليل البرامج · الكويت', setup: 'الإعدادات', noSignal: 'لا توجد إشارة', nextAt: 'التالي', offair: 'خارج البث', scrambled: 'مشفّرة', ident: 'بعد قليل', updated: 'تم تحديث القنوات', upToDate: 'القائمة محدّثة', updateFail: 'تعذّر التحديث', favOn: 'أضيفت للمفضلة', favOff: 'أزيلت من المفضلة', retry: 'نجرب نسخة أخرى…' }
+    en: { now: 'NOW', next: 'NEXT', all: 'ALL CHANNELS', favs: 'FAVOURITES', guide: 'TV GUIDE · KUWAIT', setup: 'SETUP', noSignal: 'NO SIGNAL', nextAt: 'Next', offair: 'Off air', scrambled: 'SCRAMBLED', ident: 'Coming up', updated: 'Channel list updated', upToDate: 'Already up to date', updateFail: 'Could not reach the update', favOn: 'Added to favourites', favOff: 'Removed from favourites', retry: 'Trying another copy…', followHint: 'Press YELLOW (or Y) on any show to follow it here', followed: 'Following this show', unfollowed: 'Stopped following', signIn: 'On your phone, open', enterCode: 'and enter' },
+    ar: { now: 'الآن', next: 'التالي', all: 'كل القنوات', favs: 'المفضلة', guide: 'دليل البرامج · الكويت', setup: 'الإعدادات', noSignal: 'لا توجد إشارة', nextAt: 'التالي', offair: 'خارج البث', scrambled: 'مشفّرة', ident: 'بعد قليل', updated: 'تم تحديث القنوات', upToDate: 'القائمة محدّثة', updateFail: 'تعذّر التحديث', favOn: 'أضيفت للمفضلة', favOff: 'أزيلت من المفضلة', retry: 'نجرب نسخة أخرى…', followHint: 'اضغط الزر الأصفر على أي برنامج لمتابعته هنا', followed: 'تمت متابعة البرنامج', unfollowed: 'أُلغيت المتابعة', signIn: 'من هاتفك افتح', enterCode: 'وأدخل الرمز' }
   };
   function T(k) { return (WORDS[cfg.lang] || WORDS.en)[k] || k; }
   function chName(c) { return cfg.names === 'working' ? (c.work || c.name) : (cfg.lang === 'ar' && c.ar ? c.ar : c.name); }
@@ -119,7 +146,7 @@
     var r = idx.at(c.id, now());
     $('bNum').textContent = c.n;
     $('bName').textContent = chName(c);
-    $('bAlt').textContent = cfg.names === 'working' ? c.name : (c.work || '');
+    $('bAlt').textContent = r && r.item.lbl ? '★ ' + r.item.lbl : (cfg.names === 'working' ? c.name : (c.work || '')); // themed block, e.g. Friday Cartoon Night
     $('bNow').textContent = r ? epTitle(r.item) : T('noSignal');
     $('bNow').setAttribute('dir', 'auto');
     $('bNowT').textContent = r ? S.kuwaitClock(r.item.s) + '–' + S.kuwaitClock(r.item.e) : '';
@@ -128,7 +155,7 @@
     $('bNextT').textContent = r && r.next ? S.kuwaitClock(r.next.s) : '';
     $('bBar').style.width = r ? Math.min(100, Math.max(1, (now() - r.item.s) / (r.item.e - r.item.s) * 100)) + '%' : '0';
     $('bClock').textContent = S.kuwaitClock(now());
-    $('bSrc').textContent = playingSrc ? (playingSrc.p.toUpperCase() + (playingSrc.q ? ' · ' + playingSrc.q + 'p' : '')) : '';
+    $('bSrc').textContent = playingSrc ? ({ rd: 'REAL-DEBRID', torbox: 'TORBOX', ia: 'ARCHIVE', yt: 'YT' }[playingSrc.p] || playingSrc.p.toUpperCase()) + (playingSrc.q ? ' · ' + playingSrc.q + 'p' : '') + (playingSrc.mb ? ' · ' + playingSrc.mb + ' MB' : '') : '';
     document.querySelector('.now-lbl').textContent = T('now');
     document.querySelector('.next-lbl').textContent = T('next');
   }
@@ -158,7 +185,8 @@
     show($('black'), true);
     hideCard();
     if (!quiet) { flashBanner(); }
-    clearTimeout(boundaryTimer);
+    clearTimeout(boundaryTimer); clearTimeout(prefetchTimer); clearInterval(seqTimer);
+    if (c.seq) { playSeq(c, my); return; }
     var r = idx.at(c.id, now());
     if (!r) { show($('black'), false); showCard(chName(c), T('noSignal')); return; }
     // retune at the next programme boundary: automatic episode transitions
@@ -171,6 +199,44 @@
     if (r.item.type === 'filler') { show($('black'), false); identCard(c, r); return; }
     var srcs = S.pickSources(r.item.ep, P.caps(), failed, now());
     trySource(my, c, r.item, srcs, 0);
+    // get the next programme's link ready a minute before it starts (one video buffers at a time)
+    if (r.next && r.next.type === 'ep') {
+      prefetchTimer = setTimeout(function () {
+        if (my !== tuneToken) { return; }
+        var ns = S.pickSources(r.next.ep, P.caps(), failed, now()); if (ns.length) { P.prefetch(ns[0]); }
+      }, Math.max(0, r.item.e - now() - 60000));
+    }
+  }
+
+  /* ---------------- My Shows: sequential mode ---------------- */
+  var seqTimer, prefetchTimer;
+  function seqNext() { // next episode of the next followed show, round-robin
+    var f = cfg.follow || [];
+    for (var tries = 0; tries < f.length; tries++) {
+      var sid = f[(cfg.seqTurn + tries) % f.length], list = idx.episodesBySeries[sid] || [], pos = cfg.seqPos[sid] || { i: 0, off: 0 };
+      if (list.length) { return { sid: sid, ep: list[pos.i % list.length], pos: pos, turn: (cfg.seqTurn + tries) % f.length }; }
+    }
+    return null;
+  }
+  function playSeq(c, my) {
+    var n = seqNext();
+    if (!n) { show($('black'), false); showCard(chName(c), T('followHint')); return; }
+    var item = { type: 'ep', s: now() - n.pos.off * 1000, e: now() + (n.ep.d - n.pos.off) * 1000, ep: n.ep };
+    trySource(my, c, item, S.pickSources(n.ep, P.caps(), failed, now()), 0, function ended() {
+      cfg.seqPos[n.sid] = { i: n.pos.i + 1, off: 0 }; cfg.seqTurn = (n.turn + 1) % Math.max(1, cfg.follow.length); saveCfg();
+      if (my === tuneToken) { tune(chIdx, true); }
+    });
+    seqTimer = setInterval(function () { // remember where you are, every 15 s
+      if (my !== tuneToken) { clearInterval(seqTimer); return; }
+      cfg.seqPos[n.sid] = { i: n.pos.i, off: Math.floor(P.position()) }; saveCfg();
+    }, 15000);
+  }
+  function followCurrent() {
+    var c = channels()[chIdx]; if (!c || c.seq) { return; }
+    var r = idx.at(c.id, now()); if (!r || !r.item.ep || r.item.inter) { return; }
+    var sid = r.item.ep.s, i = cfg.follow.indexOf(sid);
+    if (i >= 0) { cfg.follow.splice(i, 1); toast(T('unfollowed')); } else { cfg.follow.push(sid); toast(T('followed') + ' · 100'); }
+    saveCfg();
   }
   // Each channel's own look: ident card style and a small corner logo, like a real station.
   function look(c) {
@@ -182,21 +248,35 @@
     var nx = r.next && r.next.type === 'ep' ? epTitle(r.next) + ' · ' + S.kuwaitClock(r.next.s) : '';
     showCard(chName(c), nx ? T('nextAt') + ': ' + nx : '');
   }
-  function trySource(my, c, item, srcs, k) {
+  // Watch history on this device: play counts and last played, per episode.
+  var plays = load('plays', {}), playsDirty = false;
+  function notePlay(ep) {
+    if (!ep || !ep.id) { return; }
+    var p = plays[ep.id] || { n: 0, last: 0 }; p.n++; p.last = now(); plays[ep.id] = p;
+    if (!playsDirty) { playsDirty = true; setTimeout(function () { playsDirty = false; save('plays', plays); }, 30000); }
+  }
+  // Each copy is tried in turn; your own Real-Debrid/TorBox copy gets a second try with a fresh link.
+  function trySource(my, c, item, srcs, k, onDone, refreshed) {
     if (my !== tuneToken) { return; }
-    if (k >= srcs.length) { // every copy failed: authentic "no signal" until the next programme
+    if (k >= srcs.length) { // every copy failed
       P.stop(); show($('black'), false);
+      if (onDone) { return onDone(); } // My Shows: skip to the next episode
       showCard(chName(c), T('noSignal'));
       return;
     }
     var src = srcs[k];
     var offset = item.live ? 0 : (now() - item.s) / 1000;
-    if (k > 0) { toast(T('retry')); }
+    if (k > 0 && !refreshed) { toast(T('retry')); }
     P.play(src, offset, {
-      onPlaying: function () { if (my !== tuneToken) { return; } playingSrc = src; markOk(src); show($('black'), false); hideCard(); },
-      onError: function (code, permanent) { markFailed(src, permanent); trySource(my, c, item, srcs, k + 1); },
+      fresh: !!refreshed,
+      onPlaying: function () { if (my !== tuneToken) { return; } playingSrc = src; markOk(src); show($('black'), false); hideCard(); if (!item.inter) { notePlay(item.ep); } },
+      onError: function (code, permanent) {
+        if ((src.p === 'rd' || src.p === 'torbox') && !refreshed && !permanent) { return trySource(my, c, item, srcs, k, onDone, true); }
+        markFailed(src, permanent); trySource(my, c, item, srcs, k + 1, onDone);
+      },
       onEnded: function () { // copy shorter than its slot: ident until the next programme
         if (my !== tuneToken) { return; }
+        if (onDone) { return onDone(); }
         P.stop(); identCard(c, idx.at(c.id, now()) || { next: null });
       }
     });
@@ -271,14 +351,23 @@
     { k: 'embyImport', label: 'Import my Emby library', act: function () { importLibrary('emby'); } },
     { k: 'plexUrl', label: 'Plex address', text: true }, { k: 'plexToken', label: 'Plex token', text: true, secret: true },
     { k: 'davUrl', label: 'WebDAV share address', text: true },
-    { k: 'rdToken', label: 'Real-Debrid token (optional, paid)', text: true, secret: true },
-    { k: 'torboxToken', label: 'TorBox token (optional, paid)', text: true, secret: true },
+    { k: 'modeHere', label: 'This channel: order', info: function () { var c = channels()[chIdx]; return c ? String((cfg.modes[c.id] || c.mode || 'classic')).toUpperCase() : '—'; },
+      act: function () { var c = channels()[chIdx]; if (!c || c.seq || c.mix) { return; } cfg.modes[c.id] = (cfg.modes[c.id] || c.mode || 'classic') === 'random' ? 'classic' : 'random'; saveCfg(); buildIndex(); tune(chIdx, true); } },
+    { k: 'breaks', label: 'Ad breaks between shows', opts: ['auto', 'off', '30', '60', '120'], after: function () { buildIndex(); } },
+    { k: 'dog', label: 'Channel logo in the corner', opts: [true, false], after: function () { var c = channels()[chIdx]; if (c) { look(c); } } },
+    { k: 'rdLogin', label: 'Real-Debrid: sign in (optional, paid)', act: function () { debridLogin('rd'); }, info2: function () { return cfg.rdToken || (cfg.rdAuth && cfg.rdAuth.refresh) ? 'CONNECTED' : ''; } },
+    { k: 'rdToken', label: 'Real-Debrid token (or paste one)', text: true, secret: true },
+    { k: 'tbLogin', label: 'TorBox: sign in (optional, paid)', act: function () { debridLogin('tb'); }, info2: function () { return cfg.torboxToken ? 'CONNECTED' : ''; } },
+    { k: 'torboxToken', label: 'TorBox API key (or paste one)', text: true, secret: true },
+    { k: 'hevc', label: 'This device plays HEVC/10-bit files', opts: [false, true] },
+    { k: 'dbScan', label: 'Scan my Real-Debrid / TorBox files', act: function () { debridScan(); } },
+    { k: 'dbForget', label: 'Disconnect Real-Debrid / TorBox', act: function () { cfg.rdToken = ''; cfg.rdAuth = null; cfg.torboxToken = ''; saveCfg(); save('debridOverlay', null); save('debridFiles', null); buildIndex(); toast('OK'); } },
     { k: 'clearFails', label: 'Forget broken links on this device', act: function () { failed = {}; failCount = {}; save('failed', failed); save('failCount', failCount); toast('OK'); } },
     { k: 'about', label: 'Catalog', info: function () { return (catalog.generated || 'bundled').slice(0, 10) + ' · ' + (catalog.episodes || []).length + ' episodes'; } }
   ];
   function setupVal(it) {
     if (it.info) { return it.info(); }
-    if (it.act) { return '▶'; }
+    if (it.act) { return (it.info2 && it.info2()) || '▶'; }
     var v = cfg[it.k];
     if (it.text) { return v ? (it.secret ? '••••••' : v) : '—'; }
     return v === true ? 'ON' : v === false ? 'OFF' : String(v).toUpperCase();
@@ -291,6 +380,27 @@
     }
     $('setupItems').innerHTML = html;
   }
+  /* ---------------- Real-Debrid / TorBox ---------------- */
+  function debridLogin(which) {
+    if (!window.NODebrid) { return; }
+    closeAll();
+    NODebrid.login(which, function (url, code) {
+      showCard(code, T('signIn') + ' ' + url.replace(/^https?:\/\//, '') + ' ' + T('enterCode'));
+    }, function (err) {
+      hideCard();
+      if (err) { toast('Sign-in failed: ' + err.message); } else { toast('Connected. Scanning your files…'); debridScan(); }
+    });
+  }
+  function debridScan() {
+    if (!window.NODebrid) { return; }
+    toast('Reading your Real-Debrid / TorBox files…');
+    NODebrid.scan(catalog, { hevc: cfg.hevc, lang: cfg.lang === 'ar' ? 'ar' : 'en' }, function (err, ov, warn) {
+      if (err) { toast('Library scan failed: ' + err.message); return; }
+      buildIndex();
+      var st = ov.stats;
+      toast(st.chosen + ' episodes from your library · ' + st.matched + ' on the channels · ' + st.library + ' on 099' + (warn && warn.length ? ' · ' + warn[0] : ''));
+    });
+  }
   function openSetup() { mode = 'setup'; show($('list'), false); show($('banner'), false); renderSetup(); show($('setup'), true); }
   function changeSetup(dir) {
     var it = SETUP[setupSel];
@@ -298,7 +408,7 @@
     if (it.text) { editText(it); return; }
     if (it.opts) {
       var p = it.opts.indexOf(cfg[it.k]); cfg[it.k] = it.opts[(p + (dir || 1) + it.opts.length) % it.opts.length];
-      saveCfg(); applyLook(); renderSetup();
+      saveCfg(); applyLook(); if (it.after) { it.after(); } renderSetup();
     }
   }
   function editText(it) { // on-screen keyboards (Tizen IME, Android TV) open on a focused input
@@ -377,7 +487,8 @@
     else if (k === K.INFO || k === 73) { flashBanner(6000); }
     else if (k === K.PRECH) { var p = findChannel(cfg.prevCh); if (p >= 0) { tune(p); } }
     else if (k === K.RED || k === 67) { cfg.crt = { off: 'light', light: 'heavy', heavy: 'off' }[cfg.crt]; saveCfg(); applyLook(); toast('CRT ' + cfg.crt.toUpperCase()); }
-    else if (k === K.YELLOW || k === 78) { cfg.names = cfg.names === 'ours' ? 'working' : 'ours'; saveCfg(); renderBanner(); if (mode === 'list') { renderList(); } }
+    else if (k === K.YELLOW || k === 89) { followCurrent(); }
+    else if (k === 78) { cfg.names = cfg.names === 'ours' ? 'working' : 'ours'; saveCfg(); renderBanner(); if (mode === 'list') { renderList(); } }
     else if (k === K.BLUE || k === 83) { if (mode === 'setup') { closeAll(); } else { openSetup(); } }
     else if (mode === 'tv') {
       if (k === K.UP) { tune(chIdx + 1); }

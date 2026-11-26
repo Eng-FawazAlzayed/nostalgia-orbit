@@ -38,6 +38,14 @@ export function compact(lib, channels, now = Date.now()) {
     const t = {}; for (const k of ['en', 'ar', 'ja']) if (s.titles[k]) t[k] = s.titles[k];
     series[id] = { t, y: s.year || undefined, ch: { ...s.channels }, fill: s.fill || undefined };
   }
+  // Original run years (e.g. [2002, 2007]) for flashback nights, from show_years in seeds.json.
+  const years = readJSON(path.join(DATA, 'seeds.json'), {}).show_years || {};
+  const yNames = Object.keys(years);
+  for (const s of Object.values(series)) {
+    if (s.y || s.fill) continue;
+    const hit = matchShow(s.t.en || '', yNames) || matchShow(s.t.ar || '', yNames);
+    if (hit) s.y = years[hit];
+  }
   collect(series, channels);
   return { v: 1, generated: nowIso(), channels, series, episodes };
 }

@@ -2814,6 +2814,402 @@
           "min_minutes": 0.08,
           "max_minutes": 3,
           "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "The Powerpuff Girls full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Ed, Edd n Eddy full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "I Am Weasel full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Time Squad full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Whatever Happened to... Robot Jones? full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Codename: Kids Next Door full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Grim Adventures of Billy & Mandy full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Evil Con Carne full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Life and Times of Juniper Lee full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "My Gym Partner's a Monkey full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Chowder full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Marvelous Misadventures of Flapjack full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Ben 10 full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Ben 10: Alien Force full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Ben 10: Ultimate Alien full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Ben 10: Omniverse full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Teen Titans full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Megas XLR full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Generator Rex full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Adventure Time full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Regular Show full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Amazing World of Gumball full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Secret Saturdays full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Hi Hi Puffy AmiYumi full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Mucha Lucha full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Justice League full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Justice League Unlimited full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Duck Dodgers full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Scooby-Doo full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "What's New, Scooby-Doo? full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Scooby-Doo! Mystery Incorporated full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Pokémon full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Transformers Animated full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
         }
       ],
       "archive": [
@@ -2828,6 +3224,54 @@
           "allow_clips": true,
           "min_minutes": 20,
           "series": "Cartoon Network"
+        },
+        {
+          "query": "title:(\"Dexters Laboratory\" OR \"Johnny Bravo\" OR \"The Powerpuff Girls\" OR \"Courage the Cowardly Dog\" OR \"Ed, Edd n Eddy\" OR \"Cow and Chicken\" OR \"I Am Weasel\" OR \"Samurai Jack\" OR \"Time Squad\" OR \"Whatever Happened to Robot Jones\" OR \"Codename Kids Next Door\" OR \"The Grim Adventures of Billy and Mandy\" OR \"Evil Con Carne\" OR \"Fosters Home for Imaginary Friends\")",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "rows": 500,
+          "exclude": "audiobook|radio|full movie review|reaction|1930s|1940s|1950s",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "max_minutes": 150,
+          "_auto": true
+        },
+        {
+          "query": "title:(\"Camp Lazlo\" OR \"The Life and Times of Juniper Lee\" OR \"My Gym Partners a Monkey\" OR \"Chowder\" OR \"The Marvelous Misadventures of Flapjack\" OR \"Ben 10\" OR \"Ben 10 Alien Force\" OR \"Ben 10 Ultimate Alien\" OR \"Ben 10 Omniverse\" OR \"Teen Titans\" OR \"Megas XLR\" OR \"Generator Rex\" OR \"Adventure Time\" OR \"Regular Show\")",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "rows": 500,
+          "exclude": "audiobook|radio|full movie review|reaction|1930s|1940s|1950s",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "max_minutes": 150,
+          "_auto": true
+        },
+        {
+          "query": "title:(\"The Amazing World of Gumball\" OR \"The Secret Saturdays\" OR \"Hi Hi Puffy AmiYumi\" OR \"Mucha Lucha\" OR \"Justice League\" OR \"Justice League Unlimited\" OR \"Duck Dodgers\" OR \"Scooby-Doo\" OR \"Whats New, Scooby-Doo\" OR \"Scooby-Doo Mystery Incorporated\" OR \"Pokémon\" OR \"Transformers Animated\")",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "rows": 500,
+          "exclude": "audiobook|radio|full movie review|reaction|1930s|1940s|1950s",
+          "shows_ref": "cn_classic",
+          "min_minutes": 8,
+          "max_minutes": 150,
+          "_auto": true
         }
       ]
     },
@@ -3229,6 +3673,426 @@
           "min_minutes": 0.08,
           "max_minutes": 3,
           "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Drake & Josh full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "iCarly full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Kenan & Kel full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "All That full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Amanda Show full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Ned's Declassified School Survival Guide full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Zoey 101 full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Victorious full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Big Time Rush full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Unfabulous full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Brothers García full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "True Jackson, VP full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Naked Brothers Band full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "House of Anubis full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Troop full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Sam & Cat full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "SpongeBob SquarePants full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Fairly OddParents full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Adventures of Jimmy Neutron full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Rugrats full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "All Grown Up! full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Hey Arnold! full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Invader Zim full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Avatar: The Last Airbender full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Legend of Korra full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "My Life as a Teenage Robot full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "ChalkZone full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "As Told by Ginger full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Angry Beavers full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Catscratch full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Mighty B! full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "El Tigre full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Back at the Barnyard full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Penguins of Madagascar full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "T.U.F.F. Puppy full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
         }
       ],
       "archive": [
@@ -3242,11 +4106,140 @@
           "allow_clips": true,
           "min_minutes": 20,
           "series": "Nickelodeon"
+        },
+        {
+          "query": "title:(\"Drake and Josh\" OR \"iCarly\" OR \"Kenan and Kel\" OR \"All That\" OR \"The Amanda Show\" OR \"Neds Declassified School Survival Guide\" OR \"Zoey 101\" OR \"Victorious\" OR \"Big Time Rush\" OR \"Unfabulous\" OR \"The Brothers García\" OR \"True Jackson, VP\" OR \"The Naked Brothers Band\" OR \"House of Anubis\")",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "rows": 500,
+          "exclude": "audiobook|radio|full movie review|reaction|1930s|1940s|1950s",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "max_minutes": 150,
+          "_auto": true
+        },
+        {
+          "query": "title:(\"The Troop\" OR \"Sam and Cat\" OR \"SpongeBob SquarePants\" OR \"The Fairly OddParents\" OR \"The Adventures of Jimmy Neutron\" OR \"Danny Phantom\" OR \"Rugrats\" OR \"All Grown Up\" OR \"CatDog\" OR \"Hey Arnold\" OR \"Rocket Power\" OR \"The Wild Thornberrys\" OR \"Invader Zim\" OR \"Avatar The Last Airbender\")",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "rows": 500,
+          "exclude": "audiobook|radio|full movie review|reaction|1930s|1940s|1950s",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "max_minutes": 150,
+          "_auto": true
+        },
+        {
+          "query": "title:(\"The Legend of Korra\" OR \"My Life as a Teenage Robot\" OR \"ChalkZone\" OR \"As Told by Ginger\" OR \"The Angry Beavers\" OR \"Rockos Modern Life\" OR \"Catscratch\" OR \"The Mighty B\" OR \"El Tigre\" OR \"Back at the Barnyard\" OR \"The Penguins of Madagascar\" OR \"TUFF Puppy\")",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "rows": 500,
+          "exclude": "audiobook|radio|full movie review|reaction|1930s|1940s|1950s",
+          "shows_ref": "nick_classic",
+          "min_minutes": 8,
+          "max_minutes": 150,
+          "_auto": true
         }
       ]
     },
     "magic-hour": {
-      "archive": [],
+      "archive": [
+        {
+          "query": "title:(\"Lizzie McGuire\" OR \"Even Stevens\" OR \"Thats So Raven\" OR \"Phil of the Future\" OR \"The Suite Life of Zack and Cody\" OR \"The Suite Life on Deck\" OR \"Hannah Montana\" OR \"Wizards of Waverly Place\" OR \"Cory in the House\" OR \"Sonny with a Chance\" OR \"Good Luck Charlie\" OR \"Shake It Up\" OR \"Jessie\" OR \"Austin and Ally\")",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "rows": 500,
+          "exclude": "audiobook|radio|full movie review|reaction|1930s|1940s|1950s",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "max_minutes": 150,
+          "_auto": true
+        },
+        {
+          "query": "title:(\"Life with Derek\" OR \"ANT Farm\" OR \"Pair of Kings\" OR \"Zeke and Luther\" OR \"Kickin It\" OR \"Kim Possible\" OR \"American Dragon Jake Long\" OR \"Lilo and Stitch The Series\" OR \"The Proud Family\" OR \"The Replacements\" OR \"Brandy and Mr Whiskers\" OR \"Dave the Barbarian\" OR \"House of Mouse\" OR \"The Emperors New School\")",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "rows": 500,
+          "exclude": "audiobook|radio|full movie review|reaction|1930s|1940s|1950s",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "max_minutes": 150,
+          "_auto": true
+        },
+        {
+          "query": "title:(\"Fillmore\" OR \"Phineas and Ferb\" OR \"Gravity Falls\" OR \"Kick Buttowski\" OR \"Recess\" OR \"The Weekenders\" OR \"Teachers Pet\" OR \"Buzz Lightyear of Star Command\" OR \"High School Musical\" OR \"Camp Rock\" OR \"The Cheetah Girls\" OR \"Halloweentown\" OR \"The Even Stevens Movie\" OR \"The Lizzie McGuire Movie\")",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "rows": 500,
+          "exclude": "audiobook|radio|full movie review|reaction|1930s|1940s|1950s",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "max_minutes": 150,
+          "_auto": true
+        },
+        {
+          "query": "title:(\"Zenon\" OR \"Johnny Tsunami\" OR \"Motocrossed\" OR \"Cadet Kelly\" OR \"Twitches\" OR \"Read It and Weep\" OR \"Jump In\" OR \"Starstruck\" OR \"Princess Protection Program\" OR \"Lemonade Mouth\" OR \"Let It Shine\" OR \"Smart House\" OR \"Halloweentown High\" OR \"Return to Halloweentown\")",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "rows": 500,
+          "exclude": "audiobook|radio|full movie review|reaction|1930s|1940s|1950s",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "max_minutes": 150,
+          "_auto": true
+        },
+        {
+          "query": "title:(\"Stuck in the Suburbs\" OR \"Wendy Wu\" OR \"Minutemen\" OR \"Den Brother\" OR \"16 Wishes\" OR \"Geek Charming\" OR \"Frenemies\" OR \"Radio Rebel\" OR \"Girl vs Monster\")",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "rows": 500,
+          "exclude": "audiobook|radio|full movie review|reaction|1930s|1940s|1950s",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "max_minutes": 150,
+          "_auto": true
+        }
+      ],
       "youtube_handles": [],
       "youtube_searches": [
         {
@@ -3408,6 +4401,558 @@
           "min_minutes": 0.08,
           "max_minutes": 3,
           "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Lizzie McGuire full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "That's So Raven full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Phil of the Future full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Suite Life of Zack & Cody full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Suite Life on Deck full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Hannah Montana full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Wizards of Waverly Place full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Cory in the House full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Sonny with a Chance full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Good Luck Charlie full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Shake It Up full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Jessie full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Austin & Ally full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Life with Derek full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "A.N.T. Farm full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Pair of Kings full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Zeke and Luther full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Kickin' It full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "American Dragon: Jake Long full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Lilo & Stitch: The Series full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Replacements full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Brandy & Mr. Whiskers full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Dave the Barbarian full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "House of Mouse full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Emperor's New School full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Fillmore! full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Phineas and Ferb full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Gravity Falls full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Kick Buttowski full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Weekenders full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Teacher's Pet full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Buzz Lightyear of Star Command full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "High School Musical full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Camp Rock full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Cheetah Girls full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Halloweentown full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Even Stevens Movie full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "The Lizzie McGuire Movie full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Zenon full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Johnny Tsunami full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Motocrossed full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Cadet Kelly full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Twitches full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Read It and Weep full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Jump In! full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
+        },
+        {
+          "q": "Starstruck full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic",
+          "min_minutes": 8,
+          "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
         }
       ]
     },
@@ -5280,7 +6825,51 @@
       "2 Stupid Dogs",
       "Swat Kats",
       "Johnny Bravo",
-      "Whatever Happened to Robot Jones"
+      "Whatever Happened to Robot Jones",
+      {
+        "name": "Whatever Happened to... Robot Jones?",
+        "match": [
+          "Whatever Happened to Robot Jones"
+        ]
+      },
+      {
+        "name": "The Life and Times of Juniper Lee",
+        "match": [
+          "Life and Times of Juniper Lee"
+        ]
+      },
+      "Ben 10: Alien Force",
+      "Ben 10: Ultimate Alien",
+      "Ben 10: Omniverse",
+      {
+        "name": "The Secret Saturdays",
+        "match": [
+          "Secret Saturdays"
+        ]
+      },
+      "Mucha Lucha",
+      "Justice League",
+      "Justice League Unlimited",
+      "Scooby-Doo",
+      {
+        "name": "What's New, Scooby-Doo?",
+        "match": [
+          "What's New, Scooby-Doo"
+        ]
+      },
+      {
+        "name": "Scooby-Doo! Mystery Incorporated",
+        "match": [
+          "Scooby-Doo Mystery Incorporated"
+        ]
+      },
+      {
+        "name": "Pokémon",
+        "match": [
+          "Pokemon"
+        ]
+      },
+      "Transformers Animated"
     ],
     "wb_classic": [
       "Tom and Jerry",
@@ -5437,7 +7026,67 @@
       "The Journey of Allen Strange",
       "100 Deeds for Eddie McDowd",
       "The Secret World of Alex Mack",
-      "My Brother and Me"
+      "My Brother and Me",
+      {
+        "name": "Ned's Declassified School Survival Guide",
+        "match": [
+          "Ned's Declassified"
+        ]
+      },
+      {
+        "name": "The Brothers García",
+        "match": [
+          "Brothers García"
+        ]
+      },
+      "True Jackson, VP",
+      {
+        "name": "The Naked Brothers Band",
+        "match": [
+          "Naked Brothers Band"
+        ]
+      },
+      "House of Anubis",
+      {
+        "name": "The Troop",
+        "match": [
+          "Troop"
+        ]
+      },
+      {
+        "name": "Sam & Cat",
+        "match": [
+          "Sam and Cat"
+        ]
+      },
+      {
+        "name": "The Adventures of Jimmy Neutron",
+        "match": [
+          "Adventures of Jimmy Neutron",
+          "Jimmy Neutron"
+        ]
+      },
+      {
+        "name": "All Grown Up!",
+        "match": [
+          "All Grown Up"
+        ]
+      },
+      {
+        "name": "Hey Arnold!",
+        "match": [
+          "Hey Arnold"
+        ]
+      },
+      "Catscratch",
+      {
+        "name": "The Mighty B!",
+        "match": [
+          "The Mighty B",
+          "Mighty B!"
+        ]
+      },
+      "T.U.F.F. Puppy"
     ],
     "spacetoon": [
       {
@@ -6017,7 +7666,93 @@
       "The Weekenders",
       "Sonny with a Chance",
       "Jonas",
-      "Hannah Montana"
+      "Hannah Montana",
+      "Phil of the Future",
+      {
+        "name": "The Suite Life on Deck",
+        "match": [
+          "Suite Life on Deck"
+        ]
+      },
+      "Cory in the House",
+      "Good Luck Charlie",
+      "Shake It Up",
+      "Jessie",
+      {
+        "name": "Austin & Ally",
+        "match": [
+          "Austin and Ally"
+        ]
+      },
+      "Life with Derek",
+      "A.N.T. Farm",
+      "Pair of Kings",
+      "Zeke and Luther",
+      "Kickin' It",
+      {
+        "name": "Lilo & Stitch: The Series",
+        "match": [
+          "Lilo and Stitch: The Series"
+        ]
+      },
+      {
+        "name": "Fillmore!",
+        "match": [
+          "Fillmore"
+        ]
+      },
+      "Gravity Falls",
+      "Kick Buttowski",
+      "Teacher's Pet",
+      "High School Musical",
+      "Camp Rock",
+      {
+        "name": "The Cheetah Girls",
+        "match": [
+          "Cheetah Girls"
+        ]
+      },
+      "Halloweentown",
+      {
+        "name": "The Even Stevens Movie",
+        "match": [
+          "Even Stevens Movie"
+        ]
+      },
+      {
+        "name": "The Lizzie McGuire Movie",
+        "match": [
+          "Lizzie McGuire Movie"
+        ]
+      },
+      "Zenon",
+      "Johnny Tsunami",
+      "Motocrossed",
+      "Cadet Kelly",
+      "Twitches",
+      "Read It and Weep",
+      {
+        "name": "Jump In!",
+        "match": [
+          "Jump In"
+        ]
+      },
+      "Starstruck",
+      "Princess Protection Program",
+      "Lemonade Mouth",
+      "Let It Shine",
+      "Smart House",
+      "Halloweentown High",
+      "Return to Halloweentown",
+      "Stuck in the Suburbs",
+      "Wendy Wu",
+      "Minutemen",
+      "Den Brother",
+      "16 Wishes",
+      "Geek Charming",
+      "Frenemies",
+      "Radio Rebel",
+      "Girl vs. Monster"
     ],
     "game_shows": [
       "You Bet Your Life",
@@ -6713,6 +8448,543 @@
       "The King of Queens",
       "Everybody Loves Raymond",
       "Two and a Half Men"
+    ],
+    "dcom": [
+      "High School Musical",
+      "Camp Rock",
+      "The Cheetah Girls",
+      "Halloweentown",
+      "The Even Stevens Movie",
+      "The Lizzie McGuire Movie",
+      "Zenon",
+      "Johnny Tsunami",
+      "Motocrossed",
+      "Cadet Kelly",
+      "Twitches",
+      "Read It and Weep",
+      "Jump In!",
+      "Starstruck",
+      "Princess Protection Program",
+      "Lemonade Mouth",
+      "Let It Shine",
+      "Smart House",
+      "Halloweentown High",
+      "Return to Halloweentown",
+      "Stuck in the Suburbs",
+      "Wendy Wu",
+      "Minutemen",
+      "Den Brother",
+      "16 Wishes",
+      "Geek Charming",
+      "Frenemies",
+      "Radio Rebel",
+      "Girl vs. Monster"
+    ]
+  },
+  "show_years": {
+    "Dexter's Laboratory": [
+      1996,
+      2003
+    ],
+    "Johnny Bravo": [
+      1997,
+      2004
+    ],
+    "The Powerpuff Girls": [
+      1998,
+      2005
+    ],
+    "Courage the Cowardly Dog": [
+      1999,
+      2002
+    ],
+    "Ed, Edd n Eddy": [
+      1999,
+      2009
+    ],
+    "Cow and Chicken": [
+      1997,
+      1999
+    ],
+    "I Am Weasel": [
+      1997,
+      2000
+    ],
+    "Samurai Jack": [
+      2001,
+      2004
+    ],
+    "Time Squad": [
+      2001,
+      2003
+    ],
+    "Whatever Happened to... Robot Jones?": [
+      2002,
+      2003
+    ],
+    "Codename: Kids Next Door": [
+      2002,
+      2008
+    ],
+    "The Grim Adventures of Billy & Mandy": [
+      2003,
+      2008
+    ],
+    "Evil Con Carne": [
+      2003,
+      2004
+    ],
+    "Foster's Home for Imaginary Friends": [
+      2004,
+      2009
+    ],
+    "Camp Lazlo": [
+      2005,
+      2008
+    ],
+    "The Life and Times of Juniper Lee": [
+      2005,
+      2007
+    ],
+    "My Gym Partner's a Monkey": [
+      2005,
+      2008
+    ],
+    "Chowder": [
+      2007,
+      2010
+    ],
+    "The Marvelous Misadventures of Flapjack": [
+      2008,
+      2010
+    ],
+    "Ben 10": [
+      2005,
+      2008
+    ],
+    "Ben 10: Alien Force": [
+      2008,
+      2010
+    ],
+    "Ben 10: Ultimate Alien": [
+      2010,
+      2012
+    ],
+    "Ben 10: Omniverse": [
+      2012,
+      2014
+    ],
+    "Teen Titans": [
+      2003,
+      2006
+    ],
+    "Megas XLR": [
+      2004,
+      2005
+    ],
+    "Generator Rex": [
+      2010,
+      2013
+    ],
+    "Adventure Time": [
+      2010,
+      2018
+    ],
+    "Regular Show": [
+      2010,
+      2017
+    ],
+    "The Amazing World of Gumball": [
+      2011,
+      2019
+    ],
+    "The Secret Saturdays": [
+      2008,
+      2010
+    ],
+    "Hi Hi Puffy AmiYumi": [
+      2004,
+      2006
+    ],
+    "Mucha Lucha": [
+      2002,
+      2005
+    ],
+    "Justice League": [
+      2001,
+      2004
+    ],
+    "Justice League Unlimited": [
+      2004,
+      2006
+    ],
+    "Duck Dodgers": [
+      2003,
+      2005
+    ],
+    "What's New, Scooby-Doo?": [
+      2002,
+      2006
+    ],
+    "Scooby-Doo! Mystery Incorporated": [
+      2010,
+      2013
+    ],
+    "Pokémon": [
+      1998,
+      2013
+    ],
+    "Transformers Animated": [
+      2007,
+      2009
+    ],
+    "Drake & Josh": [
+      2004,
+      2007
+    ],
+    "iCarly": [
+      2007,
+      2012
+    ],
+    "Kenan & Kel": [
+      1996,
+      2000
+    ],
+    "All That": [
+      1994,
+      2005
+    ],
+    "The Amanda Show": [
+      1999,
+      2002
+    ],
+    "Ned's Declassified School Survival Guide": [
+      2004,
+      2007
+    ],
+    "Zoey 101": [
+      2005,
+      2008
+    ],
+    "Victorious": [
+      2010,
+      2013
+    ],
+    "Big Time Rush": [
+      2009,
+      2013
+    ],
+    "Unfabulous": [
+      2004,
+      2007
+    ],
+    "The Brothers García": [
+      2000,
+      2004
+    ],
+    "True Jackson, VP": [
+      2008,
+      2011
+    ],
+    "The Naked Brothers Band": [
+      2007,
+      2009
+    ],
+    "House of Anubis": [
+      2011,
+      2013
+    ],
+    "The Troop": [
+      2009,
+      2013
+    ],
+    "Sam & Cat": [
+      2013,
+      2014
+    ],
+    "SpongeBob SquarePants": [
+      1999,
+      2013
+    ],
+    "The Fairly OddParents": [
+      2001,
+      2013
+    ],
+    "The Adventures of Jimmy Neutron": [
+      2002,
+      2006
+    ],
+    "Danny Phantom": [
+      2004,
+      2007
+    ],
+    "Rugrats": [
+      1991,
+      2004
+    ],
+    "All Grown Up!": [
+      2003,
+      2008
+    ],
+    "CatDog": [
+      1998,
+      2005
+    ],
+    "Hey Arnold!": [
+      1996,
+      2004
+    ],
+    "Rocket Power": [
+      1999,
+      2004
+    ],
+    "The Wild Thornberrys": [
+      1998,
+      2004
+    ],
+    "Invader Zim": [
+      2001,
+      2006
+    ],
+    "Avatar: The Last Airbender": [
+      2005,
+      2008
+    ],
+    "The Legend of Korra": [
+      2012,
+      2014
+    ],
+    "My Life as a Teenage Robot": [
+      2003,
+      2009
+    ],
+    "ChalkZone": [
+      2002,
+      2008
+    ],
+    "As Told by Ginger": [
+      2000,
+      2009
+    ],
+    "The Angry Beavers": [
+      1997,
+      2001
+    ],
+    "Rocko's Modern Life": [
+      1993,
+      1996
+    ],
+    "Catscratch": [
+      2005,
+      2007
+    ],
+    "The Mighty B!": [
+      2008,
+      2011
+    ],
+    "El Tigre": [
+      2007,
+      2008
+    ],
+    "Back at the Barnyard": [
+      2007,
+      2011
+    ],
+    "The Penguins of Madagascar": [
+      2008,
+      2015
+    ],
+    "T.U.F.F. Puppy": [
+      2010,
+      2015
+    ],
+    "Lizzie McGuire": [
+      2001,
+      2004
+    ],
+    "Even Stevens": [
+      2000,
+      2003
+    ],
+    "That's So Raven": [
+      2003,
+      2007
+    ],
+    "Phil of the Future": [
+      2004,
+      2006
+    ],
+    "The Suite Life of Zack & Cody": [
+      2005,
+      2008
+    ],
+    "The Suite Life on Deck": [
+      2008,
+      2011
+    ],
+    "Hannah Montana": [
+      2006,
+      2011
+    ],
+    "Wizards of Waverly Place": [
+      2007,
+      2012
+    ],
+    "Cory in the House": [
+      2007,
+      2008
+    ],
+    "Sonny with a Chance": [
+      2009,
+      2011
+    ],
+    "Good Luck Charlie": [
+      2010,
+      2014
+    ],
+    "Shake It Up": [
+      2010,
+      2013
+    ],
+    "Jessie": [
+      2011,
+      2015
+    ],
+    "Austin & Ally": [
+      2011,
+      2016
+    ],
+    "Life with Derek": [
+      2005,
+      2009
+    ],
+    "A.N.T. Farm": [
+      2011,
+      2014
+    ],
+    "Pair of Kings": [
+      2010,
+      2013
+    ],
+    "Zeke and Luther": [
+      2009,
+      2012
+    ],
+    "Kickin' It": [
+      2011,
+      2015
+    ],
+    "Kim Possible": [
+      2002,
+      2007
+    ],
+    "American Dragon: Jake Long": [
+      2005,
+      2007
+    ],
+    "Lilo & Stitch: The Series": [
+      2003,
+      2006
+    ],
+    "The Proud Family": [
+      2001,
+      2005
+    ],
+    "The Replacements": [
+      2006,
+      2009
+    ],
+    "Brandy & Mr. Whiskers": [
+      2004,
+      2006
+    ],
+    "Dave the Barbarian": [
+      2004,
+      2005
+    ],
+    "House of Mouse": [
+      2001,
+      2003
+    ],
+    "The Emperor's New School": [
+      2006,
+      2008
+    ],
+    "Fillmore!": [
+      2002,
+      2004
+    ],
+    "Phineas and Ferb": [
+      2007,
+      2015
+    ],
+    "Gravity Falls": [
+      2012,
+      2016
+    ],
+    "Kick Buttowski": [
+      2010,
+      2012
+    ],
+    "Recess": [
+      1997,
+      2001
+    ],
+    "The Weekenders": [
+      2000,
+      2004
+    ],
+    "Teacher's Pet": [
+      2000,
+      2002
+    ],
+    "Buzz Lightyear of Star Command": [
+      2000,
+      2001
+    ],
+    "High School Musical": [
+      2006,
+      2008
+    ],
+    "Camp Rock": [
+      2008,
+      2010
+    ],
+    "The Cheetah Girls": [
+      2003,
+      2008
+    ],
+    "Halloweentown": [
+      1998,
+      2006
+    ],
+    "Scooby-Doo": [
+      1969,
+      2013
+    ],
+    "Looney Tunes": [
+      1930,
+      2013
+    ],
+    "Tom and Jerry": [
+      1940,
+      2013
+    ],
+    "Captain Majid": [
+      1994,
+      2006
+    ],
+    "Detective Conan": [
+      1996,
+      2013
+    ],
+    "Grendizer": [
+      1975,
+      1990
+    ],
+    "Freej": [
+      2006,
+      2011
     ]
   }
 }

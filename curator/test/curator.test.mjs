@@ -150,3 +150,27 @@ test('one show on several channels without copies; mixed channel follows weights
   const first = idx.playlist('mix', '*all').items.slice(0, 8).map(e => e.s).join('');
   assert.equal(first.split('j').length - 1, 6, first);
 });
+
+test('debrid: file names understood, smallest compatible file wins, episodes matched to channels', async () => {
+  const vm = await import('node:vm'); const fs = await import('node:fs');
+  const store = {}; const ctx = { XMLHttpRequest: function () {}, setTimeout, clearTimeout, NOStore: { load: (k, d) => store[k] ?? d, save: (k, v) => { store[k] = v; } } };
+  ctx.this = ctx; vm.createContext(ctx);
+  vm.runInContext(fs.readFileSync(new URL('../../client/debrid.js', import.meta.url), 'utf8').replace('}(this));', '}(globalThis));'), ctx);
+  const D = ctx.NODebrid;
+  const p = D.parse("Dexters.Laboratory.S02E14.480p.DVDRip.x264.AAC.mkv");
+  assert.equal(p.show, 'dexters laboratory'); assert.equal(p.sn, 2); assert.equal(p.ep, 14); assert.equal(p.codec, 'h264'); assert.equal(p.res, 480);
+  assert.equal(D.parse('Kim Possible 1x05 [720p HEVC 10bit].mkv').codec, 'hevc');
+  const MB = 1048576;
+  const items = [
+    { pv: 'rd', r: 'L1', name: "Dexter's Laboratory S02E14 1080p BluRay x264 DTS.mkv", bytes: 1400 * MB },
+    { pv: 'rd', r: 'L2', name: "Dexter's Laboratory S02E14 480p DVDRip x264 AAC.mp4", bytes: 120 * MB },
+    { pv: 'torbox', r: 't:1:2', name: "Dexter's Laboratory S02E14 720p x265 10bit.mkv", bytes: 90 * MB },
+    { pv: 'rd', r: 'L3', name: "Dexter's Laboratory S02E15 480p x264.mkv", bytes: 110 * MB },
+    { pv: 'rd', r: 'L4', name: 'Some Unknown Show S01E01 720p x264.mkv', bytes: 200 * MB }];
+  const catalog = { series: { dex: { t: { en: "Dexter's Laboratory" }, ch: { 'toon-orbit-gold': ['*'] } } }, episodes: [{ id: 'e14', s: 'dex', sn: 2, ep: 14, d: 1320, src: [] }] };
+  const ov = D.match(catalog, items, { lang: 'en' });
+  assert.equal(ov.extra.e14[0].r, 'L2', 'small H.264 480p beats 1080p DTS and HEVC');
+  assert.ok(ov.episodes.some(e => e.s === 'dex' && e.ep === 15), 'missing episode joins the show on its channel');
+  assert.ok(ov.episodes.some(e => e.s.startsWith('db-some-unknown')), 'unknown show goes to My Library');
+  assert.equal(ov.stats.matched, 2);
+});

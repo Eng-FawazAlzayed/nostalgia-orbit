@@ -115,3 +115,33 @@ test('source picking honours device caps, region and remembered failures', () =>
   l = S.pickSources(ep, { yt: false, file: true, region: 'US' }, {}, 0);
   assert.deepEqual(l.map(s => s.r), ['y']);
 });
+
+test('themed blocks: Friday and Halloween blocks win over the everyday block; title filters; marathons', () => {
+  const eps = [];
+  for (let i = 1; i <= 40; i++) eps.push({ id: 'a' + i, s: 'a', sn: 1, ep: i, d: 1320, t: { en: i === 5 ? 'Halloween Special' : 'Ep ' + i }, src: [{ p: 'yt', r: 'A' + i }] });
+  for (let i = 1; i <= 40; i++) eps.push({ id: 'b' + i, s: 'b', sn: 1, ep: i, d: 1320, t: { en: 'B ' + i }, src: [{ p: 'yt', r: 'B' + i }] });
+  const ch = { id: 'cn', n: '002', blocks: [
+    { f: '06:00', t: '06:00', g: '*all' },
+    { f: '19:00', t: '21:00', g: '*all', days: [5], marathon: true, label: 'Fri' },
+    { f: '21:00', t: '22:00', g: '*all', months: [10], q: 'halloween' }] };
+  const idx = new S.Index({ channels: [ch], series: { a: { t: { en: 'A' }, ch: { cn: ['*'] } }, b: { t: { en: 'B' }, ch: { cn: ['*'] } } }, episodes: eps });
+  // find a Friday in October 2026
+  let day = S.dayIndexOf(Date.UTC(2026, 9, 2, 12)); // Fri 2 Oct 2026
+  assert.equal(S.kuwaitWeekday(S.dayStartMs(day) + 12 * 3600e3), 5);
+  const items = idx.day('cn', day).filter(x => x.type === 'ep' && !x.inter);
+  const at = h => items.find(x => x.s <= S.dayStartMs(day) + (h - 6) * 3600e3 && x.e > S.dayStartMs(day) + (h - 6) * 3600e3);
+  const fri = items.filter(x => x.s >= S.dayStartMs(day) + 13 * 3600e3 && x.e <= S.dayStartMs(day) + 15 * 3600e3);
+  assert.ok(fri.length >= 4 && fri.every(x => x.ep.s === fri[0].ep.s), 'marathon: one show');
+  assert.equal(at(21.1).ep.t.en, 'Halloween Special');
+});
+
+test('random mode: shuffled but no episode repeats within a week when there is enough', () => {
+  const eps = []; for (let s = 0; s < 6; s++) for (let i = 1; i <= 80; i++) eps.push({ id: s + '-' + i, s: 's' + s, ep: i, d: 1320, src: [{ p: 'yt', r: s + 'x' + i }] });
+  const series = {}; for (let s = 0; s < 6; s++) series['s' + s] = { t: { en: 'S' + s }, ch: { r: ['*'] } };
+  const idx = new S.Index({ channels: [{ id: 'r', n: '1', blocks: [{ f: '06:00', t: '06:00', g: '*all' }] }], series, episodes: eps }, { modes: { r: 'random' } });
+  const d0 = S.dayIndexOf(Date.UTC(2026, 10, 26, 12)); const seen = new Set(); let n = 0;
+  for (let d = d0; d < d0 + 7; d++) for (const x of idx.day('r', d)) if (x.type === 'ep') { n++; seen.add(x.ep.id); }
+  assert.ok(n > 300 && seen.size >= n - 2, `${n} airings, ${seen.size} unique`);
+  const firstFive = idx.day('r', d0).filter(x => x.type === 'ep').slice(0, 5).map(x => x.ep.ep);
+  assert.notDeepEqual(firstFive, [1, 1, 1, 1, 1]);
+});
