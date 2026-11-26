@@ -3,149 +3,1316 @@
   "channels": {
     "toon-orbit-gold": {
       "youtube_handles": [
-        { "handle": "@cartoonnetwork", "tags": ["afterschool", "prime", "day", "overnight", "morning"], "min_minutes": 8 },
-        { "handle": "@cartoonnetworkarabic", "tags": ["arabic"], "language": "ar", "min_minutes": 8 }
+        {
+          "handle": "@cartoonnetwork",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day",
+            "overnight",
+            "morning"
+          ],
+          "min_minutes": 8,
+          "shows_ref": "cn_classic",
+          "exclude": "teen titans go|ben 10 \\(2016\\)|apple & onion|craig of the creek|we baby bears|tiny toons looniversity|clarence|steven universe future"
+        }
       ],
       "youtube_searches": [
-        { "q": "Dexter's Laboratory full episode", "tags": ["afterschool", "prime"], "series": "Dexter's Laboratory", "duration": "medium" },
-        { "q": "The Powerpuff Girls classic full episode", "tags": ["afterschool", "prime"], "series": "The Powerpuff Girls", "duration": "medium" },
-        { "q": "Courage the Cowardly Dog full episode", "tags": ["prime", "overnight"], "series": "Courage the Cowardly Dog", "duration": "medium" },
-        { "q": "كرتون نتورك بالعربية حلقة كاملة قديم", "tags": ["arabic"], "lang": "ar", "duration": "medium" }
+        {
+          "q": "Dexter's Laboratory full episode",
+          "tags": [
+            "afterschool",
+            "prime"
+          ],
+          "series": "Dexter's Laboratory",
+          "duration": "medium"
+        },
+        {
+          "q": "The Powerpuff Girls classic full episode",
+          "tags": [
+            "afterschool",
+            "prime"
+          ],
+          "series": "The Powerpuff Girls",
+          "duration": "medium"
+        },
+        {
+          "q": "Courage the Cowardly Dog full episode",
+          "tags": [
+            "prime",
+            "overnight"
+          ],
+          "series": "Courage the Cowardly Dog",
+          "duration": "medium"
+        },
+        {
+          "q": "كرتون نتورك بالعربية حلقة كاملة قديم",
+          "tags": [
+            "arabic"
+          ],
+          "lang": "ar",
+          "duration": "medium",
+          "shows": [
+            "مختبر دكستر",
+            "فتيات القوة",
+            "جوني برافو",
+            "الكلب الجبان",
+            "إد إد وإدي",
+            "ساموراي جاك",
+            "بقرة ودجاجة",
+            "بن تن",
+            "بن 10",
+            "فوستر",
+            "بيلي وماندي",
+            "تيتنز",
+            "توم وجيري",
+            "سكوبي دو",
+            "الفضائيون",
+            "كوكي",
+            "أطفال الجيران"
+          ]
+        }
       ]
     },
     "rebound": {
-      "youtube_handles": [ { "handle": "@WBKids", "tags": ["day", "afternoon", "overnight"], "min_minutes": 6 } ],
-      "archive": [ { "query": "collection:animationandcartoons AND (hanna-barbera OR \"looney tunes\" OR \"merrie melodies\")", "tags": ["overnight"] } ]
+      "youtube_handles": [
+        {
+          "handle": "@WBKids",
+          "tags": [
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "min_minutes": 6,
+          "shows_ref": "wb_classic",
+          "exclude": "tom and jerry show|tom and jerry in new york|new looney tunes|wabbit|be cool,? scooby|scooby-doo and guess who|bugs bunny builders|looney tunes cartoons|batwheels|tiny toons looniversity|jellystone|velma"
+        }
+      ],
+      "archive": [
+        {
+          "query": "collection:animationandcartoons AND (hanna-barbera OR \"looney tunes\" OR \"merrie melodies\")",
+          "tags": [
+            "overnight"
+          ]
+        }
+      ]
     },
     "orange-couch": {
       "youtube_handles": [
-        { "handle": "@Nickelodeon", "tags": ["afterschool", "day", "overnight"], "min_minutes": 10 },
-        { "handle": "@Nicktoons", "tags": ["afterschool", "morning"], "min_minutes": 10 },
-        { "handle": "@AvatarTheLastAirbender", "tags": ["afterschool", "overnight"], "min_minutes": 15 }
+        {
+          "handle": "@Nickelodeon",
+          "tags": [
+            "afterschool",
+            "day",
+            "overnight"
+          ],
+          "min_minutes": 10,
+          "shows_ref": "nick_classic",
+          "exclude": "rise of the teenage|tales of the teenage|mutant mayhem|loud house|casagrandes|the patrick star show|kamp koral|rock paper scissors|thundermans|henry danger|danger force|side hustle|tyler perry|young dylan|lopez vs|monster high|max & the midknights|big nate|transformers earthspark|paw patrol|blaze"
+        },
+        {
+          "handle": "@Nicktoons",
+          "tags": [
+            "afterschool",
+            "morning"
+          ],
+          "min_minutes": 10,
+          "shows_ref": "nick_classic",
+          "exclude": "rise of the teenage|tales of the teenage|mutant mayhem|loud house|casagrandes|the patrick star show|kamp koral|rock paper scissors|thundermans|henry danger|danger force|side hustle|tyler perry|young dylan|lopez vs|monster high|max & the midknights|big nate|transformers earthspark|paw patrol|blaze"
+        },
+        {
+          "handle": "@AvatarTheLastAirbender",
+          "tags": [
+            "afterschool",
+            "overnight"
+          ],
+          "min_minutes": 15,
+          "shows": [
+            "Avatar: The Last Airbender",
+            {
+              "name": "Avatar: The Last Airbender",
+              "match": [
+                "last airbender",
+                "avatar"
+              ]
+            },
+            "The Legend of Korra",
+            {
+              "name": "The Legend of Korra",
+              "match": [
+                "korra"
+              ]
+            }
+          ],
+          "exclude": "netflix|live action|seven havens|aang the last"
+        }
       ],
-      "youtube_searches": [ { "q": "Rugrats full episode official", "tags": ["morning", "day"], "series": "Rugrats", "duration": "medium" } ]
+      "youtube_searches": [
+        {
+          "q": "Rugrats full episode official",
+          "tags": [
+            "morning",
+            "day"
+          ],
+          "series": "Rugrats",
+          "duration": "medium"
+        }
+      ]
     },
     "magic-hour": {
-      "archive": [ { "query": "(\"steamboat willie\" OR \"plane crazy\" OR \"gallopin gaucho\") AND year:1928", "tags": ["day", "overnight"], "series": "Mickey Mouse 1928", "one_offs": true, "min_minutes": 5 } ],
-      "youtube_handles": [ { "handle": "@DisneyXD", "tags": ["xd"], "min_minutes": 10 } ]
+      "archive": [
+        {
+          "query": "(\"steamboat willie\" OR \"plane crazy\" OR \"gallopin gaucho\") AND year:1928",
+          "tags": [
+            "day",
+            "overnight"
+          ],
+          "series": "Mickey Mouse 1928",
+          "one_offs": true,
+          "min_minutes": 5
+        }
+      ],
+      "youtube_handles": []
     },
     "zap-kids": {
       "youtube_handles": [
-        { "handle": "@PowerRangersOfficial", "tags": ["morning", "afterschool", "day", "overnight"], "min_minutes": 15 },
-        { "handle": "@DigimonGlobalOfficial", "tags": ["afterschool", "day"], "min_minutes": 15 }
+        {
+          "handle": "@PowerRangersOfficial",
+          "tags": [
+            "morning",
+            "afterschool",
+            "day",
+            "overnight"
+          ],
+          "min_minutes": 15,
+          "shows_ref": "power_rangers",
+          "exclude": "dino fury|cosmic fury|beast morphers|ninja steel|dino charge|megaforce|super samurai|once & always|once and always"
+        },
+        {
+          "handle": "@DigimonGlobalOfficial",
+          "tags": [
+            "afterschool",
+            "day"
+          ],
+          "min_minutes": 15,
+          "shows_ref": "digimon",
+          "exclude": "2020|ghost game|beatbreak|appmon|universe"
+        }
       ]
     },
     "comet": {
       "youtube_handles": [
-        { "handle": "@GundamInfo", "tags": ["prime", "afterschool", "overnight"], "min_minutes": 18 },
-        { "handle": "@TMSEntertainment", "tags": ["afterschool", "prime"], "min_minutes": 18 },
-        { "handle": "@DreamWorksVoltron", "tags": ["afterschool", "day"], "min_minutes": 18 }
+        {
+          "handle": "@GundamInfo",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "min_minutes": 18,
+          "shows_ref": "anime_classic",
+          "exclude": "witch from mercury|gquuuuuux|build fighters|build divers|iron-blooded|iron blooded|requiem for vengeance|hathaway|thunderbolt|legendary defender|dr\\. stone|megalobox|fire force"
+        },
+        {
+          "handle": "@TMSEntertainment",
+          "tags": [
+            "afterschool",
+            "prime"
+          ],
+          "min_minutes": 18,
+          "shows_ref": "anime_classic",
+          "exclude": "witch from mercury|gquuuuuux|build fighters|build divers|iron-blooded|iron blooded|requiem for vengeance|hathaway|thunderbolt|legendary defender|dr\\. stone|megalobox|fire force"
+        },
+        {
+          "handle": "@DreamWorksVoltron",
+          "tags": [
+            "afterschool",
+            "day"
+          ],
+          "min_minutes": 18,
+          "shows_ref": "anime_classic",
+          "exclude": "witch from mercury|gquuuuuux|build fighters|build divers|iron-blooded|iron blooded|requiem for vengeance|hathaway|thunderbolt|legendary defender|dr\\. stone|megalobox|fire force"
+        }
       ],
-      "youtube_searches": [ { "q": "RetroCrush full episode classic anime", "tags": ["prime", "overnight"], "duration": "long" } ]
+      "youtube_searches": [
+        {
+          "q": "RetroCrush full episode classic anime",
+          "tags": [
+            "prime",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "anime_classic"
+        }
+      ]
     },
     "tokyo-tube": {
       "youtube_handles": [
-        { "handle": "@ULTRAMAN_OFFICIAL", "tags": ["tokusatsu", "day"], "min_minutes": 18 },
-        { "handle": "@ToeiTokusatsuWORLD", "tags": ["tokusatsu", "day", "overnight"], "min_minutes": 18 },
-        { "handle": "@TezukaProductions", "tags": ["day"], "min_minutes": 18 }
+        {
+          "handle": "@ULTRAMAN_OFFICIAL",
+          "tags": [
+            "tokusatsu",
+            "day"
+          ],
+          "min_minutes": 18,
+          "shows_ref": [
+            "tokusatsu_classic",
+            "anime_classic"
+          ],
+          "exclude": "blazar|ultraman arc|decker|trigger|ultraman z\\b|taiga|r/b|geed|ultraman orb|ultraman x\\b|ginga|omega|rising|gavv|gotchard|geats|revice|saber|zero-one|zi-o|build|ex-aid|ghost|drive|gaim|wizard|king-ohger|boonboomger|donbrothers|zenkaiger|kiramager|ryusoulger|lupinranger|kyuranger|zyuohger|ninninger|tokkyuger|gozyuger|zeztz"
+        },
+        {
+          "handle": "@ToeiTokusatsuWORLD",
+          "tags": [
+            "tokusatsu",
+            "day",
+            "overnight"
+          ],
+          "min_minutes": 18,
+          "shows_ref": [
+            "tokusatsu_classic",
+            "anime_classic"
+          ],
+          "exclude": "blazar|ultraman arc|decker|trigger|ultraman z\\b|taiga|r/b|geed|ultraman orb|ultraman x\\b|ginga|omega|rising|gavv|gotchard|geats|revice|saber|zero-one|zi-o|build|ex-aid|ghost|drive|gaim|wizard|king-ohger|boonboomger|donbrothers|zenkaiger|kiramager|ryusoulger|lupinranger|kyuranger|zyuohger|ninninger|tokkyuger|gozyuger|zeztz"
+        },
+        {
+          "handle": "@TezukaProductions",
+          "tags": [
+            "day"
+          ],
+          "min_minutes": 18,
+          "shows_ref": [
+            "tokusatsu_classic",
+            "anime_classic"
+          ],
+          "exclude": "blazar|ultraman arc|decker|trigger|ultraman z\\b|taiga|r/b|geed|ultraman orb|ultraman x\\b|ginga|omega|rising|gavv|gotchard|geats|revice|saber|zero-one|zi-o|build|ex-aid|ghost|drive|gaim|wizard|king-ohger|boonboomger|donbrothers|zenkaiger|kiramager|ryusoulger|lupinranger|kyuranger|zyuohger|ninninger|tokkyuger|gozyuger|zeztz"
+        }
       ],
       "youtube_searches": [
-        { "q": "昔のバラエティ 公式 フル", "tags": ["variety"], "lang": "ja", "duration": "long" },
-        { "q": "classic Japanese game show full episode official", "tags": ["variety"], "duration": "long" }
+        {
+          "q": "昔のバラエティ 公式 フル",
+          "tags": [
+            "variety"
+          ],
+          "lang": "ja",
+          "duration": "long"
+        },
+        {
+          "q": "classic Japanese game show full episode official",
+          "tags": [
+            "variety"
+          ],
+          "duration": "long"
+        }
       ]
     },
     "planet-toon": {
-      "youtube_handles": [ { "handle": "@spacetoon", "tags": ["morning", "day", "afterschool", "action", "overnight"], "language": "ar", "min_minutes": 15 } ],
+      "youtube_handles": [
+        {
+          "handle": "@spacetoon",
+          "tags": [
+            "morning",
+            "day",
+            "afterschool",
+            "action",
+            "overnight"
+          ],
+          "language": "ar",
+          "min_minutes": 15,
+          "shows_ref": "spacetoon"
+        }
+      ],
       "youtube_searches": [
-        { "q": "سبيستون الحلقة كاملة مدبلج قديم", "tags": ["afterschool", "day"], "lang": "ar", "duration": "medium" },
-        { "q": "الكابتن ماجد الحلقة كاملة", "tags": ["afterschool", "action"], "series": "الكابتن ماجد", "series_en": "Captain Majid", "lang": "ar", "duration": "medium" },
-        { "q": "المحقق كونان مدبلج الحلقة", "tags": ["afterschool", "overnight"], "series": "المحقق كونان", "series_en": "Detective Conan", "lang": "ar", "duration": "medium" }
+        {
+          "q": "سبيستون الحلقة كاملة مدبلج قديم",
+          "tags": [
+            "afterschool",
+            "day"
+          ],
+          "lang": "ar",
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "الكابتن ماجد الحلقة كاملة",
+          "tags": [
+            "afterschool",
+            "action"
+          ],
+          "series": "الكابتن ماجد",
+          "series_en": "Captain Majid",
+          "lang": "ar",
+          "duration": "medium"
+        },
+        {
+          "q": "المحقق كونان مدبلج الحلقة",
+          "tags": [
+            "afterschool",
+            "overnight"
+          ],
+          "series": "المحقق كونان",
+          "series_en": "Detective Conan",
+          "lang": "ar",
+          "duration": "medium"
+        }
       ]
     },
     "power-orbit": {
       "youtube_searches": [
-        { "q": "سبيس باور حلقة كاملة", "tags": ["day", "prime"], "lang": "ar", "duration": "medium" },
-        { "q": "غرندايزر مدبلج الحلقة كاملة", "tags": ["prime", "overnight"], "series": "غرندايزر", "series_en": "Grendizer", "lang": "ar", "duration": "medium" }
+        {
+          "q": "سبيس باور حلقة كاملة",
+          "tags": [
+            "day",
+            "prime"
+          ],
+          "lang": "ar",
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "غرندايزر مدبلج الحلقة كاملة",
+          "tags": [
+            "prime",
+            "overnight"
+          ],
+          "series": "غرندايزر",
+          "series_en": "Grendizer",
+          "lang": "ar",
+          "duration": "medium"
+        }
       ]
     },
     "najma-3": {
-      "youtube_handles": [ { "handle": "@MBC3", "tags": ["morning", "day", "afterschool", "overnight"], "language": "ar", "min_minutes": 10 } ],
-      "youtube_searches": [ { "q": "فريج الحلقة كاملة", "tags": ["afterschool", "overnight"], "series": "فريج", "series_en": "Freej", "lang": "ar", "duration": "medium" } ]
+      "youtube_handles": [
+        {
+          "handle": "@MBC3",
+          "tags": [
+            "morning",
+            "day",
+            "afterschool",
+            "overnight"
+          ],
+          "language": "ar",
+          "min_minutes": 10,
+          "shows_ref": "mbc3"
+        }
+      ],
+      "youtube_searches": [
+        {
+          "q": "فريج الحلقة كاملة",
+          "tags": [
+            "afterschool",
+            "overnight"
+          ],
+          "series": "فريج",
+          "series_en": "Freej",
+          "lang": "ar",
+          "duration": "medium"
+        }
+      ]
     },
     "dirati-tv": {
       "youtube_searches": [
-        { "q": "افتح يا سمسم الحلقة كاملة 1979", "tags": ["morning"], "series": "افتح يا سمسم", "series_en": "Iftah Ya Simsim", "lang": "ar", "duration": "medium" },
-        { "q": "تلفزيون الكويت قديم برنامج كامل", "tags": ["day", "prime", "late"], "lang": "ar", "duration": "long" },
-        { "q": "بوقتادة وبونبيل الحلقة كاملة", "tags": ["cartoons"], "series": "بوقتادة وبونبيل", "series_en": "Bu Qatada & Bu Nabeel", "lang": "ar", "duration": "medium" }
+        {
+          "q": "افتح يا سمسم الحلقة كاملة 1979",
+          "tags": [
+            "morning"
+          ],
+          "series": "افتح يا سمسم",
+          "series_en": "Iftah Ya Simsim",
+          "lang": "ar",
+          "duration": "medium"
+        },
+        {
+          "q": "تلفزيون الكويت قديم برنامج كامل",
+          "tags": [
+            "day",
+            "prime",
+            "late"
+          ],
+          "lang": "ar",
+          "duration": "long"
+        },
+        {
+          "q": "بوقتادة وبونبيل الحلقة كاملة",
+          "tags": [
+            "cartoons"
+          ],
+          "series": "بوقتادة وبونبيل",
+          "series_en": "Bu Qatada & Bu Nabeel",
+          "lang": "ar",
+          "duration": "medium"
+        }
       ]
     },
     "masrah-kuwait": {
       "youtube_searches": [
-        { "q": "مسرحية كويتية كاملة عبدالحسين عبدالرضا", "tags": ["prime", "weekend", "day"], "lang": "ar", "duration": "long", "kind": "play", "one_offs": true, "min_minutes": 60 },
-        { "q": "مسرحية كويتية قديمة كاملة", "tags": ["prime", "weekend", "day"], "lang": "ar", "duration": "long", "kind": "play", "one_offs": true, "min_minutes": 60 }
+        {
+          "q": "مسرحية كويتية كاملة عبدالحسين عبدالرضا",
+          "tags": [
+            "prime",
+            "weekend",
+            "day"
+          ],
+          "lang": "ar",
+          "duration": "long",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60
+        },
+        {
+          "q": "مسرحية كويتية قديمة كاملة",
+          "tags": [
+            "prime",
+            "weekend",
+            "day"
+          ],
+          "lang": "ar",
+          "duration": "long",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60
+        }
       ]
     },
     "khaleej-stage": {
       "youtube_searches": [
-        { "q": "مسرحية خليجية قديمة كاملة", "tags": ["prime", "day"], "lang": "ar", "duration": "long", "kind": "play", "one_offs": true, "min_minutes": 60 },
-        { "q": "مسرحية قطرية كاملة قديمة", "tags": ["prime", "day"], "lang": "ar", "duration": "long", "kind": "play", "one_offs": true, "min_minutes": 60 }
+        {
+          "q": "مسرحية خليجية قديمة كاملة",
+          "tags": [
+            "prime",
+            "day"
+          ],
+          "lang": "ar",
+          "duration": "long",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60
+        },
+        {
+          "q": "مسرحية قطرية كاملة قديمة",
+          "tags": [
+            "prime",
+            "day"
+          ],
+          "lang": "ar",
+          "duration": "long",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60
+        }
       ]
     },
     "ramadan-nights": {
       "youtube_searches": [
-        { "q": "فوازير رمضان قديمة حلقة كاملة", "tags": ["iftar", "prime"], "lang": "ar", "duration": "medium" },
-        { "q": "مسلسل رمضاني كويتي قديم الحلقة", "tags": ["prime", "day"], "lang": "ar", "duration": "long" }
+        {
+          "q": "فوازير رمضان قديمة حلقة كاملة",
+          "tags": [
+            "iftar",
+            "prime"
+          ],
+          "lang": "ar",
+          "duration": "medium"
+        },
+        {
+          "q": "مسلسل رمضاني كويتي قديم الحلقة",
+          "tags": [
+            "prime",
+            "day"
+          ],
+          "lang": "ar",
+          "duration": "long"
+        }
       ]
     },
     "night-owl": {
-      "youtube_handles": [ { "handle": "@adultswim", "tags": ["prime"], "min_minutes": 10 } ]
+      "youtube_handles": [
+        {
+          "handle": "@adultswim",
+          "tags": [
+            "prime"
+          ],
+          "min_minutes": 10,
+          "shows_ref": "adult_swim_classic",
+          "exclude": "rick and morty|smiling friends|joe pera|primal|lazarus|yolo|common side effects|women wearing|unicorn: warriors|royal crackers|teenage euthanasia|birdgirl|tuca|aqua teen forever|the shivering truth|three busy debras|ha ha you clowns|invincible fight girl|my adventures with superman|housing complex"
+        }
+      ]
     },
     "vault-33": {
       "archive": [
-        { "query": "collection:animationandcartoons AND (fleischer OR popeye OR \"betty boop\" OR casper OR superman)", "tags": ["*all"], "rows": 300, "one_offs": true, "min_minutes": 5 },
-        { "query": "collection:classic_cartoons", "tags": ["*all"], "rows": 300, "one_offs": true, "min_minutes": 5 }
+        {
+          "query": "collection:animationandcartoons AND (fleischer OR popeye OR \"betty boop\" OR casper OR superman)",
+          "tags": [
+            "*all"
+          ],
+          "rows": 300,
+          "one_offs": true,
+          "min_minutes": 5
+        },
+        {
+          "query": "collection:classic_cartoons",
+          "tags": [
+            "*all"
+          ],
+          "rows": 300,
+          "one_offs": true,
+          "min_minutes": 5
+        }
       ]
     },
     "field-trip": {
-      "youtube_handles": [ { "handle": "@NASA", "tags": ["day", "overnight"], "min_minutes": 15, "title_filter": "documentary|apollo|history|mission|film" } ],
+      "youtube_handles": [
+        {
+          "handle": "@NASA",
+          "tags": [
+            "day",
+            "overnight"
+          ],
+          "min_minutes": 15,
+          "title_filter": "documentary|apollo|history|mission|film",
+          "series": "NASA Films",
+          "one_offs": true
+        }
+      ],
       "archive": [
-        { "query": "collection:prelinger AND (science OR nature OR space OR animals)", "tags": ["day", "prime", "overnight"], "rows": 300, "one_offs": true, "min_minutes": 8 },
-        { "query": "collection:nasa AND mediatype:movies AND (documentary OR apollo)", "tags": ["prime"], "rows": 200, "one_offs": true, "min_minutes": 10 }
+        {
+          "query": "collection:prelinger AND (science OR nature OR space OR animals)",
+          "tags": [
+            "day",
+            "prime",
+            "overnight"
+          ],
+          "rows": 300,
+          "one_offs": true,
+          "min_minutes": 8
+        },
+        {
+          "query": "collection:nasa AND mediatype:movies AND (documentary OR apollo)",
+          "tags": [
+            "prime"
+          ],
+          "rows": 200,
+          "one_offs": true,
+          "min_minutes": 10
+        }
       ]
     },
     "player-2": {
-      "archive": [ { "query": "collection:computerchronicles", "tags": ["day", "overnight"], "series": "The Computer Chronicles", "rows": 300, "min_minutes": 20 } ],
+      "archive": [
+        {
+          "query": "collection:computerchronicles",
+          "tags": [
+            "day",
+            "overnight"
+          ],
+          "series": "The Computer Chronicles",
+          "rows": 300,
+          "min_minutes": 20
+        }
+      ],
       "youtube_searches": [
-        { "q": "E3 2005 press conference full", "tags": ["e3"], "duration": "long", "one_offs": true, "min_minutes": 30 },
-        { "q": "retro game review classic full episode", "tags": ["reviews"], "duration": "medium" }
+        {
+          "q": "E3 2005 press conference full",
+          "tags": [
+            "e3"
+          ],
+          "duration": "long",
+          "one_offs": true,
+          "min_minutes": 30
+        },
+        {
+          "q": "retro game review classic full episode",
+          "tags": [
+            "reviews"
+          ],
+          "duration": "medium"
+        }
       ]
     },
     "byte-shop": {
-      "archive": [ { "query": "collection:computerchronicles", "tags": ["*all"], "series": "The Computer Chronicles", "rows": 300, "min_minutes": 20 } ]
+      "archive": [
+        {
+          "query": "collection:computerchronicles",
+          "tags": [
+            "*all"
+          ],
+          "series": "The Computer Chronicles",
+          "rows": 300,
+          "min_minutes": 20
+        }
+      ]
     },
     "rewind-web": {
-      "archive": [ { "query": "collection:flashanimations OR (newgrounds AND mediatype:movies)", "tags": ["day", "prime"], "rows": 300, "one_offs": true, "min_minutes": 1 } ]
+      "archive": [
+        {
+          "query": "collection:flashanimations OR (newgrounds AND mediatype:movies)",
+          "tags": [
+            "day",
+            "prime"
+          ],
+          "rows": 300,
+          "one_offs": true,
+          "min_minutes": 1
+        }
+      ]
     },
     "sitcom-lane": {
-      "archive": [ { "query": "collection:classic_tv AND (sitcom OR comedy) AND licenseurl:*publicdomain*", "tags": ["day", "prime", "overnight"], "rows": 300, "min_minutes": 20 } ]
+      "archive": [
+        {
+          "query": "collection:classic_tv AND (sitcom OR comedy) AND licenseurl:*publicdomain*",
+          "tags": [
+            "day",
+            "prime",
+            "overnight"
+          ],
+          "rows": 300,
+          "min_minutes": 20
+        }
+      ]
     },
     "game-show-gold": {
-      "archive": [ { "query": "collection:classic_tv AND (\"game show\" OR quiz) AND licenseurl:*publicdomain*", "tags": ["*all"], "rows": 200, "min_minutes": 20 } ]
+      "archive": [
+        {
+          "query": "collection:classic_tv AND (\"game show\" OR quiz) AND licenseurl:*publicdomain*",
+          "tags": [
+            "*all"
+          ],
+          "rows": 200,
+          "min_minutes": 20
+        }
+      ]
     },
     "jukebox": {
       "youtube_searches": [
-        { "q": "anime opening creditless official", "tags": ["anisong"], "duration": "short", "fill": true, "allow_clips": true },
-        { "q": "2000s music video official", "tags": ["videos"], "duration": "short", "one_offs": true, "allow_clips": true, "min_minutes": 2, "max_minutes": 8 }
+        {
+          "q": "anime opening creditless official",
+          "tags": [
+            "anisong"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true
+        },
+        {
+          "q": "2000s music video official",
+          "tags": [
+            "videos"
+          ],
+          "duration": "short",
+          "one_offs": true,
+          "allow_clips": true,
+          "min_minutes": 2,
+          "max_minutes": 8
+        }
       ]
     },
     "goal": {
-      "youtube_searches": [ { "q": "World Cup 2002 highlights official FIFA", "tags": ["*all"], "duration": "medium", "one_offs": true, "allow_clips": true } ]
+      "youtube_searches": [
+        {
+          "q": "World Cup 2002 highlights official FIFA",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "one_offs": true,
+          "allow_clips": true
+        }
+      ]
     },
     "live-wire": {
       "direct": []
     },
     "_interstitials": {
-      "archive": [ { "query": "collection:prelinger AND (commercial OR advertisement) AND year:[1950 TO 2005]", "tags": ["*"], "fill": true, "rows": 300 } ]
+      "archive": [
+        {
+          "query": "collection:prelinger AND (commercial OR advertisement) AND year:[1950 TO 2005]",
+          "tags": [
+            "*"
+          ],
+          "fill": true,
+          "rows": 300
+        }
+      ]
     }
+  },
+  "show_lists": {
+    "cn_classic": [
+      "Dexter's Laboratory",
+      "The Powerpuff Girls",
+      {
+        "name": "Powerpuff Girls",
+        "match": [
+          "powerpuff"
+        ]
+      },
+      "Johnny Bravo",
+      "Courage the Cowardly Dog",
+      "Ed, Edd n Eddy",
+      "Cow and Chicken",
+      "I Am Weasel",
+      "Samurai Jack",
+      {
+        "name": "Codename: Kids Next Door",
+        "match": [
+          "kids next door",
+          "knd"
+        ]
+      },
+      {
+        "name": "The Grim Adventures of Billy & Mandy",
+        "match": [
+          "billy and mandy",
+          "billy mandy"
+        ]
+      },
+      "Foster's Home for Imaginary Friends",
+      "Camp Lazlo",
+      "Chowder",
+      "The Marvelous Misadventures of Flapjack",
+      {
+        "name": "Ben 10",
+        "match": [
+          "ben 10"
+        ]
+      },
+      {
+        "name": "Teen Titans",
+        "match": [
+          "teen titans"
+        ]
+      },
+      "Adventure Time",
+      "Regular Show",
+      "The Amazing World of Gumball",
+      "Megas XLR",
+      "Sheep in the Big City",
+      "Time Squad",
+      "Mike, Lu & Og",
+      "Robotboy",
+      "My Gym Partner's a Monkey",
+      "Hi Hi Puffy AmiYumi",
+      "Squirrel Boy",
+      "Class of 3000",
+      "Out of Jimmy's Head",
+      "Symbionic Titan",
+      "Sym-Bionic Titan",
+      "Generator Rex",
+      "Star Wars: The Clone Wars",
+      "Duck Dodgers",
+      "Evil Con Carne"
+    ],
+    "wb_classic": [
+      "Tom and Jerry",
+      "Looney Tunes",
+      "Merrie Melodies",
+      "Bugs Bunny",
+      "Daffy Duck",
+      "Road Runner",
+      "Sylvester",
+      "Tweety",
+      {
+        "name": "Scooby-Doo",
+        "match": [
+          "scooby doo",
+          "scooby"
+        ]
+      },
+      "The Flintstones",
+      "The Jetsons",
+      "Pinky and the Brain",
+      "Animaniacs",
+      "Tiny Toon Adventures",
+      "Batman: The Animated Series",
+      {
+        "name": "Superman: The Animated Series",
+        "match": [
+          "superman the animated series"
+        ]
+      },
+      "Batman Beyond",
+      "Justice League",
+      "Yogi Bear",
+      "Top Cat",
+      "Wacky Races",
+      "Dastardly and Muttley",
+      "Huckleberry Hound",
+      "Jonny Quest",
+      "Captain Planet",
+      "Freakazoid",
+      "Taz-Mania",
+      "The Sylvester & Tweety Mysteries",
+      "Droopy",
+      "Tom and Jerry Kids",
+      "Johnny Bravo",
+      "Space Ghost",
+      "Popeye"
+    ],
+    "nick_classic": [
+      {
+        "name": "SpongeBob SquarePants",
+        "match": [
+          "spongebob"
+        ]
+      },
+      "Rugrats",
+      "Hey Arnold",
+      "The Fairly OddParents",
+      {
+        "name": "Fairly OddParents",
+        "match": [
+          "fairly odd parents",
+          "fairly oddparents"
+        ]
+      },
+      "Jimmy Neutron",
+      "Danny Phantom",
+      {
+        "name": "Avatar: The Last Airbender",
+        "match": [
+          "last airbender"
+        ]
+      },
+      "The Legend of Korra",
+      "Kenan & Kel",
+      "All That",
+      "iCarly",
+      "Drake & Josh",
+      "Zoey 101",
+      "Victorious",
+      "The Wild Thornberrys",
+      "Rocket Power",
+      "CatDog",
+      "Aaahh!!! Real Monsters",
+      "Invader Zim",
+      "As Told by Ginger",
+      "Ned's Declassified",
+      "Big Time Rush",
+      "Rocko's Modern Life",
+      "Doug",
+      "The Angry Beavers",
+      "Ren & Stimpy",
+      "Teenage Mutant Ninja Turtles",
+      "El Tigre",
+      "My Life as a Teenage Robot",
+      "ChalkZone",
+      "The Mighty B",
+      "Back at the Barnyard",
+      "The Penguins of Madagascar",
+      "Kung Fu Panda: Legends of Awesomeness",
+      "Are You Afraid of the Dark",
+      "The Amanda Show",
+      "Unfabulous",
+      "Romeo!",
+      "Kablam",
+      "Pete & Pete",
+      "Blue's Clues",
+      "Dora the Explorer",
+      "Little Bill",
+      "Oswald"
+    ],
+    "spacetoon": [
+      {
+        "name": "الكابتن ماجد",
+        "match": [
+          "كابتن ماجد"
+        ]
+      },
+      "عدنان ولينا",
+      "ريمي",
+      "سالي",
+      "جزيرة الكنز",
+      "النمر المقنع",
+      "هايدي",
+      "بوكيمون",
+      "دراغون بول",
+      {
+        "name": "أبطال الديجيتال",
+        "match": [
+          "ابطال الديجيتال",
+          "ديجيمون"
+        ]
+      },
+      "المحقق كونان",
+      "سلام دانك",
+      "ون بيس",
+      "ناروتو",
+      "ماوكلي",
+      "بي بليد",
+      "يوغي يو",
+      "يو غي يو",
+      "الحديقة السرية",
+      "عهد الأصدقاء",
+      "صاحب الظل الطويل",
+      "فلونة",
+      "سابق ولاحق",
+      "كابتن رابح",
+      "الرمية الملتهبة",
+      "هزيم الرعد",
+      "زينة ونحول",
+      "ساندي بل",
+      "لحن الحياة",
+      "جورجي",
+      "أنا وأخي",
+      "بابار",
+      "القناص",
+      "هنتر",
+      "المتحري كونان",
+      "مدرسة الكونغ فو",
+      "دروب ريمي",
+      "بيل وسيباستيان",
+      "نوار",
+      "روبن هود",
+      "السنافر",
+      "الفارس الشجاع",
+      "ماروكو",
+      "ماروكو الصغيرة",
+      "شيبتشو",
+      "سنان",
+      "الأحلام الذهبية",
+      "عدنان",
+      "مغامرات زيكو",
+      "كرة القدم",
+      "أبطال الكرة",
+      "ساسوكي",
+      "جريندايزر",
+      "غرندايزر",
+      "مازنجر",
+      "فتيات المكتب",
+      "دي إن إيه",
+      "الحوت الأبيض",
+      "المغامرون الصغار",
+      "بلاك جاك",
+      "أسرار المحيط",
+      "تاكا",
+      "ماجد",
+      "روميو",
+      "شما في البراري الخضراء",
+      "توم سوير",
+      "لوسي",
+      "بشرى",
+      "مدينة النخيل",
+      "الفتى النبيل",
+      "سيف النار",
+      "سيلفر فانج",
+      "ريو",
+      "كيكو",
+      "بوبي",
+      "موكا موكا",
+      "سوبر جيمز"
+    ],
+    "anime_classic": [
+      "Lupin",
+      "Sherlock Hound",
+      "Detective Conan",
+      "Case Closed",
+      "Rose of Versailles",
+      "Ashita no Joe",
+      "Tomorrow's Joe",
+      "Monster Rancher",
+      "Bakugan",
+      "Jewelpet",
+      "Anpanman",
+      "Mobile Suit Gundam",
+      "Gundam Wing",
+      "Gundam SEED",
+      "Gundam 00",
+      "G Gundam",
+      "Gundam X",
+      "Turn A Gundam",
+      "Zeta Gundam",
+      "Gundam ZZ",
+      "08th MS Team",
+      "Gundam 0080",
+      "Gundam 0083",
+      "Victory Gundam",
+      "Char's Counterattack",
+      "Gundam Unicorn",
+      "Astro Boy",
+      "Kimba",
+      "Black Jack",
+      "Princess Knight",
+      "Unico",
+      "Dororo",
+      "Jungle Emperor",
+      "Voltron",
+      "Robotech",
+      "Speed Racer",
+      "Gigantor",
+      "Captain Harlock",
+      "Galaxy Express 999",
+      "Space Battleship Yamato",
+      "Star Blazers",
+      "Cyborg 009"
+    ],
+    "tokusatsu_classic": [
+      "Ultraman",
+      "Ultraseven",
+      "Ultra Q",
+      "Ultraman Tiga",
+      "Ultraman Dyna",
+      "Ultraman Gaia",
+      "Ultraman Cosmos",
+      "Ultraman Nexus",
+      "Ultraman Max",
+      "Ultraman Mebius",
+      "Ultraman Ace",
+      "Ultraman Taro",
+      "Ultraman Leo",
+      "Ultraman 80",
+      "Return of Ultraman",
+      "Kamen Rider",
+      "Super Sentai",
+      "Himitsu Sentai Gorenger",
+      "Spider-Man",
+      "Kikaider",
+      "Kamen Rider Black",
+      "Kamen Rider Kuuga",
+      "Kamen Rider Agito",
+      "Kamen Rider Ryuki",
+      "Kamen Rider 555",
+      "Kamen Rider Blade",
+      "Kamen Rider Hibiki",
+      "Kamen Rider Kabuto",
+      "Kamen Rider Den-O",
+      "Kamen Rider Kiva",
+      "Kamen Rider Decade",
+      "Kamen Rider W",
+      "Kamen Rider OOO",
+      "Kamen Rider Fourze",
+      "Jiraiya",
+      "Juspion",
+      "Spielvan",
+      "Metalder",
+      "Gavan",
+      "Sharivan",
+      "Shaider",
+      "Jetman",
+      "Dairanger",
+      "Kakuranger",
+      "Ohranger",
+      "Megaranger",
+      "Gingaman",
+      "Timeranger",
+      "Gaoranger",
+      "Hurricaneger",
+      "Abaranger",
+      "Dekaranger",
+      "Magiranger",
+      "Boukenger",
+      "Gekiranger",
+      "Go-onger",
+      "Shinkenger",
+      "Goseiger",
+      "Gokaiger",
+      "Kyoryuger"
+    ],
+    "power_rangers": [
+      {
+        "name": "Mighty Morphin Power Rangers",
+        "match": [
+          "mighty morphin"
+        ]
+      },
+      {
+        "name": "Power Rangers Zeo",
+        "match": [
+          "power rangers zeo"
+        ]
+      },
+      {
+        "name": "Power Rangers Turbo",
+        "match": [
+          "power rangers turbo"
+        ]
+      },
+      {
+        "name": "Power Rangers in Space",
+        "match": [
+          "power rangers in space"
+        ]
+      },
+      {
+        "name": "Power Rangers Lost Galaxy",
+        "match": [
+          "lost galaxy"
+        ]
+      },
+      {
+        "name": "Power Rangers Lightspeed Rescue",
+        "match": [
+          "lightspeed rescue"
+        ]
+      },
+      {
+        "name": "Power Rangers Time Force",
+        "match": [
+          "time force"
+        ]
+      },
+      {
+        "name": "Power Rangers Wild Force",
+        "match": [
+          "wild force"
+        ]
+      },
+      {
+        "name": "Power Rangers Ninja Storm",
+        "match": [
+          "ninja storm"
+        ]
+      },
+      {
+        "name": "Power Rangers Dino Thunder",
+        "match": [
+          "dino thunder"
+        ]
+      },
+      {
+        "name": "Power Rangers S.P.D.",
+        "match": [
+          "power rangers spd",
+          "power rangers s p d"
+        ]
+      },
+      {
+        "name": "Power Rangers Mystic Force",
+        "match": [
+          "mystic force"
+        ]
+      },
+      {
+        "name": "Power Rangers Operation Overdrive",
+        "match": [
+          "operation overdrive"
+        ]
+      },
+      {
+        "name": "Power Rangers Jungle Fury",
+        "match": [
+          "jungle fury"
+        ]
+      },
+      {
+        "name": "Power Rangers RPM",
+        "match": [
+          "power rangers rpm"
+        ]
+      },
+      {
+        "name": "Power Rangers Samurai",
+        "match": [
+          "power rangers samurai"
+        ]
+      },
+      {
+        "name": "VR Troopers",
+        "match": [
+          "vr troopers"
+        ]
+      },
+      {
+        "name": "Big Bad Beetleborgs",
+        "match": [
+          "beetleborgs"
+        ]
+      }
+    ],
+    "digimon": [
+      {
+        "name": "Digimon Adventure",
+        "match": [
+          "digimon adventure"
+        ]
+      },
+      {
+        "name": "Digimon Adventure 02",
+        "match": [
+          "digimon adventure 02"
+        ]
+      },
+      {
+        "name": "Digimon Tamers",
+        "match": [
+          "tamers"
+        ]
+      },
+      {
+        "name": "Digimon Frontier",
+        "match": [
+          "frontier"
+        ]
+      },
+      {
+        "name": "Digimon Data Squad",
+        "match": [
+          "data squad",
+          "savers"
+        ]
+      },
+      {
+        "name": "Digimon Fusion",
+        "match": [
+          "digimon fusion",
+          "xros wars"
+        ]
+      }
+    ],
+    "adult_swim_classic": [
+      "Aqua Teen Hunger Force",
+      "Space Ghost Coast to Coast",
+      "Harvey Birdman",
+      "Sealab 2021",
+      "The Brak Show",
+      "Robot Chicken",
+      "Metalocalypse",
+      "Squidbillies",
+      "The Venture Bros",
+      "Venture Bros",
+      "Tim and Eric",
+      "Home Movies",
+      "Moral Orel",
+      "Frisky Dingo",
+      "12 oz. Mouse",
+      "Superjail",
+      "Childrens Hospital",
+      "Delocated",
+      "Xavier: Renegade Angel",
+      "Assy McGee",
+      "Perfect Hair Forever",
+      "Stroker and Hoop",
+      "Minoriteam",
+      "Mary Shelley's Frankenhole",
+      "China, IL",
+      "Eagleheart",
+      "NTSF:SD:SUV",
+      "Off the Air",
+      "Check It Out",
+      "Saul of the Mole Men",
+      "Lucy, the Daughter of the Devil",
+      "Fat Guy Stuck in Internet",
+      "Tom Goes to the Mayor",
+      "The Boondocks",
+      "Cowboy Bebop",
+      "FLCL",
+      "Inuyasha",
+      "Trigun",
+      "Outlaw Star",
+      "Lupin the 3rd"
+    ],
+    "mbc3": [
+      {
+        "name": "فريج",
+        "match": [
+          "freej"
+        ]
+      },
+      "شعبية الكرتون",
+      "افتح يا سمسم",
+      "مدينة المعلومات",
+      "سلام سلام",
+      "حمودي",
+      "حكايات",
+      "ورقة وقلم"
+    ]
   }
 }

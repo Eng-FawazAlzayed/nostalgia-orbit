@@ -101,3 +101,15 @@ test('orphans are episodes that worked before and lost every copy; due list puts
   assert.deepEqual(orphans(L, now).map(e => e.id), [e1.id]);
   assert.equal(dueSources(L, 10, now)[0].id, b.id);
 });
+
+test('compilations, clips and live streams are not episodes; show lists pick the series', async () => {
+  const { matchShow } = await import('../src/titles.mjs');
+  for (const t of ['1 Hour of Henry Danger at NIGHT 🌙😈', 'Fantastic FOOD of Ooo 🥪 Adventure Time', '🟠 LIVE', 'Classic Cartoon MARATHON Vol. 5 📺', 'Every Time Someone Falls in The Thundermans', 'تجميع حلقات الكابتن ماجد'])
+    assert.ok(looksLikeClip(t), t);
+  for (const t of ['Dexter\'s Laboratory | S2E14 | Full Episode', 'الكابتن ماجد الحلقة 12', 'Courage the Cowardly Dog - The Demon in the Mattress'])
+    assert.ok(!looksLikeClip(t), t);
+  const shows = ['Teen Titans', 'Ben 10', { name: 'الكابتن ماجد', match: ['كابتن ماجد'] }];
+  assert.equal(matchShow('Teen Titans | Season 1 Episode 2 | Full Episode', shows), 'Teen Titans');
+  assert.equal(matchShow('كابتن ماجد الحلقة 3', shows), 'الكابتن ماجد');
+  assert.equal(matchShow('Regular Show full episode', shows), null);
+});

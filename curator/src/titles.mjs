@@ -57,7 +57,28 @@ export function fingerprint(seriesId, season, episode, title, duration) {
   return `${seriesId}|t:${normalize(title).slice(0, 60)}|${bucket}`;
 }
 
-// Words that mark clips, trailers and compilations we don't want as "episodes".
+// Words that mark clips, trailers, compilations and live streams we don't want as "episodes".
+const CLIP_EN = /\b(clips?|trailer|teaser|promo|shorts?|reaction|review of|tiktok|best moments|moments|top \d+|compilations?|marathon|mashup|supercut|recap|best of|every time|funniest|scariest|creepiest|craziest|trivia|live|livestream|vol\.?\s*\d+|\d+\s*(?:hours?|hrs?|minutes?|mins?)\s+of|hour of|non-?stop|back to back|behind the scenes|sneak peek|music video|lyric video|unboxing|asmr|challenge|podcast|scene|scenes)\b/i;
+const CLIP_OTHER = /#shorts|تجميع|مقاطع|مقطع|لحظات|اعلان|إعلان|بث مباشر|مباشر|ساعة كاملة|ساعات|まとめ|切り抜き|予告|ライブ配信|生配信/;
+const EMOJI = /\p{Extended_Pictographic}/u;
 export function looksLikeClip(title) {
-  return /\b(clip|trailer|teaser|promo|shorts?|reaction|review of|tiktok|#shorts|best moments|top \d+)\b/i.test(title);
+  const t = title || '';
+  if (CLIP_EN.test(t) || CLIP_OTHER.test(t)) return true;
+  // Official channels decorate clip and compilation titles with emoji; real episode uploads rarely do.
+  return EMOJI.test(t) && !parseEpisode(t).episode && !/full episode|الحلقة|حلقة/i.test(t);
+}
+
+// Find which known show a title belongs to. shows: ["Dexter's Laboratory", {"name": "Captain Majid", "match": ["كابتن ماجد"]}]
+export function matchShow(title, shows) {
+  const t = ' ' + normalize(title) + ' ';
+  let best = null, bestLen = 0;
+  for (const sh of shows || []) {
+    const name = typeof sh === 'string' ? sh : sh.name;
+    const alts = [name].concat(typeof sh === 'string' ? [] : sh.match || []);
+    for (const a of alts) {
+      const n = normalize(a);
+      if (n && n.length > bestLen && t.includes(' ' + n + ' ')) { best = name; bestLen = n.length; }
+    }
+  }
+  return best;
 }

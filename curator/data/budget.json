@@ -2,12 +2,21 @@
   "_note": "Limits for the nightly job. YouTube Data API and Internet Archive are free; only the optional AI helper costs money. 1 USD = usd_to_kwd KWD.",
   "youtube_units_per_day": 9000,
   "youtube_units_reserved_for_checks": 1500,
-  "ai_usd_per_day": 0.10,
-  "ai_usd_per_month": 1.00,
+  "ai_usd_per_day": 0.1,
+  "ai_usd_per_month": 1,
   "usd_to_kwd": 0.307,
   "check_batch_size": 4000,
-  "discover_max_new_per_run": 1500,
+  "discover_max_new_per_run": 3000,
   "allow_unknown_youtube_uploaders": true,
-  "min_gap_ms": { "youtube": 120, "archive": 400, "tvmaze": 600, "http": 100 },
-  "requests_per_day": { "archive": 20000, "tvmaze": 2000, "http": 20000 }
+  "min_gap_ms": {
+    "youtube": 120,
+    "archive": 400,
+    "tvmaze": 600,
+    "http": 100
+  },
+  "requests_per_day": {
+    "archive": 20000,
+    "tvmaze": 2000,
+    "http": 20000
+  }
 }
