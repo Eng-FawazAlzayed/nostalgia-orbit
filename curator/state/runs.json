@@ -1,5 +1,16 @@
 [
  {
+  "cmd": "check",
+  "arg": "all",
+  "started": "2026-11-26T20:38:45.613Z",
+  "check": {
+   "checked": 4912,
+   "ok": 4911,
+   "fail": 1
+  },
+  "finished": "2026-11-26T20:46:04.016Z"
+ },
+ {
   "cmd": "build",
   "arg": null,
   "started": "2026-11-26T20:21:14.351Z",
