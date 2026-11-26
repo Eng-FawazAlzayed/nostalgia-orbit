@@ -426,8 +426,8 @@
   {
     "id": "toon-orbit-gold",
     "n": "002",
-    "name": "TOON ORBIT GOLD",
-    "ar": "مدار الكرتون",
+    "name": "CN",
+    "ar": "CN",
     "work": "Cartoon Network Golden Era",
     "color": "#ff6a3d",
     "blocks": [
@@ -601,8 +601,8 @@
   {
     "id": "orange-couch",
     "n": "006",
-    "name": "ORANGE COUCH",
-    "ar": "الكنبة البرتقالية",
+    "name": "NICK",
+    "ar": "NICK",
     "work": "Nickelodeon Retro",
     "color": "#ff8a00",
     "blocks": [
@@ -750,8 +750,8 @@
   {
     "id": "magic-hour",
     "n": "007",
-    "name": "MAGIC HOUR",
-    "ar": "الساعة السحرية",
+    "name": "DSNY",
+    "ar": "DSNY",
     "work": "Disney Channel Classic / Disney XD",
     "color": "#7b6bff",
     "blocks": [
