@@ -1,5 +1,47 @@
 [
  {
+  "cmd": "discover",
+  "arg": null,
+  "started": "2026-11-26T18:32:48.192Z",
+  "discover": {
+   "added": 1375,
+   "rejected": 17434,
+   "unclassified": 2,
+   "seen": 783,
+   "per_channel": {
+    "gamezone": 108,
+    "internet-2006": 108,
+    "japan-2000": 108,
+    "cartoon-city": 108,
+    "spacetoon-zaman": 108,
+    "kuwait-zaman": 79,
+    "after-school": 108,
+    "toon-orbit-gold": 108,
+    "rebound": 108,
+    "orange-couch": 108,
+    "magic-hour": 0,
+    "zap-kids": 0,
+    "comet": 108,
+    "tokyo-tube": 0,
+    "planet-toon": 0,
+    "power-orbit": 0,
+    "najma-3": 0,
+    "dirati-tv": 0,
+    "masrah-kuwait": 0,
+    "khaleej-stage": 0,
+    "ramadan-nights": 0,
+    "night-owl": 0,
+    "player-2": 108,
+    "byte-shop": 108,
+    "rewind-web": 0,
+    "jukebox": 0,
+    "goal": 0,
+    "live-wire": 0
+   }
+  },
+  "finished": "2026-11-26T18:35:25.916Z"
+ },
+ {
   "cmd": "build",
   "arg": null,
   "started": "2026-11-26T18:25:59.607Z",
