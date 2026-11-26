@@ -143,3 +143,7 @@ body.lowperf .card-name { text-shadow: none; }
 .th-vhs .card-name { color: #fff; font-family: "Courier New", monospace; text-shadow: 0.4vh 0 0 #ff0040, -0.4vh 0 0 #00e5ff; }
 .th-vhs .card-sub { color: #9f9; }
 .th-vhs #dog { font-family: "Courier New", monospace; color: #fff; }
+
+#gear { position: absolute; right: 1.5vw; bottom: 2vh; z-index: 9; font-size: 4.5vh; line-height: 1; color: #fff; opacity: 0.35; cursor: pointer; padding: 1vh; }
+#gear:hover { opacity: 0.9; }
+.lowperf #gear { opacity: 0.25; }

@@ -544,8 +544,14 @@
   $('tv').addEventListener('touchend', function (e) {
     if (touchY === null || mode !== 'tv') { return; }
     var dy = e.changedTouches[0].clientY - touchY; touchY = null;
-    if (Math.abs(dy) > 60) { tune(chIdx + (dy < 0 ? 1 : -1)); } else if (now() - touchT < 400) { flashBanner(); }
+    if (Math.abs(dy) > 60) { tune(chIdx + (dy < 0 ? 1 : -1)); }
+    else if (now() - touchT > 700) { openSetup(); }      // press and hold: Setup (phones and tablets have no S key)
+    else if (now() - touchT < 400) { flashBanner(); }
   }, false);
+  // a small gear for mouse and touch users
+  var gear = document.createElement('div'); gear.id = 'gear'; gear.textContent = '\u2699'; gear.title = 'Setup';
+  gear.onclick = function (e) { e.stopPropagation(); if (mode === 'setup') { closeAll(); } else { openSetup(); } };
+  document.body.appendChild(gear);
   $('tv').addEventListener('dblclick', function () { if (mode === 'tv') { openList(); } });
   function rowClick(container, fn) {
     container.addEventListener('click', function (e) {
