@@ -66,6 +66,9 @@ export function keepEpisode(lib, e) {
   if (!tape && !chs.some(ch => LIGHT.includes(ch) || PLAYS.includes(ch))) {
     const marked = EP_MARK.test(title);
     if (isOfficial(lib, e.id) && !marked) return false;
+    // today's official channel uploads ("… | Nick", "… | Cartoon Network") are mostly new shorts:
+    // only ones that say "full episode" count
+    if (isOfficial(lib, e.id) && /\|\s*(nick|nickelodeon|cartoon network|disney|adult swim|@?wb ?kids)\b/i.test(title) && !/full episode/i.test(title)) return false;
     if (!marked && (e.duration || 0) < 18 * 60) return false;
   }
   const name = ser.titles.en || '';
@@ -120,9 +123,10 @@ export function compact(lib, channels, now = Date.now()) {
     if (hit) s.y = years[hit];
   }
   collect(series, channels);
-  // A channel with nothing to show yet stays off the list instead of showing NO SIGNAL all day.
-  const live = new Set(); for (const sr of Object.values(series)) if (!sr.fill) for (const c of Object.keys(sr.ch || {})) live.add(c);
-  channels = channels.filter(c => c.mix || live.has(c.id));
+  // A channel with a handful of episodes would loop them all day, so it waits for at least 12.
+  const perCh = {};
+  for (const e of episodes) { const sr = series[e.s]; if (sr && !sr.fill) for (const c of Object.keys(sr.ch || {})) perCh[c] = (perCh[c] || 0) + 1; }
+  channels = channels.filter(c => c.mix || (perCh[c.id] || 0) >= 12);
   // Which channel each listed show belongs on, so your own Real-Debrid/TorBox copy of a show
   // nobody has found online yet still airs on the right channel instead of 099.
   const shows = {};
