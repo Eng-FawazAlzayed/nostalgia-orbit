@@ -78,9 +78,9 @@
   function checkUpdate(force) {
     if (!cfg.catalogUrl) { return; }
     var last = load('catalogChecked', 0);
-    if (!force && now() - last < 6 * 3600000) { return; }
+    if (!force && now() - last < (window.NO_CATALOG ? 6 * 3600000 : 60000)) { return; } // the web copy has no bundled catalog: check on every visit
     save('catalogChecked', now());
-    fetchJSON(cfg.catalogUrl + (cfg.catalogUrl.indexOf('?') < 0 ? '?' : '&') + 't=' + Math.floor(now() / 3600000), function (err, c) {
+    fetchJSON(cfg.catalogUrl + (cfg.catalogUrl.indexOf('?') < 0 ? '?' : '&') + 't=' + Math.floor(now() / 60000), function (err, c) {
       if (err || !c || !c.episodes) { if (force) { toast(T('updateFail')); } return; }
       if (c.generated && c.generated <= (catalog.generated || '')) { if (force) { toast(T('upToDate')); } return; }
       catalog = c;
