@@ -22,7 +22,7 @@ async function main() {
   const lib = open();
   const run = { cmd, arg: arg || null, started: nowIso() };
   try {
-    if (cmd === 'check' || cmd === 'nightly') run.check = await runChecks(lib);
+    if (cmd === 'check' || cmd === 'nightly') run.check = await runChecks(lib, { all: cmd === 'check' && arg === 'all' });
     if (cmd === 'heal' || cmd === 'nightly') run.heal = await heal(lib);
     if (cmd === 'discover' || cmd === 'nightly') run.discover = await discover(lib, { channel: arg || null, maxNew: cmd === 'nightly' ? 1500 : undefined });
     if (cmd === 'probe' || cmd === 'nightly') run.probe = await probe(lib, { max: cmd === 'probe' ? 800 : 200 });

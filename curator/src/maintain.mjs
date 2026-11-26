@@ -82,8 +82,9 @@ export async function checkSources(list, origin = 'batch') {
   return counts;
 }
 
-export async function runChecks(lib) {
-  const list = dueSources(lib, config.check_batch_size ?? 4000);
+export async function runChecks(lib, { all = false } = {}) {
+  // "all": check every link now, not only the ones due (a full health check)
+  const list = all ? dueSources(lib, 1e6, Date.now() + 400 * 86400e3) : dueSources(lib, config.check_batch_size ?? 4000);
   log(`checking ${list.length} due sources`);
   const c = await checkSources(list);
   log(`checks: ${c.ok} ok, ${c.fail} failed`);
