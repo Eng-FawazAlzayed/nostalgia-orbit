@@ -97,11 +97,13 @@
     if (this.playlists[key]) { return this.playlists[key]; }
     var series = this.catalog.series || {};
     var ids = [], sid, tags, lists = [], i, j, longest = 0, out = [], live = [];
+    var chan = this.channels[channelId] || {};
+    if (chan.mix) { return (this.playlists[key] = this.mixPlaylist(chan.mix)); }
     for (sid in series) {
-      if (!series.hasOwnProperty(sid)) { continue; }
+      if (!series.hasOwnProperty(sid) || series[sid].fill) { continue; } // bumpers and ads only go in breaks
       tags = series[sid].ch && series[sid].ch[channelId];
       if (!tags) { continue; }
-      if (tags.indexOf(tag) >= 0 || tags.indexOf('*') >= 0) { ids.push(sid); }
+      if (tag === '*all' || tags.indexOf(tag) >= 0 || tags.indexOf('*') >= 0 || tags.indexOf('*all') >= 0) { ids.push(sid); }
     }
     ids.sort();
     for (i = 0; i < ids.length; i++) {
@@ -128,6 +130,32 @@
 
   // How many ms of a given tag have aired on this channel before (day, block)?
   // Used so each day picks up the rotation where the previous day stopped.
+  // A mixed channel (e.g. 108 Random Nostalgia): everything from other channels, picked by
+  // weight with smooth weighted round-robin so it is deterministic and never clumps.
+  Index.prototype.mixPlaylist = function (mix) {
+    var subs = [], cid, i, total = 0, out = [], live = [];
+    for (cid in mix) {
+      if (!mix.hasOwnProperty(cid) || !(mix[cid] > 0) || !this.channels[cid] || this.channels[cid].mix) { continue; }
+      var p = this.playlist(cid, '*all');
+      if (p.items.length) { subs.push({ items: p.items, w: +mix[cid], cur: 0, k: 0 }); total += +mix[cid]; }
+      for (i = 0; i < p.live.length; i++) { live.push(p.live[i]); }
+    }
+    var n = 0, seen = {}, cap = 0;
+    for (i = 0; i < subs.length; i++) { cap += subs[i].items.length; }
+    cap = Math.min(cap, 4000);
+    while (subs.length && n < cap) {
+      var best = null;
+      for (i = 0; i < subs.length; i++) { subs[i].cur += subs[i].w; if (!best || subs[i].cur > best.cur) { best = subs[i]; } }
+      best.cur -= total;
+      var it = best.items[best.k % best.items.length]; best.k++;
+      if (seen[it.id] && best.k > best.items.length) { continue; } // a show that's on two source channels: once is enough
+      seen[it.id] = 1; out.push(it); n++;
+    }
+    var starts = [], t = 0;
+    for (i = 0; i < out.length; i++) { starts.push(t); t += out[i].d * 1000; }
+    return { items: out, starts: starts, total: t, live: live };
+  };
+
   function tagLengths(channel, tag) {
     var perDay = 0, before = [], i, b, len;
     for (i = 0; i < channel.blocks.length; i++) {

@@ -44,11 +44,11 @@ async function addCandidate(lib, chId, seed, provider, ref, r, stats) {
   if (provider === 'youtube' && seed.authorization !== 'official' && !config.allow_unknown_youtube_uploaders) { stats.rejected++; return; }
 
   const shows = showsOf(seed);
-  const shown = shows.length ? matchShow(r.title || '', shows) : null;
+  const shown = shows.length ? matchShow(seed._match_title || r.title || '', shows) : null;
   if (shows.length && !shown && !seed.series) { stats.rejected++; return; } // not one of the classic shows we want
-  let name = seed.series || shown || seriesFromTitle(r.title || '');
+  let name = seed.series || shown || (seed._multi ? (seriesFromTitle(r.item_title || '') || String(r.item_title || '').slice(0, 60)) : seriesFromTitle(r.title || ''));
   let pe = parseEpisode(r.title || '');
-  if (!name || (!shown && !pe.episode && !seed.one_offs && !fill)) {
+  if (!name || (!shown && !pe.episode && !seed.one_offs && !seed._multi && !fill)) {
     const g = await ai.classifyTitle(r.title || '', chId); // only if enabled and within budget
     if (g?.is_full_episode === false && !fill) { stats.rejected++; return; }
     if (g && !name) name = g.series || g.series_ar || '';
@@ -71,7 +71,8 @@ async function addCandidate(lib, chId, seed, provider, ref, r, stats) {
   const src = lib.addSource(ep.id, {
     provider, ref, url: r.url, kind: provider === 'youtube' ? (r.live ? 'live' : 'embed') : (seed.kind_override || (r.live ? 'live' : (provider === 'direct' ? (/\.m3u8/.test(ref) ? 'hls' : 'file') : 'file'))),
     authorization: provider === 'archive' ? r.authorization : (seed.authorization || 'unknown'),
-    auth_note: r.auth_note || seed.auth_note || '', uploader: r.uploader || '', duration: r.duration, quality: r.quality
+    auth_note: r.auth_note || seed.auth_note || '', uploader: r.uploader || '', duration: r.duration, quality: r.quality,
+    recorded: r.recorded || null, uploaded: r.uploaded || null
   });
   applyResult(src, r, 'discover');
   stats.added++;
@@ -80,7 +81,7 @@ async function addCandidate(lib, chId, seed, provider, ref, r, stats) {
 export async function discover(lib, { channel = null, maxNew = config.discover_max_new_per_run ?? 1500 } = {}) {
   const sd = seeds().channels || {};
   const stats = { added: 0, rejected: 0, unclassified: 0, seen: 0, per_channel: {} };
-  const ids = Object.keys(sd).filter(id => !channel || id === channel);
+  const ids = Object.keys(sd).filter(id => (!channel || id === channel) && !sd[id].disabled);
   // Every channel gets a fair share of the run, so the first few can't use it all up.
   const share = channel ? maxNew : Math.max(30, Math.ceil(maxNew / Math.max(1, ids.length)));
   for (const chId of ids) {
@@ -97,8 +98,13 @@ export async function discover(lib, { channel = null, maxNew = config.discover_m
 async function discoverChannel(lib, chId, s, stats, maxNew) {
   {
 
-    // 1) official channels by handle -> uploads playlist (1 unit per 50 videos)
-    for (const seed of s.youtube_handles || []) {
+    // 1) Internet Archive first: free, no quota, and the preferred source.
+    for (const seed of (s.archive || []).filter(x => !x.disabled)) {
+      if (stats.added >= maxNew) break;
+      await fromArchive(lib, chId, seed, stats, maxNew);
+    }
+    // 2) YouTube channels by handle -> uploads playlist (1 unit per 50 videos)
+    for (const seed of (s.youtube_handles || []).filter(x => !x.disabled)) {
       if (stats.added >= maxNew) break;
       const ch = await yt.channelByHandle(seed.handle);
       if (!ch) { log(`  handle ${seed.handle} skipped (YouTube allowance used up, retry next run)`); continue; }
@@ -110,20 +116,10 @@ async function discoverChannel(lib, chId, s, stats, maxNew) {
       await fromYouTubeIds(lib, chId, seed, await yt.playlistIds(seed.id, seed.max || 1000), stats, maxNew);
     }
     // 3) searches (100 units each, cached 30 days)
-    for (const seed of s.youtube_searches || []) {
+    for (const seed of (s.youtube_searches || []).filter(x => !x.disabled)) {
       if (stats.added >= maxNew) break;
       if (!canSpend('youtube', 100)) { log('  search budget reached for today'); break; }
       await fromYouTubeIds(lib, chId, seed, await yt.search(seed.q, { duration: seed.duration || 'long', lang: seed.lang }), stats, maxNew);
-    }
-    // 4) Internet Archive (free)
-    for (const seed of s.archive || []) {
-      const docs = (await ia.search(seed.query, seed.rows || 150)) || [];
-      for (const d of docs) {
-        if (stats.added >= maxNew) break;
-        if (lib.d.sources['archive:' + d.id]) { stats.seen++; continue; }
-        const r = await ia.check(d.id);
-        await addCandidate(lib, chId, seed, 'archive', d.id, r, stats);
-      }
     }
     // 5) direct live streams / files listed by hand
     for (const seed of s.direct || []) {
@@ -144,5 +140,40 @@ async function fromYouTubeIds(lib, chId, seed, ids, stats, maxNew) {
     if (seed.title_filter && !(new RegExp(seed.title_filter, 'i')).test(r.title || '')) { stats.rejected++; continue; }
     if (seed.uploader_filter && !(new RegExp(seed.uploader_filter, 'i')).test(r.uploader || '')) { stats.rejected++; continue; }
     await addCandidate(lib, chId, seed, 'youtube', id, r, stats);
+  }
+}
+
+// One Archive search: skip items already looked at, filter on the search title first (free),
+// then read the item and add each playable video in it as its own episode.
+async function fromArchive(lib, chId, seed, stats, maxNew) {
+  const docs = (await ia.search(seed.query, seed.rows || 150)) || [];
+  const seen = lib.d.ia_items ||= {};
+  const shows = showsOf(seed);
+  const [rlo, rhi] = seed.recorded_range || [0, 9999];
+  for (const d of docs) {
+    if (stats.added >= maxNew) break;
+    if (seen[d.id] || lib.d.sources['archive:' + d.id]) { stats.seen++; continue; }
+    if (seed.exclude && new RegExp(seed.exclude, 'i').test(d.title || '')) { stats.rejected++; continue; }
+    if (d.year && (d.year < rlo || d.year > rhi)) { stats.rejected++; continue; }
+    if (shows.length && !seed.series && !matchShow(d.title || '', shows) && !seed.match_files) { stats.rejected++; continue; }
+    const it = await ia.inspect(d.id);
+    if (!it.ok && (it.code === 'budget' || it.code === 'network')) break;
+    seen[d.id] = new Date().toISOString().slice(0, 10);
+    if (!it.ok) { stats.rejected++; continue; }
+    if (it.info.recorded && (it.info.recorded < rlo || it.info.recorded > rhi)) { stats.rejected++; continue; }
+    const many = it.files.length > 1;
+    for (const f of it.files.slice(0, seed.max_files || 300)) {
+      if (stats.added >= maxNew) break;
+      const stem = f.root.replace(/\.[^.]+$/, '').replace(/[_]+/g, ' ');
+      const title = many ? (f.title || `${it.info.item_title} ${stem}`) : (f.title || it.info.item_title);
+      const r = {
+        ok: true, code: 'ok', title, duration: f.length, quality: f.height ? String(f.height) : '',
+        url: `https://archive.org/download/${encodeURIComponent(d.id)}/${f.name.split('/').map(encodeURIComponent).join('/')}`,
+        year: it.info.recorded, ...it.info
+      };
+      // For matching, the item title tells us the show when file names are just "ep01".
+      const matchTitle = shows.length && !matchShow(title, shows) ? `${it.info.item_title} ${title}` : title;
+      await addCandidate(lib, chId, { ...seed, _match_title: matchTitle, _multi: many }, 'archive', d.id + '/' + f.name, r, stats);
+    }
   }
 }

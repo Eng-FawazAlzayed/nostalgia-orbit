@@ -35,7 +35,7 @@
       var origin = location.protocol.indexOf('http') === 0 ? location.origin : 'https://localhost';
       yt.player = new root.YT.Player('yt', {
         width: '100%', height: '100%',
-        playerVars: { autoplay: 1, controls: 0, disablekb: 1, fs: 0, rel: 0, iv_load_policy: 3, modestbranding: 1, playsinline: 1, origin: origin },
+        playerVars: { autoplay: 1, controls: 0, disablekb: 1, fs: 0, rel: 0, iv_load_policy: 3, modestbranding: 1, playsinline: 1, cc_load_policy: 0, origin: origin },
         events: {
           onReady: function () { yt.ready = true; var q = yt.queue; yt.queue = []; for (var i = 0; i < q.length; i++) { q[i](null); } },
           onStateChange: function (e) { if (yt.handlers) { yt.handlers.state(e.data); } },
@@ -46,6 +46,51 @@
     loadScript('https://www.youtube.com/iframe_api', function (err) {
       if (err) { yt.loading = false; var q = yt.queue; yt.queue = []; for (var i = 0; i < q.length; i++) { q[i](err); } }
     });
+  }
+
+  /*
+   * Only the picture: a black cover hides YouTube's big play/pause button and loading
+   * screen whenever the video isn't actually playing, a paused or stalled video is
+   * restarted, and captions are switched off every time playback starts.
+   */
+  var ytCover = null, ytKick = null, ytStarted = false, wantSound = true;
+  function cover(on) {
+    ytCover = ytCover || document.getElementById('yt-cover');
+    if (ytCover) { ytCover.style.display = on ? 'block' : 'none'; }
+  }
+  function noCaptions() {
+    var p = yt.player;
+    try { p.unloadModule('captions'); } catch (e) {}
+    try { p.unloadModule('cc'); } catch (e2) {}
+    try { p.setOption('captions', 'track', {}); } catch (e3) {}
+  }
+  function ytState(st) {
+    clearTimeout(ytKick);
+    if (st === 1) { ytStarted = true; cover(false); noCaptions(); return; }
+    if (st === 3 && ytStarted) { return; } // a short buffer mid-show: keep the picture
+    cover(true);
+    if (st === 2 || st === 5 || st === -1) {
+      // paused, cued or stuck before starting (often autoplay with sound refused): start it,
+      // muted if we have to; sound comes back on the next key press or tap.
+      ytKick = setTimeout(function () {
+        try {
+          if (yt.player.getPlayerState() !== 1) {
+            if (st === -1 || st === 5) { yt.player.mute(); }
+            yt.player.playVideo();
+          }
+        } catch (e) {}
+      }, st === 2 ? 300 : 1500);
+    }
+  }
+  function unlockSound() {
+    if (!wantSound) { return; }
+    try { if (yt.player && yt.player.isMuted && yt.player.isMuted()) { yt.player.unMute(); yt.player.setVolume(100); } } catch (e) {}
+    try { if (vid && vid.muted) { vid.muted = false; } } catch (e2) {}
+  }
+  if (document.addEventListener) {
+    document.addEventListener('keydown', unlockSound, true);
+    document.addEventListener('click', unlockSound, true);
+    document.addEventListener('touchend', unlockSound, true);
   }
 
   /* ---------- hls.js only where HLS isn't native (desktop WebView2) ---------- */
@@ -113,7 +158,7 @@
     try { vid.pause(); vid.removeAttribute('src'); vid.load(); } catch (e) {}
     vid.onplaying = vid.onerror = vid.onloadedmetadata = null;
     if (yt.ready && yt.player) { try { yt.player.stopVideo(); } catch (e) {} }
-    yt.handlers = null;
+    yt.handlers = null; clearTimeout(ytKick); cover(false);
     document.getElementById('yt-host').style.visibility = 'hidden';
     vid.style.visibility = 'hidden';
     current = null;
@@ -138,13 +183,18 @@
         if (my !== token) { return; }
         if (err) { return onError('yt-api', false); }
         yt.handlers = {
-          state: function (st) { if (my !== token) { return; } if (st === 1) { playing(); } else if (st === 0) { onEnded(); } },
+          state: function (st) {
+            if (my !== token) { return; }
+            ytState(st);
+            if (st === 1) { playing(); } else if (st === 0) { onEnded(); }
+          },
           error: function (code) {
             if (my !== token) { return; }
             // 100 removed/private, 101/150/153 embedding refused: permanent. 2/5: temporary.
             onError(code, code === 'yt100' || code === 'yt101' || code === 'yt150' || code === 'yt153');
           }
         };
+        ytStarted = false; cover(true); wantSound = !h.muted;
         var opts = { videoId: s.r };
         if (s.k !== 'live' && offset > 1) { opts.startSeconds = Math.floor(offset + (s.o || 0)); }
         try { yt.player.loadVideoById(opts); if (h.muted) { yt.player.mute(); } else { yt.player.unMute(); } }

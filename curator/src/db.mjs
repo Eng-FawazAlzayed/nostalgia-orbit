@@ -72,6 +72,8 @@ export class Library {
       quality: src.quality || '', duration: src.duration || 0, offset: src.offset || 0,
       embeddable: src.embeddable ?? null, seekable: src.seekable ?? true,
       regions: src.regions || null, status: src.status || 'pending', reliability: 0.5,
+      ...(src.provider === 'archive' ? { archive_id: src.ref.split('/')[0], file: src.ref.split('/').slice(1).join('/') || null,
+        recorded: src.recorded || null, uploaded: src.uploaded || null } : {}),
       fail_count: 0, last_ok: null, last_try: null, next_check: null, last_error: '', history: [], created: nowIso()
     };
   }
