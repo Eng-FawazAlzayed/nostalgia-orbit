@@ -28,7 +28,7 @@ async function main() {
     const runs = readJSON(runFile, []);
     runs.unshift(run); writeJSON(runFile, runs.slice(0, 60));
     if (['build', 'nightly', 'discover', 'heal', 'check'].includes(cmd)) {
-      publish(lib, { last_run: run, recent_runs: runs.slice(0, 10), next_run: 'daily at 03:00 Kuwait time' });
+      publish(lib, { last_run: run, recent_runs: runs.slice(0, 10), next_run: 'daily at 11:20 Kuwait time' });
     }
   } finally {
     persist();

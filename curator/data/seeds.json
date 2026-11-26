@@ -2281,7 +2281,8 @@
           ],
           "rows": 300,
           "one_offs": true,
-          "min_minutes": 8
+          "min_minutes": 8,
+          "exclude": "commercial|advertisement|\\bad\\b|promo"
         },
         {
           "query": "collection:nasa AND mediatype:movies AND (documentary OR apollo)",
@@ -2290,7 +2291,8 @@
           ],
           "rows": 200,
           "one_offs": true,
-          "min_minutes": 10
+          "min_minutes": 10,
+          "exclude": "commercial|advertisement|\\bad\\b|promo"
         }
       ]
     },

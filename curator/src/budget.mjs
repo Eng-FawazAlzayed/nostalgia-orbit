@@ -11,7 +11,8 @@ export const config = readJSON(CFG_FILE, {});
 
 // ---- usage ----
 const usage = readJSON(USAGE_FILE, { days: {}, months: {} });
-const today = () => nowIso().slice(0, 10);
+// YouTube's free daily allowance resets at midnight Pacific time, so the budget day follows that clock.
+const today = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
 const month = () => nowIso().slice(0, 7);
 function bucket(store, key) { return (store[key] ||= { youtube_units: 0, ai_usd: 0, ai_calls: 0, requests: {} }); }
 

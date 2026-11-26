@@ -3,7 +3,7 @@ name: nightly
 # content, then publishes catalog.json + the dashboard + the web app to Pages.
 on:
   schedule:
-    - cron: "0 0 * * *"   # 03:00 Kuwait time
+    - cron: "20 8 * * *"  # 11:20 Kuwait time, just after YouTube's free daily allowance resets (midnight Pacific)
   workflow_dispatch:
     inputs:
       task:
