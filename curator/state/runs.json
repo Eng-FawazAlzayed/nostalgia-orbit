@@ -1,5 +1,20 @@
 [
  {
+  "cmd": "probe",
+  "arg": null,
+  "started": "2026-11-26T20:07:17.033Z",
+  "probe": {
+   "probed": 360,
+   "tally": {
+    "h264": 331,
+    "mpeg4": 26,
+    "": 2,
+    "h264/yuvj420p": 1
+   }
+  },
+  "finished": "2026-11-26T20:19:47.507Z"
+ },
+ {
   "cmd": "discover",
   "arg": "toon-orbit-gold",
   "started": "2026-11-26T19:59:45.950Z",
