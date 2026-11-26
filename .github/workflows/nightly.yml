@@ -1,0 +1,49 @@
+name: nightly
+# Free on public repos. Checks links, heals broken episodes, finds a little new
+# content, then publishes catalog.json + the dashboard + the web app to Pages.
+on:
+  schedule:
+    - cron: "0 0 * * *"   # 03:00 Kuwait time
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "nightly | check | heal | discover | build"
+        default: nightly
+        required: true
+      channel:
+        description: "channel id for discover (e.g. planet-toon); empty = all"
+        default: ""
+        required: false
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency: { group: nightly, cancel-in-progress: false }
+jobs:
+  curate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Tests
+        run: cd curator && node --test test/*.test.mjs
+      - name: Run curator
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PAGES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+        run: cd curator && node src/cli.mjs "${{ inputs.task || 'nightly' }}" ${{ inputs.channel }}
+      - name: Save the updated library
+        run: |
+          git config user.name "nostalgia-orbit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add curator/data/library.json curator/state
+          git diff --cached --quiet || git commit -m "Nightly catalog update $(date -u +%F)"
+          git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: public }
+      - id: deploy
+        uses: actions/deploy-pages@v4

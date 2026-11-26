@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 220" role="img" aria-label="Nostalgia Orbit logo">
+  <defs>
+    <radialGradient id="scr" cx="45%" cy="40%" r="70%">
+      <stop offset="0" stop-color="#7fe3ff"/>
+      <stop offset="0.55" stop-color="#2b6cff"/>
+      <stop offset="1" stop-color="#16135c"/>
+    </radialGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff8a3d"/>
+      <stop offset="1" stop-color="#e2463a"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffd23f"/>
+      <stop offset="1" stop-color="#ff5fa2"/>
+    </linearGradient>
+  </defs>
+  <!-- antenna -->
+  <line x1="120" y1="52" x2="88" y2="14" stroke="#ffd23f" stroke-width="6" stroke-linecap="round"/>
+  <line x1="120" y1="52" x2="156" y2="10" stroke="#ffd23f" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="88" cy="14" r="7" fill="#ff5fa2"/>
+  <circle cx="156" cy="10" r="7" fill="#7fe3ff"/>
+  <!-- orbit ring, back half -->
+  <path d="M18 128 A104 34 -14 0 1 222 78" fill="none" stroke="url(#ring)" stroke-width="9" stroke-linecap="round" opacity="0.55"/>
+  <!-- tv body -->
+  <rect x="44" y="50" width="152" height="124" rx="30" fill="url(#body)" stroke="#16135c" stroke-width="6"/>
+  <rect x="58" y="64" width="104" height="90" rx="22" fill="url(#scr)" stroke="#16135c" stroke-width="5"/>
+  <!-- scanlines -->
+  <g stroke="#ffffff" stroke-opacity="0.13" stroke-width="2">
+    <line x1="64" y1="80" x2="156" y2="80"/><line x1="62" y1="92" x2="158" y2="92"/>
+    <line x1="61" y1="104" x2="159" y2="104"/><line x1="61" y1="116" x2="159" y2="116"/>
+    <line x1="61" y1="128" x2="159" y2="128"/><line x1="63" y1="140" x2="157" y2="140"/>
+  </g>
+  <!-- glare -->
+  <path d="M70 80 Q78 70 96 70" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="5" stroke-linecap="round"/>
+  <!-- knobs -->
+  <circle cx="179" cy="86" r="9" fill="#ffd23f" stroke="#16135c" stroke-width="4"/>
+  <circle cx="179" cy="116" r="9" fill="#7fe3ff" stroke="#16135c" stroke-width="4"/>
+  <g fill="#16135c"><rect x="171" y="136" width="16" height="4" rx="2"/><rect x="171" y="145" width="16" height="4" rx="2"/></g>
+  <!-- feet -->
+  <rect x="70" y="172" width="22" height="14" rx="5" fill="#16135c"/>
+  <rect x="148" y="172" width="22" height="14" rx="5" fill="#16135c"/>
+  <!-- orbit ring, front half -->
+  <path d="M18 128 A104 34 -14 0 0 222 78" fill="none" stroke="url(#ring)" stroke-width="9" stroke-linecap="round"/>
+  <!-- satellite star -->
+  <path d="M214 60 l5 11 12 2 -9 8 3 12 -11 -6 -11 6 3 -12 -9 -8 12 -2z" fill="#ffd23f" stroke="#16135c" stroke-width="3" stroke-linejoin="round"/>
+</svg>

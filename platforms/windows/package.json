@@ -1,0 +1,7 @@
+{
+  "name": "nostalgia-orbit-windows",
+  "private": true,
+  "version": "0.1.0",
+  "devDependencies": { "@tauri-apps/cli": "2.1.0" },
+  "scripts": { "build": "tauri build", "icons": "tauri icon ../../assets/icon-512.png" }
+}

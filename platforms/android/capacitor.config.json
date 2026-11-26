@@ -1,0 +1,7 @@
+{
+  "appId": "tv.nostalgiaorbit.app",
+  "appName": "Nostalgia Orbit",
+  "webDir": "../../dist/bundle",
+  "server": { "androidScheme": "https" },
+  "android": { "allowMixedContent": true, "backgroundColor": "#000000" }
+}

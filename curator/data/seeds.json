@@ -1,0 +1,151 @@
+{
+  "_note": "Starting points for discovery, NOT the catalog. Handles that don't resolve are skipped and logged. Every video found is checked (exists, embeddable, not age-restricted, plays in Kuwait, right length) before it can air. 'authorization: official' marks rights-holder channels; anything else is published as 'unknown' and ranked below official copies. Searches cost 100 API units each and are cached 30 days.",
+  "channels": {
+    "toon-orbit-gold": {
+      "youtube_handles": [
+        { "handle": "@cartoonnetwork", "tags": ["afterschool", "prime", "day", "overnight", "morning"], "min_minutes": 8 },
+        { "handle": "@cartoonnetworkarabic", "tags": ["arabic"], "language": "ar", "min_minutes": 8 }
+      ],
+      "youtube_searches": [
+        { "q": "Dexter's Laboratory full episode", "tags": ["afterschool", "prime"], "series": "Dexter's Laboratory", "duration": "medium" },
+        { "q": "The Powerpuff Girls classic full episode", "tags": ["afterschool", "prime"], "series": "The Powerpuff Girls", "duration": "medium" },
+        { "q": "Courage the Cowardly Dog full episode", "tags": ["prime", "overnight"], "series": "Courage the Cowardly Dog", "duration": "medium" },
+        { "q": "كرتون نتورك بالعربية حلقة كاملة قديم", "tags": ["arabic"], "lang": "ar", "duration": "medium" }
+      ]
+    },
+    "rebound": {
+      "youtube_handles": [ { "handle": "@WBKids", "tags": ["day", "afternoon", "overnight"], "min_minutes": 6 } ],
+      "archive": [ { "query": "collection:animationandcartoons AND (hanna-barbera OR \"looney tunes\" OR \"merrie melodies\")", "tags": ["overnight"] } ]
+    },
+    "orange-couch": {
+      "youtube_handles": [
+        { "handle": "@Nickelodeon", "tags": ["afterschool", "day", "overnight"], "min_minutes": 10 },
+        { "handle": "@Nicktoons", "tags": ["afterschool", "morning"], "min_minutes": 10 },
+        { "handle": "@AvatarTheLastAirbender", "tags": ["afterschool", "overnight"], "min_minutes": 15 }
+      ],
+      "youtube_searches": [ { "q": "Rugrats full episode official", "tags": ["morning", "day"], "series": "Rugrats", "duration": "medium" } ]
+    },
+    "magic-hour": {
+      "archive": [ { "query": "(\"steamboat willie\" OR \"plane crazy\" OR \"gallopin gaucho\") AND year:1928", "tags": ["day", "overnight"], "series": "Mickey Mouse 1928", "one_offs": true, "min_minutes": 5 } ],
+      "youtube_handles": [ { "handle": "@DisneyXD", "tags": ["xd"], "min_minutes": 10 } ]
+    },
+    "zap-kids": {
+      "youtube_handles": [
+        { "handle": "@PowerRangersOfficial", "tags": ["morning", "afterschool", "day", "overnight"], "min_minutes": 15 },
+        { "handle": "@DigimonGlobalOfficial", "tags": ["afterschool", "day"], "min_minutes": 15 }
+      ]
+    },
+    "comet": {
+      "youtube_handles": [
+        { "handle": "@GundamInfo", "tags": ["prime", "afterschool", "overnight"], "min_minutes": 18 },
+        { "handle": "@TMSEntertainment", "tags": ["afterschool", "prime"], "min_minutes": 18 },
+        { "handle": "@DreamWorksVoltron", "tags": ["afterschool", "day"], "min_minutes": 18 }
+      ],
+      "youtube_searches": [ { "q": "RetroCrush full episode classic anime", "tags": ["prime", "overnight"], "duration": "long" } ]
+    },
+    "tokyo-tube": {
+      "youtube_handles": [
+        { "handle": "@ULTRAMAN_OFFICIAL", "tags": ["tokusatsu", "day"], "min_minutes": 18 },
+        { "handle": "@ToeiTokusatsuWORLD", "tags": ["tokusatsu", "day", "overnight"], "min_minutes": 18 },
+        { "handle": "@TezukaProductions", "tags": ["day"], "min_minutes": 18 }
+      ],
+      "youtube_searches": [
+        { "q": "昔のバラエティ 公式 フル", "tags": ["variety"], "lang": "ja", "duration": "long" },
+        { "q": "classic Japanese game show full episode official", "tags": ["variety"], "duration": "long" }
+      ]
+    },
+    "planet-toon": {
+      "youtube_handles": [ { "handle": "@spacetoon", "tags": ["morning", "day", "afterschool", "action", "overnight"], "language": "ar", "min_minutes": 15 } ],
+      "youtube_searches": [
+        { "q": "سبيستون الحلقة كاملة مدبلج قديم", "tags": ["afterschool", "day"], "lang": "ar", "duration": "medium" },
+        { "q": "الكابتن ماجد الحلقة كاملة", "tags": ["afterschool", "action"], "series": "الكابتن ماجد", "series_en": "Captain Majid", "lang": "ar", "duration": "medium" },
+        { "q": "المحقق كونان مدبلج الحلقة", "tags": ["afterschool", "overnight"], "series": "المحقق كونان", "series_en": "Detective Conan", "lang": "ar", "duration": "medium" }
+      ]
+    },
+    "power-orbit": {
+      "youtube_searches": [
+        { "q": "سبيس باور حلقة كاملة", "tags": ["day", "prime"], "lang": "ar", "duration": "medium" },
+        { "q": "غرندايزر مدبلج الحلقة كاملة", "tags": ["prime", "overnight"], "series": "غرندايزر", "series_en": "Grendizer", "lang": "ar", "duration": "medium" }
+      ]
+    },
+    "najma-3": {
+      "youtube_handles": [ { "handle": "@MBC3", "tags": ["morning", "day", "afterschool", "overnight"], "language": "ar", "min_minutes": 10 } ],
+      "youtube_searches": [ { "q": "فريج الحلقة كاملة", "tags": ["afterschool", "overnight"], "series": "فريج", "series_en": "Freej", "lang": "ar", "duration": "medium" } ]
+    },
+    "dirati-tv": {
+      "youtube_searches": [
+        { "q": "افتح يا سمسم الحلقة كاملة 1979", "tags": ["morning"], "series": "افتح يا سمسم", "series_en": "Iftah Ya Simsim", "lang": "ar", "duration": "medium" },
+        { "q": "تلفزيون الكويت قديم برنامج كامل", "tags": ["day", "prime", "late"], "lang": "ar", "duration": "long" },
+        { "q": "بوقتادة وبونبيل الحلقة كاملة", "tags": ["cartoons"], "series": "بوقتادة وبونبيل", "series_en": "Bu Qatada & Bu Nabeel", "lang": "ar", "duration": "medium" }
+      ]
+    },
+    "masrah-kuwait": {
+      "youtube_searches": [
+        { "q": "مسرحية كويتية كاملة عبدالحسين عبدالرضا", "tags": ["prime", "weekend", "day"], "lang": "ar", "duration": "long", "kind": "play", "one_offs": true, "min_minutes": 60 },
+        { "q": "مسرحية كويتية قديمة كاملة", "tags": ["prime", "weekend", "day"], "lang": "ar", "duration": "long", "kind": "play", "one_offs": true, "min_minutes": 60 }
+      ]
+    },
+    "khaleej-stage": {
+      "youtube_searches": [
+        { "q": "مسرحية خليجية قديمة كاملة", "tags": ["prime", "day"], "lang": "ar", "duration": "long", "kind": "play", "one_offs": true, "min_minutes": 60 },
+        { "q": "مسرحية قطرية كاملة قديمة", "tags": ["prime", "day"], "lang": "ar", "duration": "long", "kind": "play", "one_offs": true, "min_minutes": 60 }
+      ]
+    },
+    "ramadan-nights": {
+      "youtube_searches": [
+        { "q": "فوازير رمضان قديمة حلقة كاملة", "tags": ["iftar", "prime"], "lang": "ar", "duration": "medium" },
+        { "q": "مسلسل رمضاني كويتي قديم الحلقة", "tags": ["prime", "day"], "lang": "ar", "duration": "long" }
+      ]
+    },
+    "night-owl": {
+      "youtube_handles": [ { "handle": "@adultswim", "tags": ["prime"], "min_minutes": 10 } ]
+    },
+    "vault-33": {
+      "archive": [
+        { "query": "collection:animationandcartoons AND (fleischer OR popeye OR \"betty boop\" OR casper OR superman)", "tags": ["*all"], "rows": 300, "one_offs": true, "min_minutes": 5 },
+        { "query": "collection:classic_cartoons", "tags": ["*all"], "rows": 300, "one_offs": true, "min_minutes": 5 }
+      ]
+    },
+    "field-trip": {
+      "youtube_handles": [ { "handle": "@NASA", "tags": ["day", "overnight"], "min_minutes": 15, "title_filter": "documentary|apollo|history|mission|film" } ],
+      "archive": [
+        { "query": "collection:prelinger AND (science OR nature OR space OR animals)", "tags": ["day", "prime", "overnight"], "rows": 300, "one_offs": true, "min_minutes": 8 },
+        { "query": "collection:nasa AND mediatype:movies AND (documentary OR apollo)", "tags": ["prime"], "rows": 200, "one_offs": true, "min_minutes": 10 }
+      ]
+    },
+    "player-2": {
+      "archive": [ { "query": "collection:computerchronicles", "tags": ["day", "overnight"], "series": "The Computer Chronicles", "rows": 300, "min_minutes": 20 } ],
+      "youtube_searches": [
+        { "q": "E3 2005 press conference full", "tags": ["e3"], "duration": "long", "one_offs": true, "min_minutes": 30 },
+        { "q": "retro game review classic full episode", "tags": ["reviews"], "duration": "medium" }
+      ]
+    },
+    "byte-shop": {
+      "archive": [ { "query": "collection:computerchronicles", "tags": ["*all"], "series": "The Computer Chronicles", "rows": 300, "min_minutes": 20 } ]
+    },
+    "rewind-web": {
+      "archive": [ { "query": "collection:flashanimations OR (newgrounds AND mediatype:movies)", "tags": ["day", "prime"], "rows": 300, "one_offs": true, "min_minutes": 1 } ]
+    },
+    "sitcom-lane": {
+      "archive": [ { "query": "collection:classic_tv AND (sitcom OR comedy) AND licenseurl:*publicdomain*", "tags": ["day", "prime", "overnight"], "rows": 300, "min_minutes": 20 } ]
+    },
+    "game-show-gold": {
+      "archive": [ { "query": "collection:classic_tv AND (\"game show\" OR quiz) AND licenseurl:*publicdomain*", "tags": ["*all"], "rows": 200, "min_minutes": 20 } ]
+    },
+    "jukebox": {
+      "youtube_searches": [
+        { "q": "anime opening creditless official", "tags": ["anisong"], "duration": "short", "fill": true, "allow_clips": true },
+        { "q": "2000s music video official", "tags": ["videos"], "duration": "short", "one_offs": true, "allow_clips": true, "min_minutes": 2, "max_minutes": 8 }
+      ]
+    },
+    "goal": {
+      "youtube_searches": [ { "q": "World Cup 2002 highlights official FIFA", "tags": ["*all"], "duration": "medium", "one_offs": true, "allow_clips": true } ]
+    },
+    "live-wire": {
+      "direct": []
+    },
+    "_interstitials": {
+      "archive": [ { "query": "collection:prelinger AND (commercial OR advertisement) AND year:[1950 TO 2005]", "tags": ["*"], "fill": true, "rows": 300 } ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "nostalgia-orbit-curator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Developer-side tools: find, verify and package Nostalgia Orbit's catalog. Not needed by the apps at runtime.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node src/cli.mjs check",
+    "discover": "node src/cli.mjs discover",
+    "build-catalog": "node src/cli.mjs build",
+    "report": "node src/cli.mjs report"
+  }
+}

@@ -1,0 +1,105 @@
+/*
+ * Written for Chromium 47 (Samsung 2017 TVs): flexbox only, no CSS grid,
+ * no custom properties, no flex gap, no position:sticky.
+ */
+html, body { margin: 0; height: 100%; background: #000; color: #fff; overflow: hidden; }
+body { font-family: "Courier New", "DejaVu Sans Mono", monospace; -webkit-user-select: none; user-select: none; }
+.hidden { display: none !important; }
+#tv { position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; background: #000; }
+#pic, #yt-host, #yt, #yt iframe, #vid { position: absolute; left: 0; top: 0; width: 100%; height: 100%; border: 0; }
+#vid { background: #000; }
+#black { position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 3; }
+
+/* ident / filler card */
+.card { position: absolute; left: 0; top: 0; right: 0; bottom: 0; display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-flex-direction: column; flex-direction: column; -webkit-justify-content: center; justify-content: center;
+  -webkit-align-items: center; align-items: center; background: #14124a; z-index: 2; text-align: center; }
+.card-name { font-family: Impact, "Arial Black", sans-serif; font-size: 8vh; letter-spacing: 0.04em; text-shadow: 0.5vh 0.5vh 0 rgba(0,0,0,0.5); }
+.card-sub { margin-top: 2vh; font-size: 3.4vh; color: #ffd23f; }
+#bars { position: absolute; left: 0; top: 0; right: 0; bottom: 0; display: -webkit-box; display: -webkit-flex; display: flex; z-index: 2; }
+#bars div { -webkit-flex: 1; flex: 1; }
+#bars div:nth-child(1) { background: #c0c0c0; } #bars div:nth-child(2) { background: #c0c000; }
+#bars div:nth-child(3) { background: #00c0c0; } #bars div:nth-child(4) { background: #00c000; }
+#bars div:nth-child(5) { background: #c000c0; } #bars div:nth-child(6) { background: #c00000; }
+#bars div:nth-child(7) { background: #0000c0; }
+
+#digits { position: absolute; top: 6vh; left: 6vw; font-size: 9vh; z-index: 6; text-shadow: 0.4vh 0.4vh 0 #000; letter-spacing: 0.1em; }
+
+/* now/next banner, in the style of a 2000s satellite box */
+#banner { position: absolute; left: 4vw; right: 4vw; bottom: 5vh; z-index: 5; display: -webkit-box; display: -webkit-flex; display: flex;
+  background: #1a3f95; background: linear-gradient(#2f6fd6, #1a3f95 45%, #0e2667); border: 0.3vh solid #9ec3ff; border-radius: 1vh;
+  box-shadow: 0 1vh 3vh rgba(0,0,0,0.6); overflow: hidden; }
+.b-num { background: #e0a800; background: linear-gradient(#ffd23f, #e0a800); color: #0e1a4a; font-size: 7vh; padding: 0 2vw;
+  display: -webkit-box; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; }
+.b-main { -webkit-flex: 1; flex: 1; min-width: 0; padding: 1vh 1.5vw; }
+.b-name { font-size: 4.2vh; white-space: nowrap; overflow: hidden; }
+.b-name small { font-size: 2.6vh; color: #bcd4ff; margin-left: 1.2vw; }
+.b-row { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; font-size: 3vh; margin-top: 0.4vh; white-space: nowrap; }
+.b-row em { font-style: normal; color: #ffd23f; width: 4.5em; -webkit-flex: none; flex: none; }
+.b-title { -webkit-flex: 1; flex: 1; overflow: hidden; text-overflow: ellipsis; }
+.b-time { -webkit-flex: none; flex: none; margin-left: 1vw; min-width: 6.5em; text-align: right; }
+.bar { -webkit-flex: 1; flex: 1; height: 0.9vh; background: #0a1640; border: 1px solid #7fa8f0; }
+.bar i { display: block; height: 100%; width: 0; background: #ffd23f; }
+.b-side { padding: 1vh 1.5vw; border-left: 1px solid rgba(158,195,255,0.4); text-align: right;
+  display: -webkit-box; display: -webkit-flex; display: flex; -webkit-flex-direction: column; flex-direction: column; -webkit-justify-content: center; justify-content: center; }
+.b-clock { font-size: 4.5vh; }
+.b-src { font-size: 2.2vh; color: #bcd4ff; margin-top: 0.6vh; }
+
+/* overlays */
+.panel { position: absolute; z-index: 7; background: #0c1f5c; background: linear-gradient(#1f4fb5, #0c1f5c); border: 0.3vh solid #9ec3ff;
+  border-radius: 1vh; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-flex-direction: column; flex-direction: column; overflow: hidden; }
+#list { top: 5vh; bottom: 5vh; right: 4vw; width: 38vw; }
+#epg { top: 5vh; bottom: 5vh; left: 4vw; right: 4vw; }
+#setup { top: 10vh; bottom: 10vh; left: 20vw; right: 20vw; }
+.p-head { background: #aeb8cc; background: linear-gradient(#e9eef8, #aeb8cc); color: #0e1a4a; font-size: 3vh; padding: 0.6vh 1.2vw;
+  display: -webkit-box; display: -webkit-flex; display: flex; -webkit-justify-content: space-between; justify-content: space-between; }
+.p-body { -webkit-flex: 1; flex: 1; overflow: hidden; padding: 0.5vh; }
+.p-foot { background: #081646; font-size: 2.2vh; padding: 0.6vh 1.2vw; }
+.p-foot span { margin-right: 1.6vw; }
+.k:before { content: ""; display: inline-block; width: 1.6vh; height: 1.6vh; margin-right: 0.4vw; vertical-align: -0.2vh; border-radius: 0.3vh; }
+.k.red:before { background: #e2463a; } .k.green:before { background: #3bd16f; } .k.yellow:before { background: #ffd23f; } .k.blue:before { background: #3d7bff; }
+.row { display: -webkit-box; display: -webkit-flex; display: flex; font-size: 2.9vh; padding: 0.35vh 0.8vw; white-space: nowrap; border-radius: 0.4vh; }
+.row b { font-weight: normal; color: #ffd23f; width: 3em; -webkit-flex: none; flex: none; }
+.row .nm { -webkit-flex: 1; flex: 1; overflow: hidden; text-overflow: ellipsis; }
+.row .tag { color: #ff9f8a; margin-left: 0.6vw; }
+.row.sel, .e-row.sel .e-ch { background: #ffd23f; color: #0e1a4a; }
+.row.sel b, .e-row.sel .e-ch b { color: #0e1a4a; }
+.row .val { color: #7fe3ff; margin-left: 1vw; }
+.row.sel .val { color: #0e1a4a; }
+
+.e-row { display: -webkit-box; display: -webkit-flex; display: flex; font-size: 2.6vh; border-top: 1px solid rgba(158,195,255,0.25); height: 4.6vh; }
+.e-head { background: #081646; color: #ffd23f; border-top: 0; }
+.e-ch { width: 22%; -webkit-flex: none; flex: none; padding: 0.8vh 0.6vw; white-space: nowrap; overflow: hidden; color: #ffd23f; background: rgba(0,0,0,0.2); }
+.e-ch b { font-weight: normal; color: #fff; margin-right: 0.6vw; }
+.e-cells { -webkit-flex: 1; flex: 1; position: relative; overflow: hidden; }
+.e-cell { position: absolute; top: 0; bottom: 0; padding: 0.8vh 0.5vw; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  border-right: 1px solid rgba(158,195,255,0.25); box-sizing: border-box; }
+.e-cell.now { background: rgba(255,210,63,0.18); }
+.e-cell.focus { background: #7fe3ff; color: #0e1a4a; }
+.e-tick { position: absolute; top: 0; bottom: 0; padding: 0.8vh 0.5vw; box-sizing: border-box; }
+
+#toast { position: absolute; top: 5vh; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); z-index: 9;
+  background: rgba(8,22,70,0.9); border: 1px solid #9ec3ff; padding: 1vh 2vw; font-size: 2.8vh; border-radius: 0.6vh; }
+
+/* RTL (Arabic menus) */
+body.rtl .row, body.rtl .b-row, body.rtl .e-row { direction: rtl; }
+body.rtl .b-time { text-align: left; margin-left: 0; margin-right: 1vw; }
+[dir=auto] { unicode-bidi: plaintext; }
+
+/* CRT filter levels: an overlay above the player (pixels of embedded video can't be read). */
+#crt { position: absolute; left: 0; top: 0; right: 0; bottom: 0; pointer-events: none; z-index: 20; display: none; }
+body.crt-light #crt, body.crt-heavy #crt { display: block; }
+body.crt-light #crt { background: repeating-linear-gradient(to bottom, rgba(0,0,0,0.22) 0, rgba(0,0,0,0.22) 1px, transparent 1px, transparent 3px); }
+body.crt-heavy #crt { background:
+  radial-gradient(ellipse at center, transparent 58%, rgba(0,0,0,0.7) 100%),
+  repeating-linear-gradient(to bottom, rgba(0,0,0,0.32) 0, rgba(0,0,0,0.32) 1px, transparent 1px, transparent 3px);
+  border-radius: 4vh / 3vh; box-shadow: inset 0 0 8vh rgba(0,0,0,0.85); }
+body.crt-heavy.anim #crt { -webkit-animation: flick 7s infinite; animation: flick 7s infinite; }
+@-webkit-keyframes flick { 0%, 97%, 100% { opacity: 1; } 98% { opacity: 0.9; } }
+@keyframes flick { 0%, 97%, 100% { opacity: 1; } 98% { opacity: 0.9; } }
+
+/* low-performance mode: flat colours, no shadows or gradients */
+body.lowperf #banner, body.lowperf .panel { background: #1a3f95; box-shadow: none; }
+body.lowperf .p-head { background: #c8d0e0; }
+body.lowperf .b-num { background: #ffd23f; }
+body.lowperf .card-name { text-shadow: none; }

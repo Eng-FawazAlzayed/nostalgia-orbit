@@ -1,0 +1,13 @@
+node_modules/
+server/.env
+server/var/
+*.db
+*.db-*
+dist/
+platforms/android/app/
+platforms/windows/src-tauri/target/
+*.wgt
+*.p12
+author.xml
+distributor.xml
+public/

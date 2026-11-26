@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nostalgia Orbit Control Room</title>
+<style>
+:root{--bg:#0f0d3a;--panel:#1d1b6b;--line:#34328a;--ink:#eef0ff;--muted:#a9acdf;--gold:#ffd23f;--ok:#5be08a;--warn:#ffd23f;--bad:#ff7a6b;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,"Segoe UI",Tahoma,sans-serif;padding:24px max(16px,env(safe-area-inset-left)) 48px}
+.wrap{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+h1{margin:0;font-size:26px;color:var(--gold)}h2{margin:0 0 10px;font-size:17px;color:var(--gold)}
+.sub{color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.tile b{display:block;font-size:26px;font-variant-numeric:tabular-nums}.tile span{color:var(--muted);font-size:13px}
+.ok b{color:var(--ok)}.bad b{color:var(--bad)}.warn b{color:var(--warn)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:620px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}th{color:var(--gold);font-weight:500}
+.bar{height:8px;background:#0b0930;border-radius:4px;overflow:hidden;min-width:120px}.bar i{display:block;height:100%;background:var(--gold)}
+.low .bar i{background:var(--bad)}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.actions a{background:var(--gold);color:#16135c;text-decoration:none;padding:9px 14px;border-radius:8px;font-weight:600}
+.actions a.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px}.kv span:nth-child(odd){color:var(--muted)}
+select{background:#0b0930;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:7px}
+#err{color:var(--bad)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div><h1>Nostalgia Orbit · Control Room</h1><div class="sub" id="gen">Loading…</div><div id="err"></div></div>
+  <div class="tiles" id="tiles"></div>
+  <div class="panel">
+    <h2>Maintenance</h2>
+    <p class="sub">These buttons open GitHub. Press "Run workflow" there to start the job. The nightly job also runs on its own every day at 03:00 Kuwait time.</p>
+    <div class="actions">
+      <a id="aNightly" target="_blank" rel="noopener">Run full maintenance now</a>
+      <a id="aCheck" class="ghost" target="_blank" rel="noopener">Check links only</a>
+      <a id="aHeal" class="ghost" target="_blank" rel="noopener">Replace broken links</a>
+      <a id="aDiscover" class="ghost" target="_blank" rel="noopener">Find more for one channel</a>
+      <a id="aBudget" class="ghost" target="_blank" rel="noopener">Change API budget</a>
+      <a id="aSeeds" class="ghost" target="_blank" rel="noopener">Edit search sources</a>
+    </div>
+    <p class="sub" id="discHint"></p>
+  </div>
+  <div class="grid2">
+    <div class="panel"><h2>API use and cost</h2><div class="kv" id="usage"></div></div>
+    <div class="panel"><h2>Last run</h2><div class="kv" id="run"></div></div>
+  </div>
+  <div class="panel"><h2>Coverage by channel</h2><table><thead><tr><th>Ch</th><th>Channel</th><th>Your name</th><th>Series</th><th>Episodes</th><th>Hours</th><th>Fill (24 h = full day)</th></tr></thead><tbody id="chans"></tbody></table></div>
+  <div class="grid2">
+    <div class="panel"><h2>By decade</h2><div class="kv" id="dec"></div></div>
+    <div class="panel"><h2>By language</h2><div class="kv" id="lang"></div></div>
+  </div>
+</div>
+<script>
+(function(){
+  var repo = (function(){ var m = location.hostname.match(/^([^.]+)\.github\.io$/); var p = location.pathname.split('/')[1];
+    return m ? 'https://github.com/' + m[1] + '/' + p : 'https://github.com'; })();
+  var wf = repo + '/actions/workflows/';
+  document.getElementById('aNightly').href = wf + 'nightly.yml';
+  document.getElementById('aCheck').href = wf + 'nightly.yml';
+  document.getElementById('aHeal').href = wf + 'nightly.yml';
+  document.getElementById('aDiscover').href = wf + 'nightly.yml';
+  document.getElementById('aBudget').href = repo + '/edit/main/curator/data/budget.json';
+  document.getElementById('aSeeds').href = repo + '/edit/main/curator/data/seeds.json';
+  document.getElementById('discHint').textContent = 'In "Run workflow", choose the task (nightly, check, heal or discover) and, for discover, type a channel id such as planet-toon.';
+  function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+  function kv(id, obj){ var h=''; for (var k in obj) h += '<span>'+esc(k)+'</span><span>'+esc(obj[k])+'</span>'; document.getElementById(id).innerHTML = h || '<span>—</span><span></span>'; }
+  fetch('../stats.json?t=' + Date.now()).then(function(r){ if(!r.ok) throw new Error('stats.json ' + r.status); return r.json(); }).then(function(s){
+    document.getElementById('gen').textContent = 'Catalog published ' + new Date(s.generated).toLocaleString() + ' · next link check ' + (s.upcoming ? new Date(s.upcoming).toLocaleString() : '—');
+    var t = s.totals, tiles = [
+      ['Channels', t.channels, ''], ['Series', t.series, ''], ['Episodes on air', t.episodes, 'ok'],
+      ['Working links', t.sources_working, 'ok'], ['Broken links', t.sources_broken, 'bad'], ['Failing (retrying)', t.sources_failing, 'warn'],
+      ['Awaiting check', t.sources_pending, 'warn'], ['Episodes with backups', t.episodes_with_alternatives, '']];
+    document.getElementById('tiles').innerHTML = tiles.map(function(x){ return '<div class="tile '+x[2]+'"><b>'+x[1]+'</b><span>'+x[0]+'</span></div>'; }).join('');
+    var u = s.usage;
+    kv('usage', {
+      'YouTube API today': u.today.youtube_units + ' / ' + u.limits.youtube_units_per_day + ' units (free)',
+      'YouTube API this month': u.month.youtube_units + ' units (free)',
+      'AI helper': u.ai_enabled ? 'on' : 'off (no key)',
+      'AI cost this month': u.month.ai_kwd.toFixed(3) + ' KWD (' + u.month.ai_calls + ' calls)',
+      'AI limit': u.limits.ai_kwd_per_day + ' KWD/day · ' + u.limits.ai_kwd_per_month + ' KWD/month',
+      'Estimated monthly cost': u.estimated_cost_kwd_month.toFixed(3) + ' KWD'
+    });
+    var r = s.last_run || {};
+    kv('run', { 'Task': r.cmd, 'Started': r.started && new Date(r.started).toLocaleString(), 'Finished': r.finished && new Date(r.finished).toLocaleString(),
+      'Links checked': r.check ? r.check.checked + ' (' + r.check.ok + ' ok, ' + r.check.fail + ' failed)' : '—',
+      'Replaced': r.heal ? r.heal.replaced + ' of ' + r.heal.orphans + ' lost episodes' : '—',
+      'Newly found': r.discover ? r.discover.added : '—' });
+    document.getElementById('chans').innerHTML = s.channels.map(function(c){ var pct = Math.min(100, c.hours / 24 * 100);
+      return '<tr class="'+(c.hours<24&&!c.live?'low':'')+'"><td>'+esc(c.n)+'</td><td>'+esc(c.name)+'</td><td>'+esc(c.work)+'</td><td>'+c.series+'</td><td>'+c.episodes+'</td><td>'+c.hours+'</td><td><div class="bar"><i style="width:'+pct+'%"></i></div></td></tr>'; }).join('');
+    kv('dec', s.decades); kv('lang', s.languages);
+  }).catch(function(e){ document.getElementById('err').textContent = 'Could not load stats: ' + e.message; });
+})();
+</script>
+</body>
+</html>

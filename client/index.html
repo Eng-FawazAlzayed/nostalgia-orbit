@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nostalgia Orbit</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="crt-light">
+<div id="tv">
+  <div id="pic">
+    <div id="yt-host"><div id="yt"></div></div>
+    <video id="vid" playsinline preload="auto"></video>
+    <div id="card" class="card hidden">
+      <div class="card-name" id="cardName"></div>
+      <div class="card-sub" id="cardSub"></div>
+    </div>
+    <div id="bars" class="hidden"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  </div>
+  <div id="black" class="hidden"></div>
+  <div id="digits" class="hidden"></div>
+
+  <div id="banner" class="hidden">
+    <div class="b-num" id="bNum">000</div>
+    <div class="b-main">
+      <div class="b-name"><span id="bName"></span><small id="bAlt"></small></div>
+      <div class="b-row"><em class="now-lbl">NOW</em><span id="bNow" class="b-title"></span><span id="bNowT" class="b-time"></span></div>
+      <div class="b-row"><em></em><span class="bar"><i id="bBar"></i></span><span class="b-time"></span></div>
+      <div class="b-row"><em class="next-lbl">NEXT</em><span id="bNext" class="b-title"></span><span id="bNextT" class="b-time"></span></div>
+    </div>
+    <div class="b-side">
+      <div class="b-clock" id="bClock">00:00</div>
+      <div class="b-src" id="bSrc"></div>
+    </div>
+  </div>
+
+  <div id="list" class="panel hidden">
+    <div class="p-head"><span id="listTitle">ALL CHANNELS</span><span id="listCount"></span></div>
+    <div id="listItems" class="p-body"></div>
+    <div class="p-foot"><span class="k red">CRT</span><span class="k green">FAV</span><span class="k yellow">NAMES</span><span class="k blue">SETUP</span></div>
+  </div>
+
+  <div id="epg" class="panel hidden">
+    <div class="p-head"><span id="epgTitle">TV GUIDE · KUWAIT</span><span id="epgDate"></span></div>
+    <div id="epgHead" class="e-row e-head"></div>
+    <div id="epgBody" class="p-body"></div>
+    <div class="p-foot"><span>▲▼ CH</span><span>◀▶ TIME</span><span>OK TUNE</span><span>BACK CLOSE</span></div>
+  </div>
+
+  <div id="setup" class="panel hidden">
+    <div class="p-head"><span id="setupTitle">SETUP</span><span>v<span id="ver"></span></span></div>
+    <div id="setupItems" class="p-body"></div>
+    <div class="p-foot"><span>▲▼ SELECT</span><span>◀▶ / OK CHANGE</span><span>BACK CLOSE</span></div>
+  </div>
+
+  <div id="toast" class="hidden"></div>
+</div>
+<div id="crt"></div>
+<script src="schedule.js"></script>
+<script src="catalog.js"></script>
+<script src="providers.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
