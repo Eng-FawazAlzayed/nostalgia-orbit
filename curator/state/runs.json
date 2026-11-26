@@ -2,6 +2,46 @@
  {
   "cmd": "discover",
   "arg": null,
+  "started": "2026-11-26T17:46:33.527Z",
+  "discover": {
+   "added": 2311,
+   "rejected": 30624,
+   "unclassified": 32,
+   "seen": 293,
+   "per_channel": {
+    "toon-orbit-gold": 116,
+    "rebound": 116,
+    "orange-couch": 116,
+    "magic-hour": 116,
+    "zap-kids": 116,
+    "comet": 116,
+    "tokyo-tube": 116,
+    "planet-toon": 116,
+    "power-orbit": 116,
+    "najma-3": 116,
+    "dirati-tv": 116,
+    "masrah-kuwait": 107,
+    "khaleej-stage": 109,
+    "ramadan-nights": 0,
+    "night-owl": 16,
+    "vault-33": 116,
+    "field-trip": 116,
+    "player-2": 116,
+    "byte-shop": 116,
+    "rewind-web": 116,
+    "sitcom-lane": 116,
+    "game-show-gold": 71,
+    "jukebox": 0,
+    "goal": 0,
+    "live-wire": 0,
+    "_interstitials": 36
+   }
+  },
+  "finished": "2026-11-26T18:02:34.404Z"
+ },
+ {
+  "cmd": "discover",
+  "arg": null,
   "started": "2026-11-26T17:11:44.216Z",
   "discover": {
    "added": 1969,
