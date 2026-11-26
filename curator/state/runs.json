@@ -1,5 +1,11 @@
 [
  {
+  "cmd": "build",
+  "arg": null,
+  "started": "2026-11-26T18:58:38.492Z",
+  "finished": "2026-11-26T18:58:38.531Z"
+ },
+ {
   "cmd": "discover",
   "arg": null,
   "started": "2026-11-26T18:55:36.030Z",
