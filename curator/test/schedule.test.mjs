@@ -5,6 +5,8 @@ import fs from 'node:fs';
 const require = createRequire(import.meta.url);
 const S = require('../../shared/schedule.js');
 const channels = JSON.parse(fs.readFileSync(new URL('../data/channels.json', import.meta.url)));
+// a live-stream channel for the live test (no such channel in the lineup right now)
+channels.push({ id: 'live-wire', n: '040', name: 'LIVE', blocks: [{ f: '06:00', t: '06:00', g: 'live' }] });
 
 function cat() {
   const series = {
@@ -141,7 +143,8 @@ test('random mode: shuffled but no episode repeats within a week when there is e
   const idx = new S.Index({ channels: [{ id: 'r', n: '1', blocks: [{ f: '06:00', t: '06:00', g: '*all' }] }], series, episodes: eps }, { modes: { r: 'random' } });
   const d0 = S.dayIndexOf(Date.UTC(2026, 10, 26, 12)); const seen = new Set(); let n = 0;
   for (let d = d0; d < d0 + 7; d++) for (const x of idx.day('r', d)) if (x.type === 'ep') { n++; seen.add(x.ep.id); }
-  assert.ok(n > 300 && seen.size >= n - 2, `${n} airings, ${seen.size} unique`);
+  // (an episode cut short at the end of a day may air again in full the next day: at most one a day)
+  assert.ok(n > 300 && seen.size >= n - 7, `${n} airings, ${seen.size} unique`);
   const firstFive = idx.day('r', d0).filter(x => x.type === 'ep').slice(0, 5).map(x => x.ep.ep);
   assert.notDeepEqual(firstFive, [1, 1, 1, 1, 1]);
 });

@@ -50,7 +50,7 @@ export function seriesFromTitle(title) {
 
 async function addCandidate(lib, chId, seed, provider, ref, r, stats) {
   const fill = !!seed.fill;
-  const minS = (seed.min_minutes ?? (fill ? 0.25 : 5)) * 60, maxS = (seed.max_minutes ?? (fill ? 10 : 240)) * 60;
+  const minS = (seed.min_minutes ?? (fill ? 0.25 : 5)) * 60, maxS = (seed.max_minutes ?? (fill ? 4 : 240)) * 60;
   if (!r.ok) { stats.rejected++; return; }
   if (r.live && !seed.allow_live) { stats.rejected++; return; }
   if (seed.year_range) { // e.g. Gulf plays first released 1990-2010 (the year in the title, not the upload date)

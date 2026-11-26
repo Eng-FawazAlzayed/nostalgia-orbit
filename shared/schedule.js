@@ -306,7 +306,21 @@
           var ep = pl.items[k];
           var d = ep.d * 1000;
           if (t + d > be) {
-            if (placed === 0) { // one long item (a play) overruns: clip it to the block
+            // The next one doesn't fit: look ahead for a shorter one that does, so the end of a
+            // block isn't left empty.
+            var left = be - t, f = -1, q2;
+            for (q2 = 1; q2 < Math.min(pl.items.length, 200); q2++) {
+              var cand = pl.items[(k + q2) % pl.items.length];
+              if (cand.d * 1000 <= left && (f < 0 || cand.d > pl.items[(k + f) % pl.items.length].d)) { f = q2; }
+            }
+            if (f > 0 && left >= 4 * 60000) {
+              ep = pl.items[(k + f) % pl.items.length]; d = ep.d * 1000;
+              items.push({ type: 'ep', s: t, e: t + d, ep: ep, lbl: b.label });
+              t += d; placed++;
+              t = brk(t, Math.min(be, t + BREAK));
+              continue;
+            }
+            if (placed === 0 || left >= 8 * 60000) { // nothing shorter: play this one and cut it at the block's end
               items.push({ type: 'ep', s: t, e: be, ep: ep, clipped: true, lbl: b.label });
               t = be;
             }

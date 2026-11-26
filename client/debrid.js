@@ -259,6 +259,8 @@
       (typical[e.s] = typical[e.s] || []).push(e.d);
       if (e.ep) { epKey[e.s + '|' + (e.sn || 0) + '|' + e.ep] = e.id; if (!e.sn) { epKey[e.s + '|1|' + e.ep] = epKey[e.s + '|1|' + e.ep] || e.id; } }
     }
+    var listed = {}; // shows on a channel's list that aren't in the catalog yet
+    if (catalog.shows) { for (k in catalog.shows) { if (catalog.shows.hasOwnProperty(k) && norm(k).length >= 4) { listed[norm(k)] = catalog.shows[k]; } } }
     function median(a) { if (!a || !a.length) { return 0; } a = a.slice().sort(function (x, y) { return x - y; }); return a[a.length >> 1]; }
     function findSeries(show) {
       if (byName[show]) { return byName[show]; }
@@ -293,8 +295,10 @@
       var sidOut = G.sid;
       if (!sidOut) {
         sidOut = 'db-' + G.p.show.replace(/\s/g, '-');
-        if (!overlay.series[sidOut]) { overlay.series[sidOut] = { t: { en: titleCase(G.p.show) }, ch: { 'my-library': ['*'] } }; }
-        stats.library++;
+        var home = listed[G.p.show], chs = { 'my-library': ['*'] };
+        if (!home) { for (var ln in listed) { if (listed.hasOwnProperty(ln) && ln.length >= 5 && (G.p.show.indexOf(ln) === 0 || ln.indexOf(G.p.show) === 0)) { home = listed[ln]; break; } } }
+        if (home) { for (k = 0; k < home.length; k++) { chs[home[k]] = ['*']; } stats.matched++; } else { stats.library++; }
+        if (!overlay.series[sidOut]) { overlay.series[sidOut] = { t: { en: titleCase(G.p.show) }, ch: chs }; }
       } else { stats.matched++; }
       overlay.episodes.push({ id: 'db-' + hash(g), s: sidOut, sn: G.p.sn || undefined, ep: G.p.ep || undefined,
         t: { en: titleCase(G.p.show) + (G.p.ep ? ' ' + (G.p.sn ? 'S' + G.p.sn + 'E' : 'E') + G.p.ep : '') }, d: top[0].sec, src: src });

@@ -5,6 +5,7 @@ import path from 'node:path';
 import { DATA, OUT, ROOT, readJSON, writeJSON, nowIso, log } from './util.mjs';
 import { isPublishable } from './maintain.mjs';
 import { usageSummary } from './budget.mjs';
+import { playableCodec } from './probe.mjs';
 import { matchShow, notAShow, looksLikeClip, westernDigits } from './titles.mjs';
 import { seriesRequire } from './discover.mjs';
 
@@ -47,7 +48,9 @@ export function keepEpisode(lib, e) {
   const title = e.titles.en || e.titles.ar || e.titles.ja || '';
   if (ser.fill) { // period breaks only: no idents made after 2013, no theme songs
     const ys = (westernDigits(title).match(/(?:^|\D)(20[0-2]\d)(?!\d)/g) || []).map(y => +y.replace(/\D/g, ''));
-    return !ys.some(y => y > 2013) && !/شارة|opening|intro song|theme song/i.test(title);
+    // short period bumpers and ads only: no modern 8-minute official compilations, no credits
+    if ((e.duration || 0) > 240 || isOfficial(lib, e.id)) return false;
+    return !ys.some(y => y > 2013) && !/شارة|opening|intro song|theme song|credits|closing|end card/i.test(title);
   }
   const chs = allowedChannels(lib, ser);
   if (!chs.length) return false;
@@ -80,6 +83,7 @@ export function compact(lib, channels, now = Date.now()) {
   const srcByEp = new Map();
   for (const s of Object.values(lib.d.sources)) {
     if (!isPublishable(s, now)) continue;
+    if (s.provider === 'archive' && !playableCodec((lib.d.ia_codec || {})[s.archive_id])) continue; // HEVC etc.: NO SIGNAL on most screens
     const p = P[s.provider] || (s.kind === 'hls' || s.kind === 'live' ? 'hls' : 'mp4');
     const c = { p, r: s.ref, k: s.kind, a: s.authorization, rel: s.reliability };
     if (s.url && p !== 'yt') c.u = s.url;
@@ -116,7 +120,22 @@ export function compact(lib, channels, now = Date.now()) {
     if (hit) s.y = years[hit];
   }
   collect(series, channels);
-  return { v: 1, generated: nowIso(), channels, series, episodes };
+  // A channel with nothing to show yet stays off the list instead of showing NO SIGNAL all day.
+  const live = new Set(); for (const sr of Object.values(series)) if (!sr.fill) for (const c of Object.keys(sr.ch || {})) live.add(c);
+  channels = channels.filter(c => c.mix || live.has(c.id));
+  // Which channel each listed show belongs on, so your own Real-Debrid/TorBox copy of a show
+  // nobody has found online yet still airs on the right channel instead of 099.
+  const shows = {};
+  for (const [ch, keys] of Object.entries(seeds().channel_only || {})) {
+    if (!channels.some(c => c.id === ch)) continue;
+    for (const sh of [].concat(...keys.map(k => LISTS[k] || []))) {
+      for (const n of [].concat(typeof sh === 'string' ? sh : [sh.name, ...(sh.match || [])])) {
+        if (!/[a-z\u0600-\u06ff]{3}/i.test(n) || /^(g4|mtv|disney channel|nickelodeon|cartoon network|toonami|tv|quiz)$/i.test(n)) continue;
+        const list = shows[n] ||= []; if (!list.includes(ch)) list.push(ch);
+      }
+    }
+  }
+  return { v: 1, generated: nowIso(), channels, series, episodes, shows };
 }
 
 // One show, many channels: a channel with "collect" also airs matching shows that were

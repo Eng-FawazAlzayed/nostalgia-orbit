@@ -1743,6 +1743,24 @@
           "max_minutes": 4,
           "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
         }
+      ],
+      "youtube_playlist_searches": [
+        {
+          "shows_ref": "spacetoon_zaman",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "language": "ar",
+          "tags": [
+            "*all"
+          ],
+          "skip": [
+            "سبيستون",
+            "سبيس باور",
+            "ام بي سي 3",
+            "آرت تينز",
+            "art teenz"
+          ]
+        }
       ]
     },
     "kuwait-zaman": {
@@ -2537,6 +2555,15 @@
           "min_minutes": 0.08,
           "max_minutes": 4,
           "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        }
+      ],
+      "youtube_playlist_searches": [
+        {
+          "shows_ref": "sitcoms",
+          "q": "{show} full episodes",
+          "tags": [
+            "*all"
+          ]
         }
       ]
     },
@@ -6219,6 +6246,23 @@
           "max_minutes": 3,
           "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
         }
+      ],
+      "youtube_playlist_searches": [
+        {
+          "shows_ref": "mbc3",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "language": "ar",
+          "tags": [
+            "morning",
+            "day",
+            "afterschool",
+            "overnight"
+          ],
+          "skip": [
+            "فريج"
+          ]
+        }
       ]
     },
     "dirati-tv": {
@@ -6933,7 +6977,7 @@
           "rows": 300,
           "one_offs": true,
           "min_minutes": 15,
-          "shows_ref": "g4",
+          "shows_ref": "techtv",
           "series": ""
         }
       ],
@@ -7009,19 +7053,39 @@
     "rewind-web": {
       "archive": []
     },
-    "jukebox": {
-      "youtube_searches": [
+    "old-mtv": {
+      "archive": [
         {
-          "q": "2000s music video official",
+          "query": "(mtv OR \"music television\") AND (recording OR broadcast OR vhs OR tape OR aired OR commercials) AND mediatype:movies AND year:[1981 TO 2006]",
           "tags": [
-            "videos"
+            "*all"
           ],
-          "duration": "short",
+          "rows": 400,
+          "series": "MTV",
           "one_offs": true,
-          "allow_clips": true,
-          "min_minutes": 2,
-          "max_minutes": 8
+          "min_minutes": 15,
+          "recorded_range": [
+            1981,
+            2008
+          ],
+          "exclude": "audiobook|radio|full movie|feature film|mtv unplugged in new york full album|lecture|sermon|202\\d|201[4-9]"
         },
+        {
+          "query": "title:(\"total request live\" OR trl OR \"120 minutes\" OR \"headbangers ball\" OR \"yo! mtv raps\" OR \"beavis and butt-head\" OR daria OR \"liquid television\" OR \"remote control\" OR \"celebrity deathmatch\" OR \"alternative nation\" OR \"club mtv\" OR \"singled out\" OR \"the grind\") AND mediatype:movies",
+          "tags": [
+            "*all"
+          ],
+          "rows": 400,
+          "shows_ref": "mtv",
+          "one_offs": true,
+          "min_minutes": 10,
+          "recorded_range": [
+            1981,
+            2008
+          ]
+        }
+      ],
+      "youtube_searches": [
         {
           "q": "MTV bumper 2000",
           "tags": [
@@ -7047,22 +7111,6 @@
           "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
         }
       ]
-    },
-    "goal": {
-      "youtube_searches": [
-        {
-          "q": "World Cup 2002 highlights official FIFA",
-          "tags": [
-            "*all"
-          ],
-          "duration": "medium",
-          "one_offs": true,
-          "allow_clips": true
-        }
-      ]
-    },
-    "live-wire": {
-      "direct": []
     }
   },
   "show_lists": {
@@ -7858,7 +7906,145 @@
       "سلام سلام",
       "حمودي",
       "حكايات",
-      "ورقة وقلم"
+      "ورقة وقلم",
+      {
+        "name": "سبونج بوب",
+        "match": [
+          "SpongeBob",
+          "سبونج بوب"
+        ]
+      },
+      {
+        "name": "أفاتار",
+        "match": [
+          "Avatar",
+          "افاتار",
+          "أفاتار"
+        ]
+      },
+      {
+        "name": "بن تن",
+        "match": [
+          "Ben 10",
+          "بن 10",
+          "بن تن"
+        ]
+      },
+      {
+        "name": "كيم بوسيبل",
+        "match": [
+          "Kim Possible",
+          "كيم بوسيبل"
+        ]
+      },
+      {
+        "name": "الجاسوسات",
+        "match": [
+          "Totally Spies",
+          "الجاسوسات"
+        ]
+      },
+      {
+        "name": "نادي وينكس",
+        "match": [
+          "Winx",
+          "وينكس"
+        ]
+      },
+      {
+        "name": "كود ليوكو",
+        "match": [
+          "Code Lyoko",
+          "كود ليوكو"
+        ]
+      },
+      {
+        "name": "مستر بين",
+        "match": [
+          "Mr. Bean",
+          "Mr Bean",
+          "مستر بين"
+        ]
+      },
+      {
+        "name": "الخروف شون",
+        "match": [
+          "Shaun the Sheep",
+          "الخروف شون",
+          "شون ذا شيب"
+        ]
+      },
+      {
+        "name": "أوجي والصراصير",
+        "match": [
+          "Oggy",
+          "أوجي",
+          "اوجي"
+        ]
+      },
+      {
+        "name": "جوني تست",
+        "match": [
+          "Johnny Test",
+          "جوني تست"
+        ]
+      },
+      {
+        "name": "هانا مونتانا",
+        "match": [
+          "Hannah Montana",
+          "هانا مونتانا"
+        ]
+      },
+      {
+        "name": "آي كارلي",
+        "match": [
+          "iCarly",
+          "اي كارلي",
+          "آي كارلي"
+        ]
+      },
+      {
+        "name": "داني فانتوم",
+        "match": [
+          "Danny Phantom",
+          "داني فانتوم"
+        ]
+      },
+      {
+        "name": "جيمي نيوترون",
+        "match": [
+          "Jimmy Neutron",
+          "جيمي نيوترون"
+        ]
+      },
+      {
+        "name": "بيتي الذرية",
+        "match": [
+          "Atomic Betty",
+          "بيتي الذرية"
+        ]
+      },
+      {
+        "name": "مارتن ميستري",
+        "match": [
+          "Martin Mystery",
+          "مارتن ميستري"
+        ]
+      },
+      {
+        "name": "كرة القدم المجرية",
+        "match": [
+          "Galactik Football",
+          "كرة القدم المجرية"
+        ]
+      },
+      {
+        "name": "شعبية الكرتون",
+        "match": [
+          "شعبية الكرتون"
+        ]
+      }
     ],
     "foxkids": [
       {
@@ -8798,6 +8984,90 @@
       "Frenemies",
       "Radio Rebel",
       "Girl vs. Monster"
+    ],
+    "g4_only": [
+      "X-Play",
+      "XPlay",
+      "Attack of the Show",
+      "Cinematech",
+      "G4 Icons",
+      "Icons",
+      "Filter",
+      "Judgment Day",
+      "Arena",
+      "Portal",
+      "Code Monkeys",
+      "Cheat!",
+      "Cheat",
+      "Players",
+      "Sweat",
+      "Formula Fun",
+      "Blister",
+      "Pulse",
+      "Ninja Warrior",
+      "Hurl!",
+      "Proving Ground",
+      "G4tv",
+      "G4"
+    ],
+    "techtv": [
+      "The Screen Savers",
+      "Screen Savers",
+      "Call for Help",
+      "Tech Live",
+      "Big Thinkers",
+      "Fresh Gear",
+      "Extended Play",
+      "Unscrewed",
+      "Silicon Spin",
+      "Cybercrime",
+      "TechTV",
+      "Tech TV",
+      "The Computer Chronicles",
+      "Computer Chronicles",
+      "Net Cafe",
+      "Click",
+      "Anchors"
+    ],
+    "mtv": [
+      "MTV",
+      "Total Request Live",
+      "TRL",
+      "120 Minutes",
+      "Headbangers Ball",
+      "Yo! MTV Raps",
+      "Beavis and Butt-Head",
+      "Beavis and Butthead",
+      "Daria",
+      "The Real World",
+      "Unplugged",
+      "MTV Jams",
+      "Liquid Television",
+      "Remote Control",
+      "Celebrity Deathmatch",
+      "Cribs",
+      "Pimp My Ride",
+      "Jackass",
+      "The Grind",
+      "Singled Out",
+      "Video Music Awards",
+      "VMA",
+      "Spring Break",
+      "Buzz Bin",
+      "Alternative Nation",
+      "Club MTV",
+      "The Tom Green Show",
+      "Undressed",
+      "Sifl and Olly",
+      "Downtown",
+      "Aeon Flux",
+      "Diary",
+      "Making the Video",
+      "Punk'd",
+      "Room Raiders",
+      "Say What Karaoke",
+      "Lyricist Lounge",
+      "Music Television"
     ]
   },
   "show_years": {
@@ -9310,7 +9580,8 @@
     "Toonami": "toonami|midnight run|cartoon network|\\bcn\\b|adult swim",
     "Cartoon Network": "cartoon network|\\bcn\\b|toonami|boomerang|cartoon cartoon|adult swim",
     "Nickelodeon": "nick|snick|tnn|nicktoons|teennick",
-    "Disney Channel": "disney"
+    "Disney Channel": "disney",
+    "MTV": "mtv|music television"
   },
   "channel_only": {
     "gamezone": [
@@ -9368,16 +9639,21 @@
       "adult_swim_classic"
     ],
     "player-2": [
-      "g4",
-      "gaming_shows"
+      "g4_only"
     ],
     "byte-shop": [
-      "g4"
+      "techtv"
     ],
     "tokyo-tube": [
       "japan_tv",
       "tokusatsu_classic",
       "anime_classic"
+    ],
+    "old-mtv": [
+      "mtv"
+    ],
+    "najma-3": [
+      "mbc3"
     ]
   },
   "channel_exclude": {

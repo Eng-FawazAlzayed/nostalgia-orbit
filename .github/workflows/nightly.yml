@@ -29,6 +29,9 @@ jobs:
         with: { node-version: 22 }
       - name: Tests
         run: cd curator && node --test test/*.test.mjs
+      - name: Install ffprobe (codec check)
+        if: ${{ inputs.task == 'probe' || inputs.task == '' || github.event_name == 'schedule' }}
+        run: command -v ffprobe || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
       - name: Run curator
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}

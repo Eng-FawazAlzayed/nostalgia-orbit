@@ -187,3 +187,10 @@ test('non-shows are rejected, numbered episodes kept', async () => {
   assert.equal(notAShow('Toonami - 2002-11-05 - Dragon Ball, Dragon Ball Z, He-Man', 'comet'), '');
   assert.equal(notAShow('X-Play review of Halo 2', 'gamezone'), '');
 });
+
+test('Arabic explanation and commentary videos are not shows', async () => {
+  const { notAShow } = await import('../src/titles.mjs');
+  for (const t of ['شرح قضية المحقق كونان الحلقة 50', 'ملخص انمي المحقق كونان', 'تحليل شخصية كونان', 'أسرار غرندايزر'])
+    assert.ok(notAShow(t, 'spacetoon-zaman'), t);
+  assert.equal(notAShow('المحقق كونان الحلقة 12 مدبلج', 'spacetoon-zaman'), '');
+});
