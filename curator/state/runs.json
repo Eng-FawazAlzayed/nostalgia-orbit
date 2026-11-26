@@ -1,6 +1,21 @@
 [
  {
   "cmd": "discover",
+  "arg": "comet",
+  "started": "2026-11-26T18:03:04.513Z",
+  "discover": {
+   "added": 158,
+   "rejected": 2106,
+   "unclassified": 0,
+   "seen": 6,
+   "per_channel": {
+    "comet": 158
+   }
+  },
+  "finished": "2026-11-26T18:05:22.105Z"
+ },
+ {
+  "cmd": "discover",
   "arg": null,
   "started": "2026-11-26T17:46:33.527Z",
   "discover": {
