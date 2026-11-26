@@ -59,6 +59,9 @@ async function addCandidate(lib, chId, seed, provider, ref, r, stats) {
     if (g && !pe.episode && g.episode) pe = { season: g.season || 0, episode: g.episode };
   }
   if (!name) { stats.unclassified++; return; }
+  const sk = chId + '|' + name; stats.bySeries ||= {};
+  if ((stats.bySeries[sk] || 0) >= (seed.per_series_cap || 40)) { stats.capped = (stats.capped || 0) + 1; return; } // more next run
+  stats.bySeries[sk] = (stats.bySeries[sk] || 0) + 1;
   const lang = seed.language || guessLanguage(r.title || '');
   const ser = lib.upsertSeries({
     title_en: hasArabic(name) || hasJapanese(name) ? (seed.series_en || '') : name,
@@ -95,17 +98,22 @@ export async function discover(lib, { channel = null, maxNew = config.discover_m
     await discoverChannel(lib, chId, s, stats, limit);
     stats.per_channel[chId] = stats.added - before;
   }
+  delete stats.bySeries;
   log(`discover: +${stats.added} new, ${stats.rejected} rejected, ${stats.unclassified} unclassified, ${stats.seen} already known`);
   return stats;
 }
 
 async function discoverChannel(lib, chId, s, stats, maxNew) {
   {
+    // Spread the channel's share over its sources so one big Archive item can't fill it alone.
+    const nSeeds = ['archive', 'youtube_handles', 'youtube_playlists', 'youtube_searches', 'direct'].reduce((a, k) => a + (s[k] || []).filter(x => !x.disabled).length, 0) || 1;
+    const seedShare = Math.max(15, Math.ceil((maxNew - stats.added) / nSeeds));
+    const cap = () => Math.min(maxNew, stats.added + seedShare);
 
     // 1) Internet Archive first: free, no quota, and the preferred source.
     for (const seed of (s.archive || []).filter(x => !x.disabled)) {
       if (stats.added >= maxNew) break;
-      await fromArchive(lib, chId, seed, stats, maxNew);
+      await fromArchive(lib, chId, seed, stats, cap());
     }
     // 2) YouTube channels by handle -> uploads playlist (1 unit per 50 videos)
     for (const seed of (s.youtube_handles || []).filter(x => !x.disabled)) {
@@ -113,17 +121,17 @@ async function discoverChannel(lib, chId, s, stats, maxNew) {
       const ch = await yt.channelByHandle(seed.handle);
       if (!ch) { log(`  handle ${seed.handle} skipped (YouTube allowance used up, retry next run)`); continue; }
       if (ch.missing) { log(`  handle ${seed.handle} not found`); continue; }
-      await fromYouTubeIds(lib, chId, { authorization: 'official', ...seed }, await yt.playlistIds(ch.uploads, seed.max || 4000), stats, maxNew);
+      await fromYouTubeIds(lib, chId, { authorization: 'official', ...seed }, await yt.playlistIds(ch.uploads, seed.max || 4000), stats, cap());
     }
     // 2) playlists
     for (const seed of s.youtube_playlists || []) {
-      await fromYouTubeIds(lib, chId, seed, await yt.playlistIds(seed.id, seed.max || 1000), stats, maxNew);
+      await fromYouTubeIds(lib, chId, seed, await yt.playlistIds(seed.id, seed.max || 1000), stats, cap());
     }
     // 3) searches (100 units each, cached 30 days)
     for (const seed of (s.youtube_searches || []).filter(x => !x.disabled)) {
       if (stats.added >= maxNew) break;
       if (!canSpend('youtube', 100)) { log('  search budget reached for today'); break; }
-      await fromYouTubeIds(lib, chId, seed, await yt.search(seed.q, { duration: seed.duration || 'long', lang: seed.lang }), stats, maxNew);
+      await fromYouTubeIds(lib, chId, seed, await yt.search(seed.q, { duration: seed.duration || 'long', lang: seed.lang }), stats, cap());
     }
     // 5) direct live streams / files listed by hand
     for (const seed of s.direct || []) {
@@ -162,12 +170,13 @@ async function fromArchive(lib, chId, seed, stats, maxNew) {
     if (shows.length && !seed.series && !matchShow(d.title || '', shows) && !seed.match_files) { stats.rejected++; continue; }
     const it = await ia.inspect(d.id);
     if (!it.ok && (it.code === 'budget' || it.code === 'network')) break;
-    seen[d.id] = new Date().toISOString().slice(0, 10);
-    if (!it.ok) { stats.rejected++; continue; }
+    if (!it.ok) { seen[d.id] = new Date().toISOString().slice(0, 10); stats.rejected++; continue; }
     if (it.info.recorded && (it.info.recorded < rlo || it.info.recorded > rhi)) { stats.rejected++; continue; }
     const many = it.files.length > 1;
+    const capped0 = stats.capped || 0; let finished = true;
     for (const f of it.files.slice(0, seed.max_files || 300)) {
-      if (stats.added >= maxNew) break;
+      if (stats.added >= maxNew) { finished = false; break; }
+      if (lib.d.sources['archive:' + d.id + '/' + f.name]) { stats.seen++; continue; }
       const stem = f.root.replace(/\.[^.]+$/, '').replace(/[_]+/g, ' ');
       const title = many ? (f.title || `${it.info.item_title} ${stem}`) : (f.title || it.info.item_title);
       const r = {
@@ -179,5 +188,7 @@ async function fromArchive(lib, chId, seed, stats, maxNew) {
       const matchTitle = shows.length && !matchShow(title, shows) ? `${it.info.item_title} ${title}` : title;
       await addCandidate(lib, chId, { ...seed, _match_title: matchTitle, _multi: many }, 'archive', d.id + '/' + f.name, r, stats);
     }
+    // Only skip this item next time once every video in it has been looked at.
+    if (finished && (stats.capped || 0) === capped0) seen[d.id] = new Date().toISOString().slice(0, 10);
   }
 }
