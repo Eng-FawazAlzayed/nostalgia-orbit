@@ -2,8 +2,8 @@
   {
     "id": "gamezone",
     "n": "101",
-    "name": "GAMEZONE",
-    "ar": "جيم زون",
+    "name": "GAMING SHOWS",
+    "ar": "برامج الألعاب",
     "work": "G4 / GameTrailers 2000s",
     "color": "#7cff3f",
     "theme": "gamezone",
@@ -139,8 +139,8 @@
   {
     "id": "cartoon-city",
     "n": "104",
-    "name": "CARTOON CITY",
-    "ar": "مدينة الكرتون",
+    "name": "CARTOONS 2000s",
+    "ar": "كرتون الألفينات",
     "work": "CN / Nick / Disney / Jetix 2000-2013",
     "color": "#ff7a00",
     "theme": "cartoon",
@@ -364,8 +364,8 @@
   {
     "id": "after-school",
     "n": "107",
-    "name": "AFTER SCHOOL",
-    "ar": "بعد المدرسة",
+    "name": "TEEN SITCOMS",
+    "ar": "مسلسلات المراهقين",
     "work": "Nick / Disney / US sitcoms 1995-2013",
     "color": "#f4b942",
     "theme": "sitcom",
@@ -426,8 +426,8 @@
   {
     "id": "toon-orbit-gold",
     "n": "002",
-    "name": "CN",
-    "ar": "CN",
+    "name": "CARTOON NETWORK",
+    "ar": "كرتون نتورك",
     "work": "Cartoon Network Golden Era",
     "color": "#ff6a3d",
     "blocks": [
@@ -576,8 +576,8 @@
   {
     "id": "rebound",
     "n": "004",
-    "name": "REBOUND",
-    "ar": "ريباوند",
+    "name": "BOOMERANG",
+    "ar": "بوميرانج",
     "work": "Boomerang",
     "color": "#00b3a4",
     "blocks": [
@@ -601,8 +601,8 @@
   {
     "id": "orange-couch",
     "n": "006",
-    "name": "NICK",
-    "ar": "NICK",
+    "name": "NICKELODEON",
+    "ar": "نيكلوديون",
     "work": "Nickelodeon Retro",
     "color": "#ff8a00",
     "blocks": [
@@ -750,8 +750,8 @@
   {
     "id": "magic-hour",
     "n": "007",
-    "name": "DSNY",
-    "ar": "DSNY",
+    "name": "DISNEY CHANNEL",
+    "ar": "قناة ديزني",
     "work": "Disney Channel Classic / Disney XD",
     "color": "#7b6bff",
     "blocks": [
@@ -899,8 +899,8 @@
   {
     "id": "zap-kids",
     "n": "009",
-    "name": "ZAP! KIDS",
-    "ar": "زاب كيدز",
+    "name": "JETIX / FOX KIDS",
+    "ar": "جيتكس / فوكس كيدز",
     "work": "Jetix / Fox Kids",
     "color": "#e8003d",
     "blocks": [
@@ -929,8 +929,8 @@
   {
     "id": "comet",
     "n": "013",
-    "name": "COMET",
-    "ar": "المذنّب",
+    "name": "TOONAMI",
+    "ar": "تونامي",
     "work": "Toonami Retro",
     "color": "#00c2ff",
     "blocks": [
@@ -959,8 +959,8 @@
   {
     "id": "tokyo-tube",
     "n": "016",
-    "name": "TOKYO TUBE",
-    "ar": "طوكيو تيوب",
+    "name": "JAPANESE TV",
+    "ar": "التلفزيون الياباني",
     "work": "Japanese TV",
     "color": "#e8003d",
     "blocks": [
@@ -989,8 +989,8 @@
   {
     "id": "planet-toon",
     "n": "020",
-    "name": "PLANET TOON CLASSIC",
-    "ar": "كوكب الكرتون",
+    "name": "SPACETOON CLASSIC",
+    "ar": "سبيستون كلاسيك",
     "work": "Spacetoon Classic",
     "color": "#18c29c",
     "blocks": [
@@ -1029,8 +1029,8 @@
   {
     "id": "power-orbit",
     "n": "021",
-    "name": "POWER ORBIT",
-    "ar": "قوة المدار",
+    "name": "SPACE POWER",
+    "ar": "سبيس باور",
     "work": "Space Power / MBC Action",
     "color": "#3d5afe",
     "blocks": [
@@ -1054,8 +1054,8 @@
   {
     "id": "najma-3",
     "n": "023",
-    "name": "NAJMA 3",
-    "ar": "نجمة ٣",
+    "name": "MBC3 CLASSIC",
+    "ar": "MBC3 كلاسيك",
     "work": "MBC3 Classic",
     "color": "#ff5fa2",
     "blocks": [
@@ -1084,8 +1084,8 @@
   {
     "id": "dirati-tv",
     "n": "025",
-    "name": "DIRATI TV",
-    "ar": "ديرتي",
+    "name": "KUWAIT TV",
+    "ar": "تلفزيون الكويت",
     "work": "Kuwait Retro TV",
     "color": "#ffb627",
     "blocks": [
@@ -1125,8 +1125,8 @@
   {
     "id": "masrah-kuwait",
     "n": "027",
-    "name": "MASRAH KUWAIT",
-    "ar": "مسرح الكويت",
+    "name": "KUWAITI PLAYS",
+    "ar": "مسرحيات كويتية",
     "work": "مسرحيات كويتية",
     "color": "#c9a227",
     "blocks": [
@@ -1161,8 +1161,8 @@
   {
     "id": "khaleej-stage",
     "n": "028",
-    "name": "KHALEEJ STAGE",
-    "ar": "خشبة الخليج",
+    "name": "GULF PLAYS",
+    "ar": "مسرحيات خليجية",
     "work": "مسرحيات خليجية / Gulf TV",
     "color": "#8a2be2",
     "blocks": [
@@ -1181,8 +1181,8 @@
   {
     "id": "ramadan-nights",
     "n": "029",
-    "name": "RAMADAN NIGHTS",
-    "ar": "ليالي رمضان",
+    "name": "RAMADAN CLASSICS",
+    "ar": "كلاسيكيات رمضان",
     "work": "Ramadan classics",
     "color": "#2fbf71",
     "blocks": [
@@ -1206,8 +1206,8 @@
   {
     "id": "night-owl",
     "n": "030",
-    "name": "NIGHT OWL",
-    "ar": "بومة الليل",
+    "name": "ADULT SWIM",
+    "ar": "أدلت سويم",
     "work": "Adult Swim",
     "color": "#262633",
     "blocks": [
@@ -1227,8 +1227,8 @@
   {
     "id": "player-2",
     "n": "039",
-    "name": "PLAYER 2",
-    "ar": "اللاعب ٢",
+    "name": "G4 & TECHTV",
+    "ar": "G4 و TechTV",
     "work": "G4 / TechTV / retro gaming / E3",
     "color": "#ff2d55",
     "blocks": [
@@ -1257,8 +1257,8 @@
   {
     "id": "live-wire",
     "n": "040",
-    "name": "LIVE WIRE",
-    "ar": "البث المباشر",
+    "name": "FREE LIVE TV",
+    "ar": "بث مباشر مجاني",
     "work": "Free live TV",
     "color": "#ff2d55",
     "blocks": [
@@ -1272,8 +1272,8 @@
   {
     "id": "rewind-web",
     "n": "041",
-    "name": "REWIND WEB",
-    "ar": "ريوايند ويب",
+    "name": "CLASSIC YOUTUBE",
+    "ar": "يوتيوب زمان",
     "work": "Classic YouTube / Newgrounds / memes",
     "color": "#9b5cff",
     "blocks": [
@@ -1292,8 +1292,8 @@
   {
     "id": "byte-shop",
     "n": "042",
-    "name": "BYTE SHOP",
-    "ar": "متجر البايت",
+    "name": "RETRO TECH",
+    "ar": "تقنية زمان",
     "work": "Retro technology / TechTV",
     "color": "#5bffe1",
     "blocks": [
@@ -1307,8 +1307,8 @@
   {
     "id": "jukebox",
     "n": "047",
-    "name": "JUKEBOX",
-    "ar": "جوك بوكس",
+    "name": "MUSIC VIDEOS",
+    "ar": "أغاني مصورة",
     "work": "Music videos / anime openings",
     "color": "#ff5fa2",
     "blocks": [
@@ -1332,8 +1332,8 @@
   {
     "id": "goal",
     "n": "048",
-    "name": "GOAL!",
-    "ar": "قوووول",
+    "name": "FOOTBALL HIGHLIGHTS",
+    "ar": "أهداف كرة القدم",
     "work": "Football highlights",
     "color": "#2fbf71",
     "blocks": [
