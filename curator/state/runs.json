@@ -2,6 +2,18 @@
  {
   "cmd": "discover",
   "arg": null,
+  "started": "2026-11-26T17:08:59.868Z",
+  "discover": {
+   "added": 1500,
+   "rejected": 8151,
+   "unclassified": 240,
+   "seen": 1514
+  },
+  "finished": "2026-11-26T17:10:33.272Z"
+ },
+ {
+  "cmd": "discover",
+  "arg": null,
   "started": "2026-11-26T17:03:20.776Z",
   "discover": {
    "added": 1500,
