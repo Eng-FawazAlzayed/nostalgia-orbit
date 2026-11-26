@@ -63,6 +63,8 @@ async function addCandidate(lib, chId, seed, provider, ref, r, stats) {
   if ((stats.bySeries[sk] || 0) >= (seed.per_series_cap || 40)) { stats.capped = (stats.capped || 0) + 1; return; } // more next run
   stats.bySeries[sk] = (stats.bySeries[sk] || 0) + 1;
   const lang = seed.language || guessLanguage(r.title || '');
+  // Bumpers and ads live in their own series, so a show never turns into ad filler.
+  if (fill) name = 'Breaks · ' + name;
   const ser = lib.upsertSeries({
     title_en: hasArabic(name) || hasJapanese(name) ? (seed.series_en || '') : name,
     title_ar: hasArabic(name) ? name : (seed.series_ar || ''), title_ja: hasJapanese(name) ? name : '',

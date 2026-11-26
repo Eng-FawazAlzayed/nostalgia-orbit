@@ -25,8 +25,7 @@
      "*"
     ]
    },
-   "created": "2026-11-26T17:46:44.866Z",
-   "fill": true
+   "created": "2026-11-26T17:46:44.866Z"
   },
   "s-5q5d1u": {
    "id": "s-5q5d1u",
@@ -76,8 +75,7 @@
      "cn"
     ]
    },
-   "created": "2026-11-26T17:46:44.888Z",
-   "fill": true
+   "created": "2026-11-26T17:46:44.888Z"
   },
   "s-14r6vhd": {
    "id": "s-14r6vhd",
@@ -256,8 +254,7 @@
      "*"
     ]
    },
-   "created": "2026-11-26T17:47:04.639Z",
-   "fill": true
+   "created": "2026-11-26T17:47:04.639Z"
   },
   "s-bmg2aj": {
    "id": "s-bmg2aj",
@@ -282,8 +279,7 @@
      "*"
     ]
    },
-   "created": "2026-11-26T17:47:04.658Z",
-   "fill": true
+   "created": "2026-11-26T17:47:04.658Z"
   },
   "s-ofyaeb": {
    "id": "s-ofyaeb",
@@ -474,8 +470,7 @@
      "*"
     ]
    },
-   "created": "2026-11-26T17:47:16.302Z",
-   "fill": true
+   "created": "2026-11-26T17:47:16.302Z"
   },
   "s-730wod": {
    "id": "s-730wod",
@@ -11599,8 +11594,7 @@
      "gaming"
     ]
    },
-   "created": "2026-11-26T18:38:01.608Z",
-   "fill": true
+   "created": "2026-11-26T18:38:01.608Z"
   },
   "s-114r8f3": {
    "id": "s-114r8f3",
@@ -11717,8 +11711,7 @@
      "*"
     ]
    },
-   "created": "2026-11-26T18:38:11.990Z",
-   "fill": true
+   "created": "2026-11-26T18:38:11.990Z"
   },
   "s-1s6n4h3": {
    "id": "s-1s6n4h3",
@@ -11905,8 +11898,7 @@
      "overnight"
     ]
    },
-   "created": "2026-11-26T18:38:56.795Z",
-   "fill": true
+   "created": "2026-11-26T18:38:56.795Z"
   },
   "s-1l500bb": {
    "id": "s-1l500bb",
@@ -12756,6 +12748,210 @@
     ]
    },
    "created": "2026-11-26T18:57:47.584Z"
+  },
+  "s-pe0vx-breaks": {
+   "id": "s-pe0vx-breaks",
+   "titles": {
+    "en": "Breaks · Cartoon Network",
+    "ar": "",
+    "ja": ""
+   },
+   "year": null,
+   "kind": "series",
+   "language": "en",
+   "dub": "",
+   "subs": "",
+   "channels": {
+    "toon-orbit-gold": [
+     "afterschool",
+     "prime",
+     "day",
+     "overnight",
+     "morning"
+    ],
+    "cartoon-city": [
+     "*"
+    ]
+   },
+   "created": "2026-11-26T17:46:44.866Z",
+   "fill": true
+  },
+  "s-1thiqoa-breaks": {
+   "id": "s-1thiqoa-breaks",
+   "titles": {
+    "en": "Breaks · Powerpuff Girls",
+    "ar": "",
+    "ja": ""
+   },
+   "year": null,
+   "kind": "series",
+   "language": "en",
+   "dub": "",
+   "subs": "",
+   "channels": {
+    "toon-orbit-gold": [
+     "afterschool",
+     "prime",
+     "day",
+     "overnight",
+     "morning"
+    ],
+    "cartoon-city": [
+     "*",
+     "cn"
+    ]
+   },
+   "created": "2026-11-26T17:46:44.888Z",
+   "fill": true
+  },
+  "s-6144va-breaks": {
+   "id": "s-6144va-breaks",
+   "titles": {
+    "en": "Breaks · Nickelodeon",
+    "ar": "",
+    "ja": ""
+   },
+   "year": null,
+   "kind": "series",
+   "language": "en",
+   "dub": "",
+   "subs": "",
+   "channels": {
+    "orange-couch": [
+     "afterschool",
+     "day",
+     "overnight",
+     "morning"
+    ],
+    "cartoon-city": [
+     "*"
+    ]
+   },
+   "created": "2026-11-26T17:47:04.639Z",
+   "fill": true
+  },
+  "s-bmg2aj-breaks": {
+   "id": "s-bmg2aj-breaks",
+   "titles": {
+    "en": "Breaks · SpongeBob SquarePants",
+    "ar": "",
+    "ja": ""
+   },
+   "year": null,
+   "kind": "series",
+   "language": "en",
+   "dub": "",
+   "subs": "",
+   "channels": {
+    "orange-couch": [
+     "afterschool",
+     "day",
+     "overnight",
+     "morning"
+    ],
+    "cartoon-city": [
+     "*"
+    ]
+   },
+   "created": "2026-11-26T17:47:04.658Z",
+   "fill": true
+  },
+  "s-190gdq2-breaks": {
+   "id": "s-190gdq2-breaks",
+   "titles": {
+    "en": "Breaks · Disney Channel",
+    "ar": "",
+    "ja": ""
+   },
+   "year": null,
+   "kind": "series",
+   "language": "en",
+   "dub": "",
+   "subs": "",
+   "channels": {
+    "magic-hour": [
+     "day",
+     "overnight"
+    ],
+    "cartoon-city": [
+     "*"
+    ]
+   },
+   "created": "2026-11-26T17:47:16.302Z",
+   "fill": true
+  },
+  "s-jyasi-breaks": {
+   "id": "s-jyasi-breaks",
+   "titles": {
+    "en": "Breaks · Japanese",
+    "ar": "",
+    "ja": ""
+   },
+   "year": null,
+   "kind": "series",
+   "language": "en",
+   "dub": "",
+   "subs": "",
+   "channels": {
+    "japan-2000": [
+     "variety",
+     "city",
+     "*",
+     "gaming"
+    ]
+   },
+   "created": "2026-11-26T18:38:01.608Z",
+   "fill": true
+  },
+  "s-166a6w5-breaks": {
+   "id": "s-166a6w5-breaks",
+   "titles": {
+    "en": "Breaks · Japan",
+    "ar": "",
+    "ja": ""
+   },
+   "year": null,
+   "kind": "series",
+   "language": "en",
+   "dub": "",
+   "subs": "",
+   "channels": {
+    "japan-2000": [
+     "city",
+     "gaming",
+     "*"
+    ]
+   },
+   "created": "2026-11-26T18:38:11.990Z",
+   "fill": true
+  },
+  "s-1568m29-breaks": {
+   "id": "s-1568m29-breaks",
+   "titles": {
+    "en": "Breaks · Ben 10",
+    "ar": "",
+    "ja": ""
+   },
+   "year": null,
+   "kind": "interstitial",
+   "language": "en",
+   "dub": "",
+   "subs": "",
+   "channels": {
+    "cartoon-city": [
+     "*",
+     "cn"
+    ],
+    "toon-orbit-gold": [
+     "afterschool",
+     "prime",
+     "day",
+     "morning",
+     "overnight"
+    ]
+   },
+   "created": "2026-11-26T18:38:56.795Z",
+   "fill": true
   }
  },
  "episodes": {
@@ -12932,7 +13128,7 @@
   },
   "e-1aqvgpo": {
    "id": "e-1aqvgpo",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -12951,7 +13147,7 @@
   },
   "e-1uh6ns1": {
    "id": "e-1uh6ns1",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -12989,7 +13185,7 @@
   },
   "e-t46hta": {
    "id": "e-t46hta",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13046,7 +13242,7 @@
   },
   "e-cmksib": {
    "id": "e-cmksib",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13160,7 +13356,7 @@
   },
   "e-1vr39kb": {
    "id": "e-1vr39kb",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13217,7 +13413,7 @@
   },
   "e-1aliz57": {
    "id": "e-1aliz57",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13293,7 +13489,7 @@
   },
   "e-hjbpjl": {
    "id": "e-hjbpjl",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13350,7 +13546,7 @@
   },
   "e-ywrf5i": {
    "id": "e-ywrf5i",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13388,7 +13584,7 @@
   },
   "e-91o0ep": {
    "id": "e-91o0ep",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13616,7 +13812,7 @@
   },
   "e-dgspzo": {
    "id": "e-dgspzo",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13635,7 +13831,7 @@
   },
   "e-15wgo2e": {
    "id": "e-15wgo2e",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13673,7 +13869,7 @@
   },
   "e-981g1i": {
    "id": "e-981g1i",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13692,7 +13888,7 @@
   },
   "e-1di8qlc": {
    "id": "e-1di8qlc",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13711,7 +13907,7 @@
   },
   "e-wnljnt": {
    "id": "e-wnljnt",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13730,7 +13926,7 @@
   },
   "e-car4m1": {
    "id": "e-car4m1",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13768,7 +13964,7 @@
   },
   "e-mdb74u": {
    "id": "e-mdb74u",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13825,7 +14021,7 @@
   },
   "e-7yv7oa": {
    "id": "e-7yv7oa",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13844,7 +14040,7 @@
   },
   "e-g1fe7v": {
    "id": "e-g1fe7v",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13882,7 +14078,7 @@
   },
   "e-1jqpes2": {
    "id": "e-1jqpes2",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -13901,7 +14097,7 @@
   },
   "e-140lieb": {
    "id": "e-140lieb",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -14129,7 +14325,7 @@
   },
   "e-11r4sre": {
    "id": "e-11r4sre",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -14224,7 +14420,7 @@
   },
   "e-ti47c1": {
    "id": "e-ti47c1",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -14243,7 +14439,7 @@
   },
   "e-tcx9km": {
    "id": "e-tcx9km",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -14281,7 +14477,7 @@
   },
   "e-fa00oc": {
    "id": "e-fa00oc",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -14300,7 +14496,7 @@
   },
   "e-hi082r": {
    "id": "e-hi082r",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -14357,7 +14553,7 @@
   },
   "e-1scdcmq": {
    "id": "e-1scdcmq",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -14376,7 +14572,7 @@
   },
   "e-106gnsp": {
    "id": "e-106gnsp",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -14566,7 +14762,7 @@
   },
   "e-niswdt": {
    "id": "e-niswdt",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -14794,7 +14990,7 @@
   },
   "e-1p0w6s1": {
    "id": "e-1p0w6s1",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -14851,7 +15047,7 @@
   },
   "e-fgxqp8": {
    "id": "e-fgxqp8",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -14908,7 +15104,7 @@
   },
   "e-5q8jcw": {
    "id": "e-5q8jcw",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -14946,7 +15142,7 @@
   },
   "e-pylhbb": {
    "id": "e-pylhbb",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -62655,7 +62851,7 @@
   },
   "e-1hdw2uf": {
    "id": "e-1hdw2uf",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77095,7 +77291,7 @@
   },
   "e-1qpn7d7": {
    "id": "e-1qpn7d7",
-   "series": "s-166a6w5",
+   "series": "s-166a6w5-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77152,7 +77348,7 @@
   },
   "e-1ag9kf": {
    "id": "e-1ag9kf",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77171,7 +77367,7 @@
   },
   "e-tden30": {
    "id": "e-tden30",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77190,7 +77386,7 @@
   },
   "e-1fa73iu": {
    "id": "e-1fa73iu",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77551,7 +77747,7 @@
   },
   "e-166obfp": {
    "id": "e-166obfp",
-   "series": "s-166a6w5",
+   "series": "s-166a6w5-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77570,7 +77766,7 @@
   },
   "e-1iexuwf": {
    "id": "e-1iexuwf",
-   "series": "s-166a6w5",
+   "series": "s-166a6w5-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77589,7 +77785,7 @@
   },
   "e-nkvhkz": {
    "id": "e-nkvhkz",
-   "series": "s-166a6w5",
+   "series": "s-166a6w5-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77608,7 +77804,7 @@
   },
   "e-qvosjg": {
    "id": "e-qvosjg",
-   "series": "s-166a6w5",
+   "series": "s-166a6w5-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77627,7 +77823,7 @@
   },
   "e-1uxprp4": {
    "id": "e-1uxprp4",
-   "series": "s-166a6w5",
+   "series": "s-166a6w5-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77646,7 +77842,7 @@
   },
   "e-wmc8bo": {
    "id": "e-wmc8bo",
-   "series": "s-166a6w5",
+   "series": "s-166a6w5-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77665,7 +77861,7 @@
   },
   "e-g6982l": {
    "id": "e-g6982l",
-   "series": "s-166a6w5",
+   "series": "s-166a6w5-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77684,7 +77880,7 @@
   },
   "e-smvv29": {
    "id": "e-smvv29",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77703,7 +77899,7 @@
   },
   "e-1ymc30y": {
    "id": "e-1ymc30y",
-   "series": "s-166a6w5",
+   "series": "s-166a6w5-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77722,7 +77918,7 @@
   },
   "e-1x4oaav": {
    "id": "e-1x4oaav",
-   "series": "s-166a6w5",
+   "series": "s-166a6w5-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77741,7 +77937,7 @@
   },
   "e-1wdq97a": {
    "id": "e-1wdq97a",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77760,7 +77956,7 @@
   },
   "e-1cvltep": {
    "id": "e-1cvltep",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77779,7 +77975,7 @@
   },
   "e-1wwgej1": {
    "id": "e-1wwgej1",
-   "series": "s-166a6w5",
+   "series": "s-166a6w5-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77798,7 +77994,7 @@
   },
   "e-1kso6ly": {
    "id": "e-1kso6ly",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -77817,7 +78013,7 @@
   },
   "e-1p6di1y": {
    "id": "e-1p6di1y",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -79242,7 +79438,7 @@
   },
   "e-1czs4a1": {
    "id": "e-1czs4a1",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -79280,7 +79476,7 @@
   },
   "e-100x0y6": {
    "id": "e-100x0y6",
-   "series": "s-1568m29",
+   "series": "s-1568m29-breaks",
    "season": 1,
    "episode": 0,
    "titles": {
@@ -79337,7 +79533,7 @@
   },
   "e-1r1rf4j": {
    "id": "e-1r1rf4j",
-   "series": "s-190gdq2",
+   "series": "s-190gdq2-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -79356,7 +79552,7 @@
   },
   "e-1tt9gen": {
    "id": "e-1tt9gen",
-   "series": "s-bmg2aj",
+   "series": "s-bmg2aj-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -79375,7 +79571,7 @@
   },
   "e-1lvymtl": {
    "id": "e-1lvymtl",
-   "series": "s-6144va",
+   "series": "s-6144va-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -79394,7 +79590,7 @@
   },
   "e-1lbzffn": {
    "id": "e-1lbzffn",
-   "series": "s-6144va",
+   "series": "s-6144va-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -79413,7 +79609,7 @@
   },
   "e-93sdgg": {
    "id": "e-93sdgg",
-   "series": "s-1thiqoa",
+   "series": "s-1thiqoa-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -79451,7 +79647,7 @@
   },
   "e-1wwzszf": {
    "id": "e-1wwzszf",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -79470,7 +79666,7 @@
   },
   "e-b808yi": {
    "id": "e-b808yi",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -79489,7 +79685,7 @@
   },
   "e-1tf5ycz": {
    "id": "e-1tf5ycz",
-   "series": "s-190gdq2",
+   "series": "s-190gdq2-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86158,7 +86354,7 @@
   },
   "e-1p3j4tu": {
    "id": "e-1p3j4tu",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86196,7 +86392,7 @@
   },
   "e-q8uyrf": {
    "id": "e-q8uyrf",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86215,7 +86411,7 @@
   },
   "e-fx0o1": {
    "id": "e-fx0o1",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86519,7 +86715,7 @@
   },
   "e-51mhvt": {
    "id": "e-51mhvt",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86538,7 +86734,7 @@
   },
   "e-4w53rl": {
    "id": "e-4w53rl",
-   "series": "s-166a6w5",
+   "series": "s-166a6w5-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86557,7 +86753,7 @@
   },
   "e-1j7fxiz": {
    "id": "e-1j7fxiz",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86576,7 +86772,7 @@
   },
   "e-enwfnp": {
    "id": "e-enwfnp",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86595,7 +86791,7 @@
   },
   "e-17u2poq": {
    "id": "e-17u2poq",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86614,7 +86810,7 @@
   },
   "e-5vxtwr": {
    "id": "e-5vxtwr",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86633,7 +86829,7 @@
   },
   "e-7kpphu": {
    "id": "e-7kpphu",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86652,7 +86848,7 @@
   },
   "e-dkkfsf": {
    "id": "e-dkkfsf",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86671,7 +86867,7 @@
   },
   "e-1qqclhm": {
    "id": "e-1qqclhm",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86690,7 +86886,7 @@
   },
   "e-5noy9": {
    "id": "e-5noy9",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86709,7 +86905,7 @@
   },
   "e-ijbbkd": {
    "id": "e-ijbbkd",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86728,7 +86924,7 @@
   },
   "e-gzt1ak": {
    "id": "e-gzt1ak",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86747,7 +86943,7 @@
   },
   "e-jcrel": {
    "id": "e-jcrel",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -86766,7 +86962,7 @@
   },
   "e-19v0kd5": {
    "id": "e-19v0kd5",
-   "series": "s-jyasi",
+   "series": "s-jyasi-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -88210,7 +88406,7 @@
   },
   "e-1lpn6g6": {
    "id": "e-1lpn6g6",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -88400,7 +88596,7 @@
   },
   "e-1gigb5o": {
    "id": "e-1gigb5o",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -88419,7 +88615,7 @@
   },
   "e-16m26ug": {
    "id": "e-16m26ug",
-   "series": "s-pe0vx",
+   "series": "s-pe0vx-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -88438,7 +88634,7 @@
   },
   "e-1mg0jw8": {
    "id": "e-1mg0jw8",
-   "series": "s-6144va",
+   "series": "s-6144va-breaks",
    "season": 0,
    "episode": 0,
    "titles": {
@@ -261641,7 +261837,7 @@
    "created": "2026-11-26T18:57:48.571Z"
   }
  },
- "updated": "2026-11-26T18:58:38.492Z",
+ "updated": "2026-11-26T18:58:52.852Z",
  "ia_items": {
   "1202": "2026-11-26",
   "tanpa-filter-capcut-template-4": "2026-11-26",
