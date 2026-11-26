@@ -110,3 +110,36 @@ body.lowperf #banner, body.lowperf .panel { background: #1a3f95; box-shadow: non
 body.lowperf .p-head { background: #c8d0e0; }
 body.lowperf .b-num { background: #ffd23f; }
 body.lowperf .card-name { text-shadow: none; }
+
+/* ---------- channel looks (original designs inspired by each era, not real network branding) ---------- */
+#dog { position: absolute; right: 4.5vw; top: 5vh; z-index: 2; font-family: Impact, "Arial Black", sans-serif; font-size: 3.2vh;
+  letter-spacing: 0.05em; color: #fff; opacity: 0.55; text-shadow: 0 0 0.6vh rgba(0,0,0,0.8); pointer-events: none; }
+.th-gamezone .card { background: #0d1117; background-image: linear-gradient(135deg, #0d1117 0%, #1b2430 60%, #0d1117 100%); }
+.th-gamezone .card-name { color: #7cff3f; font-style: italic; text-shadow: 0.4vh 0.4vh 0 #ff6a00; }
+.th-gamezone .card-sub { color: #ff6a00; }
+.th-gamezone #dog { color: #7cff3f; font-style: italic; }
+.th-xp .card { background: #245edb; background-image: linear-gradient(180deg, #2c6fe8 0%, #245edb 70%, #1c4fbf 100%); }
+.th-xp .card-name { font-family: Tahoma, "Trebuchet MS", Verdana, sans-serif; font-weight: bold; text-shadow: 0.3vh 0.3vh 0 #0b2e85; }
+.th-xp .card-sub { color: #fff; background: #3c9a3c; padding: 0.6vh 2vw; border-radius: 1.2vh; }
+.th-xp #dog { font-family: Tahoma, Verdana, sans-serif; font-weight: bold; color: #fff; }
+.th-japan .card { background: #fafafa; background-image: linear-gradient(180deg, #ffffff 0%, #f1f1f1 100%); color: #111; }
+.th-japan .card-name { color: #e60033; font-family: "Hiragino Kaku Gothic ProN", "Meiryo", "MS Gothic", Arial, sans-serif; text-shadow: none; }
+.th-japan .card-sub { color: #ff2fb0; }
+.th-japan #dog { color: #e60033; background: #fff; padding: 0.2vh 1vw; opacity: 0.8; text-shadow: none; }
+.th-cartoon .card { background: #ff7a00; background-image: linear-gradient(135deg, #ff7a00 0%, #ff3d7f 50%, #8a2be2 100%); }
+.th-cartoon .card-name { font-family: "Comic Sans MS", "Chalkboard SE", Impact, sans-serif; text-shadow: 0.5vh 0.5vh 0 #2b0a4a; }
+.th-cartoon #dog { font-family: "Comic Sans MS", Impact, sans-serif; color: #ffe14d; }
+.th-planets .card { background: #1a0640; background-image: radial-gradient(circle at 70% 30%, #6a2bd6 0%, #2a0a5e 35%, #0d0320 100%); }
+.th-planets .card-name { color: #ffd23f; font-family: Tahoma, "Arial", sans-serif; text-shadow: 0 0 2vh #9b5cff; }
+.th-planets #dog { color: #ffd23f; font-family: Tahoma, Arial, sans-serif; }
+.th-kuwait .card { background: #e9d8a6; background-image: linear-gradient(180deg, #007a3d 0%, #007a3d 25%, #f7f1e1 25%, #f7f1e1 75%, #ce1126 75%, #ce1126 100%); color: #111; }
+.th-kuwait .card-name { color: #111; font-family: Tahoma, Arial, sans-serif; text-shadow: none; }
+.th-kuwait .card-sub { color: #007a3d; }
+.th-kuwait #dog { color: #fff; font-family: Tahoma, Arial, sans-serif; }
+.th-sitcom .card { background: #f4b942; background-image: linear-gradient(180deg, #f4b942 0%, #c8562d 100%); }
+.th-sitcom .card-name { font-family: Georgia, "Times New Roman", serif; font-style: italic; text-shadow: 0.4vh 0.4vh 0 #6b2a12; }
+.th-sitcom #dog { font-family: Georgia, serif; font-style: italic; }
+.th-vhs .card { background: #111; background-image: repeating-linear-gradient(0deg, #151515 0, #151515 0.4vh, #222 0.4vh, #222 0.8vh); }
+.th-vhs .card-name { color: #fff; font-family: "Courier New", monospace; text-shadow: 0.4vh 0 0 #ff0040, -0.4vh 0 0 #00e5ff; }
+.th-vhs .card-sub { color: #9f9; }
+.th-vhs #dog { font-family: "Courier New", monospace; color: #fff; }

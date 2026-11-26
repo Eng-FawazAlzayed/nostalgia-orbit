@@ -39,6 +39,10 @@ async function addCandidate(lib, chId, seed, provider, ref, r, stats) {
     r = { ...r, year: years[0] || r.year };
   }
   if (seed.exclude && new RegExp(seed.exclude, 'i').test(r.title || '')) { stats.rejected++; return; }
+  if (seed.published_range && r.published) { // early-YouTube channels: only uploads from the era
+    const y = +String(r.published).slice(0, 4), [plo, phi] = seed.published_range;
+    if (y < plo || y > phi) { stats.rejected++; return; }
+  }
   if (!r.live && r.duration && (r.duration < minS || r.duration > maxS)) { stats.rejected++; return; }
   if (!fill && !seed.allow_clips && looksLikeClip(r.title || '')) { stats.rejected++; return; }
   if (provider === 'youtube' && seed.authorization !== 'official' && !config.allow_unknown_youtube_uploaders) { stats.rejected++; return; }

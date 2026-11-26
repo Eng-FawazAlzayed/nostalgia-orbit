@@ -152,6 +152,7 @@
     chIdx = (i + list.length) % list.length;
     var c = list[chIdx];
     cfg.lastCh = c.id; saveCfg();
+    look(c);
     var my = ++tuneToken;
     P.stop(); playingSrc = null;
     show($('black'), true);
@@ -170,6 +171,12 @@
     if (r.item.type === 'filler') { show($('black'), false); identCard(c, r); return; }
     var srcs = S.pickSources(r.item.ep, P.caps(), failed, now());
     trySource(my, c, r.item, srcs, 0);
+  }
+  // Each channel's own look: ident card style and a small corner logo, like a real station.
+  function look(c) {
+    $('tv').className = c.theme ? 'th-' + c.theme : '';
+    var d = $('dog'); d.textContent = c.dog || chName(c); d.setAttribute('dir', 'auto');
+    show(d, cfg.dog !== false && !!c.theme);
   }
   function identCard(c, r) {
     var nx = r.next && r.next.type === 'ep' ? epTitle(r.next) + ' · ' + S.kuwaitClock(r.next.s) : '';

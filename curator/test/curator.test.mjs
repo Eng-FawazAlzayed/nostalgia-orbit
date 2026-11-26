@@ -122,3 +122,31 @@ test('Gulf plays need a 1990-2010 release year in the title', async () => {
   assert.deepEqual(years('مسرحية 30 يوم حب 1973'), [1973]);
   assert.deepEqual(years('مسرحية 24 ساعة'), []);
 });
+
+test('Internet Archive: every video in an item, best playable copy, lengths, moved files', async () => {
+  const { playableFiles, lengthOf } = await import('../src/providers/archive.mjs');
+  assert.equal(lengthOf('00:22:10'), 1330); assert.equal(lengthOf('1342.6'), 1343); assert.equal(lengthOf('22:10'), 1330);
+  const files = playableFiles({ files: [
+    { name: 'ep02.avi', source: 'original', length: '1300' },
+    { name: 'ep02.mp4', source: 'derivative', original: 'ep02.avi', format: 'h.264', height: '480', length: '1300.2' },
+    { name: 'ep01.mkv', source: 'original' },
+    { name: 'ep01.mp4', source: 'derivative', original: 'ep01.mkv', format: 'h.264 IA', height: '480', length: '00:21:40' },
+    { name: 'ep03.avi', source: 'original' },             // no browser-playable copy: skipped
+    { name: 'cover.jpg', source: 'original' }] });
+  assert.deepEqual(files.map(f => f.name), ['ep01.mp4', 'ep02.mp4']);
+  assert.equal(files[0].length, 1300);
+});
+
+test('one show on several channels without copies; mixed channel follows weights', async () => {
+  const { collect } = await import('../src/build.mjs');
+  const series = { a: { t: { en: "Dexter's Laboratory" }, ch: { 'toon-orbit-gold': ['prime'] } }, b: { t: { en: 'Some Modern Show' }, ch: { 'toon-orbit-gold': ['prime'] } } };
+  collect(series, [{ id: 'cartoon-city', collect: [{ from: ['toon-orbit-gold'], shows: ["Dexter's Laboratory"], tags: ['cn'] }] }]);
+  assert.deepEqual(series.a.ch['cartoon-city'], ['cn']);
+  assert.equal(series.b.ch['cartoon-city'], undefined);
+  const S = (await import('node:module')).createRequire(import.meta.url)('../../shared/schedule.js');
+  const eps = []; for (let i = 0; i < 30; i++) { eps.push({ id: 'j' + i, s: 'j', ep: i + 1, d: 600, src: [{ p: 'yt', r: 'J' + i }] }); eps.push({ id: 'k' + i, s: 'k', ep: i + 1, d: 600, src: [{ p: 'yt', r: 'K' + i }] }); }
+  const idx = new S.Index({ channels: [{ id: 'j', n: '1', blocks: [] }, { id: 'k', n: '2', blocks: [] }, { id: 'mix', n: '3', mix: { j: 3, k: 1 }, blocks: [{ f: '06:00', t: '06:00', g: '*all' }] }],
+    series: { j: { t: { en: 'J' }, ch: { j: ['*'] } }, k: { t: { en: 'K' }, ch: { k: ['*'] } } }, episodes: eps });
+  const first = idx.playlist('mix', '*all').items.slice(0, 8).map(e => e.s).join('');
+  assert.equal(first.split('j').length - 1, 6, first);
+});

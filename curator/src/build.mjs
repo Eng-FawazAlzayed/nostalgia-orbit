@@ -5,6 +5,7 @@ import path from 'node:path';
 import { DATA, OUT, ROOT, readJSON, writeJSON, nowIso, log } from './util.mjs';
 import { isPublishable } from './maintain.mjs';
 import { usageSummary } from './budget.mjs';
+import { matchShow } from './titles.mjs';
 
 const P = { youtube: 'yt', archive: 'ia' };
 
@@ -35,9 +36,31 @@ export function compact(lib, channels, now = Date.now()) {
   for (const id of usedSeries) {
     const s = lib.d.series[id];
     const t = {}; for (const k of ['en', 'ar', 'ja']) if (s.titles[k]) t[k] = s.titles[k];
-    series[id] = { t, y: s.year || undefined, ch: s.channels, fill: s.fill || undefined };
+    series[id] = { t, y: s.year || undefined, ch: { ...s.channels }, fill: s.fill || undefined };
   }
+  collect(series, channels);
   return { v: 1, generated: nowIso(), channels, series, episodes };
+}
+
+// One show, many channels: a channel with "collect" also airs matching shows that were
+// found for other channels (e.g. 104 Cartoon City takes Dexter's Lab from 002), without
+// copying any records.
+export function collect(series, channels) {
+  const lists = readJSON(path.join(DATA, 'seeds.json'), {}).show_lists || {};
+  for (const c of channels) {
+    for (const g of [].concat(c.collect || [])) {
+    const from = g.from === '*' ? null : new Set(g.from || []);
+    const shows = [].concat(g.shows || [], ...[].concat(g.shows_ref || []).map(k => lists[k] || []));
+    const notFrom = new Set(g.not_from || []);
+    for (const s of Object.values(series)) {
+      if (s.fill && !g.fill) continue;
+      const owners = Object.keys(s.ch).filter(k => k !== c.id && !notFrom.has(k));
+      if (!owners.length || (from && !owners.some(k => from.has(k)))) continue;
+      if (!s.fill && shows.length && !(matchShow(s.t.en || '', shows) || matchShow(s.t.ar || '', shows) || matchShow(s.t.ja || '', shows))) continue;
+      const cur = new Set(s.ch[c.id] || []); for (const t of g.tags || ['*all']) cur.add(t); s.ch[c.id] = [...cur];
+    }
+    }
+  }
 }
 
 export function stats(lib, catalog, extra = {}) {

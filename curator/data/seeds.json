@@ -1,6 +1,2544 @@
 {
-  "_note": "Starting points for discovery, NOT the catalog. Any free online source is allowed (Fazeen, 2026-11-26); every video is still checked (exists, embeddable, not age-restricted, plays in Kuwait, right length) before it can air, and the copy that plays most reliably is preferred. Show lists keep each channel to its classic shows. Searches cost 100 API units each and are cached 30 days.",
+  "_note": "Starting points for discovery, NOT the catalog. Any free online source is allowed (Fazeen, 2026-11-26); every video is still checked (exists, embeddable, not age-restricted, plays in Kuwait, right length) before it can air, and the copy that plays most reliably is preferred. Show lists keep each channel to its classic shows. Searches cost 100 API units each and are cached 30 days. Channels 101-107 search the Internet Archive first (free, no quota), then YouTube.",
   "channels": {
+    "gamezone": {
+      "archive": [
+        {
+          "query": "title:(\"x-play\" OR xplay OR \"extended play\" OR \"gamespot tv\" OR \"game makers\" OR cinematech OR \"attack of the show\" OR \"electric playground\" OR \"reviews on the run\" OR \"gametrailers\" OR \"bonus round\" OR \"judgment day\" OR \"g4 icons\" OR \"filter\" OR \"cheat!\")",
+          "tags": [
+            "shows"
+          ],
+          "rows": 400,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "gaming_shows",
+          "one_offs": true,
+          "min_minutes": 10,
+          "recorded_range": [
+            1998,
+            2013
+          ]
+        },
+        {
+          "query": "(e3 OR \"electronic entertainment expo\") AND (press conference OR keynote OR conference) AND year:[2000 TO 2013]",
+          "tags": [
+            "e3"
+          ],
+          "rows": 400,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "gaming_shows",
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "query": "(\"tokyo game show\" OR \"nintendo direct\" OR \"space world\" OR spaceworld) AND year:[1998 TO 2013]",
+          "tags": [
+            "e3"
+          ],
+          "rows": 400,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "gaming_shows",
+          "one_offs": true,
+          "min_minutes": 5,
+          "allow_clips": true
+        },
+        {
+          "query": "collection:gamevideos",
+          "tags": [
+            "reviews",
+            "shows"
+          ],
+          "rows": 800,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "franchises",
+          "one_offs": true,
+          "min_minutes": 3,
+          "allow_clips": true
+        },
+        {
+          "query": "collection:speed_runs",
+          "tags": [
+            "docs"
+          ],
+          "rows": 600,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "franchises",
+          "one_offs": true,
+          "min_minutes": 10,
+          "allow_clips": true,
+          "series": "Speed Demos Archive"
+        },
+        {
+          "query": "(\"playstation underground\" OR \"nintendo power\" OR \"demo disc\" OR \"promotional video\" OR \"promo vhs\" OR \"dreamcast\" OR \"gamecube\" OR \"ps2\") AND (vhs OR dvd OR promo OR promotional)",
+          "tags": [
+            "reviews"
+          ],
+          "rows": 400,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "franchises",
+          "one_offs": true,
+          "min_minutes": 3,
+          "allow_clips": true
+        },
+        {
+          "query": "(video game OR videogame) AND (documentary OR \"making of\" OR interview OR retrospective)",
+          "tags": [
+            "docs"
+          ],
+          "rows": 400,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "franchises",
+          "one_offs": true,
+          "min_minutes": 10,
+          "allow_clips": true
+        }
+      ],
+      "youtube_searches": [
+        {
+          "q": "X-Play full episode G4 2005",
+          "tags": [
+            "shows"
+          ],
+          "duration": "long",
+          "shows_ref": "gaming_shows",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "GameTrailers TV full episode",
+          "tags": [
+            "shows"
+          ],
+          "duration": "long",
+          "shows_ref": "gaming_shows",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "Bonus Round GameTrailers full",
+          "tags": [
+            "shows"
+          ],
+          "duration": "long",
+          "shows_ref": "gaming_shows",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "GameTrailers retrospective Final Fantasy",
+          "tags": [
+            "docs"
+          ],
+          "duration": "medium",
+          "shows_ref": "franchises",
+          "one_offs": true,
+          "min_minutes": 4,
+          "allow_clips": true
+        },
+        {
+          "q": "GameTrailers retrospective Zelda Mario Metal Gear",
+          "tags": [
+            "docs"
+          ],
+          "duration": "medium",
+          "shows_ref": "franchises",
+          "one_offs": true,
+          "min_minutes": 4,
+          "allow_clips": true
+        },
+        {
+          "q": "Nintendo E3 2004 press conference full",
+          "tags": [
+            "e3"
+          ],
+          "duration": "long",
+          "shows_ref": "gaming_shows",
+          "one_offs": true,
+          "min_minutes": 30
+        },
+        {
+          "q": "Sony E3 2006 press conference full",
+          "tags": [
+            "e3"
+          ],
+          "duration": "long",
+          "shows_ref": "gaming_shows",
+          "one_offs": true,
+          "min_minutes": 30
+        },
+        {
+          "q": "Nintendo Direct 2012 full",
+          "tags": [
+            "e3"
+          ],
+          "duration": "medium",
+          "shows_ref": "gaming_shows",
+          "one_offs": true,
+          "min_minutes": 10
+        },
+        {
+          "q": "Tokyo Game Show 2005 footage",
+          "tags": [
+            "e3"
+          ],
+          "duration": "medium",
+          "shows_ref": "gaming_shows",
+          "one_offs": true,
+          "min_minutes": 5,
+          "allow_clips": true
+        },
+        {
+          "q": "GameSpot video review 2007 PS3",
+          "tags": [
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "franchises",
+          "one_offs": true,
+          "min_minutes": 4,
+          "allow_clips": true,
+          "published_range": [
+            2006,
+            2013
+          ]
+        },
+        {
+          "q": "IGN video review 2008 Wii",
+          "tags": [
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "franchises",
+          "one_offs": true,
+          "min_minutes": 4,
+          "allow_clips": true,
+          "published_range": [
+            2006,
+            2013
+          ]
+        },
+        {
+          "q": "PlayStation Underground disc video",
+          "tags": [
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "franchises",
+          "one_offs": true,
+          "min_minutes": 4,
+          "allow_clips": true
+        },
+        {
+          "q": "JRPG documentary Squaresoft history",
+          "tags": [
+            "docs"
+          ],
+          "duration": "long",
+          "shows_ref": "franchises",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "PS2 trailer 2003",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "franchises",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "GameCube commercial",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "franchises",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Final Fantasy trailer PS2",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "franchises",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Kingdom Hearts trailer 2005",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "franchises",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Nintendo DS commercial 2006",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "franchises",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Dreamcast commercial",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "franchises",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "G4 bumper",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        }
+      ]
+    },
+    "internet-2006": {
+      "archive": [
+        {
+          "query": "title:(\"homestar runner\" OR \"strong bad\" OR eddsworld OR \"salad fingers\" OR \"happy tree friends\" OR \"charlie the unicorn\" OR \"animator vs\" OR \"red vs blue\" OR \"red vs. blue\" OR \"baman piderman\" OR \"llamas with hats\" OR \"madness combat\")",
+          "tags": [
+            "flash",
+            "web"
+          ],
+          "rows": 400,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "internet_era",
+          "one_offs": true,
+          "min_minutes": 1,
+          "allow_clips": true
+        },
+        {
+          "query": "collection:machinima",
+          "tags": [
+            "web"
+          ],
+          "rows": 800,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "internet_era",
+          "one_offs": true,
+          "min_minutes": 2,
+          "allow_clips": true,
+          "match_files": true
+        },
+        {
+          "query": "(newgrounds OR \"flash animation\" OR \"flash cartoon\") AND (mp4 OR video)",
+          "tags": [
+            "flash"
+          ],
+          "rows": 600,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "internet_era",
+          "one_offs": true,
+          "min_minutes": 1,
+          "allow_clips": true
+        },
+        {
+          "query": "title:(diggnation OR hak5 OR \"net cafe\" OR \"screen savers\")",
+          "tags": [
+            "tech"
+          ],
+          "rows": 400,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "internet_era",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "query": "(\"youtube\" AND (2006 OR 2007 OR 2008) AND (viral OR meme))",
+          "tags": [
+            "web"
+          ],
+          "rows": 400,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "internet_era",
+          "one_offs": true,
+          "min_minutes": 0.5,
+          "allow_clips": true
+        }
+      ],
+      "youtube_handles": [
+        {
+          "handle": "@Cinemassacre",
+          "tags": [
+            "web"
+          ],
+          "min_minutes": 5,
+          "published_range": [
+            2006,
+            2013
+          ],
+          "shows_ref": "internet_era",
+          "one_offs": true
+        },
+        {
+          "handle": "@homestarrunnerdotcom",
+          "tags": [
+            "flash"
+          ],
+          "min_minutes": 1,
+          "one_offs": true,
+          "allow_clips": true,
+          "series": "Homestar Runner"
+        },
+        {
+          "handle": "@eddsworld",
+          "tags": [
+            "flash"
+          ],
+          "min_minutes": 1,
+          "published_range": [
+            2004,
+            2013
+          ],
+          "one_offs": true,
+          "allow_clips": true,
+          "series": "Eddsworld"
+        },
+        {
+          "handle": "@AlanBecker",
+          "tags": [
+            "flash"
+          ],
+          "min_minutes": 1,
+          "one_offs": true,
+          "allow_clips": true,
+          "title_filter": "animator vs|animation vs",
+          "series": "Animator vs. Animation"
+        },
+        {
+          "handle": "@FilmCow",
+          "tags": [
+            "flash"
+          ],
+          "min_minutes": 1,
+          "one_offs": true,
+          "allow_clips": true,
+          "title_filter": "charlie|llamas",
+          "series": "FilmCow"
+        },
+        {
+          "handle": "@DavidFirth",
+          "tags": [
+            "flash"
+          ],
+          "min_minutes": 1,
+          "one_offs": true,
+          "allow_clips": true,
+          "title_filter": "salad fingers",
+          "series": "Salad Fingers"
+        },
+        {
+          "handle": "@happytreefriends",
+          "tags": [
+            "flash"
+          ],
+          "min_minutes": 1,
+          "published_range": [
+            2006,
+            2013
+          ],
+          "one_offs": true,
+          "allow_clips": true,
+          "series": "Happy Tree Friends"
+        },
+        {
+          "handle": "@RoosterTeeth",
+          "tags": [
+            "web"
+          ],
+          "min_minutes": 3,
+          "published_range": [
+            2006,
+            2013
+          ],
+          "title_filter": "red vs|rvb|blood gulch",
+          "one_offs": true,
+          "series": "Red vs. Blue"
+        },
+        {
+          "handle": "@Mega64",
+          "tags": [
+            "web"
+          ],
+          "min_minutes": 2,
+          "published_range": [
+            2006,
+            2013
+          ],
+          "one_offs": true,
+          "allow_clips": true,
+          "series": "Mega64"
+        },
+        {
+          "handle": "@smosh",
+          "tags": [
+            "web"
+          ],
+          "min_minutes": 1.5,
+          "published_range": [
+            2006,
+            2011
+          ],
+          "one_offs": true,
+          "allow_clips": true,
+          "series": "Smosh"
+        },
+        {
+          "handle": "@freddiew",
+          "tags": [
+            "web"
+          ],
+          "min_minutes": 2,
+          "published_range": [
+            2008,
+            2013
+          ],
+          "one_offs": true,
+          "allow_clips": true,
+          "series": "Freddie Wong"
+        },
+        {
+          "handle": "@DidYouKnowGaming",
+          "tags": [
+            "web"
+          ],
+          "min_minutes": 3,
+          "published_range": [
+            2012,
+            2013
+          ],
+          "one_offs": true,
+          "allow_clips": true,
+          "series": "Did You Know Gaming"
+        },
+        {
+          "handle": "@JonTronShow",
+          "tags": [
+            "web"
+          ],
+          "min_minutes": 5,
+          "published_range": [
+            2010,
+            2013
+          ],
+          "one_offs": true,
+          "series": "JonTron"
+        },
+        {
+          "handle": "@GameGrumps",
+          "tags": [
+            "web"
+          ],
+          "min_minutes": 8,
+          "published_range": [
+            2012,
+            2013
+          ],
+          "one_offs": true,
+          "series": "Game Grumps"
+        }
+      ],
+      "youtube_searches": [
+        {
+          "q": "Nostalgia Critic 2008 full review",
+          "tags": [
+            "web"
+          ],
+          "duration": "long",
+          "shows_ref": "internet_era",
+          "one_offs": true,
+          "min_minutes": 10
+        },
+        {
+          "q": "The Guild season 1 episode",
+          "tags": [
+            "web"
+          ],
+          "duration": "medium",
+          "shows_ref": "internet_era",
+          "series": "The Guild",
+          "min_minutes": 3,
+          "allow_clips": true
+        },
+        {
+          "q": "Video Game High School episode 1",
+          "tags": [
+            "web"
+          ],
+          "duration": "long",
+          "shows_ref": "internet_era",
+          "series": "Video Game High School",
+          "min_minutes": 10
+        },
+        {
+          "q": "Baman Piderman episode",
+          "tags": [
+            "flash"
+          ],
+          "duration": "short",
+          "shows_ref": "internet_era",
+          "series": "Baman Piderman",
+          "one_offs": true,
+          "allow_clips": true,
+          "min_minutes": 1
+        },
+        {
+          "q": "Super Mario Bros Z episode",
+          "tags": [
+            "flash"
+          ],
+          "duration": "medium",
+          "shows_ref": "internet_era",
+          "series": "Super Mario Bros Z",
+          "min_minutes": 3,
+          "allow_clips": true
+        },
+        {
+          "q": "ScrewAttack Video Game Vault classic",
+          "tags": [
+            "web"
+          ],
+          "duration": "medium",
+          "shows_ref": "internet_era",
+          "one_offs": true,
+          "min_minutes": 3,
+          "allow_clips": true
+        },
+        {
+          "q": "CollegeHumor classic sketch 2008",
+          "tags": [
+            "web"
+          ],
+          "duration": "short",
+          "shows_ref": "internet_era",
+          "one_offs": true,
+          "min_minutes": 1.5,
+          "allow_clips": true,
+          "published_range": [
+            2006,
+            2012
+          ]
+        },
+        {
+          "q": "Diggnation full episode",
+          "tags": [
+            "tech"
+          ],
+          "duration": "long",
+          "shows_ref": "internet_era",
+          "one_offs": true,
+          "min_minutes": 20,
+          "series": "Diggnation"
+        },
+        {
+          "q": "Hak5 2006 episode",
+          "tags": [
+            "tech"
+          ],
+          "duration": "long",
+          "shows_ref": "internet_era",
+          "one_offs": true,
+          "min_minutes": 15,
+          "series": "Hak5"
+        },
+        {
+          "q": "Numa Numa original",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "internet_era",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Leeroy Jenkins original",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "internet_era",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Badger Badger Badger",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "internet_era",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Peanut Butter Jelly Time original",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "internet_era",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Dramatic Chipmunk",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "internet_era",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Charlie bit my finger original",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "internet_era",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        }
+      ]
+    },
+    "japan-2000": {
+      "archive": [
+        {
+          "query": "title:(\"game center cx\" OR \"retro game master\" OR ゲームセンターCX OR \"gamecenter cx\")",
+          "tags": [
+            "gaming"
+          ],
+          "rows": 800,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon|2014|2015|2016|2017|2018|2019|2020|2021|2022|2023|2024|2025|4k|drone",
+          "shows_ref": "japan_tv",
+          "series": "Game Center CX",
+          "min_minutes": 15
+        },
+        {
+          "query": "title:(\"takeshi\" AND castle) OR title:(たけし城) OR title:(\"gaki no tsukai\" OR ガキの使い OR \"batsu game\" OR 笑ってはいけない)",
+          "tags": [
+            "variety"
+          ],
+          "rows": 800,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon|2014|2015|2016|2017|2018|2019|2020|2021|2022|2023|2024|2025|4k|drone",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "query": "title:(sasuke OR \"ninja warrior\" OR \"tv champion\" OR TVチャンピオン OR pythagoraswitch OR ピタゴラスイッチ OR \"iron chef\" OR 料理の鉄人 OR 電波少年 OR \"denpa shonen\")",
+          "tags": [
+            "variety"
+          ],
+          "rows": 600,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon|2014|2015|2016|2017|2018|2019|2020|2021|2022|2023|2024|2025|4k|drone",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 10
+        },
+        {
+          "query": "(バラエティ OR \"japanese variety\" OR \"japanese game show\" OR \"japanese tv\") AND year:[1995 TO 2013]",
+          "tags": [
+            "variety"
+          ],
+          "rows": 600,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon|2014|2015|2016|2017|2018|2019|2020|2021|2022|2023|2024|2025|4k|drone",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 10,
+          "recorded_range": [
+            1995,
+            2013
+          ]
+        },
+        {
+          "query": "(akihabara OR 秋葉原 OR shibuya OR 渋谷 OR shinjuku OR 新宿 OR ikebukuro OR 池袋 OR asakusa OR 浅草 OR odaiba OR お台場 OR harajuku OR 原宿 OR \"nakano broadway\" OR 中野ブロードウェイ) AND year:[1995 TO 2013]",
+          "tags": [
+            "city"
+          ],
+          "rows": 800,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon|2014|2015|2016|2017|2018|2019|2020|2021|2022|2023|2024|2025|4k|drone",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 3,
+          "allow_clips": true,
+          "recorded_range": [
+            1995,
+            2013
+          ]
+        },
+        {
+          "query": "(tokyo OR japan OR 東京) AND (vhs OR camcorder OR minidv OR \"home video\" OR 8mm) AND year:[1995 TO 2013]",
+          "tags": [
+            "city"
+          ],
+          "rows": 600,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon|2014|2015|2016|2017|2018|2019|2020|2021|2022|2023|2024|2025|4k|drone",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 3,
+          "allow_clips": true,
+          "recorded_range": [
+            1995,
+            2013
+          ]
+        },
+        {
+          "query": "(japan OR tokyo) AND (arcade OR \"game center\" OR ゲームセンター OR comiket OR コミケ OR shinkansen OR train OR 電車 OR matsuri OR festival) AND year:[1995 TO 2013]",
+          "tags": [
+            "city"
+          ],
+          "rows": 600,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon|2014|2015|2016|2017|2018|2019|2020|2021|2022|2023|2024|2025|4k|drone",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 3,
+          "allow_clips": true,
+          "recorded_range": [
+            1995,
+            2013
+          ]
+        },
+        {
+          "query": "(\"tokyo game show\" OR 東京ゲームショウ OR \"space world\" OR スペースワールド OR famitsu OR ファミ通) AND year:[1995 TO 2013]",
+          "tags": [
+            "gaming"
+          ],
+          "rows": 400,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon|2014|2015|2016|2017|2018|2019|2020|2021|2022|2023|2024|2025|4k|drone",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 3,
+          "allow_clips": true
+        },
+        {
+          "query": "(japanese commercial OR japanese commercials OR \"japanese cm\" OR 昔のCM OR 懐かしいCM OR CM集 OR コマーシャル) AND year:[1990 TO 2013]",
+          "tags": [
+            "*"
+          ],
+          "rows": 600,
+          "exclude": "2014|2015|2016|2017|2018|2019|202",
+          "shows_ref": "japan_tv",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4
+        },
+        {
+          "query": "(japanese commercial OR CM集 OR 懐かしいCM) AND year:[1990 TO 2013]",
+          "tags": [
+            "city"
+          ],
+          "rows": 300,
+          "exclude": "2014|2015|2016|2017|2018|2019|202",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "allow_clips": true,
+          "min_minutes": 8,
+          "max_minutes": 60,
+          "series": "懐かしいCM集"
+        }
+      ],
+      "youtube_searches": [
+        {
+          "q": "ゲームセンターCX 第1話",
+          "tags": [
+            "gaming"
+          ],
+          "duration": "long",
+          "shows_ref": "japan_tv",
+          "series": "Game Center CX",
+          "min_minutes": 15,
+          "lang": "ja",
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "Retro Game Master episode",
+          "tags": [
+            "gaming"
+          ],
+          "duration": "long",
+          "shows_ref": "japan_tv",
+          "series": "Game Center CX",
+          "min_minutes": 15,
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "風雲！たけし城 フル",
+          "tags": [
+            "variety"
+          ],
+          "duration": "long",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 15,
+          "lang": "ja",
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "Takeshi's Castle original Japanese episode",
+          "tags": [
+            "variety"
+          ],
+          "duration": "long",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 15,
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "ガキの使い 罰ゲーム 2005",
+          "tags": [
+            "variety"
+          ],
+          "duration": "long",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 15,
+          "lang": "ja",
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "SASUKE 2000 full",
+          "tags": [
+            "variety"
+          ],
+          "duration": "long",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 20,
+          "lang": "ja",
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "TVチャンピオン 昔",
+          "tags": [
+            "variety"
+          ],
+          "duration": "long",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 15,
+          "lang": "ja",
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "秋葉原 2005年 映像",
+          "tags": [
+            "city"
+          ],
+          "duration": "medium",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 4,
+          "allow_clips": true,
+          "lang": "ja",
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "秋葉原 2000年 映像",
+          "tags": [
+            "city"
+          ],
+          "duration": "medium",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 4,
+          "allow_clips": true,
+          "lang": "ja",
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "秋葉原 2008年",
+          "tags": [
+            "city"
+          ],
+          "duration": "medium",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 4,
+          "allow_clips": true,
+          "lang": "ja",
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "東京 昔の映像 2000年代",
+          "tags": [
+            "city"
+          ],
+          "duration": "medium",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 4,
+          "allow_clips": true,
+          "lang": "ja",
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "Tokyo 1999 home video",
+          "tags": [
+            "city"
+          ],
+          "duration": "medium",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 4,
+          "allow_clips": true,
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "Akihabara 2004 walk",
+          "tags": [
+            "city"
+          ],
+          "duration": "medium",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 4,
+          "allow_clips": true,
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "平成レトロ 街並み 映像",
+          "tags": [
+            "city"
+          ],
+          "duration": "medium",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 4,
+          "allow_clips": true,
+          "lang": "ja",
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "東京ゲームショウ 2003",
+          "tags": [
+            "gaming"
+          ],
+          "duration": "medium",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 4,
+          "allow_clips": true,
+          "lang": "ja",
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "ゲーム番組 昔 フル",
+          "tags": [
+            "gaming"
+          ],
+          "duration": "long",
+          "shows_ref": "japan_tv",
+          "one_offs": true,
+          "min_minutes": 15,
+          "lang": "ja",
+          "exclude": "reaction|ranking|explained|2014|2015|2016|2017|2018|2019|202[0-9]|4k|drone"
+        },
+        {
+          "q": "懐かしいCM 2000年代",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "japan_tv",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "ゲーム CM プレイステーション2",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "japan_tv",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "任天堂 CM 2005",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "japan_tv",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "セガ CM ドリームキャスト",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "japan_tv",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "スクウェア CM ファイナルファンタジー",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "japan_tv",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "昔のCM 1990年代",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "japan_tv",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "フジテレビ 番組 オープニング 2000",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "japan_tv",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "携帯電話 CM 2003",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "japan_tv",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        }
+      ]
+    },
+    "cartoon-city": {
+      "archive": [
+        {
+          "query": "title:(\"dexter's laboratory\" OR \"johnny bravo\" OR \"powerpuff\" OR \"courage the cowardly\" OR \"ed edd\" OR \"samurai jack\" OR \"kids next door\" OR \"billy and mandy\" OR \"foster's home\" OR \"camp lazlo\" OR chowder OR flapjack OR \"ben 10\" OR \"teen titans\" OR \"megas xlr\" OR \"generator rex\")",
+          "tags": [
+            "cn"
+          ],
+          "rows": 600,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "query": "title:(spongebob OR \"fairly oddparents\" OR \"jimmy neutron\" OR \"danny phantom\" OR rugrats OR \"all grown up\" OR catdog OR \"hey arnold\" OR \"invader zim\" OR avatar OR korra)",
+          "tags": [
+            "nick"
+          ],
+          "rows": 600,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "query": "title:(\"kim possible\" OR \"american dragon\" OR \"lilo & stitch\" OR \"the replacements\" OR \"phineas and ferb\" OR \"gravity falls\")",
+          "tags": [
+            "disney"
+          ],
+          "rows": 400,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "query": "title:(\"jackie chan adventures\" OR \"xiaolin showdown\" OR \"static shock\" OR \"batman beyond\" OR \"justice league\" OR \"totally spies\" OR \"martin mystery\" OR \"sonic x\" OR \"oban star\" OR \"super robot monkey\")",
+          "tags": [
+            "foxkids"
+          ],
+          "rows": 600,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "query": "(\"cartoon network\" OR nickelodeon OR \"disney channel\" OR jetix OR \"fox kids\" OR \"kids wb\") AND (bumper OR bumpers OR commercials OR promo OR ident) AND year:[1998 TO 2013]",
+          "tags": [
+            "*"
+          ],
+          "rows": 400,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "cartoon_city",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4
+        }
+      ],
+      "youtube_searches": [
+        {
+          "q": "Jackie Chan Adventures full episode",
+          "tags": [
+            "foxkids"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "Xiaolin Showdown full episode",
+          "tags": [
+            "foxkids"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "Static Shock full episode",
+          "tags": [
+            "foxkids"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "Batman Beyond full episode",
+          "tags": [
+            "foxkids"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "Justice League Unlimited full episode",
+          "tags": [
+            "foxkids"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "Totally Spies full episode",
+          "tags": [
+            "foxkids"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "Martin Mystery full episode",
+          "tags": [
+            "foxkids"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "Sonic X full episode",
+          "tags": [
+            "foxkids"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "Oban Star Racers full episode",
+          "tags": [
+            "foxkids"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "Generator Rex full episode",
+          "tags": [
+            "cn"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "Ben 10 Alien Force full episode",
+          "tags": [
+            "cn"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "Megas XLR full episode",
+          "tags": [
+            "cn"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "Flapjack full episode",
+          "tags": [
+            "cn"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "All Grown Up full episode",
+          "tags": [
+            "nick"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "Gravity Falls full episode",
+          "tags": [
+            "disney"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "Phineas and Ferb full episode",
+          "tags": [
+            "disney"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        },
+        {
+          "q": "The Replacements Disney full episode",
+          "tags": [
+            "disney"
+          ],
+          "duration": "medium",
+          "shows_ref": "cartoon_city",
+          "min_minutes": 8
+        }
+      ]
+    },
+    "spacetoon-zaman": {
+      "archive": [
+        {
+          "query": "(سبيستون OR spacetoon OR \"space toon\" OR مدبلج OR \"arabic dub\" OR \"arabic dubbed\") AND mediatype:movies",
+          "tags": [
+            "*all"
+          ],
+          "rows": 800,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "spacetoon_zaman",
+          "min_minutes": 10,
+          "language": "ar"
+        }
+      ],
+      "youtube_searches": [
+        {
+          "q": "القناص الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "دراغون بول زد الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "سابق ولاحق الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "أبطال الكرة الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "فرسان الأرض الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "صقور الأرض الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "صانع السلام الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "ساموراي 7 الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "يوغي يو الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "عهد الأصدقاء الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "دروب ريمي الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "لحن الحياة الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "الحديقة السرية الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "المقاتل النبيل الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "السراب الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "انوياشا الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "بليتش الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "مازنجر الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "الماسة الزرقاء الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "سيمبا الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "سندباد الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "ناروتو الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "ون بيس الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "بي بليد الحلقة 1 مدبلج",
+          "tags": [
+            "*all"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon_zaman",
+          "lang": "ar",
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "فواصل سبيستون كوكب",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "spacetoon_zaman",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "سبيستون كوكب الأكشن فاصل",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "spacetoon_zaman",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "سبيستون كوكب زمردة",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "spacetoon_zaman",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "ارت تينز فواصل",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "spacetoon_zaman",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        }
+      ]
+    },
+    "kuwait-zaman": {
+      "archive": [
+        {
+          "query": "(كويت OR كويتي OR كويتية OR kuwait OR kuwaiti OR مسرحية OR \"تلفزيون الكويت\") AND mediatype:movies",
+          "tags": [
+            "tv",
+            "plays"
+          ],
+          "rows": 800,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "kuwait_zaman",
+          "one_offs": true,
+          "min_minutes": 15,
+          "language": "ar",
+          "recorded_range": [
+            1975,
+            2013
+          ]
+        }
+      ],
+      "youtube_searches": [
+        {
+          "q": "مسرحية باي باي لندن كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية سيف العرب كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية فرسان المناخ كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية عزوبي السالمية كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية بيت بوصالح كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية هالو بانكوك كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية على هامان يا فرعون كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية بني صامت كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية حامي الديار كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية هذا سيفوه كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية طارق العلي كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية داود حسين كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية حسن البلام كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية محمد العجيمي كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية انتصار الشراح كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية هيا الشعيبي كاملة",
+          "tags": [
+            "plays"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "language": "ar",
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "درب الزلق الحلقة 1",
+          "tags": [
+            "tv"
+          ],
+          "duration": "medium",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "min_minutes": 15,
+          "language": "ar"
+        },
+        {
+          "q": "خالتي قماشة الحلقة 1",
+          "tags": [
+            "tv"
+          ],
+          "duration": "medium",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "min_minutes": 15,
+          "language": "ar"
+        },
+        {
+          "q": "الأقدار الحلقة 1",
+          "tags": [
+            "tv"
+          ],
+          "duration": "medium",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "min_minutes": 15,
+          "language": "ar"
+        },
+        {
+          "q": "الحيالة الحلقة 1",
+          "tags": [
+            "tv"
+          ],
+          "duration": "medium",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "min_minutes": 15,
+          "language": "ar"
+        },
+        {
+          "q": "سوق المقاصيص الحلقة 1",
+          "tags": [
+            "tv"
+          ],
+          "duration": "medium",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "min_minutes": 15,
+          "language": "ar"
+        },
+        {
+          "q": "فريج صويلح الحلقة 1",
+          "tags": [
+            "tv"
+          ],
+          "duration": "medium",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "min_minutes": 15,
+          "language": "ar"
+        },
+        {
+          "q": "عائلتي الحلقة 1",
+          "tags": [
+            "tv"
+          ],
+          "duration": "medium",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "min_minutes": 15,
+          "language": "ar"
+        },
+        {
+          "q": "طاش ما طاش الحلقة 1",
+          "tags": [
+            "tv"
+          ],
+          "duration": "medium",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "min_minutes": 15,
+          "language": "ar"
+        },
+        {
+          "q": "قرقيعان الحلقة 1",
+          "tags": [
+            "tv"
+          ],
+          "duration": "medium",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "min_minutes": 15,
+          "language": "ar"
+        },
+        {
+          "q": "ماما أنيسة برنامج أطفال تلفزيون الكويت",
+          "tags": [
+            "kids"
+          ],
+          "duration": "medium",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "one_offs": true,
+          "min_minutes": 10,
+          "language": "ar"
+        },
+        {
+          "q": "من سيربح المليون جورج قرداحي حلقة كاملة",
+          "tags": [
+            "tv"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "one_offs": true,
+          "min_minutes": 30,
+          "language": "ar"
+        },
+        {
+          "q": "وزنك ذهب حلقة كاملة",
+          "tags": [
+            "tv"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "one_offs": true,
+          "min_minutes": 20,
+          "language": "ar"
+        },
+        {
+          "q": "حروف وألوف حلقة كاملة",
+          "tags": [
+            "tv"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "one_offs": true,
+          "min_minutes": 20,
+          "language": "ar"
+        },
+        {
+          "q": "تحدي المعلومات حلقة",
+          "tags": [
+            "tv"
+          ],
+          "duration": "long",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "one_offs": true,
+          "min_minutes": 15,
+          "language": "ar"
+        },
+        {
+          "q": "الكويت 2005 تصوير شوارع",
+          "tags": [
+            "tv"
+          ],
+          "duration": "medium",
+          "shows_ref": "kuwait_zaman",
+          "lang": "ar",
+          "one_offs": true,
+          "min_minutes": 4,
+          "allow_clips": true,
+          "language": "ar"
+        },
+        {
+          "q": "اعلانات كي دي دي قديمة",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "kuwait_zaman",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "اعلانات زين ام تي سي قديمة",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "kuwait_zaman",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "اعلانات الوطنية للاتصالات قديمة",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "kuwait_zaman",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "اعلانات رمضان الكويت قديمة",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "kuwait_zaman",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "اعلانات الجمعيات التعاونية قديمة",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "kuwait_zaman",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "فواصل قناة الراي قديمة",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "kuwait_zaman",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "فواصل القناة الأولى الكويتية",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "kuwait_zaman",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        }
+      ]
+    },
+    "after-school": {
+      "archive": [
+        {
+          "query": "title:(\"drake and josh\" OR \"icarly\" OR \"kenan and kel\" OR \"amanda show\" OR \"zoey 101\" OR \"lizzie mcguire\" OR \"that's so raven\" OR \"even stevens\" OR \"suite life\" OR \"hannah montana\" OR \"wizards of waverly\" OR \"malcolm in the middle\" OR \"everybody hates chris\" OR \"fresh prince\" OR \"my wife and kids\" OR \"george lopez\" OR \"scrubs\" OR \"8 simple rules\" OR \"according to jim\" OR \"king of queens\" OR \"everybody loves raymond\")",
+          "tags": [
+            "general"
+          ],
+          "rows": 600,
+          "exclude": "audiobook|radio|old time radio|otr|full movie|feature film|newsreel|public domain|1930s|1940s|1950s|world war|documentary about the war|lecture|sermon",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18
+        }
+      ],
+      "youtube_searches": [
+        {
+          "q": "Drake & Josh full episode",
+          "tags": [
+            "nick"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "iCarly full episode",
+          "tags": [
+            "nick"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "Kenan & Kel full episode",
+          "tags": [
+            "nick"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "All That full episode",
+          "tags": [
+            "nick"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "The Amanda Show full episode",
+          "tags": [
+            "nick"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "Ned's Declassified full episode",
+          "tags": [
+            "nick"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "Zoey 101 full episode",
+          "tags": [
+            "nick"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "Unfabulous full episode",
+          "tags": [
+            "nick"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "The Brothers Garcia full episode",
+          "tags": [
+            "nick"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "Lizzie McGuire full episode",
+          "tags": [
+            "disney"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "That's So Raven full episode",
+          "tags": [
+            "disney"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "Even Stevens full episode",
+          "tags": [
+            "disney"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "Phil of the Future full episode",
+          "tags": [
+            "disney"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "Life with Derek full episode",
+          "tags": [
+            "disney"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "Cory in the House full episode",
+          "tags": [
+            "disney"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "Malcolm in the Middle full episode",
+          "tags": [
+            "general"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "Everybody Hates Chris full episode",
+          "tags": [
+            "general"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "The Fresh Prince of Bel-Air full episode",
+          "tags": [
+            "general"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "My Wife and Kids full episode",
+          "tags": [
+            "general"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "George Lopez full episode",
+          "tags": [
+            "general"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "8 Simple Rules full episode",
+          "tags": [
+            "general"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "According to Jim full episode",
+          "tags": [
+            "general"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "The King of Queens full episode",
+          "tags": [
+            "general"
+          ],
+          "duration": "medium",
+          "shows_ref": "sitcoms",
+          "min_minutes": 18,
+          "exclude": "reaction|ranking|explained|cast then and now|bloopers|clip|scene"
+        },
+        {
+          "q": "Nickelodeon commercials 2005",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "sitcoms",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Disney Channel bumper 2007",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "sitcoms",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "TV commercial 2004",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "shows_ref": "sitcoms",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 4,
+          "exclude": "reaction|ranking|top 10|explained|tier list|review|analysis|ردة فعل|تحليل"
+        }
+      ]
+    },
     "toon-orbit-gold": {
       "youtube_handles": [
         {
@@ -708,18 +3246,7 @@
       ]
     },
     "magic-hour": {
-      "archive": [
-        {
-          "query": "(\"steamboat willie\" OR \"plane crazy\" OR \"gallopin gaucho\") AND year:1928",
-          "tags": [
-            "day",
-            "overnight"
-          ],
-          "series": "Mickey Mouse 1928",
-          "one_offs": true,
-          "min_minutes": 5
-        }
-      ],
+      "archive": [],
       "youtube_handles": [],
       "youtube_searches": [
         {
@@ -2235,67 +4762,6 @@
         }
       ]
     },
-    "vault-33": {
-      "archive": [
-        {
-          "query": "collection:animationandcartoons AND (fleischer OR popeye OR \"betty boop\" OR casper OR superman)",
-          "tags": [
-            "*all"
-          ],
-          "rows": 300,
-          "one_offs": true,
-          "min_minutes": 5
-        },
-        {
-          "query": "collection:classic_cartoons",
-          "tags": [
-            "*all"
-          ],
-          "rows": 300,
-          "one_offs": true,
-          "min_minutes": 5
-        }
-      ]
-    },
-    "field-trip": {
-      "youtube_handles": [
-        {
-          "handle": "@NASA",
-          "tags": [
-            "day",
-            "overnight"
-          ],
-          "min_minutes": 15,
-          "title_filter": "documentary|apollo|history|mission|film",
-          "series": "NASA Films",
-          "one_offs": true
-        }
-      ],
-      "archive": [
-        {
-          "query": "collection:prelinger AND (science OR nature OR space OR animals)",
-          "tags": [
-            "day",
-            "prime",
-            "overnight"
-          ],
-          "rows": 300,
-          "one_offs": true,
-          "min_minutes": 8,
-          "exclude": "commercial|advertisement|\\bad\\b|promo"
-        },
-        {
-          "query": "collection:nasa AND mediatype:movies AND (documentary OR apollo)",
-          "tags": [
-            "prime"
-          ],
-          "rows": 200,
-          "one_offs": true,
-          "min_minutes": 10,
-          "exclude": "commercial|advertisement|\\bad\\b|promo"
-        }
-      ]
-    },
     "player-2": {
       "archive": [
         {
@@ -2674,47 +5140,7 @@
       ]
     },
     "rewind-web": {
-      "archive": [
-        {
-          "query": "collection:flashanimations OR (newgrounds AND mediatype:movies)",
-          "tags": [
-            "day",
-            "prime"
-          ],
-          "rows": 300,
-          "one_offs": true,
-          "min_minutes": 1,
-          "exclude": "gumball|cartoon network|nickelodeon|disney"
-        }
-      ]
-    },
-    "sitcom-lane": {
-      "archive": [
-        {
-          "query": "collection:classic_tv AND (sitcom OR comedy) AND licenseurl:*publicdomain*",
-          "tags": [
-            "day",
-            "prime",
-            "overnight"
-          ],
-          "rows": 300,
-          "min_minutes": 20,
-          "exclude": "pilot reel|blooper|commercial|promo|newsreel"
-        }
-      ]
-    },
-    "game-show-gold": {
-      "archive": [
-        {
-          "query": "collection:classic_tv AND (\"game show\" OR quiz OR panel)",
-          "tags": [
-            "*all"
-          ],
-          "rows": 200,
-          "min_minutes": 20,
-          "shows_ref": "game_shows"
-        }
-      ]
+      "archive": []
     },
     "jukebox": {
       "youtube_searches": [
@@ -2770,18 +5196,6 @@
     },
     "live-wire": {
       "direct": []
-    },
-    "_interstitials": {
-      "archive": [
-        {
-          "query": "collection:prelinger AND (commercial OR advertisement) AND year:[1950 TO 2005]",
-          "tags": [
-            "*"
-          ],
-          "fill": true,
-          "rows": 300
-        }
-      ]
     }
   },
   "show_lists": {
@@ -3691,6 +6105,614 @@
       "Angry Video Game Nerd",
       "Classic Game Room",
       "Pat the NES Punk"
+    ],
+    "gaming_shows": [
+      "X-Play",
+      "XPlay",
+      "Extended Play",
+      "GameSpot TV",
+      "Game Makers",
+      "Icons",
+      "Filter",
+      "Cinematech",
+      "Cheat!",
+      "Attack of the Show",
+      "Electric Playground",
+      "Reviews on the Run",
+      "GameTrailers TV",
+      "GameTrailers",
+      "Bonus Round",
+      "Retrospective",
+      "IGN",
+      "GameSpot",
+      "PlayStation Underground",
+      "Nintendo Power",
+      "Dreamcast",
+      "E3",
+      "Electronic Entertainment Expo",
+      "Tokyo Game Show",
+      "Nintendo Direct",
+      "Judgment Day",
+      "Arena",
+      "Portal",
+      "G4",
+      "TechTV",
+      "Game Head",
+      "Pulse",
+      "Players",
+      "Space World",
+      "Spaceworld",
+      "Speed Demos Archive",
+      "speedrun",
+      "Gamespot TV",
+      "Video Game Documentary",
+      "Indie Game: The Movie",
+      "Making of",
+      "Developer interview",
+      "Iwata Asks",
+      "Nintendo Week",
+      "Game Center CX",
+      "Electronic Gaming Monthly",
+      "EGM",
+      "Official PlayStation Magazine",
+      "OPM demo disc",
+      "Nintendo Power video",
+      "Game Informer"
+    ],
+    "franchises": [
+      "Final Fantasy",
+      "Kingdom Hearts",
+      "Dragon Quest",
+      "Persona",
+      "Shin Megami Tensei",
+      "Trails in the Sky",
+      "Ys",
+      "Tales of",
+      "Xenogears",
+      "Xenosaga",
+      "Xenoblade",
+      "Golden Sun",
+      "Grandia",
+      "Suikoden",
+      "Super Mario",
+      "Mario",
+      "Zelda",
+      "Pokemon",
+      "Pokémon",
+      "Kirby",
+      "Metroid",
+      "Sonic",
+      "Sly Cooper",
+      "Jak and Daxter",
+      "Jak",
+      "Ratchet & Clank",
+      "Ratchet and Clank",
+      "Crash Bandicoot",
+      "Spyro",
+      "Ape Escape",
+      "Banjo-Kazooie",
+      "Mega Man",
+      "Metal Gear",
+      "Devil May Cry",
+      "Resident Evil",
+      "Chrono",
+      "Star Ocean",
+      "Fire Emblem",
+      "Smash Bros",
+      "Halo",
+      "Gran Turismo",
+      "Shenmue",
+      "Jet Set Radio",
+      "Okami",
+      "Shadow of the Colossus",
+      "Ico",
+      "Katamari",
+      "Dark Cloud",
+      "Rogue Galaxy",
+      "Professor Layton",
+      "Ni no Kuni",
+      "Dragon Ball",
+      "Naruto",
+      "Tekken",
+      "Soul Calibur",
+      "Street Fighter",
+      "Castlevania",
+      "Silent Hill",
+      "Animal Crossing",
+      "Wii Sports",
+      "Nintendo DS",
+      "PSP",
+      "GameCube",
+      "PlayStation 2",
+      "PS2",
+      "Xbox 360",
+      "PlayStation 3",
+      "PS3",
+      "Wii",
+      "Dreamcast",
+      "3DS",
+      "PS Vita",
+      "Nintendo",
+      "PlayStation",
+      "Sega",
+      "Square Enix",
+      "Squaresoft",
+      "Capcom",
+      "Namco",
+      "Konami",
+      "Atlus",
+      "Falcom",
+      "Level-5"
+    ],
+    "internet_era": [
+      "Angry Video Game Nerd",
+      "AVGN",
+      "Nostalgia Critic",
+      "Homestar Runner",
+      "Strong Bad",
+      "Strongbad",
+      "Eddsworld",
+      "Animator vs. Animation",
+      "Animator vs Animation",
+      "Charlie the Unicorn",
+      "Salad Fingers",
+      "Happy Tree Friends",
+      "Baman Piderman",
+      "The Guild",
+      "Red vs. Blue",
+      "Red vs Blue",
+      "Mega64",
+      "Smosh",
+      "CollegeHumor",
+      "College Humor",
+      "Freddiew",
+      "freddie wong",
+      "Video Game High School",
+      "VGHS",
+      "Did You Know Gaming",
+      "JonTron",
+      "Game Grumps",
+      "Rooster Teeth",
+      "ScrewAttack",
+      "Newgrounds",
+      "Flash animation",
+      "Super Mario Bros Z",
+      "Mario Bros Z",
+      "Sonic Shorts",
+      "Sprite animation",
+      "Madness Combat",
+      "Weebl",
+      "Badger Badger",
+      "Llamas with Hats",
+      "Shoes",
+      "Kenny vs Spenny",
+      "Ask a Ninja",
+      "lonelygirl15",
+      "Zero Punctuation",
+      "Diggnation",
+      "Hak5",
+      "Net Cafe",
+      "The Screen Savers",
+      "Computer Chronicles",
+      "Machinima",
+      "This Spartan Life",
+      "Arby 'n' the Chief",
+      "Leeroy Jenkins",
+      "Numa Numa",
+      "Chocolate Rain",
+      "Charlie Bit My Finger",
+      "Dramatic Chipmunk",
+      "Peanut Butter Jelly Time",
+      "Potter Puppet Pals",
+      "Retarded Animal Babies",
+      "Cyanide & Happiness",
+      "Pure Pwnage",
+      "The Annoying Orange",
+      "Fred",
+      "Epic Meal Time",
+      "Rhett & Link",
+      "Achievement Hunter",
+      "Spoony",
+      "Irate Gamer",
+      "Pat the NES Punk",
+      "Classic Game Room",
+      "Super Best Friends",
+      "Brentalfloss",
+      "Dorkly"
+    ],
+    "japan_tv": [
+      "Game Center CX",
+      "ゲームセンターCX",
+      "Retro Game Master",
+      "Takeshi's Castle",
+      "風雲！たけし城",
+      "たけし城",
+      "Gaki no Tsukai",
+      "ガキの使い",
+      "Batsu Game",
+      "罰ゲーム",
+      "笑ってはいけない",
+      "Sasuke",
+      "SASUKE",
+      "Ninja Warrior",
+      "TV Champion",
+      "TVチャンピオン",
+      "PythagoraSwitch",
+      "ピタゴラスイッチ",
+      "Downtown",
+      "ダウンタウン",
+      "Tunnels",
+      "とんねるず",
+      "Ucchan Nanchan",
+      "ウッチャンナンチャン",
+      "Silk Road",
+      "Hey! Hey! Hey!",
+      "Music Station",
+      "ミュージックステーション",
+      "Iron Chef",
+      "料理の鉄人",
+      "Ainori",
+      "あいのり",
+      "Denpa Shonen",
+      "電波少年",
+      "Waratte Iitomo",
+      "笑っていいとも",
+      "Kasou Taishou",
+      "仮装大賞",
+      "AKBingo",
+      "Ame Talk",
+      "アメトーーク",
+      "Lincoln",
+      "Shinsuke",
+      "Nep League",
+      "ネプリーグ",
+      "Quiz",
+      "クイズ",
+      "バラエティ",
+      "Famitsu",
+      "ファミ通",
+      "Tokyo Game Show",
+      "東京ゲームショウ",
+      "Space World",
+      "スペースワールド",
+      "Nintendo",
+      "任天堂",
+      "Sega",
+      "セガ",
+      "PlayStation",
+      "プレイステーション",
+      "Square",
+      "スクウェア",
+      "Capcom",
+      "カプコン",
+      "Namco",
+      "ナムコ",
+      "Konami",
+      "コナミ",
+      "Akihabara",
+      "秋葉原",
+      "Shibuya",
+      "渋谷",
+      "Shinjuku",
+      "新宿",
+      "Ikebukuro",
+      "池袋",
+      "Asakusa",
+      "浅草",
+      "Odaiba",
+      "お台場",
+      "Harajuku",
+      "原宿",
+      "Nakano Broadway",
+      "中野ブロードウェイ",
+      "Tokyo",
+      "東京",
+      "Osaka",
+      "大阪",
+      "Kyoto",
+      "京都",
+      "Shinkansen",
+      "新幹線",
+      "Yamanote",
+      "山手線",
+      "JR",
+      "train",
+      "電車",
+      "arcade",
+      "ゲームセンター",
+      "ゲーセン",
+      "Comiket",
+      "コミケ",
+      "コミックマーケット",
+      "Matsuri",
+      "祭り",
+      "Don Quijote",
+      "ドン・キホーテ",
+      "Yodobashi",
+      "ヨドバシ",
+      "Bic Camera",
+      "Sofmap",
+      "Mandarake",
+      "まんだらけ",
+      "konbini",
+      "コンビニ",
+      "7-Eleven",
+      "Lawson",
+      "Family Mart",
+      "CM",
+      "コマーシャル",
+      "懐かしい",
+      "平成",
+      "Japan",
+      "日本",
+      "Japanese"
+    ],
+    "cartoon_city": [
+      "Dexter's Laboratory",
+      "Johnny Bravo",
+      "The Powerpuff Girls",
+      "Powerpuff Girls",
+      "Courage the Cowardly Dog",
+      "Ed, Edd n Eddy",
+      "Samurai Jack",
+      "Codename: Kids Next Door",
+      "Kids Next Door",
+      "The Grim Adventures of Billy & Mandy",
+      "Billy and Mandy",
+      "Foster's Home for Imaginary Friends",
+      "Camp Lazlo",
+      "Chowder",
+      "The Marvelous Misadventures of Flapjack",
+      "Flapjack",
+      "Ben 10",
+      "Ben 10: Alien Force",
+      "Alien Force",
+      "Teen Titans",
+      "Megas XLR",
+      "Generator Rex",
+      "Adventure Time",
+      "Regular Show",
+      "The Amazing World of Gumball",
+      "SpongeBob SquarePants",
+      "The Fairly OddParents",
+      "Fairly OddParents",
+      "Jimmy Neutron",
+      "Danny Phantom",
+      "Rugrats",
+      "All Grown Up",
+      "CatDog",
+      "Hey Arnold",
+      "Invader Zim",
+      "Avatar: The Last Airbender",
+      "The Legend of Korra",
+      "Kim Possible",
+      "American Dragon: Jake Long",
+      "Lilo & Stitch",
+      "The Replacements",
+      "Phineas and Ferb",
+      "Gravity Falls",
+      "Jackie Chan Adventures",
+      "Xiaolin Showdown",
+      "Static Shock",
+      "Batman Beyond",
+      "Justice League",
+      "Justice League Unlimited",
+      "Totally Spies",
+      "Martin Mystery",
+      "Sonic X",
+      "Oban Star-Racers",
+      "Super Robot Monkey Team Hyperforce Go",
+      "Cartoon Network",
+      "Nickelodeon",
+      "Nicktoons",
+      "Disney Channel",
+      "Toon Disney",
+      "Jetix",
+      "Fox Kids",
+      "Kids' WB",
+      "Kids WB",
+      "Boomerang"
+    ],
+    "spacetoon_zaman": [
+      "القناص",
+      {
+        "name": "دراغون بول",
+        "match": [
+          "دراغون بول",
+          "دراجون بول",
+          "دراقون بول"
+        ]
+      },
+      {
+        "name": "دراغون بول زد",
+        "match": [
+          "دراغون بول زد",
+          "دراجون بول زد"
+        ]
+      },
+      {
+        "name": "أبطال الديجيتال",
+        "match": [
+          "ابطال الديجيتال",
+          "ديجيمون"
+        ]
+      },
+      "المحقق كونان",
+      "ناروتو",
+      "ون بيس",
+      "سابق ولاحق",
+      {
+        "name": "بي بليد",
+        "match": [
+          "بي بليد",
+          "بيبليد"
+        ]
+      },
+      {
+        "name": "كابتن ماجد",
+        "match": [
+          "كابتن ماجد"
+        ]
+      },
+      "سلام دانك",
+      "أبطال الكرة",
+      "هزيم الرعد",
+      "فرسان الأرض",
+      "صقور الأرض",
+      "صانع السلام",
+      "ساموراي 7",
+      {
+        "name": "يوغي يو",
+        "match": [
+          "يوغي يو",
+          "يو غي يو",
+          "يوقي يو"
+        ]
+      },
+      "بوكيمون",
+      "عهد الأصدقاء",
+      "دروب ريمي",
+      "ريمي",
+      "سالي",
+      "هايدي",
+      "أنا وأخي",
+      "لحن الحياة",
+      "جزيرة الكنز",
+      "الحديقة السرية",
+      "المقاتل النبيل",
+      "السراب",
+      {
+        "name": "إينوياشا",
+        "match": [
+          "اينوياشا",
+          "انوياشا"
+        ]
+      },
+      "بليتش",
+      {
+        "name": "غراندايزر",
+        "match": [
+          "غرندايزر",
+          "جريندايزر",
+          "غراندايزر"
+        ]
+      },
+      "مازنجر",
+      "الماسة الزرقاء",
+      "النمر المقنع",
+      "سيمبا",
+      "سندباد",
+      "عدنان ولينا",
+      "سبيستون",
+      "سبيس باور",
+      "ام بي سي 3",
+      "آرت تينز",
+      "art teenz"
+    ],
+    "kuwait_zaman": [
+      "باي باي لندن",
+      "سيف العرب",
+      "فرسان المناخ",
+      "عزوبي السالمية",
+      "بيت بوصالح",
+      "هالو بانكوك",
+      "على هامان يا فرعون",
+      "بني صامت",
+      "حامي الديار",
+      "هذا سيفوه",
+      "عبدالحسين عبدالرضا",
+      "عبد الحسين عبد الرضا",
+      "سعد الفرج",
+      "طارق العلي",
+      "داود حسين",
+      "حسن البلام",
+      "محمد العجيمي",
+      "انتصار الشراح",
+      "هيا الشعيبي",
+      "مسرحية",
+      "درب الزلق",
+      "خالتي قماشة",
+      "الأقدار",
+      "الحيالة",
+      "سوق المقاصيص",
+      "فريج صويلح",
+      "عائلتي",
+      "بو قتادة وبو نبيل",
+      "بوقتادة",
+      "قرقيعان",
+      "طاش ما طاش",
+      "فوازير",
+      "افتح يا سمسم",
+      "ماما أنيسة",
+      "ماما انيسة",
+      "تلفزيون الكويت",
+      "القناة الأولى",
+      "القناة الثانية",
+      "قناة الراي",
+      "قناة الوطن",
+      "قناة فنون",
+      "من سيربح المليون",
+      "وزنك ذهب",
+      "تحدي المعلومات",
+      "حروف وألوف",
+      "حروف والوف",
+      "مسابقات",
+      "الكويت",
+      "كويتي",
+      "كويتية",
+      "خليجي",
+      "خليجية"
+    ],
+    "sitcoms": [
+      "Drake & Josh",
+      "Drake and Josh",
+      "iCarly",
+      "Kenan & Kel",
+      "Kenan and Kel",
+      "All That",
+      "The Amanda Show",
+      "Ned's Declassified",
+      "Zoey 101",
+      "Victorious",
+      "Big Time Rush",
+      "Unfabulous",
+      "The Brothers Garcia",
+      "Brothers García",
+      "Lizzie McGuire",
+      "That's So Raven",
+      "Even Stevens",
+      "Phil of the Future",
+      "The Suite Life of Zack & Cody",
+      "Suite Life of Zack and Cody",
+      "The Suite Life on Deck",
+      "Hannah Montana",
+      "Wizards of Waverly Place",
+      "Sonny with a Chance",
+      "Good Luck Charlie",
+      "Shake It Up",
+      "Jessie",
+      "Cory in the House",
+      "Life with Derek",
+      "Austin & Ally",
+      "Austin and Ally",
+      "Friends",
+      "Malcolm in the Middle",
+      "Everybody Hates Chris",
+      "The Fresh Prince of Bel-Air",
+      "Fresh Prince",
+      "My Wife and Kids",
+      "George Lopez",
+      "Scrubs",
+      "How I Met Your Mother",
+      "The Office",
+      "Community",
+      "Modern Family",
+      "The Big Bang Theory",
+      "8 Simple Rules",
+      "According to Jim",
+      "The King of Queens",
+      "Everybody Loves Raymond",
+      "Two and a Half Men"
     ]
   }
 }

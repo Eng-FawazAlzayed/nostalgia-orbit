@@ -225,6 +225,7 @@
         continue;
       }
       var pl = this.playlist(channelId, b.g);
+      if (!pl.total && !pl.live.length && b.g !== '*all') { pl = this.playlist(channelId, '*all'); } // nothing tagged for this block yet
       var len = be - bs;
       var tl = tagLengths(ch, b.g);
       var priorToday = tagSeen[b.g] || 0;

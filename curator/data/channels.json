@@ -1,5 +1,429 @@
 [
   {
+    "id": "gamezone",
+    "n": "101",
+    "name": "GAMEZONE",
+    "ar": "جيم زون",
+    "work": "G4 / GameTrailers 2000s",
+    "color": "#7cff3f",
+    "theme": "gamezone",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "10:00",
+        "g": "reviews"
+      },
+      {
+        "f": "10:00",
+        "t": "14:00",
+        "g": "shows"
+      },
+      {
+        "f": "14:00",
+        "t": "17:00",
+        "g": "e3"
+      },
+      {
+        "f": "17:00",
+        "t": "22:00",
+        "g": "shows"
+      },
+      {
+        "f": "22:00",
+        "t": "01:00",
+        "g": "reviews"
+      },
+      {
+        "f": "01:00",
+        "t": "06:00",
+        "g": "docs"
+      }
+    ],
+    "collect": [
+      {
+        "from": [
+          "player-2"
+        ],
+        "shows_ref": [
+          "gaming_shows"
+        ],
+        "tags": [
+          "shows"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "internet-2006",
+    "n": "102",
+    "name": "INTERNET 2006",
+    "ar": "إنترنت ٢٠٠٦",
+    "work": "Early internet culture",
+    "color": "#3a8ee6",
+    "theme": "xp",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "12:00",
+        "g": "web"
+      },
+      {
+        "f": "12:00",
+        "t": "16:00",
+        "g": "flash"
+      },
+      {
+        "f": "16:00",
+        "t": "22:00",
+        "g": "web"
+      },
+      {
+        "f": "22:00",
+        "t": "02:00",
+        "g": "flash"
+      },
+      {
+        "f": "02:00",
+        "t": "06:00",
+        "g": "tech"
+      }
+    ]
+  },
+  {
+    "id": "japan-2000",
+    "n": "103",
+    "name": "JAPAN 2000",
+    "ar": "اليابان ٢٠٠٠",
+    "ja": "ジャパン2000",
+    "work": "Japanese TV, games and city life 1995-2013",
+    "color": "#e60033",
+    "theme": "japan",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "09:00",
+        "g": "city"
+      },
+      {
+        "f": "09:00",
+        "t": "12:00",
+        "g": "variety"
+      },
+      {
+        "f": "12:00",
+        "t": "15:00",
+        "g": "gaming"
+      },
+      {
+        "f": "15:00",
+        "t": "18:00",
+        "g": "city"
+      },
+      {
+        "f": "18:00",
+        "t": "21:00",
+        "g": "variety"
+      },
+      {
+        "f": "21:00",
+        "t": "00:00",
+        "g": "gaming"
+      },
+      {
+        "f": "00:00",
+        "t": "06:00",
+        "g": "city"
+      }
+    ]
+  },
+  {
+    "id": "cartoon-city",
+    "n": "104",
+    "name": "CARTOON CITY",
+    "ar": "مدينة الكرتون",
+    "work": "CN / Nick / Disney / Jetix 2000-2013",
+    "color": "#ff7a00",
+    "theme": "cartoon",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "09:00",
+        "g": "nick"
+      },
+      {
+        "f": "09:00",
+        "t": "12:00",
+        "g": "disney"
+      },
+      {
+        "f": "12:00",
+        "t": "15:00",
+        "g": "foxkids"
+      },
+      {
+        "f": "15:00",
+        "t": "19:00",
+        "g": "cn"
+      },
+      {
+        "f": "19:00",
+        "t": "22:00",
+        "g": "nick"
+      },
+      {
+        "f": "22:00",
+        "t": "02:00",
+        "g": "cn"
+      },
+      {
+        "f": "02:00",
+        "t": "06:00",
+        "g": "*all"
+      }
+    ],
+    "collect": [
+      {
+        "from": [
+          "toon-orbit-gold"
+        ],
+        "shows_ref": [
+          "cartoon_city"
+        ],
+        "tags": [
+          "cn"
+        ],
+        "fill": true
+      },
+      {
+        "from": [
+          "orange-couch"
+        ],
+        "shows_ref": [
+          "cartoon_city"
+        ],
+        "tags": [
+          "nick"
+        ],
+        "fill": true
+      },
+      {
+        "from": [
+          "magic-hour"
+        ],
+        "shows_ref": [
+          "cartoon_city"
+        ],
+        "tags": [
+          "disney"
+        ],
+        "fill": true
+      },
+      {
+        "from": [
+          "zap-kids",
+          "rebound",
+          "comet"
+        ],
+        "shows_ref": [
+          "cartoon_city"
+        ],
+        "tags": [
+          "foxkids"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "spacetoon-zaman",
+    "n": "105",
+    "name": "سبيستون زمان",
+    "ar": "سبيستون زمان",
+    "work": "Spacetoon / Space Power / MBC3 Arabic dubs",
+    "color": "#9b5cff",
+    "theme": "planets",
+    "rtl": true,
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "10:00",
+        "g": "*all"
+      },
+      {
+        "f": "10:00",
+        "t": "14:00",
+        "g": "*all"
+      },
+      {
+        "f": "14:00",
+        "t": "19:00",
+        "g": "*all"
+      },
+      {
+        "f": "19:00",
+        "t": "23:00",
+        "g": "*all"
+      },
+      {
+        "f": "23:00",
+        "t": "06:00",
+        "g": "*all"
+      }
+    ],
+    "collect": [
+      {
+        "from": [
+          "planet-toon",
+          "power-orbit",
+          "najma-3"
+        ],
+        "tags": [
+          "*all"
+        ],
+        "fill": true
+      }
+    ]
+  },
+  {
+    "id": "kuwait-zaman",
+    "n": "106",
+    "name": "الكويت زمان",
+    "ar": "الكويت زمان",
+    "work": "Kuwaiti and Gulf TV, theatre, Ramadan",
+    "color": "#007a3d",
+    "theme": "kuwait",
+    "rtl": true,
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "09:00",
+        "g": "kids"
+      },
+      {
+        "f": "09:00",
+        "t": "13:00",
+        "g": "tv"
+      },
+      {
+        "f": "13:00",
+        "t": "16:00",
+        "g": "plays"
+      },
+      {
+        "f": "16:00",
+        "t": "20:00",
+        "g": "tv"
+      },
+      {
+        "f": "20:00",
+        "t": "00:00",
+        "g": "plays"
+      },
+      {
+        "f": "00:00",
+        "t": "03:00",
+        "g": "tv"
+      },
+      {
+        "f": "03:00",
+        "t": "06:00",
+        "off": true,
+        "label": "نهاية الإرسال"
+      }
+    ],
+    "collect": [
+      {
+        "from": [
+          "dirati-tv"
+        ],
+        "tags": [
+          "tv",
+          "kids"
+        ],
+        "fill": true
+      },
+      {
+        "from": [
+          "masrah-kuwait",
+          "khaleej-stage"
+        ],
+        "tags": [
+          "plays"
+        ],
+        "fill": true
+      },
+      {
+        "from": [
+          "ramadan-nights"
+        ],
+        "tags": [
+          "tv"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "after-school",
+    "n": "107",
+    "name": "AFTER SCHOOL",
+    "ar": "بعد المدرسة",
+    "work": "Nick / Disney / US sitcoms 1995-2013",
+    "color": "#f4b942",
+    "theme": "sitcom",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "12:00",
+        "g": "general"
+      },
+      {
+        "f": "12:00",
+        "t": "15:00",
+        "g": "disney"
+      },
+      {
+        "f": "15:00",
+        "t": "19:00",
+        "g": "nick"
+      },
+      {
+        "f": "19:00",
+        "t": "00:00",
+        "g": "general"
+      },
+      {
+        "f": "00:00",
+        "t": "06:00",
+        "g": "*all"
+      }
+    ]
+  },
+  {
+    "id": "random-nostalgia",
+    "n": "108",
+    "name": "RANDOM NOSTALGIA",
+    "ar": "حنين عشوائي",
+    "work": "A mix of 101-107",
+    "color": "#c0c0c0",
+    "theme": "vhs",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "06:00",
+        "g": "*all"
+      }
+    ],
+    "mix": {
+      "japan-2000": 3,
+      "gamezone": 3,
+      "spacetoon-zaman": 3,
+      "internet-2006": 1,
+      "cartoon-city": 1,
+      "kuwait-zaman": 1,
+      "after-school": 1
+    },
+    "_mix_note": "Weights: higher = more often. Edit freely."
+  },
+  {
     "id": "toon-orbit-gold",
     "n": "002",
     "name": "TOON ORBIT GOLD",
@@ -448,48 +872,6 @@
     ]
   },
   {
-    "id": "vault-33",
-    "n": "033",
-    "name": "VAULT 33",
-    "ar": "الخزنة ٣٣",
-    "work": "Public domain classics",
-    "color": "#d8c7a0",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "06:00",
-        "g": "*all"
-      }
-    ],
-    "global_fill": true
-  },
-  {
-    "id": "field-trip",
-    "n": "036",
-    "name": "FIELD TRIP",
-    "ar": "رحلة ميدانية",
-    "work": "Discovery / National Geographic / documentaries",
-    "color": "#2e7d32",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "18:00",
-        "g": "day"
-      },
-      {
-        "f": "18:00",
-        "t": "24:00",
-        "g": "prime"
-      },
-      {
-        "f": "00:00",
-        "t": "06:00",
-        "g": "overnight"
-      }
-    ],
-    "global_fill": true
-  },
-  {
     "id": "player-2",
     "n": "039",
     "name": "PLAYER 2",
@@ -568,48 +950,6 @@
         "g": "*all"
       }
     ]
-  },
-  {
-    "id": "sitcom-lane",
-    "n": "045",
-    "name": "SITCOM LANE",
-    "ar": "شارع السيتكوم",
-    "work": "American sitcoms",
-    "color": "#ffd23f",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "18:00",
-        "g": "day"
-      },
-      {
-        "f": "18:00",
-        "t": "02:00",
-        "g": "prime"
-      },
-      {
-        "f": "02:00",
-        "t": "06:00",
-        "g": "overnight"
-      }
-    ],
-    "global_fill": true
-  },
-  {
-    "id": "game-show-gold",
-    "n": "046",
-    "name": "GAME SHOW GOLD",
-    "ar": "برامج المسابقات",
-    "work": "Classic game shows",
-    "color": "#ffb000",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "06:00",
-        "g": "*all"
-      }
-    ],
-    "global_fill": true
   },
   {
     "id": "jukebox",
