@@ -147,3 +147,5 @@ body.lowperf .card-name { text-shadow: none; }
 #gear { position: absolute; right: 1.5vw; bottom: 2vh; z-index: 9; font-size: 4.5vh; line-height: 1; color: #fff; opacity: 0.35; cursor: pointer; padding: 1vh; }
 #gear:hover { opacity: 0.9; }
 .lowperf #gear { opacity: 0.25; }
+#setupItems { position: relative; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 700px) { #setup { left: 3vw; right: 3vw; } }

@@ -373,12 +373,17 @@
     return v === true ? 'ON' : v === false ? 'OFF' : String(v).toUpperCase();
   }
   function renderSetup() {
-    var html = '', start = Math.max(0, Math.min(setupSel - 6, SETUP.length - 12));
+    var html = '', box = $('setupItems'), keep = box.scrollTop;
     $('setupTitle').textContent = T('setup');
-    for (var i = start; i < Math.min(SETUP.length, start + 12); i++) {
+    for (var i = 0; i < SETUP.length; i++) {
       html += '<div class="row' + (i === setupSel ? ' sel' : '') + '" data-i="' + i + '"><span class="nm">' + esc(SETUP[i].label) + '</span><span class="val">' + esc(setupVal(SETUP[i])) + '</span></div>';
     }
-    $('setupItems').innerHTML = html;
+    box.innerHTML = html; box.scrollTop = keep;
+    // all rows are drawn so touch users can scroll; keep the remote's selection in view
+    var row = box.children[setupSel];
+    if (row && (row.offsetTop < box.scrollTop || row.offsetTop + row.offsetHeight > box.scrollTop + box.clientHeight)) {
+      box.scrollTop = row.offsetTop - box.clientHeight / 2;
+    }
   }
   /* ---------------- Real-Debrid / TorBox ---------------- */
   function debridLogin(which) {
