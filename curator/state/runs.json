@@ -1,5 +1,21 @@
 [
  {
+  "cmd": "discover",
+  "arg": "toon-orbit-gold",
+  "started": "2026-11-26T19:59:45.950Z",
+  "discover": {
+   "added": 292,
+   "rejected": 7040,
+   "unclassified": 0,
+   "seen": 344,
+   "per_channel": {
+    "toon-orbit-gold": 292
+   },
+   "capped": 2018
+  },
+  "finished": "2026-11-26T20:01:21.964Z"
+ },
+ {
   "cmd": "build",
   "arg": null,
   "started": "2026-11-26T19:59:12.544Z",
