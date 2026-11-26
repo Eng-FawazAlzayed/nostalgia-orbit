@@ -82,3 +82,22 @@ export function matchShow(title, shows) {
   }
   return best;
 }
+
+// Things that are not a TV show at all: podcasts, panels, interviews, reviews, documentaries about
+// a show, game footage, fan edits, openings. Applied to every seed (even allow_clips ones such as
+// Toonami broadcast tapes). Gaming and internet channels air review and gameplay shows, so they
+// only drop the most obvious non-shows.
+const NOT_SHOW = /\b(podcasts?|chat ep|panel|interviews?|documentary|retrospective|rise,? (?:and )?fall|history of|the story of|explained|analysis|video essay|reviews?|reaction|reacts?|gameplay|let'?s play|playthrough|walkthrough|play to watch|trailers?|teaser|unboxing|showcase|sdcc|comic-?con|convention|ranking|ranked|tier list|top \d+|special program|making of|behind the scenes|commentary|discussion|q ?& ?a|soundtrack|ost|openings?|endings?|intros?|outros?|amv|fan ?made|fan ?dub|parody|abridged|ytp|cosplay|vtuber|stream)\b|بودكاست|مقابلة|ردة فعل|مراجعة|وثائقي|برومو|تريلر|افتتاحية|شارة|تتر|対談|インタビュー|実況|レビュー|ラジオ/i;
+const NOT_SHOW_LIGHT = /\b(podcasts?|chat ep|reaction|reacts?|tier list|ranking|ranked|amv|ytp|vtuber)\b|بودكاست|ردة فعل/i;
+const LIGHT_CHANNELS = new Set(['gamezone', 'player-2', 'byte-shop', 'internet-2006', 'rewind-web']);
+// Other-language dubs on English and Arabic channels (Arabic dubs are wanted, so they are not listed).
+const FOREIGN_DUB = /\b(german dub|deutsch|brasil|brazil|dublado|legendado|latino|español|espanol|castellano|french dub|français|vf|italiano|portugu[eê]s|polski|русский|türkçe)\b/i;
+
+export function notAShow(title, channelId) {
+  const t = title || '';
+  // A numbered episode whose own title happens to be "Convention" or "A Documentary" is still an episode.
+  const numbered = /\bS\d+\s*E\d+|\b\d{1,2},\d{1,2}\b|\bepisode \d+|\bep\.? ?\d+/i.test(t);
+  if ((LIGHT_CHANNELS.has(channelId) || numbered ? NOT_SHOW_LIGHT : NOT_SHOW).test(t)) return 'not a show';
+  if (FOREIGN_DUB.test(t)) return 'other language';
+  return '';
+}

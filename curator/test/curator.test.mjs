@@ -174,3 +174,16 @@ test('debrid: file names understood, smallest compatible file wins, episodes mat
   assert.ok(ov.episodes.some(e => e.s.startsWith('db-some-unknown')), 'unknown show goes to My Library');
   assert.equal(ov.stats.matched, 2);
 });
+
+test('non-shows are rejected, numbered episodes kept', async () => {
+  const { notAShow } = await import('../src/titles.mjs');
+  assert.ok(notAShow('Bringing Tenchi Muyo Back to Life | RetroCrush Chat Ep. 2', 'comet'));
+  assert.ok(notAShow('GUNDAM Showcase - Gundam Wing Panel | SDCC 2025', 'comet'));
+  assert.ok(notAShow('The Rise, Fall and Rise Again of Toonami', 'comet'));
+  assert.ok(notAShow('Cyber Team In Akihabara Legendado [PT-BR] episodio 9', 'japan-2000'));
+  assert.ok(notAShow('مقابلة | عبدالرحمن العقل يكشف أسرار شخصية عبسي', 'planet-toon'));
+  assert.equal(notAShow('Malcolm in the Middle/Season 2/S02E06 - Convention', 'after-school'), '');
+  assert.equal(notAShow('Powerpuff Girls - 05,11 - A Documentary', 'cartoon-city'), '');
+  assert.equal(notAShow('Toonami - 2002-11-05 - Dragon Ball, Dragon Ball Z, He-Man', 'comet'), '');
+  assert.equal(notAShow('X-Play review of Halo 2', 'gamezone'), '');
+});

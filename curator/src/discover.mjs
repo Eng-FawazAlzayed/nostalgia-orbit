@@ -7,12 +7,15 @@ import * as ia from './providers/archive.mjs';
 import * as direct from './providers/direct.mjs';
 import { applyResult } from './maintain.mjs';
 import { config, canSpend } from './budget.mjs';
-import { parseEpisode, guessLanguage, isDub, looksLikeClip, matchShow, hasArabic, hasJapanese, westernDigits } from './titles.mjs';
+import { parseEpisode, guessLanguage, isDub, looksLikeClip, notAShow, matchShow, hasArabic, hasJapanese, westernDigits } from './titles.mjs';
 import * as ai from './ai.mjs';
 
 export const seeds = () => readJSON(path.join(DATA, 'seeds.json'), { channels: {} });
 
 // A seed's show list: inline "shows", or a shared list named by "shows_ref" (see show_lists in seeds.json).
+const REQ = readJSON(path.join(DATA, 'seeds.json'), {}).series_require || {};
+export function seriesRequire(name) { return REQ[name] ? new RegExp(REQ[name], 'i') : null; }
+
 function showsOf(seed) {
   const lists = seeds().show_lists || {};
   return [].concat(seed.shows || [], ...[].concat(seed.shows_ref || []).map(k => lists[k] || []));
@@ -45,11 +48,14 @@ async function addCandidate(lib, chId, seed, provider, ref, r, stats) {
   }
   if (!r.live && r.duration && (r.duration < minS || r.duration > maxS)) { stats.rejected++; return; }
   if (!fill && !seed.allow_clips && looksLikeClip(r.title || '')) { stats.rejected++; return; }
+  if (!fill && notAShow(r.title || '', chId)) { stats.rejected++; return; }
   if (provider === 'youtube' && seed.authorization !== 'official' && !config.allow_unknown_youtube_uploaders) { stats.rejected++; return; }
 
   const shows = showsOf(seed);
   const shown = shows.length ? matchShow(seed._match_title || r.title || '', shows) : null;
   if (shows.length && !shown && !seed.series) { stats.rejected++; return; } // not one of the classic shows we want
+  // Broad searches that file everything under one series (e.g. Toonami tapes) must still be about it.
+  if (seed.series && !shown && seriesRequire(seed.series) && !seriesRequire(seed.series).test(r.title || '')) { stats.rejected++; return; }
   let name = seed.series || shown || (seed._multi ? (seriesFromTitle(r.item_title || '') || String(r.item_title || '').slice(0, 60)) : seriesFromTitle(r.title || ''));
   let pe = parseEpisode(r.title || '');
   if (!name || (!shown && !pe.episode && !seed.one_offs && !seed._multi && !fill)) {

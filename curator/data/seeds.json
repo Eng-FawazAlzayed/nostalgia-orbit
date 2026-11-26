@@ -8986,5 +8986,10 @@
       2006,
       2011
     ]
+  },
+  "series_require": {
+    "Toonami": "toonami|midnight run|cartoon network|\\bcn\\b|adult swim",
+    "Cartoon Network": "cartoon network|\\bcn\\b|toonami|boomerang|cartoon cartoon|adult swim",
+    "Nickelodeon": "nick|snick|tnn|nicktoons|teennick"
   }
 }

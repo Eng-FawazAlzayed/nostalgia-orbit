@@ -5,9 +5,28 @@ import path from 'node:path';
 import { DATA, OUT, ROOT, readJSON, writeJSON, nowIso, log } from './util.mjs';
 import { isPublishable } from './maintain.mjs';
 import { usageSummary } from './budget.mjs';
-import { matchShow } from './titles.mjs';
+import { matchShow, notAShow } from './titles.mjs';
+import { seriesRequire } from './discover.mjs';
 
 const P = { youtube: 'yt', archive: 'ia' };
+
+// Leave out anything already in the library that today's rules reject: podcasts, panels,
+// reviews and other non-shows, other-language dubs, and off-topic videos filed under a
+// broadcast-tape series such as Toonami (unless they are one of the known shows).
+let ALL_SHOWS = null;
+export function keepEpisode(lib, e) {
+  const ser = lib.d.series[e.series];
+  if (!ser || ser.fill) return true;
+  const title = e.titles.en || e.titles.ar || e.titles.ja || '';
+  const chs = Object.keys(ser.channels || {});
+  if (chs.length && chs.every(ch => notAShow(title, ch))) return false;
+  const req = seriesRequire(ser.titles.en || '');
+  if (req && !req.test(title)) {
+    if (!ALL_SHOWS) { const L = readJSON(path.join(DATA, 'seeds.json'), {}).show_lists || {}; ALL_SHOWS = [].concat(...Object.values(L)); }
+    if (!matchShow(title, ALL_SHOWS)) return false;
+  }
+  return true;
+}
 
 export function compact(lib, channels, now = Date.now()) {
   const srcByEp = new Map();
@@ -25,6 +44,7 @@ export function compact(lib, channels, now = Date.now()) {
   for (const e of Object.values(lib.d.episodes)) {
     const src = srcByEp.get(e.id);
     if (!src) continue;
+    if (!keepEpisode(lib, e)) continue;
     const live = src.some(s => s.k === 'live');
     const d = live ? 0 : e.duration || Math.max(...Object.values(lib.d.sources).filter(s => s.episode === e.id).map(s => s.duration || 0));
     if (!live && !d) continue; // can't schedule something of unknown length
