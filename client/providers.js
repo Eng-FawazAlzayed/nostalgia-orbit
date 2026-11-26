@@ -196,8 +196,9 @@
     var my = token;
     function guard(fn) { return function (a, b) { if (my === token && fn) { fn(a, b); } }; }
     var onPlaying = guard(h.onPlaying), onError = guard(h.onError), onEnded = guard(h.onEnded);
-    // nothing playing within 12 s counts as a temporary failure
-    startTimer = setTimeout(function () { onError('timeout', false); }, 12000);
+    // nothing playing in time counts as a temporary failure. Joining an hour-long Internet
+    // Archive file halfway through needs a long seek on a slow server, so files get 30 s.
+    startTimer = setTimeout(function () { onError('timeout', false); }, s.p === 'yt' ? 12000 : 30000);
     var playing = function () { clearTimeout(startTimer); onPlaying(); };
 
     if (s.p === 'yt') {

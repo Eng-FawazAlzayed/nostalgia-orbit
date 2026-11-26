@@ -271,8 +271,9 @@
       fresh: !!refreshed,
       onPlaying: function () { if (my !== tuneToken) { return; } playingSrc = src; markOk(src); show($('black'), false); hideCard(); if (!item.inter) { notePlay(item.ep); } },
       onError: function (code, permanent) {
-        if ((src.p === 'rd' || src.p === 'torbox') && !refreshed && !permanent) { return trySource(my, c, item, srcs, k, onDone, true); }
-        markFailed(src, permanent); trySource(my, c, item, srcs, k + 1, onDone);
+        if (!refreshed && !permanent && (code === 'timeout' || src.p === 'rd' || src.p === 'torbox')) { return trySource(my, c, item, srcs, k, onDone, true); } // one more try
+        if (code !== 'timeout') { markFailed(src, permanent); } // a slow start isn't a broken link
+        trySource(my, c, item, srcs, k + 1, onDone);
       },
       onEnded: function () { // copy shorter than its slot: ident until the next programme
         if (my !== tuneToken) { return; }
