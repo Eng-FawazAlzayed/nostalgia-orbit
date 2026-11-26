@@ -1,21 +1,21 @@
 {
  "days": {
   "2026-11-26": {
-   "youtube_units": 1851,
+   "youtube_units": 4857,
    "ai_usd": 0,
    "ai_calls": 0,
    "requests": {
-    "archive": 177
+    "archive": 1152
    }
   }
  },
  "months": {
   "2026-11": {
-   "youtube_units": 1851,
+   "youtube_units": 4857,
    "ai_usd": 0,
    "ai_calls": 0,
    "requests": {
-    "archive": 177
+    "archive": 1152
    }
   }
  }
