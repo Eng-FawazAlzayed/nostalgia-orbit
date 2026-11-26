@@ -1069,6 +1069,18 @@
     "comet": {
       "youtube_handles": [
         {
+          "handle": "@RetroCrush",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight",
+            "day"
+          ],
+          "min_minutes": 18,
+          "max": 4000,
+          "exclude": "trailer|review|reaction|podcast|top \\d+|ranking|explained|ost|soundtrack|opening|ending"
+        },
+        {
           "handle": "@GundamInfo",
           "tags": [
             "prime",
@@ -1101,15 +1113,6 @@
         }
       ],
       "youtube_searches": [
-        {
-          "q": "RetroCrush full episode classic anime",
-          "tags": [
-            "prime",
-            "overnight"
-          ],
-          "duration": "long",
-          "shows_ref": "anime_classic"
-        },
         {
           "q": "Toonami full broadcast 2000",
           "tags": [
@@ -1297,6 +1300,24 @@
           "min_minutes": 0.08,
           "max_minutes": 3,
           "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "RetroCrush full episode english dub",
+          "tags": [
+            "prime",
+            "overnight"
+          ],
+          "duration": "long",
+          "min_minutes": 18
+        },
+        {
+          "q": "RetroCrush full episode",
+          "tags": [
+            "prime",
+            "afterschool"
+          ],
+          "duration": "medium",
+          "min_minutes": 18
         }
       ],
       "archive": [
