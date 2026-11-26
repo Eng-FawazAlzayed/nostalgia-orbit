@@ -101,7 +101,8 @@ async function discoverChannel(lib, chId, s, stats, maxNew) {
     for (const seed of s.youtube_handles || []) {
       if (stats.added >= maxNew) break;
       const ch = await yt.channelByHandle(seed.handle);
-      if (!ch || ch.missing) { log(`  handle ${seed.handle} not found`); continue; }
+      if (!ch) { log(`  handle ${seed.handle} skipped (YouTube allowance used up, retry next run)`); continue; }
+      if (ch.missing) { log(`  handle ${seed.handle} not found`); continue; }
       await fromYouTubeIds(lib, chId, { authorization: 'official', ...seed }, await yt.playlistIds(ch.uploads, seed.max || 4000), stats, maxNew);
     }
     // 2) playlists
