@@ -1,5 +1,5 @@
 {
-  "_note": "Starting points for discovery, NOT the catalog. Handles that don't resolve are skipped and logged. Every video found is checked (exists, embeddable, not age-restricted, plays in Kuwait, right length) before it can air. 'authorization: official' marks rights-holder channels; anything else is published as 'unknown' and ranked below official copies. Searches cost 100 API units each and are cached 30 days.",
+  "_note": "Starting points for discovery, NOT the catalog. Any free online source is allowed (Fazeen, 2026-11-26); every video is still checked (exists, embeddable, not age-restricted, plays in Kuwait, right length) before it can air, and the copy that plays most reliably is preferred. Show lists keep each channel to its classic shows. Searches cost 100 API units each and are cached 30 days.",
   "channels": {
     "toon-orbit-gold": {
       "youtube_handles": [
@@ -71,6 +71,225 @@
             "كوكي",
             "أطفال الجيران"
           ]
+        },
+        {
+          "q": "Cartoon Network 2001 full recording with commercials",
+          "tags": [
+            "afterschool",
+            "prime",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "cn_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Cartoon Cartoon Fridays full broadcast",
+          "tags": [
+            "afterschool",
+            "prime",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "cn_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Cartoon Network 1999 recording",
+          "tags": [
+            "afterschool",
+            "prime",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "cn_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Dexter's Laboratory full episodes compilation",
+          "tags": [
+            "afterschool",
+            "prime",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "cn_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Ed Edd n Eddy full episodes compilation",
+          "tags": [
+            "afterschool",
+            "prime",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "cn_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Ed Edd n Eddy full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic"
+        },
+        {
+          "q": "Johnny Bravo full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic"
+        },
+        {
+          "q": "Codename Kids Next Door full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic"
+        },
+        {
+          "q": "Grim Adventures of Billy and Mandy full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic"
+        },
+        {
+          "q": "Samurai Jack full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic"
+        },
+        {
+          "q": "Cow and Chicken full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic"
+        },
+        {
+          "q": "Foster's Home for Imaginary Friends full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic"
+        },
+        {
+          "q": "Camp Lazlo full episode",
+          "tags": [
+            "afterschool",
+            "prime",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "cn_classic"
+        },
+        {
+          "q": "Cartoon Network bumper 2000",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Cartoon Network Powerhouse bumper",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Cartoon Network City bumper 2004",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Cartoon Network commercial 1999",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Cartoon Network Arabic فاصل قديم",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        }
+      ],
+      "archive": [
+        {
+          "query": "\"cartoon network\" AND mediatype:movies AND year:[1993 TO 2008]",
+          "tags": [
+            "overnight",
+            "prime"
+          ],
+          "rows": 200,
+          "one_offs": true,
+          "allow_clips": true,
+          "min_minutes": 20,
+          "series": "Cartoon Network"
         }
       ]
     },
@@ -94,6 +313,126 @@
           "tags": [
             "overnight"
           ]
+        }
+      ],
+      "youtube_searches": [
+        {
+          "q": "Boomerang 2000s full recording with commercials",
+          "tags": [
+            "overnight",
+            "day"
+          ],
+          "duration": "long",
+          "shows_ref": "wb_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Scooby Doo Where Are You full episode",
+          "tags": [
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "wb_classic"
+        },
+        {
+          "q": "The Flintstones full episode",
+          "tags": [
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "wb_classic"
+        },
+        {
+          "q": "The Jetsons full episode",
+          "tags": [
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "wb_classic"
+        },
+        {
+          "q": "Pinky and the Brain full episode",
+          "tags": [
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "wb_classic"
+        },
+        {
+          "q": "Animaniacs full episode",
+          "tags": [
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "wb_classic"
+        },
+        {
+          "q": "Wacky Races full episode",
+          "tags": [
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "wb_classic"
+        },
+        {
+          "q": "The Smurfs full episode 1981",
+          "tags": [
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "wb_classic"
+        },
+        {
+          "q": "Boomerang bumper 2001",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Boomerang ident 2000s",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Hanna-Barbera cartoon commercial 1990s",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
         }
       ]
     },
@@ -156,6 +495,215 @@
           ],
           "series": "Rugrats",
           "duration": "medium"
+        },
+        {
+          "q": "Nickelodeon 1999 full recording with commercials",
+          "tags": [
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "nick_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "SNICK full broadcast 1990s",
+          "tags": [
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "nick_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Nicktoons 2002 full recording",
+          "tags": [
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "nick_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Rugrats full episodes compilation",
+          "tags": [
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "nick_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Hey Arnold full episode",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic"
+        },
+        {
+          "q": "CatDog full episode",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic"
+        },
+        {
+          "q": "Rocket Power full episode",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic"
+        },
+        {
+          "q": "Kenan and Kel full episode",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic"
+        },
+        {
+          "q": "All That full episode 90s",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic"
+        },
+        {
+          "q": "Aaahh Real Monsters full episode",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic"
+        },
+        {
+          "q": "Rocko's Modern Life full episode",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic"
+        },
+        {
+          "q": "Danny Phantom full episode",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic"
+        },
+        {
+          "q": "Jimmy Neutron full episode",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic"
+        },
+        {
+          "q": "The Wild Thornberrys full episode",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "nick_classic"
+        },
+        {
+          "q": "Nickelodeon bumper 1990s",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Nickelodeon ident 1998",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Nickelodeon commercial 1999",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Nicktoons bumper 2002",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        }
+      ],
+      "archive": [
+        {
+          "query": "nickelodeon AND mediatype:movies AND year:[1990 TO 2008]",
+          "tags": [
+            "overnight"
+          ],
+          "rows": 200,
+          "one_offs": true,
+          "allow_clips": true,
+          "min_minutes": 20,
+          "series": "Nickelodeon"
         }
       ]
     },
@@ -172,7 +720,169 @@
           "min_minutes": 5
         }
       ],
-      "youtube_handles": []
+      "youtube_handles": [],
+      "youtube_searches": [
+        {
+          "q": "Disney Channel 2003 full recording with commercials",
+          "tags": [
+            "day",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "disney_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Kim Possible full episode",
+          "tags": [
+            "day",
+            "xd",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic"
+        },
+        {
+          "q": "Recess full episode",
+          "tags": [
+            "day",
+            "xd",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic"
+        },
+        {
+          "q": "The Proud Family full episode",
+          "tags": [
+            "day",
+            "xd",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic"
+        },
+        {
+          "q": "Gargoyles full episode",
+          "tags": [
+            "day",
+            "xd",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic"
+        },
+        {
+          "q": "DuckTales 1987 full episode",
+          "tags": [
+            "day",
+            "xd",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic"
+        },
+        {
+          "q": "TaleSpin full episode",
+          "tags": [
+            "day",
+            "xd",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic"
+        },
+        {
+          "q": "Darkwing Duck full episode",
+          "tags": [
+            "day",
+            "xd",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic"
+        },
+        {
+          "q": "American Dragon Jake Long full episode",
+          "tags": [
+            "day",
+            "xd",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic"
+        },
+        {
+          "q": "Lilo and Stitch the series full episode",
+          "tags": [
+            "day",
+            "xd",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic"
+        },
+        {
+          "q": "Even Stevens full episode",
+          "tags": [
+            "day",
+            "xd",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "disney_classic"
+        },
+        {
+          "q": "Disney Channel bumper 2000s",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Zoog Disney bumper",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Toon Disney bumper",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Disney Channel wand ident",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        }
+      ]
     },
     "zap-kids": {
       "youtube_handles": [
@@ -197,6 +907,162 @@
           "min_minutes": 15,
           "shows_ref": "digimon",
           "exclude": "2020|ghost game|beatbreak|appmon|universe"
+        }
+      ],
+      "youtube_searches": [
+        {
+          "q": "Fox Kids 1997 full recording with commercials",
+          "tags": [
+            "afterschool",
+            "overnight",
+            "day"
+          ],
+          "duration": "long",
+          "shows_ref": "foxkids",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Jetix 2005 full recording",
+          "tags": [
+            "afterschool",
+            "overnight",
+            "day"
+          ],
+          "duration": "long",
+          "shows_ref": "foxkids",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "X-Men animated series full episode",
+          "tags": [
+            "afterschool",
+            "morning",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "foxkids"
+        },
+        {
+          "q": "Spider-Man 1994 full episode",
+          "tags": [
+            "afterschool",
+            "morning",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "foxkids"
+        },
+        {
+          "q": "Digimon Adventure full episode english dub",
+          "tags": [
+            "afterschool",
+            "morning",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "foxkids"
+        },
+        {
+          "q": "Beyblade full episode english dub",
+          "tags": [
+            "afterschool",
+            "morning",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "foxkids"
+        },
+        {
+          "q": "Shaman King full episode english",
+          "tags": [
+            "afterschool",
+            "morning",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "foxkids"
+        },
+        {
+          "q": "Goosebumps full episode",
+          "tags": [
+            "afterschool",
+            "morning",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "foxkids"
+        },
+        {
+          "q": "Totally Spies full episode",
+          "tags": [
+            "afterschool",
+            "morning",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "foxkids"
+        },
+        {
+          "q": "Super Robot Monkey Team Hyperforce Go full episode",
+          "tags": [
+            "afterschool",
+            "morning",
+            "day"
+          ],
+          "duration": "medium",
+          "shows_ref": "foxkids"
+        },
+        {
+          "q": "Fox Kids bumper 1997",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Jetix bumper",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Jetix ident 2005",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "toy commercial 1998",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
         }
       ]
     },
@@ -243,6 +1109,208 @@
           ],
           "duration": "long",
           "shows_ref": "anime_classic"
+        },
+        {
+          "q": "Toonami full broadcast 2000",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "anime_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Toonami 1999 recording with commercials",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "anime_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Toonami Midnight Run full",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "anime_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Toonami 2003 full block recording",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "anime_classic",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "Dragon Ball Z full episode english dub",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "anime_classic"
+        },
+        {
+          "q": "Sailor Moon full episode english dub",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "anime_classic"
+        },
+        {
+          "q": "Yu Yu Hakusho full episode english dub",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "anime_classic"
+        },
+        {
+          "q": "Tenchi Muyo full episode english dub",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "anime_classic"
+        },
+        {
+          "q": "Outlaw Star full episode english dub",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "anime_classic"
+        },
+        {
+          "q": "Zoids full episode english dub",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "anime_classic"
+        },
+        {
+          "q": "Rurouni Kenshin full episode english dub",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "anime_classic"
+        },
+        {
+          "q": "ThunderCats 1985 full episode",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "anime_classic"
+        },
+        {
+          "q": "Gundam Wing full episode english dub",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "anime_classic"
+        },
+        {
+          "q": "Cardcaptors full episode english",
+          "tags": [
+            "prime",
+            "afterschool",
+            "overnight"
+          ],
+          "duration": "medium",
+          "shows_ref": "anime_classic"
+        },
+        {
+          "q": "Toonami bumper TOM",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Toonami bumper 2000",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Toonami promo 2002",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        }
+      ],
+      "archive": [
+        {
+          "query": "toonami AND mediatype:movies",
+          "tags": [
+            "prime",
+            "overnight"
+          ],
+          "rows": 200,
+          "one_offs": true,
+          "allow_clips": true,
+          "min_minutes": 20,
+          "series": "Toonami"
         }
       ]
     },
@@ -303,6 +1371,42 @@
             "variety"
           ],
           "duration": "long"
+        },
+        {
+          "q": "懐かしいCM 1990年代",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "昭和 CM 1980年代",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "平成 CM 1995",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
         }
       ]
     },
@@ -354,6 +1458,249 @@
           "series_en": "Detective Conan",
           "lang": "ar",
           "duration": "medium"
+        },
+        {
+          "q": "عدنان ولينا الحلقة",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "ريمي الحلقة كاملة مدبلج",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "سالي الحلقة كاملة",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "النمر المقنع الحلقة",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "جزيرة الكنز الحلقة",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "ابطال الديجيتال الحلقة كاملة",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "سلام دانك مدبلج الحلقة",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "بوكيمون الحلقة مدبلج قديم",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "هايدي الحلقة كاملة",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "الرمية الملتهبة الحلقة",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning"
+          ],
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "سبيستون حلقات مجمعة قديم",
+          "tags": [
+            "overnight"
+          ],
+          "duration": "long",
+          "shows_ref": "spacetoon",
+          "allow_clips": true,
+          "one_offs": true,
+          "min_minutes": 20
+        },
+        {
+          "q": "فواصل سبيستون قديمة",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "فاصل سبيستون كواكب",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "اعلانات سبيستون قديمة",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "كرتون سبيستون قديم الحلقة 1",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "lang": "ar",
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "مسلسل كرتون مدبلج قديم الحلقة كاملة",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "lang": "ar",
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "كرتون الزمن الجميل الحلقة كاملة",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "lang": "ar",
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "ماوكلي الحلقة كاملة",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "lang": "ar",
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "فلونة الحلقة كاملة",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "lang": "ar",
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "ساندي بل الحلقة",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "lang": "ar",
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "ون بيس مدبلج سبيستون الحلقة",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "lang": "ar",
+          "duration": "medium",
+          "shows_ref": "spacetoon"
+        },
+        {
+          "q": "المحقق كونان مدبلج الحلقة 1",
+          "tags": [
+            "afterschool",
+            "day",
+            "morning",
+            "overnight"
+          ],
+          "lang": "ar",
+          "duration": "medium",
+          "shows_ref": "spacetoon"
         }
       ]
     },
@@ -379,6 +1726,30 @@
           "series_en": "Grendizer",
           "lang": "ar",
           "duration": "medium"
+        },
+        {
+          "q": "فواصل سبيس باور",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "فاصل MBC Action قديم",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
         }
       ]
     },
@@ -408,6 +1779,30 @@
           "series_en": "Freej",
           "lang": "ar",
           "duration": "medium"
+        },
+        {
+          "q": "فواصل MBC3 قديمة",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "MBC3 فاصل 2005",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
         }
       ]
     },
@@ -431,7 +1826,11 @@
             "late"
           ],
           "lang": "ar",
-          "duration": "long"
+          "duration": "long",
+          "series": "أرشيف تلفزيون الكويت",
+          "series_en": "Kuwait TV Archive",
+          "one_offs": true,
+          "min_minutes": 15
         },
         {
           "q": "بوقتادة وبونبيل الحلقة كاملة",
@@ -442,6 +1841,42 @@
           "series_en": "Bu Qatada & Bu Nabeel",
           "lang": "ar",
           "duration": "medium"
+        },
+        {
+          "q": "اعلانات كويتية قديمة",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "فواصل تلفزيون الكويت قديمة",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "تلفزيون الكويت افتتاح البث قديم",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
         }
       ]
     },
@@ -458,7 +1893,8 @@
           "duration": "long",
           "kind": "play",
           "one_offs": true,
-          "min_minutes": 60
+          "min_minutes": 60,
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
         },
         {
           "q": "مسرحية كويتية قديمة كاملة",
@@ -471,7 +1907,20 @@
           "duration": "long",
           "kind": "play",
           "one_offs": true,
-          "min_minutes": 60
+          "min_minutes": 60,
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "اعلانات كويتية قديمة التسعينات",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
         }
       ]
     },
@@ -487,7 +1936,12 @@
           "duration": "long",
           "kind": "play",
           "one_offs": true,
-          "min_minutes": 60
+          "min_minutes": 60,
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة",
+          "year_range": [
+            1990,
+            2010
+          ]
         },
         {
           "q": "مسرحية قطرية كاملة قديمة",
@@ -499,7 +1953,172 @@
           "duration": "long",
           "kind": "play",
           "one_offs": true,
-          "min_minutes": 60
+          "min_minutes": 60,
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة",
+          "year_range": [
+            1990,
+            2010
+          ]
+        },
+        {
+          "q": "اعلانات خليجية قديمة",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "اعلانات تلفزيون قطر قديمة",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "مسرحية خليجية كاملة 1995",
+          "tags": [
+            "prime",
+            "day"
+          ],
+          "lang": "ar",
+          "duration": "long",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "year_range": [
+            1990,
+            2010
+          ],
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية كويتية كاملة 1998",
+          "tags": [
+            "prime",
+            "day"
+          ],
+          "lang": "ar",
+          "duration": "long",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "year_range": [
+            1990,
+            2010
+          ],
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية قطرية كاملة 2003",
+          "tags": [
+            "prime",
+            "day"
+          ],
+          "lang": "ar",
+          "duration": "long",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "year_range": [
+            1990,
+            2010
+          ],
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية سعودية كاملة 2005",
+          "tags": [
+            "prime",
+            "day"
+          ],
+          "lang": "ar",
+          "duration": "long",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "year_range": [
+            1990,
+            2010
+          ],
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية اماراتية كاملة 2000",
+          "tags": [
+            "prime",
+            "day"
+          ],
+          "lang": "ar",
+          "duration": "long",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "year_range": [
+            1990,
+            2010
+          ],
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية بحرينية كاملة 1999",
+          "tags": [
+            "prime",
+            "day"
+          ],
+          "lang": "ar",
+          "duration": "long",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "year_range": [
+            1990,
+            2010
+          ],
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية كويتية كاملة 2008",
+          "tags": [
+            "prime",
+            "day"
+          ],
+          "lang": "ar",
+          "duration": "long",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "year_range": [
+            1990,
+            2010
+          ],
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
+        },
+        {
+          "q": "مسرحية خليجية كاملة 1992",
+          "tags": [
+            "prime",
+            "day"
+          ],
+          "lang": "ar",
+          "duration": "long",
+          "kind": "play",
+          "one_offs": true,
+          "min_minutes": 60,
+          "year_range": [
+            1990,
+            2010
+          ],
+          "exclude": "ردة فعل|تحليل|مقطع|كواليس|اعلان|إعلان|شارة"
         }
       ]
     },
@@ -512,7 +2131,11 @@
             "prime"
           ],
           "lang": "ar",
-          "duration": "medium"
+          "duration": "medium",
+          "series": "فوازير رمضان",
+          "series_en": "Ramadan Fawazeer",
+          "one_offs": true,
+          "min_minutes": 10
         },
         {
           "q": "مسلسل رمضاني كويتي قديم الحلقة",
@@ -521,7 +2144,34 @@
             "day"
           ],
           "lang": "ar",
-          "duration": "long"
+          "duration": "long",
+          "one_offs": true,
+          "min_minutes": 30,
+          "exclude": "ردة فعل|تحليل|اغنية|شارة"
+        },
+        {
+          "q": "اعلانات رمضان قديمة الكويت",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "اعلانات رمضان التسعينات",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
         }
       ]
     },
@@ -535,6 +2185,32 @@
           "min_minutes": 10,
           "shows_ref": "adult_swim_classic",
           "exclude": "rick and morty|smiling friends|joe pera|primal|lazarus|yolo|common side effects|women wearing|unicorn: warriors|royal crackers|teenage euthanasia|birdgirl|tuca|aqua teen forever|the shivering truth|three busy debras|ha ha you clowns|invincible fight girl|my adventures with superman|housing complex"
+        }
+      ],
+      "youtube_searches": [
+        {
+          "q": "Adult Swim bump 2003",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Adult Swim bumper",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
         }
       ]
     },
@@ -608,9 +2284,251 @@
           "series": "The Computer Chronicles",
           "rows": 300,
           "min_minutes": 20
+        },
+        {
+          "query": "(\"x-play\" OR xplay OR \"attack of the show\" OR g4tv OR \"g4 tv\" OR cinematech OR \"judgment day\" OR \"g4 icons\") AND mediatype:movies",
+          "tags": [
+            "day",
+            "prime",
+            "overnight"
+          ],
+          "rows": 300,
+          "one_offs": true,
+          "min_minutes": 15,
+          "shows_ref": "g4",
+          "series": ""
         }
       ],
       "youtube_searches": [
+        {
+          "q": "G4 bumper",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "TechTV bumper",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "video game commercial 1999",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "PlayStation commercial 1998",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Nintendo 64 commercial",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "X-Play full episode G4",
+          "tags": [
+            "day",
+            "prime",
+            "overnight",
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "Attack of the Show full episode",
+          "tags": [
+            "day",
+            "prime",
+            "overnight",
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "G4 Icons full episode",
+          "tags": [
+            "day",
+            "prime",
+            "overnight",
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "Judgment Day G4 full episode",
+          "tags": [
+            "day",
+            "prime",
+            "overnight",
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "Cinematech G4",
+          "tags": [
+            "day",
+            "prime",
+            "overnight",
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "Filter G4 full episode",
+          "tags": [
+            "day",
+            "prime",
+            "overnight",
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "Electric Playground full episode 2002",
+          "tags": [
+            "day",
+            "prime",
+            "overnight",
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "Extended Play TechTV full episode",
+          "tags": [
+            "day",
+            "prime",
+            "overnight",
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "Gamesmaster full episode",
+          "tags": [
+            "day",
+            "prime",
+            "overnight",
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "Bad Influence full episode",
+          "tags": [
+            "day",
+            "prime",
+            "overnight",
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "Nick Arcade full episode",
+          "tags": [
+            "day",
+            "prime",
+            "overnight",
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "Video Power full episode",
+          "tags": [
+            "day",
+            "prime",
+            "overnight",
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "Starcade full episode",
+          "tags": [
+            "day",
+            "prime",
+            "overnight",
+            "reviews"
+          ],
+          "duration": "medium",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
         {
           "q": "E3 2005 press conference full",
           "tags": [
@@ -621,11 +2539,22 @@
           "min_minutes": 30
         },
         {
-          "q": "retro game review classic full episode",
+          "q": "E3 2004 press conference full",
           "tags": [
-            "reviews"
+            "e3"
           ],
-          "duration": "medium"
+          "duration": "long",
+          "one_offs": true,
+          "min_minutes": 30
+        },
+        {
+          "q": "E3 2006 press conference full",
+          "tags": [
+            "e3"
+          ],
+          "duration": "long",
+          "one_offs": true,
+          "min_minutes": 30
         }
       ]
     },
@@ -639,6 +2568,85 @@
           "series": "The Computer Chronicles",
           "rows": 300,
           "min_minutes": 20
+        },
+        {
+          "query": "(\"screen savers\" OR \"call for help\" OR techtv OR \"tech tv\" OR \"fresh gear\" OR \"big thinkers\") AND mediatype:movies",
+          "tags": [
+            "*all"
+          ],
+          "rows": 300,
+          "one_offs": true,
+          "min_minutes": 15,
+          "shows_ref": "g4",
+          "series": ""
+        }
+      ],
+      "youtube_searches": [
+        {
+          "q": "computer commercial 1980s",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "TechTV ident",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "Windows 95 commercial",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "The Screen Savers full episode TechTV",
+          "tags": [
+            "*all"
+          ],
+          "duration": "long",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "Call for Help TechTV full episode",
+          "tags": [
+            "*all"
+          ],
+          "duration": "long",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
+        },
+        {
+          "q": "Tech Live TechTV full",
+          "tags": [
+            "*all"
+          ],
+          "duration": "long",
+          "shows_ref": "g4",
+          "one_offs": true,
+          "min_minutes": 15
         }
       ]
     },
@@ -652,7 +2660,8 @@
           ],
           "rows": 300,
           "one_offs": true,
-          "min_minutes": 1
+          "min_minutes": 1,
+          "exclude": "gumball|cartoon network|nickelodeon|disney"
         }
       ]
     },
@@ -666,33 +2675,26 @@
             "overnight"
           ],
           "rows": 300,
-          "min_minutes": 20
+          "min_minutes": 20,
+          "exclude": "pilot reel|blooper|commercial|promo|newsreel"
         }
       ]
     },
     "game-show-gold": {
       "archive": [
         {
-          "query": "collection:classic_tv AND (\"game show\" OR quiz) AND licenseurl:*publicdomain*",
+          "query": "collection:classic_tv AND (\"game show\" OR quiz OR panel)",
           "tags": [
             "*all"
           ],
           "rows": 200,
-          "min_minutes": 20
+          "min_minutes": 20,
+          "shows_ref": "game_shows"
         }
       ]
     },
     "jukebox": {
       "youtube_searches": [
-        {
-          "q": "anime opening creditless official",
-          "tags": [
-            "anisong"
-          ],
-          "duration": "short",
-          "fill": true,
-          "allow_clips": true
-        },
         {
           "q": "2000s music video official",
           "tags": [
@@ -703,6 +2705,30 @@
           "allow_clips": true,
           "min_minutes": 2,
           "max_minutes": 8
+        },
+        {
+          "q": "MTV bumper 2000",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        },
+        {
+          "q": "MTV ident 1990s",
+          "tags": [
+            "*"
+          ],
+          "duration": "short",
+          "fill": true,
+          "allow_clips": true,
+          "min_minutes": 0.08,
+          "max_minutes": 3,
+          "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
         }
       ]
     },
@@ -799,7 +2825,25 @@
       "Generator Rex",
       "Star Wars: The Clone Wars",
       "Duck Dodgers",
-      "Evil Con Carne"
+      "Evil Con Carne",
+      {
+        "name": "Cartoon Network",
+        "match": [
+          "cartoon network"
+        ]
+      },
+      {
+        "name": "Cartoon Cartoon Fridays",
+        "match": [
+          "cartoon cartoon"
+        ]
+      },
+      "The Mask",
+      "Sheep in the Big City",
+      "2 Stupid Dogs",
+      "Swat Kats",
+      "Johnny Bravo",
+      "Whatever Happened to Robot Jones"
     ],
     "wb_classic": [
       "Tom and Jerry",
@@ -845,7 +2889,28 @@
       "Tom and Jerry Kids",
       "Johnny Bravo",
       "Space Ghost",
-      "Popeye"
+      "Popeye",
+      {
+        "name": "Boomerang",
+        "match": [
+          "boomerang"
+        ]
+      },
+      "Scooby Doo Where Are You",
+      "The Smurfs",
+      "Snorks",
+      "Captain Caveman",
+      "Hong Kong Phooey",
+      "Jabberjaw",
+      "The Herculoids",
+      "Josie and the Pussycats",
+      "Speed Buggy",
+      "Secret Squirrel",
+      "Atom Ant",
+      "Magilla Gorilla",
+      "Quick Draw McGraw",
+      "The Pink Panther",
+      "Dexter's Laboratory"
     ],
     "nick_classic": [
       {
@@ -908,7 +2973,34 @@
       "Blue's Clues",
       "Dora the Explorer",
       "Little Bill",
-      "Oswald"
+      "Oswald",
+      {
+        "name": "Nickelodeon",
+        "match": [
+          "nickelodeon",
+          "nick 90s",
+          "snick"
+        ]
+      },
+      "Nicktoons",
+      "Action League Now",
+      "The Ren & Stimpy Show",
+      "Hey Dude",
+      "Clarissa Explains It All",
+      "Salute Your Shorts",
+      "Figure It Out",
+      "Double Dare",
+      "Legends of the Hidden Temple",
+      "GUTS",
+      "Allegra's Window",
+      "Gullah Gullah Island",
+      "Eureeka's Castle",
+      "KaBlam!",
+      "Cousin Skeeter",
+      "The Journey of Allen Strange",
+      "100 Deeds for Eddie McDowd",
+      "The Secret World of Alex Mack",
+      "My Brother and Me"
     ],
     "spacetoon": [
       {
@@ -1042,7 +3134,53 @@
       "Galaxy Express 999",
       "Space Battleship Yamato",
       "Star Blazers",
-      "Cyborg 009"
+      "Cyborg 009",
+      {
+        "name": "Toonami",
+        "match": [
+          "toonami"
+        ]
+      },
+      "Dragon Ball Z",
+      "Dragon Ball",
+      "Dragon Ball GT",
+      "Sailor Moon",
+      "Yu Yu Hakusho",
+      "Tenchi Muyo",
+      "Outlaw Star",
+      "Zoids",
+      "Rurouni Kenshin",
+      "Cardcaptors",
+      "Hamtaro",
+      "Naruto",
+      "Bleach",
+      "Inuyasha",
+      "Cowboy Bebop",
+      "Thundercats",
+      "ReBoot",
+      "Ronin Warriors",
+      "Blue Submarine No. 6",
+      "The Big O",
+      "Mobile Fighter G Gundam",
+      "IGPX",
+      "Samurai 7",
+      "One Piece",
+      "Fullmetal Alchemist",
+      "Yu-Gi-Oh",
+      "Pokemon",
+      "Beyblade",
+      "Shaman King",
+      "Mega Man NT Warrior",
+      "Duel Masters",
+      "Code Lyoko",
+      "Transformers Armada",
+      "Transformers Energon",
+      "Transformers Cybertron",
+      "Beast Wars",
+      "Sonic X",
+      "Hikaru no Go",
+      "Gate Keepers",
+      "Escaflowne"
     ],
     "tokusatsu_classic": [
       "Ultraman",
@@ -1313,6 +3451,223 @@
       "حمودي",
       "حكايات",
       "ورقة وقلم"
+    ],
+    "foxkids": [
+      {
+        "name": "Fox Kids",
+        "match": [
+          "fox kids"
+        ]
+      },
+      {
+        "name": "Jetix",
+        "match": [
+          "jetix"
+        ]
+      },
+      {
+        "name": "X-Men: The Animated Series",
+        "match": [
+          "x-men",
+          "x men",
+          "xmen"
+        ]
+      },
+      {
+        "name": "Spider-Man (1994)",
+        "match": [
+          "spider-man",
+          "spiderman",
+          "spider man"
+        ]
+      },
+      "Digimon",
+      "Beyblade",
+      "Shaman King",
+      "Power Rangers",
+      "Goosebumps",
+      "Eerie Indiana",
+      "Bobby's World",
+      "Life with Louie",
+      "Big Bad Beetleborgs",
+      "Monster Rancher",
+      "Medabots",
+      "W.I.T.C.H.",
+      "Totally Spies",
+      "Super Robot Monkey Team Hyperforce Go",
+      "Oban Star-Racers",
+      "Sonic Underground",
+      "Silver Surfer",
+      "Fantastic Four",
+      "Iron Man",
+      "The Tick",
+      "Eek! The Cat",
+      "Mad Jack the Pirate",
+      "Masked Rider",
+      "VR Troopers",
+      "Ninja Turtles: The Next Mutation",
+      "Teenage Mutant Ninja Turtles",
+      "Gargoyles",
+      "Pucca",
+      "Galactik Football",
+      "Get Ed",
+      "Yin Yang Yo",
+      "A.T.O.M.",
+      "Dinosaur King",
+      "Oggy and the Cockroaches",
+      "Captain Simian",
+      "Spider-Man Unlimited",
+      "Avengers: United They Stand",
+      "Stickin' Around",
+      "Diabolik",
+      "Ace Ventura",
+      "Dennis the Menace",
+      "Casper",
+      "Godzilla: The Series",
+      "Mummies Alive",
+      "Toonsylvania"
+    ],
+    "disney_classic": [
+      {
+        "name": "Disney Channel",
+        "match": [
+          "disney channel"
+        ]
+      },
+      "Kim Possible",
+      "Recess",
+      "Lizzie McGuire",
+      "The Proud Family",
+      "Gargoyles",
+      "DuckTales",
+      "TaleSpin",
+      "Darkwing Duck",
+      "Chip 'n Dale Rescue Rangers",
+      "Goof Troop",
+      "Bonkers",
+      "Aladdin",
+      "Timon & Pumbaa",
+      "Hercules",
+      "Lilo & Stitch",
+      "American Dragon: Jake Long",
+      "Fillmore",
+      "Pepper Ann",
+      "Doug",
+      "101 Dalmatians",
+      "Quack Pack",
+      "Mighty Ducks",
+      "Brandy & Mr. Whiskers",
+      "Dave the Barbarian",
+      "The Replacements",
+      "The Emperor's New School",
+      "Phineas and Ferb",
+      "That's So Raven",
+      "Even Stevens",
+      "Hannah Montana",
+      "The Suite Life of Zack & Cody",
+      "Wizards of Waverly Place",
+      "Boy Meets World",
+      "Smart Guy",
+      "Zoog Disney",
+      "House of Mouse",
+      "Mickey Mouse Works",
+      "Adventures of the Gummi Bears",
+      "Gummi Bears",
+      "Kim Possible",
+      "Buzz Lightyear of Star Command",
+      "Teamo Supremo",
+      "Lloyd in Space",
+      "The Weekenders",
+      "Sonny with a Chance",
+      "Jonas",
+      "Hannah Montana"
+    ],
+    "game_shows": [
+      "You Bet Your Life",
+      "What's My Line",
+      "I've Got a Secret",
+      "To Tell the Truth",
+      "Truth or Consequences",
+      "Beat the Clock",
+      "The Price Is Right",
+      "Twenty One",
+      "Name That Tune",
+      "The $64,000 Question",
+      "Password",
+      "Concentration",
+      "Match Game",
+      "Jeopardy",
+      "Tic-Tac-Dough",
+      "Queen for a Day",
+      "Who Do You Trust",
+      "Masquerade Party",
+      "The Name's the Same",
+      "Down You Go",
+      "Two for the Money",
+      "Pantomime Quiz",
+      "Can You Top This",
+      "The Big Payoff",
+      "Dotto",
+      "The Newlywed Game",
+      "The Dating Game",
+      "Let's Make a Deal",
+      "Family Feud",
+      "The Face Is Familiar",
+      "Break the Bank",
+      "Strike It Rich"
+    ],
+    "g4": [
+      "X-Play",
+      "Attack of the Show",
+      "Cinematech",
+      "Icons",
+      "Filter",
+      "Judgment Day",
+      "Arena",
+      "Portal",
+      "Electric Playground",
+      "Extended Play",
+      "Unscrewed",
+      "Cheat",
+      "Cheat!",
+      "The Screen Savers",
+      "Screen Savers",
+      "Call for Help",
+      "Tech Live",
+      "Big Thinkers",
+      "Fresh Gear",
+      "Pulse",
+      "Game On",
+      "G4tv",
+      "G4",
+      "TechTV",
+      "Ninja Warrior",
+      "Code Monkeys",
+      "Players",
+      "Sweat",
+      "Formula Fun",
+      "Arcade",
+      "Blister",
+      "Pulse",
+      "Good Game",
+      "Reviews on the Run",
+      "Electric Playground",
+      "The Computer Chronicles",
+      "Computer Chronicles",
+      "Bytes",
+      "Net Cafe",
+      "Click",
+      "Gamespot TV",
+      "Game Head",
+      "Gamesmaster",
+      "Bad Influence",
+      "Nick Arcade",
+      "Video Power",
+      "Starcade",
+      "Thumb Wars",
+      "Angry Video Game Nerd",
+      "Classic Game Room",
+      "Pat the NES Punk"
     ]
   }
 }

@@ -47,7 +47,8 @@
     this.channelList = [];
     this.episodesBySeries = {};
     this.playlists = {};
-    this.pool = [];
+    this.pool = [];   // shared pool (the "_interstitials" seeds), only for channels with global_fill
+    this.pools = {};  // each channel's own bumpers, idents and period ads
     this.dayCache = {};
     this.dayCacheKeys = [];
     var i, c, e;
@@ -70,11 +71,20 @@
       if (ser.hasOwnProperty(fs) && ser[fs].fill && this.episodesBySeries[fs]) {
         for (i = 0; i < this.episodesBySeries[fs].length; i++) {
           e = this.episodesBySeries[fs][i];
-          if (e.d > 0 && e.d <= 600) { this.pool.push(e); }
+          if (!(e.d > 0 && e.d <= 600)) { continue; }
+          var owners = ser[fs].ch || {};
+          if (typeof owners === 'string') { var o1 = {}; o1[owners] = 1; owners = o1; }
+          for (var oc in owners) {
+            if (!owners.hasOwnProperty(oc)) { continue; }
+            if (oc === '_interstitials') { this.pool.push(e); }
+            else { (this.pools[oc] = this.pools[oc] || []).push(e); }
+          }
         }
       }
     }
-    this.pool.sort(function (a, b) { return a.id < b.id ? -1 : 1; });
+    var byId = function (a, b) { return a.id < b.id ? -1 : 1; };
+    this.pool.sort(byId);
+    for (var pc in this.pools) { if (this.pools.hasOwnProperty(pc)) { this.pools[pc].sort(byId); } }
     for (var s in this.episodesBySeries) {
       if (this.episodesBySeries.hasOwnProperty(s)) { this.episodesBySeries[s].sort(cmpEp); }
     }
@@ -142,14 +152,29 @@
       return !b.days || b.days.indexOf(wd) >= 0; // e.g. Thursday-night specials
     }).sort(function (a, b) { return blockOffset(a.f) - blockOffset(b.f); });
     var cursor = base, i, j, self = this;
-    // Gaps between whole episodes get retro commercials, bumpers and anime
-    // openings from the interstitial pool, then a station ident for the rest.
+    // Gaps get the channel's own bumpers and period commercials, then a station ident.
+    var pool = this.pools[channelId] || (ch.global_fill ? this.pool : []);
+    var BREAK = (ch.break_s || 75) * 1000;
+    // A short break of the channel's own bumpers and period ads after each episode.
+    function brk(s0, e0) {
+      var t0 = s0, n = pool.length, g = 0, k0;
+      if (!n || e0 - s0 < 5000) { return s0; }
+      k0 = Math.floor(s0 / 1000) % n;
+      while (g++ < n) {
+        var it = pool[(k0 + g) % n];
+        if (t0 + it.d * 1000 > e0) { continue; }
+        items.push({ type: 'ep', s: t0, e: t0 + it.d * 1000, ep: it, inter: true });
+        t0 += it.d * 1000;
+        if (e0 - t0 < 5000) { break; }
+      }
+      return t0;
+    }
     function gap(s0, e0) {
-      var t0 = s0, n = self.pool.length, g = 0;
+      var t0 = s0, n = pool.length, g = 0;
       if (n && e0 - s0 >= 15000) {
         var k0 = Math.floor(s0 / 60000) % n;
         while (g++ < n) {
-          var it = self.pool[(k0 + g) % n];
+          var it = pool[(k0 + g) % n];
           if (t0 + it.d * 1000 > e0) { continue; }
           items.push({ type: 'ep', s: t0, e: t0 + it.d * 1000, ep: it, inter: true });
           t0 += it.d * 1000;
@@ -197,6 +222,7 @@
           }
           items.push({ type: 'ep', s: t, e: t + d, ep: ep });
           t += d; placed++;
+          t = brk(t, Math.min(be, t + BREAK));
           k = (k + 1) % pl.items.length;
         }
       } else if (pl.live.length) {
@@ -268,9 +294,11 @@
       if (ok) { list.push(s); }
     }
     list.sort(function (a, b) {
-      return ((AUTH_RANK[b.a] || 0) - (AUTH_RANK[a.a] || 0)) ||
-        ((b.rel || 0.5) - (a.rel || 0.5)) ||
-        ((parseInt(b.q, 10) || 0) - (parseInt(a.q, 10) || 0));
+      // Any free source is fine: the copy that plays most reliably wins, then the sharper one.
+      // Who uploaded it only breaks ties.
+      return (Math.round((b.rel || 0.5) * 10) - Math.round((a.rel || 0.5) * 10)) ||
+        ((parseInt(b.q, 10) || 0) - (parseInt(a.q, 10) || 0)) ||
+        ((AUTH_RANK[b.a] || 0) - (AUTH_RANK[a.a] || 0));
     });
     return list;
   }

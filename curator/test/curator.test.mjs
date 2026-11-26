@@ -113,3 +113,12 @@ test('compilations, clips and live streams are not episodes; show lists pick the
   assert.equal(matchShow('كابتن ماجد الحلقة 3', shows), 'الكابتن ماجد');
   assert.equal(matchShow('Regular Show full episode', shows), null);
 });
+
+test('Gulf plays need a 1990-2010 release year in the title', async () => {
+  const { discover } = await import('../src/discover.mjs');
+  assert.equal(typeof discover, 'function');
+  const years = t => (t.match(/(?:^|\D)(19[3-9]\d|20[0-2]\d)(?!\d)/g) || []).map(y => +y.replace(/\D/g, ''));
+  assert.deepEqual(years('مسرحية على الطاير 2004'), [2004]);
+  assert.deepEqual(years('مسرحية 30 يوم حب 1973'), [1973]);
+  assert.deepEqual(years('مسرحية 24 ساعة'), []);
+});

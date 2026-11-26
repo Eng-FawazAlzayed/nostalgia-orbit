@@ -11,7 +11,7 @@ function cat() {
     a: { t: { en: 'Show A' }, ch: { 'rebound': ['day', 'afternoon', 'overnight'] } },
     b: { t: { en: 'Show B' }, ch: { 'rebound': ['day'] } },
     play: { t: { ar: 'مسرحية' }, ch: { 'masrah-kuwait': ['prime', 'weekend', 'day'] } },
-    ads: { t: { en: 'Retro ads' }, fill: true, ch: {} },
+    ads: { t: { en: 'Retro ads' }, fill: true, ch: { rebound: ['*'] } },
     live: { t: { en: 'Live' }, ch: { 'live-wire': ['live'] } }
   };
   const episodes = [];
@@ -109,7 +109,7 @@ test('source picking honours device caps, region and remembered failures', () =>
     { p: 'yt', r: 'z', k: 'embed', a: 'official', reg: { b: ['KW'] } }
   ] };
   let l = S.pickSources(ep, { yt: true, file: true, region: 'KW' }, {}, 0);
-  assert.deepEqual(l.map(s => s.r), ['y', 'x']);
+  assert.deepEqual(l.map(s => s.r), ['x', 'y'], 'the more reliable copy wins, whoever uploaded it');
   l = S.pickSources(ep, { yt: true, file: true, region: 'KW' }, { 'ia:y': 10 }, 0);
   assert.deepEqual(l.map(s => s.r), ['x']);
   l = S.pickSources(ep, { yt: false, file: true, region: 'US' }, {}, 0);

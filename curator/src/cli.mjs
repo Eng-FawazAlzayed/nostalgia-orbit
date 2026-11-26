@@ -22,7 +22,7 @@ async function main() {
   try {
     if (cmd === 'check' || cmd === 'nightly') run.check = await runChecks(lib);
     if (cmd === 'heal' || cmd === 'nightly') run.heal = await heal(lib);
-    if (cmd === 'discover' || cmd === 'nightly') run.discover = await discover(lib, { channel: arg || null, maxNew: cmd === 'nightly' ? 600 : undefined });
+    if (cmd === 'discover' || cmd === 'nightly') run.discover = await discover(lib, { channel: arg || null, maxNew: cmd === 'nightly' ? 1500 : undefined });
     lib.save();
     run.finished = nowIso();
     const runs = readJSON(runFile, []);

@@ -1,53 +1,654 @@
 [
-  {"id":"toon-orbit-gold","n":"002","name":"TOON ORBIT GOLD","ar":"مدار الكرتون","work":"Cartoon Network Golden Era","color":"#ff6a3d",
-   "blocks":[{"f":"06:00","t":"09:00","g":"morning"},{"f":"09:00","t":"14:00","g":"day"},{"f":"14:00","t":"18:00","g":"afterschool"},{"f":"18:00","t":"20:00","g":"arabic"},{"f":"20:00","t":"24:00","g":"prime"},{"f":"00:00","t":"06:00","g":"overnight"}]},
-  {"id":"rebound","n":"004","name":"REBOUND","ar":"ريباوند","work":"Boomerang","color":"#00b3a4",
-   "blocks":[{"f":"06:00","t":"12:00","g":"day"},{"f":"12:00","t":"18:00","g":"afternoon"},{"f":"18:00","t":"06:00","g":"overnight"}]},
-  {"id":"orange-couch","n":"006","name":"ORANGE COUCH","ar":"الكنبة البرتقالية","work":"Nickelodeon Retro","color":"#ff8a00",
-   "blocks":[{"f":"06:00","t":"10:00","g":"morning"},{"f":"10:00","t":"15:00","g":"day"},{"f":"15:00","t":"20:00","g":"afterschool"},{"f":"20:00","t":"06:00","g":"overnight"}]},
-  {"id":"magic-hour","n":"007","name":"MAGIC HOUR","ar":"الساعة السحرية","work":"Disney Channel Classic / Disney XD","color":"#7b6bff",
-   "blocks":[{"f":"06:00","t":"16:00","g":"day"},{"f":"16:00","t":"21:00","g":"xd"},{"f":"21:00","t":"06:00","g":"overnight"}]},
-  {"id":"zap-kids","n":"009","name":"ZAP! KIDS","ar":"زاب كيدز","work":"Jetix / Fox Kids","color":"#e8003d",
-   "blocks":[{"f":"06:00","t":"10:00","g":"morning"},{"f":"10:00","t":"15:00","g":"day"},{"f":"15:00","t":"20:00","g":"afterschool"},{"f":"20:00","t":"06:00","g":"overnight"}]},
-  {"id":"comet","n":"013","name":"COMET","ar":"المذنّب","work":"Toonami Retro","color":"#00c2ff",
-   "blocks":[{"f":"06:00","t":"16:00","g":"day"},{"f":"16:00","t":"19:00","g":"afterschool"},{"f":"19:00","t":"02:00","g":"prime"},{"f":"02:00","t":"06:00","g":"overnight"}]},
-  {"id":"tokyo-tube","n":"016","name":"TOKYO TUBE","ar":"طوكيو تيوب","work":"Japanese TV","color":"#e8003d",
-   "blocks":[{"f":"06:00","t":"18:00","g":"day"},{"f":"18:00","t":"20:00","g":"tokusatsu"},{"f":"20:00","t":"23:00","g":"variety"},{"f":"23:00","t":"06:00","g":"overnight"}]},
-  {"id":"planet-toon","n":"020","name":"PLANET TOON CLASSIC","ar":"كوكب الكرتون","work":"Spacetoon Classic","color":"#18c29c",
-   "blocks":[{"f":"06:00","t":"09:00","g":"morning"},{"f":"09:00","t":"14:00","g":"day"},{"f":"14:00","t":"18:00","g":"afterschool"},{"f":"18:00","t":"20:00","g":"action"},{"f":"20:00","t":"22:00","g":"movie"},{"f":"22:00","t":"06:00","g":"overnight"}]},
-  {"id":"power-orbit","n":"021","name":"POWER ORBIT","ar":"قوة المدار","work":"Space Power / MBC Action","color":"#3d5afe",
-   "blocks":[{"f":"06:00","t":"16:00","g":"day"},{"f":"16:00","t":"22:00","g":"prime"},{"f":"22:00","t":"06:00","g":"overnight"}]},
-  {"id":"najma-3","n":"023","name":"NAJMA 3","ar":"نجمة ٣","work":"MBC3 Classic","color":"#ff5fa2",
-   "blocks":[{"f":"06:00","t":"10:00","g":"morning"},{"f":"10:00","t":"15:00","g":"day"},{"f":"15:00","t":"20:00","g":"afterschool"},{"f":"20:00","t":"06:00","g":"overnight"}]},
-  {"id":"dirati-tv","n":"025","name":"DIRATI TV","ar":"ديرتي","work":"Kuwait Retro TV","color":"#ffb627",
-   "blocks":[{"f":"06:00","t":"09:00","g":"morning"},{"f":"09:00","t":"15:00","g":"day"},{"f":"15:00","t":"19:00","g":"cartoons"},{"f":"19:00","t":"23:00","g":"prime"},{"f":"23:00","t":"03:00","g":"late"},{"f":"03:00","t":"06:00","off":true,"label":"Close-down"}]},
-  {"id":"masrah-kuwait","n":"027","name":"MASRAH KUWAIT","ar":"مسرح الكويت","work":"مسرحيات كويتية","color":"#c9a227",
-   "blocks":[{"f":"06:00","t":"21:00","g":"day"},{"f":"21:00","t":"06:00","g":"prime","days":[0,1,2,3,6]},
-             {"f":"21:00","t":"06:00","g":"weekend","days":[4,5]}]},
-  {"id":"khaleej-stage","n":"028","name":"KHALEEJ STAGE","ar":"خشبة الخليج","work":"مسرحيات خليجية / Gulf TV","color":"#8a2be2",
-   "blocks":[{"f":"06:00","t":"20:00","g":"day"},{"f":"20:00","t":"06:00","g":"prime"}]},
-  {"id":"ramadan-nights","n":"029","name":"RAMADAN NIGHTS","ar":"ليالي رمضان","work":"Ramadan classics","color":"#2fbf71",
-   "blocks":[{"f":"06:00","t":"17:00","g":"day"},{"f":"17:00","t":"21:00","g":"iftar"},{"f":"21:00","t":"06:00","g":"prime"}]},
-  {"id":"night-owl","n":"030","name":"NIGHT OWL","ar":"بومة الليل","work":"Adult Swim","color":"#262633",
-   "blocks":[{"f":"06:00","t":"21:00","off":true,"label":"Scrambled"},{"f":"21:00","t":"06:00","g":"prime"}]},
-  {"id":"vault-33","n":"033","name":"VAULT 33","ar":"الخزنة ٣٣","work":"Public domain classics","color":"#d8c7a0",
-   "blocks":[{"f":"06:00","t":"06:00","g":"*all"}]},
-  {"id":"field-trip","n":"036","name":"FIELD TRIP","ar":"رحلة ميدانية","work":"Discovery / National Geographic / documentaries","color":"#2e7d32",
-   "blocks":[{"f":"06:00","t":"18:00","g":"day"},{"f":"18:00","t":"24:00","g":"prime"},{"f":"00:00","t":"06:00","g":"overnight"}]},
-  {"id":"player-2","n":"039","name":"PLAYER 2","ar":"اللاعب ٢","work":"G4 / TechTV / retro gaming / E3","color":"#ff2d55",
-   "blocks":[{"f":"06:00","t":"16:00","g":"day"},{"f":"16:00","t":"20:00","g":"reviews"},{"f":"20:00","t":"23:00","g":"e3"},{"f":"23:00","t":"06:00","g":"overnight"}]},
-  {"id":"live-wire","n":"040","name":"LIVE WIRE","ar":"البث المباشر","work":"Free live TV","color":"#ff2d55",
-   "blocks":[{"f":"06:00","t":"06:00","g":"live"}]},
-  {"id":"rewind-web","n":"041","name":"REWIND WEB","ar":"ريوايند ويب","work":"Classic YouTube / Newgrounds / memes","color":"#9b5cff",
-   "blocks":[{"f":"06:00","t":"18:00","g":"day"},{"f":"18:00","t":"06:00","g":"prime"}]},
-  {"id":"byte-shop","n":"042","name":"BYTE SHOP","ar":"متجر البايت","work":"Retro technology / TechTV","color":"#5bffe1",
-   "blocks":[{"f":"06:00","t":"06:00","g":"*all"}]},
-  {"id":"sitcom-lane","n":"045","name":"SITCOM LANE","ar":"شارع السيتكوم","work":"American sitcoms","color":"#ffd23f",
-   "blocks":[{"f":"06:00","t":"18:00","g":"day"},{"f":"18:00","t":"02:00","g":"prime"},{"f":"02:00","t":"06:00","g":"overnight"}]},
-  {"id":"game-show-gold","n":"046","name":"GAME SHOW GOLD","ar":"برامج المسابقات","work":"Classic game shows","color":"#ffb000",
-   "blocks":[{"f":"06:00","t":"06:00","g":"*all"}]},
-  {"id":"jukebox","n":"047","name":"JUKEBOX","ar":"جوك بوكس","work":"Music videos / anime openings","color":"#ff5fa2",
-   "blocks":[{"f":"06:00","t":"20:00","g":"videos"},{"f":"20:00","t":"23:00","g":"anisong"},{"f":"23:00","t":"06:00","g":"videos"}]},
-  {"id":"goal","n":"048","name":"GOAL!","ar":"قوووول","work":"Football highlights","color":"#2fbf71",
-   "blocks":[{"f":"06:00","t":"06:00","g":"*all"}]}
+  {
+    "id": "toon-orbit-gold",
+    "n": "002",
+    "name": "TOON ORBIT GOLD",
+    "ar": "مدار الكرتون",
+    "work": "Cartoon Network Golden Era",
+    "color": "#ff6a3d",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "09:00",
+        "g": "morning"
+      },
+      {
+        "f": "09:00",
+        "t": "14:00",
+        "g": "day"
+      },
+      {
+        "f": "14:00",
+        "t": "18:00",
+        "g": "afterschool"
+      },
+      {
+        "f": "18:00",
+        "t": "20:00",
+        "g": "arabic"
+      },
+      {
+        "f": "20:00",
+        "t": "24:00",
+        "g": "prime"
+      },
+      {
+        "f": "00:00",
+        "t": "06:00",
+        "g": "overnight"
+      }
+    ]
+  },
+  {
+    "id": "rebound",
+    "n": "004",
+    "name": "REBOUND",
+    "ar": "ريباوند",
+    "work": "Boomerang",
+    "color": "#00b3a4",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "12:00",
+        "g": "day"
+      },
+      {
+        "f": "12:00",
+        "t": "18:00",
+        "g": "afternoon"
+      },
+      {
+        "f": "18:00",
+        "t": "06:00",
+        "g": "overnight"
+      }
+    ]
+  },
+  {
+    "id": "orange-couch",
+    "n": "006",
+    "name": "ORANGE COUCH",
+    "ar": "الكنبة البرتقالية",
+    "work": "Nickelodeon Retro",
+    "color": "#ff8a00",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "10:00",
+        "g": "morning"
+      },
+      {
+        "f": "10:00",
+        "t": "15:00",
+        "g": "day"
+      },
+      {
+        "f": "15:00",
+        "t": "20:00",
+        "g": "afterschool"
+      },
+      {
+        "f": "20:00",
+        "t": "06:00",
+        "g": "overnight"
+      }
+    ]
+  },
+  {
+    "id": "magic-hour",
+    "n": "007",
+    "name": "MAGIC HOUR",
+    "ar": "الساعة السحرية",
+    "work": "Disney Channel Classic / Disney XD",
+    "color": "#7b6bff",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "16:00",
+        "g": "day"
+      },
+      {
+        "f": "16:00",
+        "t": "21:00",
+        "g": "xd"
+      },
+      {
+        "f": "21:00",
+        "t": "06:00",
+        "g": "overnight"
+      }
+    ]
+  },
+  {
+    "id": "zap-kids",
+    "n": "009",
+    "name": "ZAP! KIDS",
+    "ar": "زاب كيدز",
+    "work": "Jetix / Fox Kids",
+    "color": "#e8003d",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "10:00",
+        "g": "morning"
+      },
+      {
+        "f": "10:00",
+        "t": "15:00",
+        "g": "day"
+      },
+      {
+        "f": "15:00",
+        "t": "20:00",
+        "g": "afterschool"
+      },
+      {
+        "f": "20:00",
+        "t": "06:00",
+        "g": "overnight"
+      }
+    ]
+  },
+  {
+    "id": "comet",
+    "n": "013",
+    "name": "COMET",
+    "ar": "المذنّب",
+    "work": "Toonami Retro",
+    "color": "#00c2ff",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "16:00",
+        "g": "day"
+      },
+      {
+        "f": "16:00",
+        "t": "19:00",
+        "g": "afterschool"
+      },
+      {
+        "f": "19:00",
+        "t": "02:00",
+        "g": "prime"
+      },
+      {
+        "f": "02:00",
+        "t": "06:00",
+        "g": "overnight"
+      }
+    ]
+  },
+  {
+    "id": "tokyo-tube",
+    "n": "016",
+    "name": "TOKYO TUBE",
+    "ar": "طوكيو تيوب",
+    "work": "Japanese TV",
+    "color": "#e8003d",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "18:00",
+        "g": "day"
+      },
+      {
+        "f": "18:00",
+        "t": "20:00",
+        "g": "tokusatsu"
+      },
+      {
+        "f": "20:00",
+        "t": "23:00",
+        "g": "variety"
+      },
+      {
+        "f": "23:00",
+        "t": "06:00",
+        "g": "overnight"
+      }
+    ]
+  },
+  {
+    "id": "planet-toon",
+    "n": "020",
+    "name": "PLANET TOON CLASSIC",
+    "ar": "كوكب الكرتون",
+    "work": "Spacetoon Classic",
+    "color": "#18c29c",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "09:00",
+        "g": "morning"
+      },
+      {
+        "f": "09:00",
+        "t": "14:00",
+        "g": "day"
+      },
+      {
+        "f": "14:00",
+        "t": "18:00",
+        "g": "afterschool"
+      },
+      {
+        "f": "18:00",
+        "t": "20:00",
+        "g": "action"
+      },
+      {
+        "f": "20:00",
+        "t": "22:00",
+        "g": "movie"
+      },
+      {
+        "f": "22:00",
+        "t": "06:00",
+        "g": "overnight"
+      }
+    ]
+  },
+  {
+    "id": "power-orbit",
+    "n": "021",
+    "name": "POWER ORBIT",
+    "ar": "قوة المدار",
+    "work": "Space Power / MBC Action",
+    "color": "#3d5afe",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "16:00",
+        "g": "day"
+      },
+      {
+        "f": "16:00",
+        "t": "22:00",
+        "g": "prime"
+      },
+      {
+        "f": "22:00",
+        "t": "06:00",
+        "g": "overnight"
+      }
+    ]
+  },
+  {
+    "id": "najma-3",
+    "n": "023",
+    "name": "NAJMA 3",
+    "ar": "نجمة ٣",
+    "work": "MBC3 Classic",
+    "color": "#ff5fa2",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "10:00",
+        "g": "morning"
+      },
+      {
+        "f": "10:00",
+        "t": "15:00",
+        "g": "day"
+      },
+      {
+        "f": "15:00",
+        "t": "20:00",
+        "g": "afterschool"
+      },
+      {
+        "f": "20:00",
+        "t": "06:00",
+        "g": "overnight"
+      }
+    ]
+  },
+  {
+    "id": "dirati-tv",
+    "n": "025",
+    "name": "DIRATI TV",
+    "ar": "ديرتي",
+    "work": "Kuwait Retro TV",
+    "color": "#ffb627",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "09:00",
+        "g": "morning"
+      },
+      {
+        "f": "09:00",
+        "t": "15:00",
+        "g": "day"
+      },
+      {
+        "f": "15:00",
+        "t": "19:00",
+        "g": "cartoons"
+      },
+      {
+        "f": "19:00",
+        "t": "23:00",
+        "g": "prime"
+      },
+      {
+        "f": "23:00",
+        "t": "03:00",
+        "g": "late"
+      },
+      {
+        "f": "03:00",
+        "t": "06:00",
+        "off": true,
+        "label": "Close-down"
+      }
+    ]
+  },
+  {
+    "id": "masrah-kuwait",
+    "n": "027",
+    "name": "MASRAH KUWAIT",
+    "ar": "مسرح الكويت",
+    "work": "مسرحيات كويتية",
+    "color": "#c9a227",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "21:00",
+        "g": "day"
+      },
+      {
+        "f": "21:00",
+        "t": "06:00",
+        "g": "prime",
+        "days": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ]
+      },
+      {
+        "f": "21:00",
+        "t": "06:00",
+        "g": "weekend",
+        "days": [
+          4,
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "khaleej-stage",
+    "n": "028",
+    "name": "KHALEEJ STAGE",
+    "ar": "خشبة الخليج",
+    "work": "مسرحيات خليجية / Gulf TV",
+    "color": "#8a2be2",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "20:00",
+        "g": "day"
+      },
+      {
+        "f": "20:00",
+        "t": "06:00",
+        "g": "prime"
+      }
+    ]
+  },
+  {
+    "id": "ramadan-nights",
+    "n": "029",
+    "name": "RAMADAN NIGHTS",
+    "ar": "ليالي رمضان",
+    "work": "Ramadan classics",
+    "color": "#2fbf71",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "17:00",
+        "g": "day"
+      },
+      {
+        "f": "17:00",
+        "t": "21:00",
+        "g": "iftar"
+      },
+      {
+        "f": "21:00",
+        "t": "06:00",
+        "g": "prime"
+      }
+    ]
+  },
+  {
+    "id": "night-owl",
+    "n": "030",
+    "name": "NIGHT OWL",
+    "ar": "بومة الليل",
+    "work": "Adult Swim",
+    "color": "#262633",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "21:00",
+        "off": true,
+        "label": "Scrambled"
+      },
+      {
+        "f": "21:00",
+        "t": "06:00",
+        "g": "prime"
+      }
+    ]
+  },
+  {
+    "id": "vault-33",
+    "n": "033",
+    "name": "VAULT 33",
+    "ar": "الخزنة ٣٣",
+    "work": "Public domain classics",
+    "color": "#d8c7a0",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "06:00",
+        "g": "*all"
+      }
+    ],
+    "global_fill": true
+  },
+  {
+    "id": "field-trip",
+    "n": "036",
+    "name": "FIELD TRIP",
+    "ar": "رحلة ميدانية",
+    "work": "Discovery / National Geographic / documentaries",
+    "color": "#2e7d32",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "18:00",
+        "g": "day"
+      },
+      {
+        "f": "18:00",
+        "t": "24:00",
+        "g": "prime"
+      },
+      {
+        "f": "00:00",
+        "t": "06:00",
+        "g": "overnight"
+      }
+    ],
+    "global_fill": true
+  },
+  {
+    "id": "player-2",
+    "n": "039",
+    "name": "PLAYER 2",
+    "ar": "اللاعب ٢",
+    "work": "G4 / TechTV / retro gaming / E3",
+    "color": "#ff2d55",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "16:00",
+        "g": "day"
+      },
+      {
+        "f": "16:00",
+        "t": "20:00",
+        "g": "reviews"
+      },
+      {
+        "f": "20:00",
+        "t": "23:00",
+        "g": "e3"
+      },
+      {
+        "f": "23:00",
+        "t": "06:00",
+        "g": "overnight"
+      }
+    ]
+  },
+  {
+    "id": "live-wire",
+    "n": "040",
+    "name": "LIVE WIRE",
+    "ar": "البث المباشر",
+    "work": "Free live TV",
+    "color": "#ff2d55",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "06:00",
+        "g": "live"
+      }
+    ]
+  },
+  {
+    "id": "rewind-web",
+    "n": "041",
+    "name": "REWIND WEB",
+    "ar": "ريوايند ويب",
+    "work": "Classic YouTube / Newgrounds / memes",
+    "color": "#9b5cff",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "18:00",
+        "g": "day"
+      },
+      {
+        "f": "18:00",
+        "t": "06:00",
+        "g": "prime"
+      }
+    ]
+  },
+  {
+    "id": "byte-shop",
+    "n": "042",
+    "name": "BYTE SHOP",
+    "ar": "متجر البايت",
+    "work": "Retro technology / TechTV",
+    "color": "#5bffe1",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "06:00",
+        "g": "*all"
+      }
+    ]
+  },
+  {
+    "id": "sitcom-lane",
+    "n": "045",
+    "name": "SITCOM LANE",
+    "ar": "شارع السيتكوم",
+    "work": "American sitcoms",
+    "color": "#ffd23f",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "18:00",
+        "g": "day"
+      },
+      {
+        "f": "18:00",
+        "t": "02:00",
+        "g": "prime"
+      },
+      {
+        "f": "02:00",
+        "t": "06:00",
+        "g": "overnight"
+      }
+    ],
+    "global_fill": true
+  },
+  {
+    "id": "game-show-gold",
+    "n": "046",
+    "name": "GAME SHOW GOLD",
+    "ar": "برامج المسابقات",
+    "work": "Classic game shows",
+    "color": "#ffb000",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "06:00",
+        "g": "*all"
+      }
+    ],
+    "global_fill": true
+  },
+  {
+    "id": "jukebox",
+    "n": "047",
+    "name": "JUKEBOX",
+    "ar": "جوك بوكس",
+    "work": "Music videos / anime openings",
+    "color": "#ff5fa2",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "20:00",
+        "g": "videos"
+      },
+      {
+        "f": "20:00",
+        "t": "23:00",
+        "g": "anisong"
+      },
+      {
+        "f": "23:00",
+        "t": "06:00",
+        "g": "videos"
+      }
+    ]
+  },
+  {
+    "id": "goal",
+    "n": "048",
+    "name": "GOAL!",
+    "ar": "قوووول",
+    "work": "Football highlights",
+    "color": "#2fbf71",
+    "blocks": [
+      {
+        "f": "06:00",
+        "t": "06:00",
+        "g": "*all"
+      }
+    ]
+  }
 ]

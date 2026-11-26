@@ -32,10 +32,15 @@ async function addCandidate(lib, chId, seed, provider, ref, r, stats) {
   const minS = (seed.min_minutes ?? (fill ? 0.25 : 5)) * 60, maxS = (seed.max_minutes ?? (fill ? 10 : 240)) * 60;
   if (!r.ok) { stats.rejected++; return; }
   if (r.live && !seed.allow_live) { stats.rejected++; return; }
+  if (seed.year_range) { // e.g. Gulf plays first released 1990-2010 (the year in the title, not the upload date)
+    const years = (westernDigits(r.title || '').match(/(?:^|\D)(19[3-9]\d|20[0-2]\d)(?!\d)/g) || []).map(y => +y.replace(/\D/g, ''));
+    const [lo, hi] = seed.year_range;
+    if (!years.length ? seed.year_required !== false : years.some(y => y < lo || y > hi)) { stats.rejected++; return; }
+    r = { ...r, year: years[0] || r.year };
+  }
   if (seed.exclude && new RegExp(seed.exclude, 'i').test(r.title || '')) { stats.rejected++; return; }
   if (!r.live && r.duration && (r.duration < minS || r.duration > maxS)) { stats.rejected++; return; }
   if (!fill && !seed.allow_clips && looksLikeClip(r.title || '')) { stats.rejected++; return; }
-  if (provider === 'archive' && r.authorization === 'unknown') { stats.rejected++; return; } // no reuse rights shown
   if (provider === 'youtube' && seed.authorization !== 'official' && !config.allow_unknown_youtube_uploaders) { stats.rejected++; return; }
 
   const shows = showsOf(seed);
