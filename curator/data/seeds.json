@@ -65,7 +65,8 @@
           "one_offs": true,
           "min_minutes": 10,
           "allow_clips": true,
-          "series": "Speed Demos Archive"
+          "series": "Speed Demos Archive",
+          "disabled": true
         },
         {
           "query": "(\"playstation underground\" OR \"nintendo power\" OR \"demo disc\" OR \"promotional video\" OR \"promo vhs\" OR \"dreamcast\" OR \"gamecube\" OR \"ps2\") AND (vhs OR dvd OR promo OR promotional)",
@@ -3273,6 +3274,19 @@
           "max_minutes": 150,
           "_auto": true
         }
+      ],
+      "youtube_playlist_searches": [
+        {
+          "shows_ref": "cn_classic",
+          "q": "{show} full episodes",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ]
+        }
       ]
     },
     "rebound": {
@@ -3415,6 +3429,19 @@
           "min_minutes": 0.08,
           "max_minutes": 3,
           "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        }
+      ],
+      "youtube_playlist_searches": [
+        {
+          "shows_ref": "wb_classic",
+          "q": "{show} full episodes classic",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ]
         }
       ]
     },
@@ -4154,6 +4181,19 @@
           "min_minutes": 8,
           "max_minutes": 150,
           "_auto": true
+        }
+      ],
+      "youtube_playlist_searches": [
+        {
+          "shows_ref": "nick_classic",
+          "q": "{show} full episodes",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ]
         }
       ]
     },
@@ -4954,6 +4994,32 @@
           "min_minutes": 8,
           "exclude": "reaction|ranking|explained|top 10|cast then and now|clip|scene|moments"
         }
+      ],
+      "youtube_playlist_searches": [
+        {
+          "shows_ref": "disney_classic",
+          "q": "{show} full episodes",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "skip": [
+            "Disney Channel"
+          ]
+        },
+        {
+          "shows_ref": "dcom",
+          "q": "{show} full movie",
+          "tags": [
+            "prime",
+            "weekend"
+          ],
+          "min_items": 1,
+          "min_minutes": 60
+        }
       ]
     },
     "zap-kids": {
@@ -5135,6 +5201,23 @@
           "min_minutes": 0.08,
           "max_minutes": 3,
           "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        }
+      ],
+      "youtube_playlist_searches": [
+        {
+          "shows_ref": "foxkids",
+          "q": "{show} full episodes",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "skip": [
+            "Fox Kids",
+            "Jetix"
+          ]
         }
       ]
     },
@@ -5795,6 +5878,21 @@
           "duration": "medium",
           "shows_ref": "spacetoon"
         }
+      ],
+      "youtube_playlist_searches": [
+        {
+          "shows_ref": "spacetoon",
+          "q": "{show} جميع الحلقات مدبلج",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        }
       ]
     },
     "power-orbit": {
@@ -5843,6 +5941,230 @@
           "min_minutes": 0.08,
           "max_minutes": 3,
           "exclude": "reaction|ranking|top 10|top ten|explained|tier list|review|analysis|ردة فعل|تحليل"
+        }
+      ],
+      "youtube_playlist_searches": [
+        {
+          "show": {
+            "name": "غرندايزر",
+            "match": [
+              "جريندايزر",
+              "غريندايزر",
+              "جرندايزر",
+              "غراندايزر",
+              "Grendizer"
+            ]
+          },
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": {
+            "name": "مازنجر",
+            "match": [
+              "Mazinger"
+            ]
+          },
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": "القناص",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": "هزيم الرعد",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": "فرسان الأرض",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": "صقور الأرض",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": "صانع السلام",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": "ساموراي 7",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": "المقاتل النبيل",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": "يوغي يو",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": "بي بليد",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": "ناروتو",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": "ون بيس",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": "بليتش",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": "شعلة ريكا",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
+        },
+        {
+          "show": "المحقق كونان",
+          "q": "{show} مدبلج جميع الحلقات",
+          "lang": "ar",
+          "tags": [
+            "prime",
+            "afterschool",
+            "day",
+            "afternoon",
+            "overnight"
+          ],
+          "language": "ar"
         }
       ]
     },
@@ -7857,7 +8179,6 @@
       "GameTrailers TV",
       "GameTrailers",
       "Bonus Round",
-      "Retrospective",
       "IGN",
       "GameSpot",
       "PlayStation Underground",
@@ -7877,8 +8198,6 @@
       "Players",
       "Space World",
       "Spaceworld",
-      "Speed Demos Archive",
-      "speedrun",
       "Gamespot TV",
       "Video Game Documentary",
       "Indie Game: The Movie",
@@ -8990,6 +9309,83 @@
   "series_require": {
     "Toonami": "toonami|midnight run|cartoon network|\\bcn\\b|adult swim",
     "Cartoon Network": "cartoon network|\\bcn\\b|toonami|boomerang|cartoon cartoon|adult swim",
-    "Nickelodeon": "nick|snick|tnn|nicktoons|teennick"
+    "Nickelodeon": "nick|snick|tnn|nicktoons|teennick",
+    "Disney Channel": "disney"
+  },
+  "channel_only": {
+    "gamezone": [
+      "gaming_shows",
+      "g4"
+    ],
+    "rewind-web": [
+      "internet_era"
+    ],
+    "internet-2006": [
+      "internet_era"
+    ],
+    "rebound": [
+      "wb_classic"
+    ],
+    "japan-2000": [
+      "japan_tv",
+      "gaming_shows",
+      "g4",
+      "anime_classic",
+      "tokusatsu_classic"
+    ],
+    "toon-orbit-gold": [
+      "cn_classic"
+    ],
+    "orange-couch": [
+      "nick_classic",
+      "sitcoms"
+    ],
+    "magic-hour": [
+      "disney_classic",
+      "dcom",
+      "sitcoms"
+    ],
+    "cartoon-city": [
+      "cartoon_city",
+      "cn_classic",
+      "nick_classic",
+      "disney_classic"
+    ],
+    "after-school": [
+      "sitcoms",
+      "nick_classic",
+      "disney_classic"
+    ],
+    "zap-kids": [
+      "foxkids",
+      "power_rangers",
+      "digimon"
+    ],
+    "comet": [
+      "anime_classic"
+    ],
+    "night-owl": [
+      "adult_swim_classic"
+    ],
+    "player-2": [
+      "g4",
+      "gaming_shows"
+    ],
+    "byte-shop": [
+      "g4"
+    ],
+    "tokyo-tube": [
+      "japan_tv",
+      "tokusatsu_classic",
+      "anime_classic"
+    ]
+  },
+  "channel_exclude": {
+    "khaleej-stage": "القديس|الانبا|الأنبا|كنيسة|شربل|مصر|ونيس|pi[eè]ce|skitech|acorn|ماجدة الرومي|الرحباني|جبران|المنيا|بهجورة|سته على سته|العيد الوطني|بغداد|سلفيت|اتوصيث|الصفوة|الاجواد|حملان وذئاب|خادم رغم انفه|ضيعة|بيدبر|مشيت بطريقي|الأبلسة|اللي بني|سامبا|masrahiyat",
+    "masrah-kuwait": "افتتاح|إفتتاح",
+    "rebound": "gokko|singapore|preview|first \\d+ minutes",
+    "power-orbit": "تيمون|الفشافيش|القرين|اسياد|الجزء الجديد|كلنيزر|تحشيش|باب الحارة|حقائق|الجانب المظلم|ما لا تعرف|اصوات|أصوات|صباح العربية|منو الاقوى|secret exits",
+    "japan-2000": "promotional dvd|bonus disc|time attack|oliver twist|hanson",
+    "rewind-web": "ruined my life|retarded"
   }
 }

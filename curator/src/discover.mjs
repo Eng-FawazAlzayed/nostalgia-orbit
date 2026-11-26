@@ -13,6 +13,24 @@ import * as ai from './ai.mjs';
 export const seeds = () => readJSON(path.join(DATA, 'seeds.json'), { channels: {} });
 
 // A seed's show list: inline "shows", or a shared list named by "shows_ref" (see show_lists in seeds.json).
+const EP_MARK = /full episode|\bS\d+\s*E\d+|\bepisode \d+|\bep\.? ?\d+|full movie|الحلقة|حلقة|الحلقه|第\s*\d+\s*話|#\d+/i;
+const LIGHT_CH = ['internet-2006', 'rewind-web', 'gamezone', 'player-2', 'byte-shop'];
+const PL_EPISODES = /episodes?|season|full|complete|series|all|حلقات|الحلقات|كامل|جميع|مسلسل|全話|話/i;
+const PL_BAD = /clips?|shorts|songs?|music|soundtrack|ost|openings?|intros?|endings?|amv|edits?|memes?|moments|scenes|reaction|review|trailer|toys?|gameplay|game|لعبة|اغاني|أغاني|شارات|مقاطع|لقطات/i;
+// {"shows_ref": "cn_classic", "q": "{show} full episodes"} becomes one search per show on the list.
+function expandPlaylistSeeds(seeds) {
+  const lists = readJSON(path.join(DATA, 'seeds.json'), {}).show_lists || {};
+  const out = [];
+  for (const sd of seeds.filter(x => !x.disabled)) {
+    const shows = sd.show ? [sd.show] : [].concat(...[].concat(sd.shows_ref || []).map(k => lists[k] || []));
+    for (const sh of shows) {
+      const name = typeof sh === 'string' ? sh : sh.name;
+      if ((sd.skip || []).includes(name)) continue;
+      out.push({ ...sd, show: sh, q: (sd.q || '{show} full episodes').replace('{show}', name) });
+    }
+  }
+  return out;
+}
 const REQ = readJSON(path.join(DATA, 'seeds.json'), {}).series_require || {};
 export function seriesRequire(name) { return REQ[name] ? new RegExp(REQ[name], 'i') : null; }
 
@@ -49,10 +67,14 @@ async function addCandidate(lib, chId, seed, provider, ref, r, stats) {
   if (!r.live && r.duration && (r.duration < minS || r.duration > maxS)) { stats.rejected++; return; }
   if (!fill && !seed.allow_clips && looksLikeClip(r.title || '')) { stats.rejected++; return; }
   if (!fill && notAShow(r.title || '', chId)) { stats.rejected++; return; }
+  if (!fill && seed.authorization === 'official' && !seed.allow_clips && !LIGHT_CH.includes(chId) && !EP_MARK.test(r.title || '')) { stats.rejected++; return; }
+  const chEx = (readJSON(path.join(DATA, 'seeds.json'), {}).channel_exclude || {})[chId];
+  if (!fill && chEx && new RegExp(chEx, 'i').test(r.title || '')) { stats.rejected++; return; }
   if (provider === 'youtube' && seed.authorization !== 'official' && !config.allow_unknown_youtube_uploaders) { stats.rejected++; return; }
 
-  const shows = showsOf(seed);
+  const shows = seed._require_show ? seed.shows : showsOf(seed);
   const shown = shows.length ? matchShow(seed._match_title || r.title || '', shows) : null;
+  if (seed._require_show && !shown) { stats.rejected++; return; } // a video in a show's playlist must name that show
   if (shows.length && !shown && !seed.series) { stats.rejected++; return; } // not one of the classic shows we want
   // Broad searches that file everything under one series (e.g. Toonami tapes) must still be about it.
   if (seed.series && !shown && seriesRequire(seed.series) && !seriesRequire(seed.series).test(r.title || '')) { stats.rejected++; return; }
@@ -134,6 +156,22 @@ async function discoverChannel(lib, chId, s, stats, maxNew) {
     // 2) playlists
     for (const seed of s.youtube_playlists || []) {
       await fromYouTubeIds(lib, chId, seed, await yt.playlistIds(seed.id, seed.max || 1000), stats, cap());
+    }
+    // 2b) playlist searches: one search per show finds big "full episodes" playlists; each
+    // playlist must name the show and look like an episode list, then every video in it still
+    // goes through the usual checks (full episode, length, not a clip, the show's own name).
+    for (const seed of expandPlaylistSeeds(s.youtube_playlist_searches || [])) {
+      if (stats.added >= maxNew) break;
+      if (!canSpend('youtube', 120)) { log('  playlist search budget reached for today'); break; }
+      const lists = await yt.searchPlaylists(seed.q, { lang: seed.lang });
+      if (!lists) continue;
+      const good = lists.filter(p => p.count >= (seed.min_items || 8) && matchShow(p.title, [seed.show]) &&
+        PL_EPISODES.test(p.title) && !PL_BAD.test(p.title) && !notAShow(p.title, chId) && !looksLikeClip(p.title.replace(PL_EPISODES, '')))
+        .sort((a, b) => b.count - a.count).slice(0, seed.max_playlists || 2);
+      for (const p of good) {
+        log(`  playlist "${p.title}" (${p.count} videos) for ${seed.show}`);
+        await fromYouTubeIds(lib, chId, { min_minutes: 10, ...seed, series: typeof seed.show === 'string' ? seed.show : seed.show.name, shows_ref: undefined, shows: [seed.show], _require_show: true }, await yt.playlistIds(p.id, seed.max || 400), stats, cap());
+      }
     }
     // 3) searches (100 units each, cached 30 days)
     for (const seed of (s.youtube_searches || []).filter(x => !x.disabled)) {

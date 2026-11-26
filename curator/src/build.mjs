@@ -5,25 +5,73 @@ import path from 'node:path';
 import { DATA, OUT, ROOT, readJSON, writeJSON, nowIso, log } from './util.mjs';
 import { isPublishable } from './maintain.mjs';
 import { usageSummary } from './budget.mjs';
-import { matchShow, notAShow } from './titles.mjs';
+import { matchShow, notAShow, looksLikeClip, westernDigits } from './titles.mjs';
 import { seriesRequire } from './discover.mjs';
 
 const P = { youtube: 'yt', archive: 'ia' };
 
-// Leave out anything already in the library that today's rules reject: podcasts, panels,
-// reviews and other non-shows, other-language dubs, and off-topic videos filed under a
-// broadcast-tape series such as Toonami (unless they are one of the known shows).
-let ALL_SHOWS = null;
+// Leave out anything already in the library that today's rules reject, so a rule change
+// cleans the published catalog right away:
+//  - podcasts, panels, reviews and other non-shows; other-language dubs; adult content
+//  - anything dated before 1950 (public-domain era) or after 2013 (outside the nostalgia years)
+//  - on channels with "channel_only" in seeds.json, shows that are not on that channel's lists
+//  - on brand series such as "Cartoon Network" or "Toonami" (official channels and broadcast
+//    tapes), uploads that are neither a recording of the channel nor one of its classic shows
+const ADULT = /\b(hentai|naked|nude|nsfw|stripper|strip ?club|slutty|sexy|sexual|s\.e\.x|porn|xxx|bondage|fetish|shadman|onlyfans|patreon)\b/i;
+const TAPE = /commercials?|broadcast|recording|recorded|\bvhs\b|\btape\b|\bwoc\b|airing|bumpers?|\bblock\b|midnight run|marathon|tv-?rip|full episodes? with/i;
+let SEEDS = null, LISTS = null, ALL_SHOWS = null;
+function seeds() {
+  if (!SEEDS) { SEEDS = readJSON(path.join(DATA, 'seeds.json'), {}); LISTS = SEEDS.show_lists || {}; ALL_SHOWS = [].concat(...Object.values(LISTS)); }
+  return SEEDS;
+}
+function showsFor(ch) { const only = (seeds().channel_only || {})[ch]; return only ? [].concat(...only.map(k => LISTS[k] || [])) : null; }
+export function allowedChannels(lib, ser) {
+  const chs = Object.keys(ser.channels || {});
+  if (ser.fill) return chs;
+  const name = ser.titles.en || ser.titles.ar || ser.titles.ja || '';
+  return chs.filter(ch => { const L = showsFor(ch); return !L || seriesRequire(name) || matchShow(name, L) || matchShow(ser.titles.ar || '', L); });
+}
+const EP_MARK = /full episode|\bS\d+\s*E\d+|\bepisode \d+|\bep\.? ?\d+|\b\d{1,2},\d{2}\b|full movie|complete series|full series|الحلقة|حلقة|الحلقه|第\s*\d+\s*話|\/\d{1,3}\b|#\d+/i;
+const LIGHT = ['internet-2006', 'rewind-web', 'gamezone', 'player-2', 'byte-shop'];
+const PLAYS = ['masrah-kuwait', 'khaleej-stage', 'kuwait-zaman'];
+let OFFICIAL = null;
+function isOfficial(lib, id) {
+  if (!OFFICIAL || OFFICIAL.lib !== lib) {
+    OFFICIAL = { lib, set: new Set(Object.values(lib.d.sources).filter(s => s.provider === 'youtube' && s.authorization === 'official').map(s => s.episode)) };
+  }
+  return OFFICIAL.set.has(id);
+}
 export function keepEpisode(lib, e) {
   const ser = lib.d.series[e.series];
-  if (!ser || ser.fill) return true;
+  if (!ser) return true;
   const title = e.titles.en || e.titles.ar || e.titles.ja || '';
-  const chs = Object.keys(ser.channels || {});
-  if (chs.length && chs.every(ch => notAShow(title, ch))) return false;
-  const req = seriesRequire(ser.titles.en || '');
-  if (req && !req.test(title)) {
-    if (!ALL_SHOWS) { const L = readJSON(path.join(DATA, 'seeds.json'), {}).show_lists || {}; ALL_SHOWS = [].concat(...Object.values(L)); }
-    if (!matchShow(title, ALL_SHOWS)) return false;
+  if (ser.fill) { // period breaks only: no idents made after 2013, no theme songs
+    const ys = (westernDigits(title).match(/(?:^|\D)(20[0-2]\d)(?!\d)/g) || []).map(y => +y.replace(/\D/g, ''));
+    return !ys.some(y => y > 2013) && !/شارة|opening|intro song|theme song/i.test(title);
+  }
+  const chs = allowedChannels(lib, ser);
+  if (!chs.length) return false;
+  const EX = seeds().channel_exclude || {};
+  if (chs.every(ch => notAShow(title, ch) || (EX[ch] && new RegExp(EX[ch], 'i').test(title)))) return false;
+  if (ADULT.test(title)) return false;
+  const years = (westernDigits(title).match(/(?:^|\D)(19\d\d|20[0-2]\d)(?!\d)/g) || []).map(y => +y.replace(/\D/g, ''));
+  if (years.some(y => y < 1950)) return false;
+  if (years.some(y => y > 2013) && !chs.some(ch => ['internet-2006', 'rewind-web'].includes(ch))) return false;
+  // A real episode says so in its title, or at least runs like one. Official channels now
+  // mostly post compilations, so their uploads must be marked as a full episode.
+  const tape = TAPE.test(title);
+  if (!tape && !chs.some(ch => LIGHT.includes(ch) || PLAYS.includes(ch))) {
+    const marked = EP_MARK.test(title);
+    if (isOfficial(lib, e.id) && !marked) return false;
+    if (!marked && (e.duration || 0) < 18 * 60) return false;
+  }
+  const name = ser.titles.en || '';
+  const req = seriesRequire(name);
+  if (req) {
+    const L = [].concat(...chs.map(ch => showsFor(ch) || [])); seeds();
+    const known = matchShow(title, L.length ? L : ALL_SHOWS);
+    if (!(req.test(title) && TAPE.test(title)) && !known) return false;
+    if (!TAPE.test(title) && looksLikeClip(title)) return false;
   }
   return true;
 }
@@ -56,7 +104,8 @@ export function compact(lib, channels, now = Date.now()) {
   for (const id of usedSeries) {
     const s = lib.d.series[id];
     const t = {}; for (const k of ['en', 'ar', 'ja']) if (s.titles[k]) t[k] = s.titles[k];
-    series[id] = { t, y: s.year || undefined, ch: { ...s.channels }, fill: s.fill || undefined };
+    const ch = {}; for (const c of allowedChannels(lib, s)) ch[c] = s.channels[c];
+    series[id] = { t, y: s.year || undefined, ch, fill: s.fill || undefined };
   }
   // Original run years (e.g. [2002, 2007]) for flashback nights, from show_years in seeds.json.
   const years = readJSON(path.join(DATA, 'seeds.json'), {}).show_years || {};

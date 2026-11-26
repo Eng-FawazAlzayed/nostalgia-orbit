@@ -103,3 +103,19 @@ export async function search(q, { maxResults = 50, duration = 'medium', lang } =
     return (r.data.items || []).map(it => it.id.videoId).filter(Boolean);
   });
 }
+
+// Playlists matching a query, with their titles and sizes (100 + 1 units, cached 30 days).
+// Big fan-made "full episodes" playlists hold a whole show for the price of one search.
+export async function searchPlaylists(q, { maxResults = 15, lang } = {}) {
+  return cached('yt:plsearch:' + q + ':' + (lang || ''), 24 * 30, async () => {
+    const params = { part: 'snippet', q, type: 'playlist', maxResults, regionCode: 'KW' };
+    if (lang) params.relevanceLanguage = lang;
+    const r = await api('search', params, 100);
+    if (r.error) return null;
+    const lists = (r.data.items || []).map(it => ({ id: it.id.playlistId, title: it.snippet?.title || '', channel: it.snippet?.channelTitle || '' })).filter(p => p.id);
+    if (!lists.length) return [];
+    const d = await api('playlists', { part: 'contentDetails', id: lists.map(p => p.id).join(','), maxResults: 50 }, 1);
+    const size = {}; for (const it of (d.data?.items || [])) size[it.id] = it.contentDetails?.itemCount || 0;
+    return lists.map(p => ({ ...p, count: size[p.id] || 0 }));
+  });
+}

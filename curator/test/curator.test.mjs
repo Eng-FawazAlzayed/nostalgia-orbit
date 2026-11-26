@@ -68,7 +68,7 @@ test('backoff: temporary failures retry sooner than permanent ones; dead needs t
 
 function lib() {
   const L = new Library({ series: {}, episodes: {}, sources: {} });
-  const ser = L.upsertSeries({ title_en: 'Show', channel: 'rebound', tags: ['day'] });
+  const ser = L.upsertSeries({ title_en: 'Show', channel: 'planet-toon', tags: ['day'] });
   const e1 = L.upsertEpisode({ series: ser.id, season: 1, episode: 1, title_en: 'Show S1E1', duration: 1300 });
   const e1b = L.upsertEpisode({ series: ser.id, season: 1, episode: 1, title_en: 'Show ep 1 (archive copy)', duration: 1290 });
   assert.equal(e1.id, e1b.id, 'same episode from two providers is one entry');
@@ -82,14 +82,14 @@ test('catalog only publishes working links; episodes with none disappear', () =>
   const { L, a, b } = lib();
   const now = Date.now();
   applyResult(a, { ok: true, code: 'ok', duration: 1300 }, 'batch', now);
-  let c = compact(L, [{ id: 'rebound' }], now);
+  let c = compact(L, [{ id: 'planet-toon' }], now);
   assert.equal(c.episodes.length, 1);
   assert.deepEqual(c.episodes[0].src.map(s => s.p), ['yt']);
   applyResult(b, { ok: true, code: 'ok', duration: 1290, url: b.url }, 'batch', now);
-  c = compact(L, [{ id: 'rebound' }], now);
+  c = compact(L, [{ id: 'planet-toon' }], now);
   assert.equal(c.episodes[0].src.length, 2, 'backup link included');
   for (const s of [a, b]) { s.last_ok = null; applyResult(s, { ok: false, permanent: true, code: 'removed' }, 'batch', now); }
-  assert.equal(compact(L, [{ id: 'rebound' }], now).episodes.length, 0);
+  assert.equal(compact(L, [{ id: 'planet-toon' }], now).episodes.length, 0);
 });
 
 test('orphans are episodes that worked before and lost every copy; due list puts them first', () => {
