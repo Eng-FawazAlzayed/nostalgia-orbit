@@ -1,5 +1,17 @@
 [
  {
+  "cmd": "discover",
+  "arg": null,
+  "started": "2026-11-26T17:03:20.776Z",
+  "discover": {
+   "added": 1500,
+   "rejected": 3042,
+   "unclassified": 95,
+   "seen": 4
+  },
+  "finished": "2026-11-26T17:04:52.496Z"
+ },
+ {
   "cmd": "build",
   "arg": null,
   "started": "2026-11-26T16:53:18.095Z",
