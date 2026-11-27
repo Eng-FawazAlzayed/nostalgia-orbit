@@ -1,5 +1,62 @@
 [
  {
+  "cmd": "nightly",
+  "arg": null,
+  "started": "2026-11-27T18:18:03.911Z",
+  "check": {
+   "checked": 0,
+   "ok": 0,
+   "fail": 0
+  },
+  "heal": {
+   "orphans": 1,
+   "replaced": 1,
+   "searches": 1,
+   "at": "2026-11-27T18:18:04.759Z"
+  },
+  "discover": {
+   "added": 975,
+   "rejected": 30946,
+   "unclassified": 2,
+   "seen": 3531,
+   "per_channel": {
+    "gamezone": 58,
+    "internet-2006": 58,
+    "japan-2000": 58,
+    "cartoon-city": 58,
+    "spacetoon-zaman": 58,
+    "kuwait-zaman": 58,
+    "after-school": 58,
+    "toon-orbit-gold": 58,
+    "rebound": 58,
+    "orange-couch": 58,
+    "magic-hour": 58,
+    "zap-kids": 58,
+    "comet": 58,
+    "tokyo-tube": 58,
+    "planet-toon": 58,
+    "power-orbit": 45,
+    "najma-3": 0,
+    "dirati-tv": 0,
+    "masrah-kuwait": 0,
+    "khaleej-stage": 0,
+    "ramadan-nights": 0,
+    "night-owl": 0,
+    "player-2": 15,
+    "byte-shop": 15,
+    "rewind-web": 0,
+    "old-mtv": 30
+   }
+  },
+  "probe": {
+   "probed": 78,
+   "tally": {
+    "h264": 78
+   }
+  },
+  "finished": "2026-11-27T18:27:17.823Z"
+ },
+ {
   "cmd": "check",
   "arg": "all",
   "started": "2026-11-26T20:38:45.613Z",

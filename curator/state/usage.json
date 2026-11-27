@@ -7,15 +7,23 @@
    "requests": {
     "archive": 4468
    }
+  },
+  "2026-11-27": {
+   "youtube_units": 7500,
+   "ai_usd": 0,
+   "ai_calls": 0,
+   "requests": {
+    "archive": 492
+   }
   }
  },
  "months": {
   "2026-11": {
-   "youtube_units": 7531,
+   "youtube_units": 15031,
    "ai_usd": 0,
    "ai_calls": 0,
    "requests": {
-    "archive": 4468
+    "archive": 4960
    }
   }
  }
