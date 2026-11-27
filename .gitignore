@@ -11,3 +11,4 @@ platforms/windows/src-tauri/target/
 author.xml
 distributor.xml
 public/
+**/secrets.local.js

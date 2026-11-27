@@ -224,6 +224,9 @@ export function publish(lib, extra = {}) {
   const pagesUrl = process.env.PAGES_URL || '';
   fs.writeFileSync(path.join(OUT, 'catalog.js'), `window.NO_CATALOG_URL=${JSON.stringify(pagesUrl ? pagesUrl + '/catalog.json' : 'catalog.json')};window.NO_CATALOG=null;\n`);
   copyDir(path.join(ROOT, 'dashboard'), path.join(OUT, 'admin'));
+  // debrid pilot: channels played as live TV with add-on streams for 002/006/007
+  copyDir(path.resolve(ROOT, '..', 'pilot'), path.join(OUT, 'pilot'));
+  fs.copyFileSync(shared, path.join(OUT, 'pilot', 'schedule.js'));
   // bundled snapshot for APK / Windows / Tizen builds
   const bundle = path.resolve(ROOT, '..', 'dist', 'bundle');
   copyDir(clientDir, bundle);
