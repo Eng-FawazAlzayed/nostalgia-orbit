@@ -103,7 +103,9 @@ Deno.serve(async (req: Request) => {
   const u = new URL(req.url);
 
   const key = Deno.env.get('GATEWAY_KEY');
-  if (key && u.searchParams.get('key') !== key) return json({ error: 'forbidden' }, 403);
+  // Fail closed: with no passphrase this would be an open relay to the debrid accounts.
+  if (!key) return json({ error: 'gateway key not configured' }, 500);
+  if (u.searchParams.get('key') !== key) return json({ error: 'forbidden' }, 403);
 
   const what = u.searchParams.get('what');
   try {
