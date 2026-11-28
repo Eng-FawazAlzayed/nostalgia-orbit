@@ -442,8 +442,12 @@
     inp.style.cssText = 'position:absolute;left:22vw;right:22vw;top:45vh;font-size:3vh;padding:1vh;z-index:30';
     document.body.appendChild(inp);
     editing = inp; inp.focus();
+    function commit() { cfg[it.k] = inp.value.trim(); saveCfg(); toast('SAVED'); }
+    // desktop and phones often leave the field with a click or the keyboard's done key,
+    // which used to throw the value away: commit on blur as well as Enter.
+    inp.onchange = inp.onblur = function () { if (editing === inp) { commit(); done(); } };
     inp.onkeydown = function (e) {
-      if (e.keyCode === 13 || e.keyCode === 65376) { cfg[it.k] = inp.value.trim(); saveCfg(); done(); }
+      if (e.keyCode === 13 || e.keyCode === 65376) { commit(); done(); }
       else if (e.keyCode === 27 || e.keyCode === 10009 || e.keyCode === 65385) { done(); }
       e.stopPropagation();
     };

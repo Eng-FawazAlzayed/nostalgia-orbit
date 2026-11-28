@@ -105,6 +105,28 @@
   /* ---------- optional providers: turn a catalog source into a playable URL ---------- */
   function cfg() { return root.NOConfig ? root.NOConfig() : {}; }
   var resolvers = {
+    // arabic-toons.com: the page carries a signed MP4 for its Clappr player.
+    // Native HTTP (Capacitor) can read it; a web page cannot: the site sends no CORS headers and X-Frame-Options: SAMEORIGIN,
+    arabic: function (s, cb) {
+      var page = s.r;
+      function done(txt) {
+        var m = /videoSrc\s*=\s*"([^"]+)"/.exec(txt || '');
+        if (!m) { var e = new Error('arabic-nosrc'); e.permanent = false; return cb(e); }
+        cb(null, m[1].replace(/&amp;/g, '&'));
+      }
+      var cap = root.Capacitor && root.Capacitor.Plugins && root.Capacitor.Plugins.CapacitorHttp;
+      if (cap) {
+        cap.get({ url: page, headers: { Referer: 'https://www.arabic-toons.com/', Accept: 'text/html' } })
+          .then(function (r) { done(typeof r.data === 'string' ? r.data : (r.data && r.data.data)); })
+          .catch(function () { var e = new Error('arabic-net'); e.permanent = false;  cb(e); });
+        return;
+      }
+      var x = new XMLHttpRequest();
+      x.open('GET', page, true); x.timeout = 9000;
+      x.onload = function () { if (x.status >= 200 && x.status < 300) { done(x.responseText); } else { var e = new Error('arabic-http'); e.permanent = false;  cb(e); } };
+      x.onerror = x.ontimeout = function () { var e = new Error('arabic-app-only'); e.permanent = false;  cb(e); };
+      x.send();
+    },
     ia: function (s, cb) { cb(null, s.u || ('https://archive.org/download/' + s.r)); },
     mp4: function (s, cb) { cb(null, s.u || s.r); },
     hls: function (s, cb) { cb(null, s.u || s.r); },
@@ -174,6 +196,21 @@
   var token = 0;
   var startTimer = null;
 
+  // arabic-toons on a web page: no CORS, so show their own player in a frame.
+  function framePlay(url, onPlaying) {
+    var pic = document.getElementById('pic');
+    var f = document.getElementById('at-frame');
+    if (!f) { f = document.createElement('iframe'); f.id = 'at-frame';
+      f.setAttribute('allow', 'autoplay; fullscreen'); f.setAttribute('scrolling', 'no');
+      pic.appendChild(f); }
+    vid.style.visibility = 'hidden';
+    document.getElementById('yt-host').style.visibility = 'hidden';
+    f.style.display = 'block';
+    if (f.src !== url) { f.src = url; }
+    current = { kind: 'frame' };
+    if (onPlaying) { onPlaying(); }
+  }
+
   function stopAll() {
     token++;
     clearTimeout(startTimer);
@@ -183,6 +220,8 @@
     if (yt.ready && yt.player) { try { yt.player.stopVideo(); } catch (e) {} }
     yt.handlers = null; clearTimeout(ytKick); cover(false);
     document.getElementById('yt-host').style.visibility = 'hidden';
+    var af = document.getElementById('at-frame');
+    if (af) { af.style.display = 'none'; af.src = 'about:blank'; }
     vid.style.visibility = 'hidden';
     current = null;
   }
@@ -230,6 +269,7 @@
 
     resolveSrc(s, !!h.fresh, function (err, url) {
       if (my !== token) { return; }
+      if (err && err.iframe) { return framePlay(err.iframe, onPlaying); }
       if (err) { return onError(err.message, err.permanent !== false && !/net|rd-0|rd-5|rd-429|timeout/.test(err.message)); }
       vid.style.visibility = 'visible';
       vid.muted = !!h.muted;

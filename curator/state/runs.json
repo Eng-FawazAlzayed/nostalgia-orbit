@@ -2,8 +2,71 @@
  {
   "cmd": "build",
   "arg": null,
-  "started": "2026-11-28T01:53:30.325Z",
-  "finished": "2026-11-28T01:53:30.401Z"
+  "started": "2026-11-28T02:10:30.799Z",
+  "finished": "2026-11-28T02:10:30.837Z"
+ },
+ {
+  "cmd": "build",
+  "arg": null,
+  "started": "2026-11-28T02:07:12.330Z",
+  "finished": "2026-11-28T02:07:12.376Z"
+ },
+ {
+  "cmd": "arabic",
+  "arg": null,
+  "started": "2026-11-28T02:07:11.116Z",
+  "arabic": {
+   "shows": 3,
+   "episodes": 0,
+   "skipped": 0
+  },
+  "finished": "2026-11-28T02:07:12.165Z"
+ },
+ {
+  "cmd": "build",
+  "arg": null,
+  "started": "2026-11-28T02:04:11.695Z",
+  "finished": "2026-11-28T02:04:11.742Z"
+ },
+ {
+  "cmd": "arabic",
+  "arg": null,
+  "started": "2026-11-28T02:03:49.440Z",
+  "arabic": {
+   "shows": 3,
+   "episodes": 105,
+   "skipped": 0
+  },
+  "finished": "2026-11-28T02:03:50.448Z"
+ },
+ {
+  "cmd": "build",
+  "arg": null,
+  "started": "2026-11-28T02:03:04.550Z",
+  "finished": "2026-11-28T02:03:04.588Z"
+ },
+ {
+  "cmd": "build",
+  "arg": null,
+  "started": "2026-11-28T02:02:56.841Z",
+  "finished": "2026-11-28T02:02:56.879Z"
+ },
+ {
+  "cmd": "build",
+  "arg": null,
+  "started": "2026-11-28T02:02:48.724Z",
+  "finished": "2026-11-28T02:02:48.762Z"
+ },
+ {
+  "cmd": "arabic",
+  "arg": null,
+  "started": "2026-11-28T02:02:37.470Z",
+  "arabic": {
+   "shows": 3,
+   "episodes": 105,
+   "skipped": 0
+  },
+  "finished": "2026-11-28T02:02:38.513Z"
  },
  {
   "cmd": "build",

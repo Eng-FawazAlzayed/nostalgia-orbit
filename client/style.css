@@ -149,3 +149,6 @@ body.lowperf .card-name { text-shadow: none; }
 .lowperf #gear { opacity: 0.25; }
 #setupItems { position: relative; overflow-y: auto; -webkit-overflow-scrolling: touch; }
 @media (max-width: 700px) { #setup { left: 3vw; right: 3vw; } }
+
+#at-frame { position:absolute; left:0; top:0; width:100%; height:100%; border:0;
+  background:#000; z-index:3; display:none; }

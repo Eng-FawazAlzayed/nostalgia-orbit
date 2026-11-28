@@ -9,7 +9,7 @@ import { playableCodec } from './probe.mjs';
 import { matchShow, notAShow, looksLikeClip, westernDigits } from './titles.mjs';
 import { seriesRequire } from './discover.mjs';
 
-const P = { youtube: 'yt', archive: 'ia' };
+const P = { youtube: 'yt', archive: 'ia', arabic: 'arabic' };
 
 // Leave out anything already in the library that today's rules reject, so a rule change
 // cleans the published catalog right away:
