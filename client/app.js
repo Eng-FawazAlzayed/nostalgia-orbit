@@ -19,7 +19,7 @@
     catalogUrl: window.NO_CATALOG_URL || '', jfUrl: '', jfToken: '', embyUrl: '', embyToken: '',
     plexUrl: '', plexToken: '', davUrl: '', rdToken: '', torboxToken: '', rdAuth: null,
     // not a secret: the gateway refuses every request without the passphrase
-    debridAddons: false,
+    era: 'live', debridAddons: false,
     gatewayUrl: 'https://yhjqxymuujcmbrlocamk.supabase.co/functions/v1/gateway', gatewayKey: '',
     modes: {}, breaks: 'auto', hevc: false, follow: [], seqPos: {}, seqTurn: 0, dog: true
   };
@@ -44,10 +44,19 @@
     for (k in catalog.series) { if (catalog.series.hasOwnProperty(k)) { c.series[k] = catalog.series[k]; } }
     // ad-break length from Setup overrides each channel's own
     var br = cfg.breaks === 'off' ? 0 : (cfg.breaks === 'auto' ? null : +cfg.breaks);
+    var era = cfg.era && cfg.era !== 'live' ? +cfg.era : 0;   // 0 = broadcast the current day
     for (i = 0; i < catalog.channels.length; i++) {
       var ch = catalog.channels[i];
+      if (era && ((ch.from && era < ch.from) || (ch.to && era > ch.to))) { continue; }
       if (br !== null) { var cc = {}; for (k in ch) { if (ch.hasOwnProperty(k)) { cc[k] = ch[k]; } } cc.break_s = br; ch = cc; }
       c.channels.push(ch);
+    }
+    if (era) {
+      var ef = [];
+      for (i = 0; i < c.episodes.length; i++) { var ey = c.episodes[i].y; if (ey && ey > era) { continue; } ef.push(c.episodes[i]); }
+      c.episodes = ef;
+      for (k in c.series) { if (!c.series.hasOwnProperty(k)) { continue; } var sy = c.series[k].y;
+        if (sy && sy > era) { delete c.series[k]; } }
     }
     var overlays = [local, load('debridOverlay', null)], hasLib = false;
     for (i = 0; i < overlays.length; i++) {
@@ -374,6 +383,8 @@
     { k: 'davUrl', label: 'WebDAV share address', text: true },
     { k: 'modeHere', label: 'This channel: order', info: function () { var c = channels()[chIdx]; return c ? String((cfg.modes[c.id] || c.mode || 'classic')).toUpperCase() : '—'; },
       act: function () { var c = channels()[chIdx]; if (!c || c.seq || c.mix) { return; } cfg.modes[c.id] = (cfg.modes[c.id] || c.mode || 'classic') === 'random' ? 'classic' : 'random'; saveCfg(); buildIndex(); tune(chIdx, true); } },
+    { k: 'era', label: 'Simulation year', opts: ['live', 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013],
+      after: function () { buildIndex(); toast(cfg.era === 'live' ? 'LIVE' : cfg.era); buildIndex(); } },
     { k: 'breaks', label: 'Ad breaks between shows', opts: ['auto', 'off', '30', '60', '120'], after: function () { buildIndex(); } },
     { k: 'dog', label: 'Channel logo in the corner', opts: [true, false], after: function () { var c = channels()[chIdx]; if (c) { look(c); } } },
     { k: 'rdLogin', label: 'Real-Debrid: sign in (optional, paid)', act: function () { debridLogin('rd'); }, info2: function () { return cfg.rdToken || (cfg.rdAuth && cfg.rdAuth.refresh) ? 'CONNECTED' : ''; } },

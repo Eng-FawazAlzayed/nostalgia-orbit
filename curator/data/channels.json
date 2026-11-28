@@ -1,1320 +1,1358 @@
 [
-  {
-    "id": "gamezone",
-    "n": "101",
-    "name": "GAMING SHOWS",
-    "ar": "برامج الألعاب",
-    "work": "G4 / GameTrailers 2000s",
-    "color": "#7cff3f",
-    "theme": "gamezone",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "10:00",
-        "g": "reviews"
-      },
-      {
-        "f": "10:00",
-        "t": "14:00",
-        "g": "shows"
-      },
-      {
-        "f": "14:00",
-        "t": "17:00",
-        "g": "e3"
-      },
-      {
-        "f": "17:00",
-        "t": "22:00",
-        "g": "shows"
-      },
-      {
-        "f": "22:00",
-        "t": "01:00",
-        "g": "reviews"
-      },
-      {
-        "f": "01:00",
-        "t": "06:00",
-        "g": "docs"
-      }
+ {
+  "id": "gamezone",
+  "n": "101",
+  "name": "GAMING SHOWS",
+  "ar": "برامج الألعاب",
+  "work": "G4 / GameTrailers 2000s",
+  "color": "#7cff3f",
+  "theme": "gamezone",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "10:00",
+    "g": "reviews"
+   },
+   {
+    "f": "10:00",
+    "t": "14:00",
+    "g": "shows"
+   },
+   {
+    "f": "14:00",
+    "t": "17:00",
+    "g": "e3"
+   },
+   {
+    "f": "17:00",
+    "t": "22:00",
+    "g": "shows"
+   },
+   {
+    "f": "22:00",
+    "t": "01:00",
+    "g": "reviews"
+   },
+   {
+    "f": "01:00",
+    "t": "06:00",
+    "g": "docs"
+   }
+  ],
+  "collect": [
+   {
+    "from": [
+     "player-2"
     ],
-    "collect": [
-      {
-        "from": [
-          "player-2"
-        ],
-        "shows_ref": [
-          "gaming_shows"
-        ],
-        "tags": [
-          "shows"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "internet-2006",
-    "n": "102",
-    "name": "INTERNET 2006",
-    "ar": "إنترنت ٢٠٠٦",
-    "work": "Early internet culture",
-    "color": "#3a8ee6",
-    "theme": "xp",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "12:00",
-        "g": "web"
-      },
-      {
-        "f": "12:00",
-        "t": "16:00",
-        "g": "flash"
-      },
-      {
-        "f": "16:00",
-        "t": "22:00",
-        "g": "web"
-      },
-      {
-        "f": "22:00",
-        "t": "02:00",
-        "g": "flash"
-      },
-      {
-        "f": "02:00",
-        "t": "06:00",
-        "g": "tech"
-      }
-    ]
-  },
-  {
-    "id": "japan-2000",
-    "n": "103",
-    "name": "JAPAN 2000",
-    "ar": "اليابان ٢٠٠٠",
-    "ja": "ジャパン2000",
-    "work": "Japanese TV, games and city life 1995-2013",
-    "color": "#e60033",
-    "theme": "japan",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "09:00",
-        "g": "city"
-      },
-      {
-        "f": "09:00",
-        "t": "12:00",
-        "g": "variety"
-      },
-      {
-        "f": "12:00",
-        "t": "15:00",
-        "g": "gaming"
-      },
-      {
-        "f": "15:00",
-        "t": "18:00",
-        "g": "city"
-      },
-      {
-        "f": "18:00",
-        "t": "21:00",
-        "g": "variety"
-      },
-      {
-        "f": "21:00",
-        "t": "00:00",
-        "g": "gaming"
-      },
-      {
-        "f": "00:00",
-        "t": "06:00",
-        "g": "city"
-      }
-    ]
-  },
-  {
-    "id": "cartoon-city",
-    "n": "104",
-    "name": "CARTOONS 2000s",
-    "ar": "كرتون الألفينات",
-    "work": "CN / Nick / Disney / Jetix 2000-2013",
-    "color": "#ff7a00",
-    "theme": "cartoon",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "09:00",
-        "g": "nick"
-      },
-      {
-        "f": "09:00",
-        "t": "12:00",
-        "g": "disney"
-      },
-      {
-        "f": "12:00",
-        "t": "15:00",
-        "g": "foxkids"
-      },
-      {
-        "f": "15:00",
-        "t": "19:00",
-        "g": "cn"
-      },
-      {
-        "f": "19:00",
-        "t": "22:00",
-        "g": "nick"
-      },
-      {
-        "f": "22:00",
-        "t": "02:00",
-        "g": "cn"
-      },
-      {
-        "f": "02:00",
-        "t": "06:00",
-        "g": "*all"
-      }
+    "shows_ref": [
+     "gaming_shows"
     ],
-    "collect": [
-      {
-        "from": [
-          "toon-orbit-gold"
-        ],
-        "shows_ref": [
-          "cartoon_city"
-        ],
-        "tags": [
-          "cn"
-        ],
-        "fill": true
-      },
-      {
-        "from": [
-          "orange-couch"
-        ],
-        "shows_ref": [
-          "cartoon_city"
-        ],
-        "tags": [
-          "nick"
-        ],
-        "fill": true
-      },
-      {
-        "from": [
-          "magic-hour"
-        ],
-        "shows_ref": [
-          "cartoon_city"
-        ],
-        "tags": [
-          "disney"
-        ],
-        "fill": true
-      },
-      {
-        "from": [
-          "zap-kids",
-          "rebound",
-          "comet"
-        ],
-        "shows_ref": [
-          "cartoon_city"
-        ],
-        "tags": [
-          "foxkids"
-        ]
-      }
+    "tags": [
+     "shows"
     ]
-  },
-  {
-    "id": "spacetoon-zaman",
-    "n": "105",
-    "name": "سبيستون زمان",
-    "ar": "سبيستون زمان",
-    "work": "Spacetoon / Space Power / MBC3 Arabic dubs",
-    "color": "#9b5cff",
-    "theme": "planets",
-    "rtl": true,
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "10:00",
-        "g": "*all"
-      },
-      {
-        "f": "10:00",
-        "t": "14:00",
-        "g": "*all"
-      },
-      {
-        "f": "14:00",
-        "t": "19:00",
-        "g": "*all"
-      },
-      {
-        "f": "19:00",
-        "t": "23:00",
-        "g": "*all"
-      },
-      {
-        "f": "23:00",
-        "t": "06:00",
-        "g": "*all"
-      }
+   }
+  ]
+ },
+ {
+  "id": "internet-2006",
+  "n": "102",
+  "name": "INTERNET 2006",
+  "ar": "إنترنت ٢٠٠٦",
+  "work": "Early internet culture",
+  "color": "#3a8ee6",
+  "theme": "xp",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "12:00",
+    "g": "web"
+   },
+   {
+    "f": "12:00",
+    "t": "16:00",
+    "g": "flash"
+   },
+   {
+    "f": "16:00",
+    "t": "22:00",
+    "g": "web"
+   },
+   {
+    "f": "22:00",
+    "t": "02:00",
+    "g": "flash"
+   },
+   {
+    "f": "02:00",
+    "t": "06:00",
+    "g": "tech"
+   }
+  ]
+ },
+ {
+  "id": "japan-2000",
+  "n": "103",
+  "name": "JAPAN 2000",
+  "ar": "اليابان ٢٠٠٠",
+  "ja": "ジャパン2000",
+  "work": "Japanese TV, games and city life 1995-2013",
+  "color": "#e60033",
+  "theme": "japan",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "09:00",
+    "g": "city"
+   },
+   {
+    "f": "09:00",
+    "t": "12:00",
+    "g": "variety"
+   },
+   {
+    "f": "12:00",
+    "t": "15:00",
+    "g": "gaming"
+   },
+   {
+    "f": "15:00",
+    "t": "18:00",
+    "g": "city"
+   },
+   {
+    "f": "18:00",
+    "t": "21:00",
+    "g": "variety"
+   },
+   {
+    "f": "21:00",
+    "t": "00:00",
+    "g": "gaming"
+   },
+   {
+    "f": "00:00",
+    "t": "06:00",
+    "g": "city"
+   }
+  ]
+ },
+ {
+  "id": "cartoon-city",
+  "n": "104",
+  "name": "CARTOONS 2000s",
+  "ar": "كرتون الألفينات",
+  "work": "CN / Nick / Disney / Jetix 2000-2013",
+  "color": "#ff7a00",
+  "theme": "cartoon",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "09:00",
+    "g": "nick"
+   },
+   {
+    "f": "09:00",
+    "t": "12:00",
+    "g": "disney"
+   },
+   {
+    "f": "12:00",
+    "t": "15:00",
+    "g": "foxkids"
+   },
+   {
+    "f": "15:00",
+    "t": "19:00",
+    "g": "cn"
+   },
+   {
+    "f": "19:00",
+    "t": "22:00",
+    "g": "nick"
+   },
+   {
+    "f": "22:00",
+    "t": "02:00",
+    "g": "cn"
+   },
+   {
+    "f": "02:00",
+    "t": "06:00",
+    "g": "*all"
+   }
+  ],
+  "collect": [
+   {
+    "from": [
+     "toon-orbit-gold"
     ],
-    "collect": [
-      {
-        "from": [
-          "planet-toon",
-          "power-orbit",
-          "najma-3"
-        ],
-        "tags": [
-          "*all"
-        ],
-        "fill": true
-      }
-    ]
-  },
-  {
-    "id": "kuwait-zaman",
-    "n": "106",
-    "name": "الكويت زمان",
-    "ar": "الكويت زمان",
-    "work": "Kuwaiti and Gulf TV, theatre, Ramadan",
-    "color": "#007a3d",
-    "theme": "kuwait",
-    "rtl": true,
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "09:00",
-        "g": "kids"
-      },
-      {
-        "f": "09:00",
-        "t": "13:00",
-        "g": "tv"
-      },
-      {
-        "f": "13:00",
-        "t": "16:00",
-        "g": "plays"
-      },
-      {
-        "f": "16:00",
-        "t": "20:00",
-        "g": "tv"
-      },
-      {
-        "f": "20:00",
-        "t": "00:00",
-        "g": "plays"
-      },
-      {
-        "f": "00:00",
-        "t": "03:00",
-        "g": "tv"
-      },
-      {
-        "f": "03:00",
-        "t": "06:00",
-        "off": true,
-        "label": "نهاية الإرسال"
-      }
+    "shows_ref": [
+     "cartoon_city"
     ],
-    "collect": [
-      {
-        "from": [
-          "dirati-tv"
-        ],
-        "tags": [
-          "tv",
-          "kids"
-        ],
-        "fill": true
-      },
-      {
-        "from": [
-          "masrah-kuwait",
-          "khaleej-stage"
-        ],
-        "tags": [
-          "plays"
-        ],
-        "fill": true
-      },
-      {
-        "from": [
-          "ramadan-nights"
-        ],
-        "tags": [
-          "tv"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "after-school",
-    "n": "107",
-    "name": "TEEN SITCOMS",
-    "ar": "مسلسلات المراهقين",
-    "work": "Nick / Disney / US sitcoms 1995-2013",
-    "color": "#f4b942",
-    "theme": "sitcom",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "12:00",
-        "g": "general"
-      },
-      {
-        "f": "12:00",
-        "t": "15:00",
-        "g": "disney"
-      },
-      {
-        "f": "15:00",
-        "t": "19:00",
-        "g": "nick"
-      },
-      {
-        "f": "19:00",
-        "t": "00:00",
-        "g": "general"
-      },
-      {
-        "f": "00:00",
-        "t": "06:00",
-        "g": "*all"
-      }
-    ]
-  },
-  {
-    "id": "random-nostalgia",
-    "n": "108",
-    "name": "RANDOM NOSTALGIA",
-    "ar": "حنين عشوائي",
-    "work": "A mix of 101-107",
-    "color": "#c0c0c0",
-    "theme": "vhs",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "06:00",
-        "g": "*all"
-      }
+    "tags": [
+     "cn"
     ],
-    "mix": {
-      "japan-2000": 3,
-      "gamezone": 3,
-      "spacetoon-zaman": 3,
-      "internet-2006": 1,
-      "cartoon-city": 1,
-      "kuwait-zaman": 1,
-      "after-school": 1
-    },
-    "_mix_note": "Weights: higher = more often. Edit freely."
-  },
-  {
-    "id": "toon-orbit-gold",
-    "n": "002",
-    "name": "CARTOON NETWORK",
-    "ar": "كرتون نتورك",
-    "work": "Cartoon Network Golden Era",
-    "color": "#ff6a3d",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "09:00",
-        "g": "morning"
-      },
-      {
-        "f": "09:00",
-        "t": "15:00",
-        "g": "day"
-      },
-      {
-        "f": "15:00",
-        "t": "19:00",
-        "g": "afterschool"
-      },
-      {
-        "f": "19:00",
-        "t": "23:00",
-        "g": "prime"
-      },
-      {
-        "f": "23:00",
-        "t": "06:00",
-        "g": "overnight"
-      },
-      {
-        "f": "20:00",
-        "t": "23:00",
-        "g": "*all",
-        "months": [
-          10
-        ],
-        "q": "halloween|hallowe|spooky|scary|ghost|haunted|monster|vampire|zombie|witch|pumpkin|trick or treat",
-        "label": "Halloween Specials"
-      },
-      {
-        "f": "18:00",
-        "t": "21:00",
-        "g": "*all",
-        "months": [
-          12
-        ],
-        "q": "christmas|xmas|holiday|santa|winter|snow|new year",
-        "label": "Christmas Specials"
-      },
-      {
-        "f": "10:00",
-        "t": "15:00",
-        "g": "*all",
-        "months": [
-          6,
-          7,
-          8
-        ],
-        "marathon": true,
-        "label": "Summer Vacation Marathon"
-      },
-      {
-        "f": "19:00",
-        "t": "21:00",
-        "g": "*all",
-        "days": [
-          0
-        ],
-        "years": [
-          2005,
-          2005
-        ],
-        "label": "2005 Flashback"
-      },
-      {
-        "f": "19:00",
-        "t": "21:00",
-        "g": "*all",
-        "days": [
-          1
-        ],
-        "years": [
-          2008,
-          2008
-        ],
-        "label": "2008 Flashback"
-      },
-      {
-        "f": "19:00",
-        "t": "21:00",
-        "g": "*all",
-        "days": [
-          2
-        ],
-        "years": [
-          2010,
-          2010
-        ],
-        "label": "2010 Flashback"
-      },
-      {
-        "f": "07:00",
-        "t": "12:00",
-        "g": "*all",
-        "days": [
-          6
-        ],
-        "label": "Saturday Morning Cartoons"
-      },
-      {
-        "f": "13:00",
-        "t": "18:00",
-        "g": "*all",
-        "days": [
-          5
-        ],
-        "marathon": true,
-        "label": "Weekend Marathon"
-      },
-      {
-        "f": "18:00",
-        "t": "22:00",
-        "g": "*all",
-        "days": [
-          5
-        ],
-        "q": "Dexter|Johnny Bravo|Powerpuff|Courage|Ed, Edd|Edd n Eddy|Cow and Chicken|I Am Weasel|Time Squad|Robot Jones|Mike, Lu|Sheep in the Big City|Grim Adventures|Kids Next Door",
-        "label": "Friday Cartoon Night"
-      }
+    "fill": true
+   },
+   {
+    "from": [
+     "orange-couch"
     ],
-    "collect": [
-      {
-        "from": [
-          "cartoon-city",
-          "rebound",
-          "comet"
-        ],
-        "shows_ref": [
-          "cn_classic"
-        ],
-        "tags": [
-          "*all"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "rebound",
-    "n": "004",
-    "name": "BOOMERANG",
-    "ar": "بوميرانج",
-    "work": "Boomerang",
-    "color": "#00b3a4",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "12:00",
-        "g": "day"
-      },
-      {
-        "f": "12:00",
-        "t": "18:00",
-        "g": "afternoon"
-      },
-      {
-        "f": "18:00",
-        "t": "06:00",
-        "g": "overnight"
-      }
-    ]
-  },
-  {
-    "id": "orange-couch",
-    "n": "006",
-    "name": "NICKELODEON",
-    "ar": "نيكلوديون",
-    "work": "Nickelodeon Retro",
-    "color": "#ff8a00",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "09:00",
-        "g": "morning"
-      },
-      {
-        "f": "09:00",
-        "t": "15:00",
-        "g": "day"
-      },
-      {
-        "f": "15:00",
-        "t": "19:00",
-        "g": "afterschool"
-      },
-      {
-        "f": "19:00",
-        "t": "23:00",
-        "g": "afterschool"
-      },
-      {
-        "f": "23:00",
-        "t": "06:00",
-        "g": "overnight"
-      },
-      {
-        "f": "20:00",
-        "t": "23:00",
-        "g": "*all",
-        "months": [
-          10
-        ],
-        "q": "halloween|hallowe|spooky|scary|ghost|haunted|monster|vampire|zombie|witch|pumpkin|trick or treat",
-        "label": "Halloween Specials"
-      },
-      {
-        "f": "18:00",
-        "t": "21:00",
-        "g": "*all",
-        "months": [
-          12
-        ],
-        "q": "christmas|xmas|holiday|santa|winter|snow|new year",
-        "label": "Christmas Specials"
-      },
-      {
-        "f": "10:00",
-        "t": "15:00",
-        "g": "*all",
-        "months": [
-          6,
-          7,
-          8
-        ],
-        "marathon": true,
-        "label": "Summer Vacation Marathon"
-      },
-      {
-        "f": "19:00",
-        "t": "21:00",
-        "g": "*all",
-        "days": [
-          0
-        ],
-        "years": [
-          2005,
-          2005
-        ],
-        "label": "2005 Flashback"
-      },
-      {
-        "f": "19:00",
-        "t": "21:00",
-        "g": "*all",
-        "days": [
-          1
-        ],
-        "years": [
-          2008,
-          2008
-        ],
-        "label": "2008 Flashback"
-      },
-      {
-        "f": "19:00",
-        "t": "21:00",
-        "g": "*all",
-        "days": [
-          2
-        ],
-        "years": [
-          2010,
-          2010
-        ],
-        "label": "2010 Flashback"
-      },
-      {
-        "f": "07:00",
-        "t": "12:00",
-        "g": "*all",
-        "days": [
-          6
-        ],
-        "label": "Saturday Morning Cartoons"
-      },
-      {
-        "f": "13:00",
-        "t": "18:00",
-        "g": "*all",
-        "days": [
-          5
-        ],
-        "marathon": true,
-        "label": "Weekend Marathon"
-      },
-      {
-        "f": "19:00",
-        "t": "22:00",
-        "g": "*all",
-        "days": [
-          4
-        ],
-        "q": "Drake|iCarly|Kenan|All That|Amanda Show|Ned's|Zoey 101|Victorious|Big Time Rush|Unfabulous|Garc|True Jackson|Naked Brothers|Anubis|The Troop|Sam & Cat|Sam and Cat",
-        "label": "Sitcom Night"
-      }
+    "shows_ref": [
+     "cartoon_city"
     ],
-    "collect": [
-      {
-        "from": [
-          "cartoon-city",
-          "after-school"
-        ],
-        "shows_ref": [
-          "nick_classic"
-        ],
-        "tags": [
-          "*all"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "magic-hour",
-    "n": "007",
-    "name": "DISNEY CHANNEL",
-    "ar": "قناة ديزني",
-    "work": "Disney Channel Classic / Disney XD",
-    "color": "#7b6bff",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "09:00",
-        "g": "day"
-      },
-      {
-        "f": "09:00",
-        "t": "15:00",
-        "g": "day"
-      },
-      {
-        "f": "15:00",
-        "t": "19:00",
-        "g": "day"
-      },
-      {
-        "f": "19:00",
-        "t": "23:00",
-        "g": "day"
-      },
-      {
-        "f": "23:00",
-        "t": "06:00",
-        "g": "overnight"
-      },
-      {
-        "f": "20:00",
-        "t": "23:00",
-        "g": "*all",
-        "months": [
-          10
-        ],
-        "q": "halloween|hallowe|spooky|scary|ghost|haunted|monster|vampire|zombie|witch|pumpkin|trick or treat",
-        "label": "Halloween Specials"
-      },
-      {
-        "f": "18:00",
-        "t": "21:00",
-        "g": "*all",
-        "months": [
-          12
-        ],
-        "q": "christmas|xmas|holiday|santa|winter|snow|new year",
-        "label": "Christmas Specials"
-      },
-      {
-        "f": "10:00",
-        "t": "15:00",
-        "g": "*all",
-        "months": [
-          6,
-          7,
-          8
-        ],
-        "marathon": true,
-        "label": "Summer Vacation Marathon"
-      },
-      {
-        "f": "19:00",
-        "t": "21:00",
-        "g": "*all",
-        "days": [
-          0
-        ],
-        "years": [
-          2005,
-          2005
-        ],
-        "label": "2005 Flashback"
-      },
-      {
-        "f": "19:00",
-        "t": "21:00",
-        "g": "*all",
-        "days": [
-          1
-        ],
-        "years": [
-          2008,
-          2008
-        ],
-        "label": "2008 Flashback"
-      },
-      {
-        "f": "19:00",
-        "t": "21:00",
-        "g": "*all",
-        "days": [
-          2
-        ],
-        "years": [
-          2010,
-          2010
-        ],
-        "label": "2010 Flashback"
-      },
-      {
-        "f": "07:00",
-        "t": "12:00",
-        "g": "*all",
-        "days": [
-          6
-        ],
-        "label": "Saturday Morning Cartoons"
-      },
-      {
-        "f": "13:00",
-        "t": "18:00",
-        "g": "*all",
-        "days": [
-          5
-        ],
-        "marathon": true,
-        "label": "Weekend Marathon"
-      },
-      {
-        "f": "19:00",
-        "t": "23:00",
-        "g": "*all",
-        "days": [
-          5
-        ],
-        "q": "High School Musical|Camp Rock|Cheetah Girls|Halloweentown|Movie|Zenon|Johnny Tsunami|Motocrossed|Cadet Kelly|Twitches|Read It and Weep|Jump In|Starstruck|Princess Protection|Lemonade Mouth|Let It Shine|Smart House|Stuck in the Suburbs|Wendy Wu|Minutemen|Den Brother|16 Wishes|Geek Charming|Frenemies|Radio Rebel|Girl vs. Monster",
-        "label": "Original Movie Night"
-      }
+    "tags": [
+     "nick"
     ],
-    "collect": [
-      {
-        "from": [
-          "cartoon-city",
-          "after-school"
-        ],
-        "shows_ref": [
-          "disney_classic"
-        ],
-        "tags": [
-          "*all"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "zap-kids",
-    "n": "009",
-    "name": "JETIX / FOX KIDS",
-    "ar": "جيتكس / فوكس كيدز",
-    "work": "Jetix / Fox Kids",
-    "color": "#e8003d",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "10:00",
-        "g": "morning"
-      },
-      {
-        "f": "10:00",
-        "t": "15:00",
-        "g": "day"
-      },
-      {
-        "f": "15:00",
-        "t": "20:00",
-        "g": "afterschool"
-      },
-      {
-        "f": "20:00",
-        "t": "06:00",
-        "g": "overnight"
-      }
-    ]
-  },
-  {
-    "id": "comet",
-    "n": "013",
-    "name": "TOONAMI",
-    "ar": "تونامي",
-    "work": "Toonami Retro",
-    "color": "#00c2ff",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "16:00",
-        "g": "day"
-      },
-      {
-        "f": "16:00",
-        "t": "19:00",
-        "g": "afterschool"
-      },
-      {
-        "f": "19:00",
-        "t": "02:00",
-        "g": "prime"
-      },
-      {
-        "f": "02:00",
-        "t": "06:00",
-        "g": "overnight"
-      }
-    ]
-  },
-  {
-    "id": "tokyo-tube",
-    "n": "016",
-    "name": "JAPANESE TV",
-    "ar": "التلفزيون الياباني",
-    "work": "Japanese TV",
-    "color": "#e8003d",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "18:00",
-        "g": "day"
-      },
-      {
-        "f": "18:00",
-        "t": "20:00",
-        "g": "tokusatsu"
-      },
-      {
-        "f": "20:00",
-        "t": "23:00",
-        "g": "variety"
-      },
-      {
-        "f": "23:00",
-        "t": "06:00",
-        "g": "overnight"
-      }
-    ]
-  },
-  {
-    "id": "planet-toon",
-    "n": "020",
-    "name": "SPACETOON CLASSIC",
-    "ar": "سبيستون كلاسيك",
-    "work": "Spacetoon Classic",
-    "color": "#18c29c",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "09:00",
-        "g": "morning"
-      },
-      {
-        "f": "09:00",
-        "t": "14:00",
-        "g": "day"
-      },
-      {
-        "f": "14:00",
-        "t": "18:00",
-        "g": "afterschool"
-      },
-      {
-        "f": "18:00",
-        "t": "20:00",
-        "g": "action"
-      },
-      {
-        "f": "20:00",
-        "t": "22:00",
-        "g": "movie"
-      },
-      {
-        "f": "22:00",
-        "t": "06:00",
-        "g": "overnight"
-      }
-    ]
-  },
-  {
-    "id": "power-orbit",
-    "n": "021",
-    "name": "SPACE POWER",
-    "ar": "سبيس باور",
-    "work": "Space Power / MBC Action",
-    "color": "#3d5afe",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "16:00",
-        "g": "day"
-      },
-      {
-        "f": "16:00",
-        "t": "22:00",
-        "g": "prime"
-      },
-      {
-        "f": "22:00",
-        "t": "06:00",
-        "g": "overnight"
-      }
-    ]
-  },
-  {
-    "id": "najma-3",
-    "n": "023",
-    "name": "MBC3 CLASSIC",
-    "ar": "MBC3 كلاسيك",
-    "work": "MBC3 Classic",
-    "color": "#ff5fa2",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "10:00",
-        "g": "morning"
-      },
-      {
-        "f": "10:00",
-        "t": "15:00",
-        "g": "day"
-      },
-      {
-        "f": "15:00",
-        "t": "20:00",
-        "g": "afterschool"
-      },
-      {
-        "f": "20:00",
-        "t": "06:00",
-        "g": "overnight"
-      }
-    ]
-  },
-  {
-    "id": "dirati-tv",
-    "n": "025",
-    "name": "KUWAIT TV",
-    "ar": "تلفزيون الكويت",
-    "work": "Kuwait Retro TV",
-    "color": "#ffb627",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "09:00",
-        "g": "morning"
-      },
-      {
-        "f": "09:00",
-        "t": "15:00",
-        "g": "day"
-      },
-      {
-        "f": "15:00",
-        "t": "19:00",
-        "g": "cartoons"
-      },
-      {
-        "f": "19:00",
-        "t": "23:00",
-        "g": "prime"
-      },
-      {
-        "f": "23:00",
-        "t": "03:00",
-        "g": "late"
-      },
-      {
-        "f": "03:00",
-        "t": "06:00",
-        "off": true,
-        "label": "Close-down"
-      }
-    ]
-  },
-  {
-    "id": "masrah-kuwait",
-    "n": "027",
-    "name": "KUWAITI PLAYS",
-    "ar": "مسرحيات كويتية",
-    "work": "مسرحيات كويتية",
-    "color": "#c9a227",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "21:00",
-        "g": "day"
-      },
-      {
-        "f": "21:00",
-        "t": "06:00",
-        "g": "prime",
-        "days": [
-          0,
-          1,
-          2,
-          3,
-          6
-        ]
-      },
-      {
-        "f": "21:00",
-        "t": "06:00",
-        "g": "weekend",
-        "days": [
-          4,
-          5
-        ]
-      }
-    ]
-  },
-  {
-    "id": "khaleej-stage",
-    "n": "028",
-    "name": "GULF PLAYS",
-    "ar": "مسرحيات خليجية",
-    "work": "مسرحيات خليجية / Gulf TV",
-    "color": "#8a2be2",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "20:00",
-        "g": "day"
-      },
-      {
-        "f": "20:00",
-        "t": "06:00",
-        "g": "prime"
-      }
-    ]
-  },
-  {
-    "id": "ramadan-nights",
-    "n": "029",
-    "name": "RAMADAN CLASSICS",
-    "ar": "كلاسيكيات رمضان",
-    "work": "Ramadan classics",
-    "color": "#2fbf71",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "17:00",
-        "g": "day"
-      },
-      {
-        "f": "17:00",
-        "t": "21:00",
-        "g": "iftar"
-      },
-      {
-        "f": "21:00",
-        "t": "06:00",
-        "g": "prime"
-      }
-    ]
-  },
-  {
-    "id": "night-owl",
-    "n": "030",
-    "name": "ADULT SWIM",
-    "ar": "أدلت سويم",
-    "work": "Adult Swim",
-    "color": "#262633",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "21:00",
-        "off": true,
-        "label": "Scrambled"
-      },
-      {
-        "f": "21:00",
-        "t": "06:00",
-        "g": "prime"
-      }
-    ]
-  },
-  {
-    "id": "player-2",
-    "n": "039",
-    "name": "G4",
-    "ar": "G4",
-    "work": "G4: X-Play, Attack of the Show, Cinematech, Code Monkeys 2002-2013",
-    "color": "#ff2d55",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "16:00",
-        "g": "day"
-      },
-      {
-        "f": "16:00",
-        "t": "20:00",
-        "g": "reviews"
-      },
-      {
-        "f": "20:00",
-        "t": "23:00",
-        "g": "e3"
-      },
-      {
-        "f": "23:00",
-        "t": "06:00",
-        "g": "overnight"
-      }
+    "fill": true
+   },
+   {
+    "from": [
+     "magic-hour"
     ],
-    "collect": [
-      {
-        "from": [
-          "gamezone"
-        ],
-        "shows_ref": [
-          "g4_only"
-        ],
-        "tags": [
-          "*all"
-        ]
-      }
+    "shows_ref": [
+     "cartoon_city"
+    ],
+    "tags": [
+     "disney"
+    ],
+    "fill": true
+   },
+   {
+    "from": [
+     "zap-kids",
+     "rebound",
+     "comet"
+    ],
+    "shows_ref": [
+     "cartoon_city"
+    ],
+    "tags": [
+     "foxkids"
     ]
+   }
+  ]
+ },
+ {
+  "id": "spacetoon-zaman",
+  "n": "105",
+  "name": "سبيستون زمان",
+  "ar": "سبيستون زمان",
+  "work": "Spacetoon / Space Power / MBC3 Arabic dubs",
+  "color": "#9b5cff",
+  "theme": "planets",
+  "rtl": true,
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "10:00",
+    "g": "*all"
+   },
+   {
+    "f": "10:00",
+    "t": "14:00",
+    "g": "*all"
+   },
+   {
+    "f": "14:00",
+    "t": "19:00",
+    "g": "*all"
+   },
+   {
+    "f": "19:00",
+    "t": "23:00",
+    "g": "*all"
+   },
+   {
+    "f": "23:00",
+    "t": "06:00",
+    "g": "*all"
+   }
+  ],
+  "collect": [
+   {
+    "from": [
+     "planet-toon",
+     "power-orbit",
+     "najma-3"
+    ],
+    "tags": [
+     "*all"
+    ],
+    "fill": true
+   }
+  ]
+ },
+ {
+  "id": "kuwait-zaman",
+  "n": "106",
+  "name": "الكويت زمان",
+  "ar": "الكويت زمان",
+  "work": "Kuwaiti and Gulf TV, theatre, Ramadan",
+  "color": "#007a3d",
+  "theme": "kuwait",
+  "rtl": true,
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "09:00",
+    "g": "kids"
+   },
+   {
+    "f": "09:00",
+    "t": "13:00",
+    "g": "tv"
+   },
+   {
+    "f": "13:00",
+    "t": "16:00",
+    "g": "plays"
+   },
+   {
+    "f": "16:00",
+    "t": "20:00",
+    "g": "tv"
+   },
+   {
+    "f": "20:00",
+    "t": "00:00",
+    "g": "plays"
+   },
+   {
+    "f": "00:00",
+    "t": "03:00",
+    "g": "tv"
+   },
+   {
+    "f": "03:00",
+    "t": "06:00",
+    "off": true,
+    "label": "نهاية الإرسال"
+   }
+  ],
+  "collect": [
+   {
+    "from": [
+     "dirati-tv"
+    ],
+    "tags": [
+     "tv",
+     "kids"
+    ],
+    "fill": true
+   },
+   {
+    "from": [
+     "masrah-kuwait",
+     "khaleej-stage"
+    ],
+    "tags": [
+     "plays"
+    ],
+    "fill": true
+   },
+   {
+    "from": [
+     "ramadan-nights"
+    ],
+    "tags": [
+     "tv"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "after-school",
+  "n": "107",
+  "name": "TEEN SITCOMS",
+  "ar": "مسلسلات المراهقين",
+  "work": "Nick / Disney / US sitcoms 1995-2013",
+  "color": "#f4b942",
+  "theme": "sitcom",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "12:00",
+    "g": "general"
+   },
+   {
+    "f": "12:00",
+    "t": "15:00",
+    "g": "disney"
+   },
+   {
+    "f": "15:00",
+    "t": "19:00",
+    "g": "nick"
+   },
+   {
+    "f": "19:00",
+    "t": "00:00",
+    "g": "general"
+   },
+   {
+    "f": "00:00",
+    "t": "06:00",
+    "g": "*all"
+   }
+  ]
+ },
+ {
+  "id": "random-nostalgia",
+  "n": "108",
+  "name": "RANDOM NOSTALGIA",
+  "ar": "حنين عشوائي",
+  "work": "A mix of 101-107",
+  "color": "#c0c0c0",
+  "theme": "vhs",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "06:00",
+    "g": "*all"
+   }
+  ],
+  "mix": {
+   "japan-2000": 3,
+   "gamezone": 3,
+   "spacetoon-zaman": 3,
+   "internet-2006": 1,
+   "cartoon-city": 1,
+   "kuwait-zaman": 1,
+   "after-school": 1
   },
-  {
-    "id": "rewind-web",
-    "n": "041",
-    "name": "CLASSIC YOUTUBE",
-    "ar": "يوتيوب زمان",
-    "work": "Classic YouTube / Newgrounds / memes",
-    "color": "#9b5cff",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "18:00",
-        "g": "day"
-      },
-      {
-        "f": "18:00",
-        "t": "06:00",
-        "g": "prime"
-      }
+  "_mix_note": "Weights: higher = more often. Edit freely."
+ },
+ {
+  "id": "toon-orbit-gold",
+  "n": "002",
+  "name": "CARTOON NETWORK",
+  "ar": "كرتون نتورك",
+  "work": "Cartoon Network Golden Era",
+  "color": "#ff6a3d",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "09:00",
+    "g": "morning"
+   },
+   {
+    "f": "09:00",
+    "t": "15:00",
+    "g": "day"
+   },
+   {
+    "f": "15:00",
+    "t": "19:00",
+    "g": "afterschool"
+   },
+   {
+    "f": "19:00",
+    "t": "23:00",
+    "g": "prime"
+   },
+   {
+    "f": "23:00",
+    "t": "06:00",
+    "g": "overnight"
+   },
+   {
+    "f": "20:00",
+    "t": "23:00",
+    "g": "*all",
+    "months": [
+     10
+    ],
+    "q": "halloween|hallowe|spooky|scary|ghost|haunted|monster|vampire|zombie|witch|pumpkin|trick or treat",
+    "label": "Halloween Specials"
+   },
+   {
+    "f": "18:00",
+    "t": "21:00",
+    "g": "*all",
+    "months": [
+     12
+    ],
+    "q": "christmas|xmas|holiday|santa|winter|snow|new year",
+    "label": "Christmas Specials"
+   },
+   {
+    "f": "10:00",
+    "t": "15:00",
+    "g": "*all",
+    "months": [
+     6,
+     7,
+     8
+    ],
+    "marathon": true,
+    "label": "Summer Vacation Marathon"
+   },
+   {
+    "f": "19:00",
+    "t": "21:00",
+    "g": "*all",
+    "days": [
+     0
+    ],
+    "years": [
+     2005,
+     2005
+    ],
+    "label": "2005 Flashback"
+   },
+   {
+    "f": "19:00",
+    "t": "21:00",
+    "g": "*all",
+    "days": [
+     1
+    ],
+    "years": [
+     2008,
+     2008
+    ],
+    "label": "2008 Flashback"
+   },
+   {
+    "f": "19:00",
+    "t": "21:00",
+    "g": "*all",
+    "days": [
+     2
+    ],
+    "years": [
+     2010,
+     2010
+    ],
+    "label": "2010 Flashback"
+   },
+   {
+    "f": "07:00",
+    "t": "12:00",
+    "g": "*all",
+    "days": [
+     6
+    ],
+    "label": "Saturday Morning Cartoons"
+   },
+   {
+    "f": "13:00",
+    "t": "18:00",
+    "g": "*all",
+    "days": [
+     5
+    ],
+    "marathon": true,
+    "label": "Weekend Marathon"
+   },
+   {
+    "f": "18:00",
+    "t": "22:00",
+    "g": "*all",
+    "days": [
+     5
+    ],
+    "q": "Dexter|Johnny Bravo|Powerpuff|Courage|Ed, Edd|Edd n Eddy|Cow and Chicken|I Am Weasel|Time Squad|Robot Jones|Mike, Lu|Sheep in the Big City|Grim Adventures|Kids Next Door",
+    "label": "Friday Cartoon Night"
+   }
+  ],
+  "collect": [
+   {
+    "from": [
+     "cartoon-city",
+     "rebound",
+     "comet"
+    ],
+    "shows_ref": [
+     "cn_classic"
+    ],
+    "tags": [
+     "*all"
     ]
-  },
-  {
-    "id": "byte-shop",
-    "n": "042",
-    "name": "TECHTV",
-    "ar": "TechTV",
-    "work": "TechTV: The Screen Savers, Call for Help, plus The Computer Chronicles",
-    "color": "#5bffe1",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "06:00",
-        "g": "*all"
-      }
+   }
+  ],
+  "from": 2000,
+  "to": null
+ },
+ {
+  "id": "rebound",
+  "n": "004",
+  "name": "BOOMERANG",
+  "ar": "بوميرانج",
+  "work": "Boomerang",
+  "color": "#00b3a4",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "12:00",
+    "g": "day"
+   },
+   {
+    "f": "12:00",
+    "t": "18:00",
+    "g": "afternoon"
+   },
+   {
+    "f": "18:00",
+    "t": "06:00",
+    "g": "overnight"
+   }
+  ],
+  "from": 2000,
+  "to": null
+ },
+ {
+  "id": "orange-couch",
+  "n": "006",
+  "name": "NICKELODEON",
+  "ar": "نيكلوديون",
+  "work": "Nickelodeon Retro",
+  "color": "#ff8a00",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "09:00",
+    "g": "morning"
+   },
+   {
+    "f": "09:00",
+    "t": "15:00",
+    "g": "day"
+   },
+   {
+    "f": "15:00",
+    "t": "19:00",
+    "g": "afterschool"
+   },
+   {
+    "f": "19:00",
+    "t": "23:00",
+    "g": "afterschool"
+   },
+   {
+    "f": "23:00",
+    "t": "06:00",
+    "g": "overnight"
+   },
+   {
+    "f": "20:00",
+    "t": "23:00",
+    "g": "*all",
+    "months": [
+     10
+    ],
+    "q": "halloween|hallowe|spooky|scary|ghost|haunted|monster|vampire|zombie|witch|pumpkin|trick or treat",
+    "label": "Halloween Specials"
+   },
+   {
+    "f": "18:00",
+    "t": "21:00",
+    "g": "*all",
+    "months": [
+     12
+    ],
+    "q": "christmas|xmas|holiday|santa|winter|snow|new year",
+    "label": "Christmas Specials"
+   },
+   {
+    "f": "10:00",
+    "t": "15:00",
+    "g": "*all",
+    "months": [
+     6,
+     7,
+     8
+    ],
+    "marathon": true,
+    "label": "Summer Vacation Marathon"
+   },
+   {
+    "f": "19:00",
+    "t": "21:00",
+    "g": "*all",
+    "days": [
+     0
+    ],
+    "years": [
+     2005,
+     2005
+    ],
+    "label": "2005 Flashback"
+   },
+   {
+    "f": "19:00",
+    "t": "21:00",
+    "g": "*all",
+    "days": [
+     1
+    ],
+    "years": [
+     2008,
+     2008
+    ],
+    "label": "2008 Flashback"
+   },
+   {
+    "f": "19:00",
+    "t": "21:00",
+    "g": "*all",
+    "days": [
+     2
+    ],
+    "years": [
+     2010,
+     2010
+    ],
+    "label": "2010 Flashback"
+   },
+   {
+    "f": "07:00",
+    "t": "12:00",
+    "g": "*all",
+    "days": [
+     6
+    ],
+    "label": "Saturday Morning Cartoons"
+   },
+   {
+    "f": "13:00",
+    "t": "18:00",
+    "g": "*all",
+    "days": [
+     5
+    ],
+    "marathon": true,
+    "label": "Weekend Marathon"
+   },
+   {
+    "f": "19:00",
+    "t": "22:00",
+    "g": "*all",
+    "days": [
+     4
+    ],
+    "q": "Drake|iCarly|Kenan|All That|Amanda Show|Ned's|Zoey 101|Victorious|Big Time Rush|Unfabulous|Garc|True Jackson|Naked Brothers|Anubis|The Troop|Sam & Cat|Sam and Cat",
+    "label": "Sitcom Night"
+   }
+  ],
+  "collect": [
+   {
+    "from": [
+     "cartoon-city",
+     "after-school"
+    ],
+    "shows_ref": [
+     "nick_classic"
+    ],
+    "tags": [
+     "*all"
     ]
-  },
-  {
-    "id": "old-mtv",
-    "n": "047",
-    "name": "MTV CLASSIC",
-    "ar": "MTV كلاسيك",
-    "work": "Old MTV broadcasts from the Internet Archive, 1981-2006",
-    "color": "#ff5fa2",
-    "blocks": [
-      {
-        "f": "06:00",
-        "t": "06:00",
-        "g": "*all"
-      }
+   }
+  ],
+  "from": 2000,
+  "to": null
+ },
+ {
+  "id": "magic-hour",
+  "n": "007",
+  "name": "DISNEY CHANNEL",
+  "ar": "قناة ديزني",
+  "work": "Disney Channel Classic / Disney XD",
+  "color": "#7b6bff",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "09:00",
+    "g": "day"
+   },
+   {
+    "f": "09:00",
+    "t": "15:00",
+    "g": "day"
+   },
+   {
+    "f": "15:00",
+    "t": "19:00",
+    "g": "day"
+   },
+   {
+    "f": "19:00",
+    "t": "23:00",
+    "g": "day"
+   },
+   {
+    "f": "23:00",
+    "t": "06:00",
+    "g": "overnight"
+   },
+   {
+    "f": "20:00",
+    "t": "23:00",
+    "g": "*all",
+    "months": [
+     10
+    ],
+    "q": "halloween|hallowe|spooky|scary|ghost|haunted|monster|vampire|zombie|witch|pumpkin|trick or treat",
+    "label": "Halloween Specials"
+   },
+   {
+    "f": "18:00",
+    "t": "21:00",
+    "g": "*all",
+    "months": [
+     12
+    ],
+    "q": "christmas|xmas|holiday|santa|winter|snow|new year",
+    "label": "Christmas Specials"
+   },
+   {
+    "f": "10:00",
+    "t": "15:00",
+    "g": "*all",
+    "months": [
+     6,
+     7,
+     8
+    ],
+    "marathon": true,
+    "label": "Summer Vacation Marathon"
+   },
+   {
+    "f": "19:00",
+    "t": "21:00",
+    "g": "*all",
+    "days": [
+     0
+    ],
+    "years": [
+     2005,
+     2005
+    ],
+    "label": "2005 Flashback"
+   },
+   {
+    "f": "19:00",
+    "t": "21:00",
+    "g": "*all",
+    "days": [
+     1
+    ],
+    "years": [
+     2008,
+     2008
+    ],
+    "label": "2008 Flashback"
+   },
+   {
+    "f": "19:00",
+    "t": "21:00",
+    "g": "*all",
+    "days": [
+     2
+    ],
+    "years": [
+     2010,
+     2010
+    ],
+    "label": "2010 Flashback"
+   },
+   {
+    "f": "07:00",
+    "t": "12:00",
+    "g": "*all",
+    "days": [
+     6
+    ],
+    "label": "Saturday Morning Cartoons"
+   },
+   {
+    "f": "13:00",
+    "t": "18:00",
+    "g": "*all",
+    "days": [
+     5
+    ],
+    "marathon": true,
+    "label": "Weekend Marathon"
+   },
+   {
+    "f": "19:00",
+    "t": "23:00",
+    "g": "*all",
+    "days": [
+     5
+    ],
+    "q": "High School Musical|Camp Rock|Cheetah Girls|Halloweentown|Movie|Zenon|Johnny Tsunami|Motocrossed|Cadet Kelly|Twitches|Read It and Weep|Jump In|Starstruck|Princess Protection|Lemonade Mouth|Let It Shine|Smart House|Stuck in the Suburbs|Wendy Wu|Minutemen|Den Brother|16 Wishes|Geek Charming|Frenemies|Radio Rebel|Girl vs. Monster",
+    "label": "Original Movie Night"
+   }
+  ],
+  "collect": [
+   {
+    "from": [
+     "cartoon-city",
+     "after-school"
+    ],
+    "shows_ref": [
+     "disney_classic"
+    ],
+    "tags": [
+     "*all"
     ]
-  }
+   }
+  ],
+  "from": 2000,
+  "to": null
+ },
+ {
+  "id": "zap-kids",
+  "n": "009",
+  "name": "JETIX / FOX KIDS",
+  "ar": "جيتكس / فوكس كيدز",
+  "work": "Jetix / Fox Kids",
+  "color": "#e8003d",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "10:00",
+    "g": "morning"
+   },
+   {
+    "f": "10:00",
+    "t": "15:00",
+    "g": "day"
+   },
+   {
+    "f": "15:00",
+    "t": "20:00",
+    "g": "afterschool"
+   },
+   {
+    "f": "20:00",
+    "t": "06:00",
+    "g": "overnight"
+   }
+  ],
+  "from": 2004,
+  "to": null
+ },
+ {
+  "id": "comet",
+  "n": "013",
+  "name": "TOONAMI",
+  "ar": "تونامي",
+  "work": "Toonami Retro",
+  "color": "#00c2ff",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "16:00",
+    "g": "day"
+   },
+   {
+    "f": "16:00",
+    "t": "19:00",
+    "g": "afterschool"
+   },
+   {
+    "f": "19:00",
+    "t": "02:00",
+    "g": "prime"
+   },
+   {
+    "f": "02:00",
+    "t": "06:00",
+    "g": "overnight"
+   }
+  ],
+  "from": 2000,
+  "to": null
+ },
+ {
+  "id": "tokyo-tube",
+  "n": "016",
+  "name": "JAPANESE TV",
+  "ar": "التلفزيون الياباني",
+  "work": "Japanese TV",
+  "color": "#e8003d",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "18:00",
+    "g": "day"
+   },
+   {
+    "f": "18:00",
+    "t": "20:00",
+    "g": "tokusatsu"
+   },
+   {
+    "f": "20:00",
+    "t": "23:00",
+    "g": "variety"
+   },
+   {
+    "f": "23:00",
+    "t": "06:00",
+    "g": "overnight"
+   }
+  ],
+  "from": 2000,
+  "to": null
+ },
+ {
+  "id": "planet-toon",
+  "n": "020",
+  "name": "SPACETOON CLASSIC",
+  "ar": "سبيستون كلاسيك",
+  "work": "Spacetoon Classic",
+  "color": "#18c29c",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "09:00",
+    "g": "morning"
+   },
+   {
+    "f": "09:00",
+    "t": "14:00",
+    "g": "day"
+   },
+   {
+    "f": "14:00",
+    "t": "18:00",
+    "g": "afterschool"
+   },
+   {
+    "f": "18:00",
+    "t": "20:00",
+    "g": "action"
+   },
+   {
+    "f": "20:00",
+    "t": "22:00",
+    "g": "movie"
+   },
+   {
+    "f": "22:00",
+    "t": "06:00",
+    "g": "overnight"
+   }
+  ],
+  "from": 2000,
+  "to": null
+ },
+ {
+  "id": "power-orbit",
+  "n": "021",
+  "name": "SPACE POWER",
+  "ar": "سبيس باور",
+  "work": "Space Power / MBC Action",
+  "color": "#3d5afe",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "16:00",
+    "g": "day"
+   },
+   {
+    "f": "16:00",
+    "t": "22:00",
+    "g": "prime"
+   },
+   {
+    "f": "22:00",
+    "t": "06:00",
+    "g": "overnight"
+   }
+  ],
+  "from": 2008,
+  "to": null
+ },
+ {
+  "id": "najma-3",
+  "n": "023",
+  "name": "MBC3 CLASSIC",
+  "ar": "MBC3 كلاسيك",
+  "work": "MBC3 Classic",
+  "color": "#ff5fa2",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "10:00",
+    "g": "morning"
+   },
+   {
+    "f": "10:00",
+    "t": "15:00",
+    "g": "day"
+   },
+   {
+    "f": "15:00",
+    "t": "20:00",
+    "g": "afterschool"
+   },
+   {
+    "f": "20:00",
+    "t": "06:00",
+    "g": "overnight"
+   }
+  ],
+  "from": 2004,
+  "to": null
+ },
+ {
+  "id": "dirati-tv",
+  "n": "025",
+  "name": "KUWAIT TV",
+  "ar": "تلفزيون الكويت",
+  "work": "Kuwait Retro TV",
+  "color": "#ffb627",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "09:00",
+    "g": "morning"
+   },
+   {
+    "f": "09:00",
+    "t": "15:00",
+    "g": "day"
+   },
+   {
+    "f": "15:00",
+    "t": "19:00",
+    "g": "cartoons"
+   },
+   {
+    "f": "19:00",
+    "t": "23:00",
+    "g": "prime"
+   },
+   {
+    "f": "23:00",
+    "t": "03:00",
+    "g": "late"
+   },
+   {
+    "f": "03:00",
+    "t": "06:00",
+    "off": true,
+    "label": "Close-down"
+   }
+  ],
+  "from": 2000,
+  "to": null
+ },
+ {
+  "id": "masrah-kuwait",
+  "n": "027",
+  "name": "KUWAITI PLAYS",
+  "ar": "مسرحيات كويتية",
+  "work": "مسرحيات كويتية",
+  "color": "#c9a227",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "21:00",
+    "g": "day"
+   },
+   {
+    "f": "21:00",
+    "t": "06:00",
+    "g": "prime",
+    "days": [
+     0,
+     1,
+     2,
+     3,
+     6
+    ]
+   },
+   {
+    "f": "21:00",
+    "t": "06:00",
+    "g": "weekend",
+    "days": [
+     4,
+     5
+    ]
+   }
+  ],
+  "from": 2000,
+  "to": null
+ },
+ {
+  "id": "khaleej-stage",
+  "n": "028",
+  "name": "GULF PLAYS",
+  "ar": "مسرحيات خليجية",
+  "work": "مسرحيات خليجية / Gulf TV",
+  "color": "#8a2be2",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "20:00",
+    "g": "day"
+   },
+   {
+    "f": "20:00",
+    "t": "06:00",
+    "g": "prime"
+   }
+  ],
+  "from": 2000,
+  "to": null
+ },
+ {
+  "id": "ramadan-nights",
+  "n": "029",
+  "name": "RAMADAN CLASSICS",
+  "ar": "كلاسيكيات رمضان",
+  "work": "Ramadan classics",
+  "color": "#2fbf71",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "17:00",
+    "g": "day"
+   },
+   {
+    "f": "17:00",
+    "t": "21:00",
+    "g": "iftar"
+   },
+   {
+    "f": "21:00",
+    "t": "06:00",
+    "g": "prime"
+   }
+  ],
+  "from": 2000,
+  "to": null
+ },
+ {
+  "id": "night-owl",
+  "n": "030",
+  "name": "ADULT SWIM",
+  "ar": "أدلت سويم",
+  "work": "Adult Swim",
+  "color": "#262633",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "21:00",
+    "off": true,
+    "label": "Scrambled"
+   },
+   {
+    "f": "21:00",
+    "t": "06:00",
+    "g": "prime"
+   }
+  ],
+  "from": 2001,
+  "to": null
+ },
+ {
+  "id": "player-2",
+  "n": "039",
+  "name": "G4",
+  "ar": "G4",
+  "work": "G4: X-Play, Attack of the Show, Cinematech, Code Monkeys 2002-2013",
+  "color": "#ff2d55",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "16:00",
+    "g": "day"
+   },
+   {
+    "f": "16:00",
+    "t": "20:00",
+    "g": "reviews"
+   },
+   {
+    "f": "20:00",
+    "t": "23:00",
+    "g": "e3"
+   },
+   {
+    "f": "23:00",
+    "t": "06:00",
+    "g": "overnight"
+   }
+  ],
+  "collect": [
+   {
+    "from": [
+     "gamezone"
+    ],
+    "shows_ref": [
+     "g4_only"
+    ],
+    "tags": [
+     "*all"
+    ]
+   }
+  ],
+  "from": 2002,
+  "to": null
+ },
+ {
+  "id": "rewind-web",
+  "n": "041",
+  "name": "CLASSIC YOUTUBE",
+  "ar": "يوتيوب زمان",
+  "work": "Classic YouTube / Newgrounds / memes",
+  "color": "#9b5cff",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "18:00",
+    "g": "day"
+   },
+   {
+    "f": "18:00",
+    "t": "06:00",
+    "g": "prime"
+   }
+  ],
+  "from": 2000,
+  "to": null
+ },
+ {
+  "id": "byte-shop",
+  "n": "042",
+  "name": "TECHTV",
+  "ar": "TechTV",
+  "work": "TechTV: The Screen Savers, Call for Help, plus The Computer Chronicles",
+  "color": "#5bffe1",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "06:00",
+    "g": "*all"
+   }
+  ],
+  "from": 2000,
+  "to": null
+ },
+ {
+  "id": "old-mtv",
+  "n": "047",
+  "name": "MTV CLASSIC",
+  "ar": "MTV كلاسيك",
+  "work": "Old MTV broadcasts from the Internet Archive, 1981-2006",
+  "color": "#ff5fa2",
+  "blocks": [
+   {
+    "f": "06:00",
+    "t": "06:00",
+    "g": "*all"
+   }
+  ],
+  "from": 2000,
+  "to": null
+ }
 ]

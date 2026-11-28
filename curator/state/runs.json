@@ -2,8 +2,270 @@
  {
   "cmd": "build",
   "arg": null,
-  "started": "2026-11-28T03:01:19.106Z",
-  "finished": "2026-11-28T03:01:19.193Z"
+  "started": "2026-11-28T03:04:35.030Z",
+  "finished": "2026-11-28T03:04:35.108Z"
+ },
+ {
+  "cmd": "validate",
+  "arg": null,
+  "started": "2026-11-28T03:04:23.050Z",
+  "validation": {
+   "generated": "2026-11-28T03:04:24.216Z",
+   "totals": {
+    "channels": 25,
+    "series": 515,
+    "episodes": 5689,
+    "sources": 6576
+   },
+   "providers": {
+    "yt": 1289,
+    "ia": 5182,
+    "arabic": 105
+   },
+   "titles": {
+    "arabicOnly": 312,
+    "englishOnly": 181,
+    "both": 10,
+    "none": 12,
+    "seriesWithYear": 41
+   },
+   "perChannel": {
+    "gamezone": {
+     "name": "GAMING SHOWS",
+     "n": "101",
+     "from": null,
+     "shows": 11,
+     "episodes": 242,
+     "arabic": 242
+    },
+    "internet-2006": {
+     "name": "INTERNET 2006",
+     "n": "102",
+     "from": null,
+     "shows": 7,
+     "episodes": 302,
+     "arabic": 302
+    },
+    "japan-2000": {
+     "name": "JAPAN 2000",
+     "n": "103",
+     "from": null,
+     "shows": 20,
+     "episodes": 344,
+     "arabic": 344
+    },
+    "cartoon-city": {
+     "name": "CARTOONS 2000s",
+     "n": "104",
+     "from": null,
+     "shows": 34,
+     "episodes": 839,
+     "arabic": 729
+    },
+    "spacetoon-zaman": {
+     "name": "سبيستون زمان",
+     "n": "105",
+     "from": null,
+     "shows": 171,
+     "episodes": 2084,
+     "arabic": 1786
+    },
+    "kuwait-zaman": {
+     "name": "الكويت زمان",
+     "n": "106",
+     "from": null,
+     "shows": 171,
+     "episodes": 377,
+     "arabic": 71
+    },
+    "after-school": {
+     "name": "TEEN SITCOMS",
+     "n": "107",
+     "from": null,
+     "shows": 6,
+     "episodes": 231,
+     "arabic": 198
+    },
+    "random-nostalgia": {
+     "name": "RANDOM NOSTALGIA",
+     "n": "108",
+     "from": null,
+     "shows": 0,
+     "episodes": 0,
+     "arabic": 0
+    },
+    "toon-orbit-gold": {
+     "name": "CARTOON NETWORK",
+     "n": "002",
+     "from": 2000,
+     "shows": 20,
+     "episodes": 521,
+     "arabic": 505
+    },
+    "rebound": {
+     "name": "BOOMERANG",
+     "n": "004",
+     "from": 2000,
+     "shows": 8,
+     "episodes": 36,
+     "arabic": 1
+    },
+    "orange-couch": {
+     "name": "NICKELODEON",
+     "n": "006",
+     "from": 2000,
+     "shows": 14,
+     "episodes": 296,
+     "arabic": 263
+    },
+    "magic-hour": {
+     "name": "DISNEY CHANNEL",
+     "n": "007",
+     "from": 2000,
+     "shows": 21,
+     "episodes": 287,
+     "arabic": 176
+    },
+    "zap-kids": {
+     "name": "JETIX / FOX KIDS",
+     "n": "009",
+     "from": 2004,
+     "shows": 15,
+     "episodes": 120,
+     "arabic": 0
+    },
+    "comet": {
+     "name": "TOONAMI",
+     "n": "013",
+     "from": 2000,
+     "shows": 7,
+     "episodes": 287,
+     "arabic": 161
+    },
+    "tokyo-tube": {
+     "name": "JAPANESE TV",
+     "n": "016",
+     "from": 2000,
+     "shows": 26,
+     "episodes": 154,
+     "arabic": 0
+    },
+    "planet-toon": {
+     "name": "SPACETOON CLASSIC",
+     "n": "020",
+     "from": 2000,
+     "shows": 33,
+     "episodes": 836,
+     "arabic": 730
+    },
+    "power-orbit": {
+     "name": "SPACE POWER",
+     "n": "021",
+     "from": 2008,
+     "shows": 53,
+     "episodes": 109,
+     "arabic": 0
+    },
+    "najma-3": {
+     "name": "MBC3 CLASSIC",
+     "n": "023",
+     "from": 2004,
+     "shows": 85,
+     "episodes": 1118,
+     "arabic": 1030
+    },
+    "dirati-tv": {
+     "name": "KUWAIT TV",
+     "n": "025",
+     "from": 2000,
+     "shows": 3,
+     "episodes": 84,
+     "arabic": 0
+    },
+    "masrah-kuwait": {
+     "name": "KUWAITI PLAYS",
+     "n": "027",
+     "from": 2000,
+     "shows": 86,
+     "episodes": 184,
+     "arabic": 55
+    },
+    "khaleej-stage": {
+     "name": "GULF PLAYS",
+     "n": "028",
+     "from": 2000,
+     "shows": 72,
+     "episodes": 79,
+     "arabic": 0
+    },
+    "player-2": {
+     "name": "G4",
+     "n": "039",
+     "from": 2002,
+     "shows": 4,
+     "episodes": 185,
+     "arabic": 185
+    },
+    "rewind-web": {
+     "name": "CLASSIC YOUTUBE",
+     "n": "041",
+     "from": 2000,
+     "shows": 12,
+     "episodes": 17,
+     "arabic": 17
+    },
+    "byte-shop": {
+     "name": "TECHTV",
+     "n": "042",
+     "from": 2000,
+     "shows": 2,
+     "episodes": 394,
+     "arabic": 394
+    },
+    "old-mtv": {
+     "name": "MTV CLASSIC",
+     "n": "047",
+     "from": 2000,
+     "shows": 3,
+     "episodes": 25,
+     "arabic": 25
+    }
+   },
+   "eras": {
+    "2000": {
+     "channels": 21,
+     "episodes": 4676,
+     "futureDatedDropped": 1013
+    },
+    "2004": {
+     "channels": 24,
+     "episodes": 5013,
+     "futureDatedDropped": 676
+    },
+    "2008": {
+     "channels": 25,
+     "episodes": 5312,
+     "futureDatedDropped": 377
+    },
+    "2010": {
+     "channels": 25,
+     "episodes": 5328,
+     "futureDatedDropped": 361
+    },
+    "2013": {
+     "channels": 25,
+     "episodes": 5423,
+     "futureDatedDropped": 266
+    }
+   }
+  },
+  "finished": "2026-11-28T03:04:24.272Z"
+ },
+ {
+  "cmd": "build",
+  "arg": null,
+  "started": "2026-11-28T03:02:56.292Z",
+  "finished": "2026-11-28T03:02:56.350Z"
  },
  {
   "cmd": "build",

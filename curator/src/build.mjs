@@ -104,7 +104,7 @@ export function compact(lib, channels, now = Date.now()) {
     const d = live ? 0 : e.duration || Math.max(...Object.values(lib.d.sources).filter(s => s.episode === e.id).map(s => s.duration || 0));
     if (!live && !d) continue; // can't schedule something of unknown length
     const t = {}; if (e.titles.en) t.en = e.titles.en; if (e.titles.ar) t.ar = e.titles.ar; if (e.titles.ja) t.ja = e.titles.ja;
-    episodes.push({ id: e.id, s: e.series, sn: e.season || undefined, ep: e.episode || undefined, t, d, src });
+    episodes.push({ id: e.id, s: e.series, sn: e.season || undefined, ep: e.episode || undefined, y: e.year || undefined, t, d, src });
     usedSeries.add(e.series);
   }
   const series = {};
