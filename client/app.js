@@ -217,17 +217,7 @@
       if (!srcs.length) { show($('black'), false); showCard(chName(c), T('noSignal')); return; }
       trySource(my, c, r.item, srcs, 0);
     };
-    if (window.NOAddons && !r.item.inter && r.item.ep && window.NOAddons.wants(c.id)) {
-      // 002/006/007: a cached debrid stream wins; the catalogue copies stay as the fallback.
-      var guard = setTimeout(begin, 7000);
-      window.NOAddons.resolve(catalog, r.item.ep, function (src) {
-        clearTimeout(guard);
-        if (src) { srcs.unshift(src); }
-        begin();
-      });
-    } else {
-      begin();
-    }
+    trySource(my, c, r.item, srcs, 0);
     // get the next programme's link ready a minute before it starts (one video buffers at a time)
     if (r.next && r.next.type === 'ep') {
       prefetchTimer = setTimeout(function () {
@@ -387,16 +377,7 @@
       after: function () { buildIndex(); toast(cfg.era === 'live' ? 'LIVE' : cfg.era); buildIndex(); } },
     { k: 'breaks', label: 'Ad breaks between shows', opts: ['auto', 'off', '30', '60', '120'], after: function () { buildIndex(); } },
     { k: 'dog', label: 'Channel logo in the corner', opts: [true, false], after: function () { var c = channels()[chIdx]; if (c) { look(c); } } },
-    { k: 'rdLogin', label: 'Real-Debrid: sign in (optional, paid)', act: function () { debridLogin('rd'); }, info2: function () { return cfg.rdToken || (cfg.rdAuth && cfg.rdAuth.refresh) ? 'CONNECTED' : ''; } },
-    { k: 'rdToken', label: 'Real-Debrid token (or paste one)', text: true, secret: true },
-    { k: 'tbLogin', label: 'TorBox: sign in (optional, paid)', act: function () { debridLogin('tb'); }, info2: function () { return cfg.torboxToken ? 'CONNECTED' : ''; } },
-    { k: 'torboxToken', label: 'TorBox API key (or paste one)', text: true, secret: true },
-    { k: 'debridAddons', label: 'Debrid streams on 002/006/007', opts: [true, false], after: function () { tune(chIdx, true); } },
-    { k: 'gatewayUrl', label: 'Debrid gateway URL (optional)', text: true },
-    { k: 'gatewayKey', label: 'Gateway passphrase', text: true, secret: true },
     { k: 'hevc', label: 'This device plays HEVC/10-bit files', opts: [false, true] },
-    { k: 'dbScan', label: 'Scan my Real-Debrid / TorBox files', act: function () { debridScan(); } },
-    { k: 'dbForget', label: 'Disconnect Real-Debrid / TorBox', act: function () { cfg.rdToken = ''; cfg.rdAuth = null; cfg.torboxToken = ''; saveCfg(); save('debridOverlay', null); save('debridFiles', null); buildIndex(); toast('OK'); } },
     { k: 'clearFails', label: 'Forget broken links on this device', act: function () { failed = {}; failCount = {}; save('failed', failed); save('failCount', failCount); toast('OK'); } },
     { k: 'about', label: 'Catalog', info: function () { return (catalog.generated || 'bundled').slice(0, 10) + ' · ' + (catalog.episodes || []).length + ' episodes'; } }
   ];

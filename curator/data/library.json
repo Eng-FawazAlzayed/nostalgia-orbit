@@ -1121,29 +1121,6 @@
    },
    "created": "2026-11-26T17:47:52.555Z"
   },
-  "s-wzvctz": {
-   "id": "s-wzvctz",
-   "titles": {
-    "en": "",
-    "ar": "سالي",
-    "ja": ""
-   },
-   "year": null,
-   "kind": "series",
-   "language": "ar",
-   "dub": "",
-   "subs": "",
-   "channels": {
-    "planet-toon": [
-     "afterschool",
-     "day",
-     "prime",
-     "afternoon",
-     "overnight"
-    ]
-   },
-   "created": "2026-11-26T17:47:52.560Z"
-  },
   "s-1qgs0fw": {
    "id": "s-1qgs0fw",
    "titles": {
@@ -1179,7 +1156,11 @@
    "channels": {
     "planet-toon": [
      "afterschool",
-     "action"
+     "action",
+     "prime",
+     "day",
+     "afternoon",
+     "overnight"
     ]
    },
    "created": "2026-11-26T17:47:52.693Z"
@@ -1200,6 +1181,9 @@
     "planet-toon": [
      "afterschool",
      "overnight"
+    ],
+    "spacetoon-zaman": [
+     "*all"
     ]
    },
    "created": "2026-11-26T17:47:52.833Z"
@@ -1223,7 +1207,8 @@
      "morning",
      "prime",
      "afternoon",
-     "overnight"
+     "overnight",
+     "*"
     ]
    },
    "created": "2026-11-26T17:47:53.469Z"
@@ -10429,25 +10414,6 @@
    },
    "created": "2026-11-26T18:33:06.980Z"
   },
-  "s-z88gje": {
-   "id": "s-z88gje",
-   "titles": {
-    "en": "",
-    "ar": "المحقق كونان",
-    "ja": ""
-   },
-   "year": null,
-   "kind": "series",
-   "language": "ar",
-   "dub": "ar",
-   "subs": "",
-   "channels": {
-    "spacetoon-zaman": [
-     "*all"
-    ]
-   },
-   "created": "2026-11-26T18:33:12.000Z"
-  },
   "s-c4kbsy": {
    "id": "s-c4kbsy",
    "titles": {
@@ -14707,29 +14673,6 @@
    "created": "2026-11-27T18:23:54.784Z",
    "fill": true
   },
-  "s-ry4egn": {
-   "id": "s-ry4egn",
-   "titles": {
-    "en": "",
-    "ar": "الكابتن ماجد",
-    "ja": ""
-   },
-   "year": null,
-   "kind": "series",
-   "language": "ar",
-   "dub": "",
-   "subs": "",
-   "channels": {
-    "planet-toon": [
-     "prime",
-     "afterschool",
-     "day",
-     "afternoon",
-     "overnight"
-    ]
-   },
-   "created": "2026-11-27T18:23:55.769Z"
-  },
   "s-imvsyx": {
    "id": "s-imvsyx",
    "titles": {
@@ -14859,25 +14802,6 @@
    },
    "created": "2026-11-27T18:24:37.828Z"
   },
-  "s-3axwo3": {
-   "id": "s-3axwo3",
-   "titles": {
-    "en": "Adnan wa Lina",
-    "ar": "عدنان ولينا",
-    "ja": ""
-   },
-   "year": 1975,
-   "kind": "series",
-   "language": "ar",
-   "dub": "ar",
-   "subs": "",
-   "channels": {
-    "planet-toon": [
-     "*"
-    ]
-   },
-   "created": "2026-11-28T02:03:49.997Z"
-  },
   "s-1jvdwer": {
    "id": "s-1jvdwer",
    "titles": {
@@ -14892,7 +14816,12 @@
    "subs": "",
    "channels": {
     "planet-toon": [
-     "*"
+     "*",
+     "afterschool",
+     "day",
+     "prime",
+     "afternoon",
+     "overnight"
     ]
    },
    "created": "2026-11-28T02:03:50.249Z"
@@ -32381,7 +32310,7 @@
   },
   "e-1ss7mhq": {
    "id": "e-1ss7mhq",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 1,
    "titles": {
@@ -62344,9 +62273,9 @@
   },
   "e-v3s2em": {
    "id": "e-v3s2em",
-   "series": "s-z88gje",
+   "series": "s-o2en5p",
    "season": 0,
-   "episode": 0,
+   "episode": 51,
    "titles": {
     "en": "",
     "ar": "انمي المحقق كونان الجزء العاشر مدبلج عربي 007 - الطفل المختطف الجزء الثاني",
@@ -62363,9 +62292,9 @@
   },
   "e-1z25e3": {
    "id": "e-1z25e3",
-   "series": "s-z88gje",
+   "series": "s-o2en5p",
    "season": 0,
-   "episode": 0,
+   "episode": 52,
    "titles": {
     "en": "",
     "ar": "انمي المحقق كونان الجزء العاشر مدبلج عربي 008 - لغز الروائي",
@@ -62382,9 +62311,9 @@
   },
   "e-abrszw": {
    "id": "e-abrszw",
-   "series": "s-z88gje",
+   "series": "s-o2en5p",
    "season": 0,
-   "episode": 0,
+   "episode": 53,
    "titles": {
     "en": "",
     "ar": "انمي المحقق كونان الجزء العاشر مدبلج عربي 027 - خدعة لم تكتمل الجزء الثاني",
@@ -62401,9 +62330,9 @@
   },
   "e-t1nrfe": {
    "id": "e-t1nrfe",
-   "series": "s-z88gje",
+   "series": "s-o2en5p",
    "season": 0,
-   "episode": 0,
+   "episode": 54,
    "titles": {
     "en": "",
     "ar": "انمي المحقق كونان الجزء العاشر مدبلج عربي 028 - طيف مسرح كومبيرا الجزء الأول",
@@ -62420,9 +62349,9 @@
   },
   "e-1wv1x80": {
    "id": "e-1wv1x80",
-   "series": "s-z88gje",
+   "series": "s-o2en5p",
    "season": 0,
-   "episode": 0,
+   "episode": 55,
    "titles": {
     "en": "",
     "ar": "انمي المحقق كونان الجزء العاشر مدبلج عربي 029 - طيف مسرح كومبيرا الجزء الثاني",
@@ -62439,9 +62368,9 @@
   },
   "e-1nmjsvl": {
    "id": "e-1nmjsvl",
-   "series": "s-z88gje",
+   "series": "s-o2en5p",
    "season": 0,
-   "episode": 0,
+   "episode": 56,
    "titles": {
     "en": "",
     "ar": "انمي المحقق كونان الجزء العاشر مدبلج عربي 030 - في ذكرى الرحيل",
@@ -62458,9 +62387,9 @@
   },
   "e-glcsnw": {
    "id": "e-glcsnw",
-   "series": "s-z88gje",
+   "series": "s-o2en5p",
    "season": 0,
-   "episode": 0,
+   "episode": 57,
    "titles": {
     "en": "",
     "ar": "انمي المحقق كونان الجزء العاشر مدبلج عربي 031 - الغرفة المقلوبة الجزء الأول",
@@ -62477,9 +62406,9 @@
   },
   "e-1p151ee": {
    "id": "e-1p151ee",
-   "series": "s-z88gje",
+   "series": "s-o2en5p",
    "season": 0,
-   "episode": 0,
+   "episode": 58,
    "titles": {
     "en": "",
     "ar": "انمي المحقق كونان الجزء العاشر مدبلج عربي 032 - الغرفة المقلوبة الجزء الثاني",
@@ -62496,9 +62425,9 @@
   },
   "e-bprfrv": {
    "id": "e-bprfrv",
-   "series": "s-z88gje",
+   "series": "s-o2en5p",
    "season": 0,
-   "episode": 0,
+   "episode": 59,
    "titles": {
     "en": "",
     "ar": "انمي المحقق كونان الجزء العاشر مدبلج عربي 033 - الغموض الذي شغفني",
@@ -62515,9 +62444,9 @@
   },
   "e-1o3nirj": {
    "id": "e-1o3nirj",
-   "series": "s-z88gje",
+   "series": "s-o2en5p",
    "season": 0,
-   "episode": 0,
+   "episode": 60,
    "titles": {
     "en": "",
     "ar": "انمي المحقق كونان الجزء العاشر مدبلج عربي 034 - منديل سوكو الأحمر الجزء الأول",
@@ -62534,9 +62463,9 @@
   },
   "e-15rjkkz": {
    "id": "e-15rjkkz",
-   "series": "s-z88gje",
+   "series": "s-o2en5p",
    "season": 0,
-   "episode": 0,
+   "episode": 61,
    "titles": {
     "en": "",
     "ar": "انمي المحقق كونان الجزء العاشر مدبلج عربي 035 - منديل سوكو الأحمر الجزء الثاني",
@@ -62553,9 +62482,9 @@
   },
   "e-14yxzou": {
    "id": "e-14yxzou",
-   "series": "s-z88gje",
+   "series": "s-o2en5p",
    "season": 0,
-   "episode": 0,
+   "episode": 62,
    "titles": {
     "en": "",
     "ar": "انمي المحقق كونان الجزء العاشر مدبلج عربي 036a - جريمة القمامة",
@@ -62572,9 +62501,9 @@
   },
   "e-hm465f": {
    "id": "e-hm465f",
-   "series": "s-z88gje",
+   "series": "s-o2en5p",
    "season": 0,
-   "episode": 0,
+   "episode": 63,
    "titles": {
     "en": "",
     "ar": "انمي المحقق كونان الجزء العاشر مدبلج عربي 036b - جريمة القمامة",
@@ -62591,9 +62520,9 @@
   },
   "e-11s3idz": {
    "id": "e-11s3idz",
-   "series": "s-z88gje",
+   "series": "s-o2en5p",
    "season": 0,
-   "episode": 0,
+   "episode": 64,
    "titles": {
     "en": "",
     "ar": "انمي المحقق كونان الجزء العاشر مدبلج عربي 037 end - لغز في الصف",
@@ -116057,7 +115986,7 @@
   },
   "e-76w8tv": {
    "id": "e-76w8tv",
-   "series": "s-ry4egn",
+   "series": "s-ki9t6y",
    "season": 0,
    "episode": 5,
    "titles": {
@@ -116076,9 +116005,9 @@
   },
   "e-1s6jl8q": {
    "id": "e-1s6jl8q",
-   "series": "s-ry4egn",
+   "series": "s-ki9t6y",
    "season": 0,
-   "episode": 11,
+   "episode": 72,
    "titles": {
     "en": "",
     "ar": "🔥 Captain Majid Episode 11 Full Arabic | ظهور بسام يشعل أخطر تحدٍ في الكابتن ماجد! 😱⚽",
@@ -116095,9 +116024,9 @@
   },
   "e-t16c3e": {
    "id": "e-t16c3e",
-   "series": "s-ry4egn",
+   "series": "s-ki9t6y",
    "season": 0,
-   "episode": 0,
+   "episode": 73,
    "titles": {
     "en": "",
     "ar": "الكابتن ماجد الجزء السادس ح2",
@@ -116114,9 +116043,9 @@
   },
   "e-11bt2ef": {
    "id": "e-11bt2ef",
-   "series": "s-ry4egn",
+   "series": "s-ki9t6y",
    "season": 0,
-   "episode": 0,
+   "episode": 74,
    "titles": {
     "en": "",
     "ar": "الكابتن ماجد الجزء السادس ح3",
@@ -116133,9 +116062,9 @@
   },
   "e-1ijhdak": {
    "id": "e-1ijhdak",
-   "series": "s-ry4egn",
+   "series": "s-ki9t6y",
    "season": 0,
-   "episode": 0,
+   "episode": 75,
    "titles": {
     "en": "",
     "ar": "الكابتن ماجد الجزء السادس ح4",
@@ -116152,9 +116081,9 @@
   },
   "e-vbsjco": {
    "id": "e-vbsjco",
-   "series": "s-ry4egn",
+   "series": "s-ki9t6y",
    "season": 0,
-   "episode": 0,
+   "episode": 76,
    "titles": {
     "en": "",
     "ar": "الكابتن ماجد الجزء السادس ح5",
@@ -116171,9 +116100,9 @@
   },
   "e-6gru9f": {
    "id": "e-6gru9f",
-   "series": "s-ry4egn",
+   "series": "s-ki9t6y",
    "season": 0,
-   "episode": 0,
+   "episode": 77,
    "titles": {
     "en": "",
     "ar": "الكابتن ماجد الجزء السادس ح6",
@@ -116190,9 +116119,9 @@
   },
   "e-mehc4z": {
    "id": "e-mehc4z",
-   "series": "s-ry4egn",
+   "series": "s-ki9t6y",
    "season": 0,
-   "episode": 0,
+   "episode": 78,
    "titles": {
     "en": "",
     "ar": "الكابتن ماجد الجزء السادس ح7",
@@ -116209,9 +116138,9 @@
   },
   "e-1y0k857": {
    "id": "e-1y0k857",
-   "series": "s-ry4egn",
+   "series": "s-ki9t6y",
    "season": 0,
-   "episode": 0,
+   "episode": 79,
    "titles": {
     "en": "",
     "ar": "الكابتن ماجد الجزء السادس ح8",
@@ -116228,9 +116157,9 @@
   },
   "e-169xt3r": {
    "id": "e-169xt3r",
-   "series": "s-ry4egn",
+   "series": "s-ki9t6y",
    "season": 0,
-   "episode": 0,
+   "episode": 80,
    "titles": {
     "en": "",
     "ar": "الكابتن ماجد الجزء السادس ح9",
@@ -116247,9 +116176,9 @@
   },
   "e-13xoo2n": {
    "id": "e-13xoo2n",
-   "series": "s-ry4egn",
+   "series": "s-ki9t6y",
    "season": 0,
-   "episode": 0,
+   "episode": 81,
    "titles": {
     "en": "",
     "ar": "الكابتن ماجد الجزء السادس ح10",
@@ -116266,9 +116195,9 @@
   },
   "e-nzz673": {
    "id": "e-nzz673",
-   "series": "s-ry4egn",
+   "series": "s-ki9t6y",
    "season": 0,
-   "episode": 0,
+   "episode": 82,
    "titles": {
     "en": "",
     "ar": "الكابتن ماجد الجزء السادس ح11",
@@ -116285,9 +116214,9 @@
   },
   "e-5ptpl8": {
    "id": "e-5ptpl8",
-   "series": "s-ry4egn",
+   "series": "s-ki9t6y",
    "season": 0,
-   "episode": 0,
+   "episode": 83,
    "titles": {
     "en": "",
     "ar": "الكابتن ماجد الجزء السادس ح 12",
@@ -116304,9 +116233,9 @@
   },
   "e-5ki8co": {
    "id": "e-5ki8co",
-   "series": "s-ry4egn",
+   "series": "s-ki9t6y",
    "season": 0,
-   "episode": 0,
+   "episode": 84,
    "titles": {
     "en": "",
     "ar": "الكابتن ماجد الجزء السادس ح13",
@@ -116437,7 +116366,7 @@
   },
   "e-1si80sr": {
    "id": "e-1si80sr",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 2,
    "titles": {
@@ -116456,7 +116385,7 @@
   },
   "e-1s88f3s": {
    "id": "e-1s88f3s",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 3,
    "titles": {
@@ -116475,7 +116404,7 @@
   },
   "e-1u65myl": {
    "id": "e-1u65myl",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 4,
    "titles": {
@@ -116494,7 +116423,7 @@
   },
   "e-1tw619m": {
    "id": "e-1tw619m",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 5,
    "titles": {
@@ -116513,7 +116442,7 @@
   },
   "e-1tm6fkn": {
    "id": "e-1tm6fkn",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 6,
    "titles": {
@@ -116532,7 +116461,7 @@
   },
   "e-1tc6tvo": {
    "id": "e-1tc6tvo",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 7,
    "titles": {
@@ -116551,7 +116480,7 @@
   },
   "e-1quaemx": {
    "id": "e-1quaemx",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 8,
    "titles": {
@@ -116570,7 +116499,7 @@
   },
   "e-1qkasxy": {
    "id": "e-1qkasxy",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 9,
    "titles": {
@@ -116589,7 +116518,7 @@
   },
   "e-gpy31m": {
    "id": "e-gpy31m",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 10,
    "titles": {
@@ -116608,7 +116537,7 @@
   },
   "e-gzxoql": {
    "id": "e-gzxoql",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 11,
    "titles": {
@@ -116627,7 +116556,7 @@
   },
   "e-g5yvno": {
    "id": "e-g5yvno",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 12,
    "titles": {
@@ -116646,7 +116575,7 @@
   },
   "e-gfyhcn": {
    "id": "e-gfyhcn",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 13,
    "titles": {
@@ -116665,7 +116594,7 @@
   },
   "e-flzo9q": {
    "id": "e-flzo9q",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 14,
    "titles": {
@@ -116684,7 +116613,7 @@
   },
   "e-fvz9yp": {
    "id": "e-fvz9yp",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 15,
    "titles": {
@@ -116703,7 +116632,7 @@
   },
   "e-f20gvs": {
    "id": "e-f20gvs",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 16,
    "titles": {
@@ -116722,7 +116651,7 @@
   },
   "e-fc02kr": {
    "id": "e-fc02kr",
-   "series": "s-wzvctz",
+   "series": "s-1jvdwer",
    "season": 0,
    "episode": 17,
    "titles": {
@@ -118451,7 +118380,7 @@
   },
   "e-19qovfw": {
    "id": "e-19qovfw",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 1,
    "titles": {
@@ -118470,7 +118399,7 @@
   },
   "e-1aknoit": {
    "id": "e-1aknoit",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 2,
    "titles": {
@@ -118489,7 +118418,7 @@
   },
   "e-1aao2tu": {
    "id": "e-1aao2tu",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 3,
    "titles": {
@@ -118508,7 +118437,7 @@
   },
   "e-18wq2cz": {
    "id": "e-18wq2cz",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 4,
    "titles": {
@@ -118527,7 +118456,7 @@
   },
   "e-18mqgo0": {
    "id": "e-18mqgo0",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 5,
    "titles": {
@@ -118546,7 +118475,7 @@
   },
   "e-19gp9qx": {
    "id": "e-19gp9qx",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 6,
    "titles": {
@@ -118565,7 +118494,7 @@
   },
   "e-196po1y": {
    "id": "e-196po1y",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 7,
    "titles": {
@@ -118584,7 +118513,7 @@
   },
   "e-1c8laon": {
    "id": "e-1c8laon",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 8,
    "titles": {
@@ -118603,7 +118532,7 @@
   },
   "e-1bylozo": {
    "id": "e-1bylozo",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 9,
    "titles": {
@@ -118622,7 +118551,7 @@
   },
   "e-18jy904": {
    "id": "e-18jy904",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 10,
    "titles": {
@@ -118641,7 +118570,7 @@
   },
   "e-18txup3": {
    "id": "e-18txup3",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 11,
    "titles": {
@@ -118660,7 +118589,7 @@
   },
   "e-193xge2": {
    "id": "e-193xge2",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 12,
    "titles": {
@@ -118679,7 +118608,7 @@
   },
   "e-19dx231": {
    "id": "e-19dx231",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 13,
    "titles": {
@@ -118698,7 +118627,7 @@
   },
   "e-17fzu88": {
    "id": "e-17fzu88",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 14,
    "titles": {
@@ -118717,7 +118646,7 @@
   },
   "e-17pzfx7": {
    "id": "e-17pzfx7",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 15,
    "titles": {
@@ -118736,7 +118665,7 @@
   },
   "e-17zz1m6": {
    "id": "e-17zz1m6",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 16,
    "titles": {
@@ -118755,7 +118684,7 @@
   },
   "e-189ynb5": {
    "id": "e-189ynb5",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 17,
    "titles": {
@@ -118774,7 +118703,7 @@
   },
   "e-16c1fgc": {
    "id": "e-16c1fgc",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 18,
    "titles": {
@@ -118793,7 +118722,7 @@
   },
   "e-16m115b": {
    "id": "e-16m115b",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 19,
    "titles": {
@@ -118812,7 +118741,7 @@
   },
   "e-55uclr": {
    "id": "e-55uclr",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 20,
    "titles": {
@@ -118831,7 +118760,7 @@
   },
   "e-4vuqws": {
    "id": "e-4vuqws",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 21,
    "titles": {
@@ -118850,7 +118779,7 @@
   },
   "e-5ptjzp": {
    "id": "e-5ptjzp",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 22,
    "titles": {
@@ -118869,7 +118798,7 @@
   },
   "e-5ftyaq": {
    "id": "e-5ftyaq",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 23,
    "titles": {
@@ -118888,7 +118817,7 @@
   },
   "e-41vxtv": {
    "id": "e-41vxtv",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 24,
    "titles": {
@@ -118907,7 +118836,7 @@
   },
   "e-3rwc4w": {
    "id": "e-3rwc4w",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 25,
    "titles": {
@@ -118926,7 +118855,7 @@
   },
   "e-4lv57t": {
    "id": "e-4lv57t",
-   "series": "s-3axwo3",
+   "series": "s-1dbcjlb",
    "season": 1,
    "episode": 26,
    "titles": {
@@ -509167,7 +509096,7 @@
    "created": "2026-11-28T03:25:43.263Z"
   }
  },
- "updated": "2026-11-28T03:26:22.473Z",
+ "updated": "2026-11-28T03:35:28.196Z",
  "ia_items": {
   "1202": "2026-11-26",
   "tanpa-filter-capcut-template-4": "2026-11-26",
