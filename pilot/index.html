@@ -598,6 +598,26 @@ function cleanName(raw) {
   t = t.replace(/[,:;]+\s*$/, " ");
   return t.replace(/\s+/g, " ").replace(/^\s+|\s+$/g, "");
 }
+var STOPW = { the: 1, a: 1, an: 1, of: 1, and: 1, to: 1, in: 1, boy: 1, girl: 1, mr: 1, mrs: 1 };
+function normWords(s) {
+  return String(s || "").toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/)
+    .filter(function (w) { return w.length > 2 && !STOPW[w]; });
+}
+function overlap(a, b) {
+  var A = normWords(a), B = normWords(b), i, j, n = 0;
+  for (i = 0; i < A.length; i++) for (j = 0; j < B.length; j++) if (A[i] === B[j]) n++;
+  return n;
+}
+/* A debrid channel must never air the wrong show: "Nickelodeon" matched Avatar,
+   "Twitches" matched The Witcher. Brand buckets and zero-overlap matches are refused. */
+function badMatch(seriesTitle, matchName) {
+  if (/^(cartoon network|nickelodeon|disney channel|nicktoons|disney)$/i.test(String(seriesTitle || "").trim()))
+    return "brand bucket";
+  if (!matchName) return "no name";
+  if (!overlap(seriesTitle, matchName)) return "no word overlap";
+  return "";
+}
+
 function IMDBFOR(sid, ep, cb) {
   if (OVERRIDE[sid]) return cb(OVERRIDE[sid]);
   if (IMDB[sid] && IMDB[sid].id) return cb(IMDB[sid].id);
@@ -613,6 +633,8 @@ function IMDBFOR(sid, ep, cb) {
       function (d) {
         var m = (d.metas || [])[0];
         if (!m || !m.id) return next(i + 1);
+        var why = badMatch(cands[i], m.name);
+        if (why) { logline("rejected " + m.name + " for " + cands[i] + " (" + why + ")"); return cb(null); }
         IMDB[sid] = { id: m.id, name: m.name };
         store(LS_IMDB, IMDB);
         cb(m.id);
