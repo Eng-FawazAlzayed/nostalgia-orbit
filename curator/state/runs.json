@@ -2,22 +2,22 @@
  {
   "cmd": "build",
   "arg": null,
-  "started": "2026-11-28T03:06:41.753Z",
+  "started": "2026-11-28T03:25:43.867Z",
   "validation": {
-   "generated": "2026-11-28T03:06:43.326Z",
+   "generated": "2026-11-28T03:25:45.005Z",
    "totals": {
     "channels": 25,
-    "series": 515,
-    "episodes": 5689,
-    "sources": 6576
+    "series": 551,
+    "episodes": 6413,
+    "sources": 7528
    },
    "providers": {
     "yt": 1289,
-    "ia": 5182,
+    "ia": 6134,
     "arabic": 105
    },
    "titles": {
-    "arabicOnly": 312,
+    "arabicOnly": 348,
     "englishOnly": 181,
     "both": 10,
     "none": 12,
@@ -60,9 +60,9 @@
      "name": "سبيستون زمان",
      "n": "105",
      "from": null,
-     "shows": 171,
-     "episodes": 2084,
-     "arabic": 1786
+     "shows": 207,
+     "episodes": 2808,
+     "arabic": 2510
     },
     "kuwait-zaman": {
      "name": "الكويت زمان",
@@ -148,17 +148,17 @@
      "name": "SPACETOON CLASSIC",
      "n": "020",
      "from": 2000,
-     "shows": 33,
-     "episodes": 836,
-     "arabic": 730
+     "shows": 71,
+     "episodes": 1610,
+     "arabic": 1454
     },
     "power-orbit": {
      "name": "SPACE POWER",
      "n": "021",
      "from": 2008,
      "shows": 53,
-     "episodes": 109,
-     "arabic": 0
+     "episodes": 196,
+     "arabic": 87
     },
     "najma-3": {
      "name": "MBC3 CLASSIC",
@@ -228,32 +228,43 @@
    "eras": {
     "2000": {
      "channels": 21,
-     "episodes": 4676,
+     "episodes": 5400,
      "futureDatedDropped": 1013
     },
     "2004": {
      "channels": 24,
-     "episodes": 5013,
+     "episodes": 5737,
      "futureDatedDropped": 676
     },
     "2008": {
      "channels": 25,
-     "episodes": 5312,
+     "episodes": 6036,
      "futureDatedDropped": 377
     },
     "2010": {
      "channels": 25,
-     "episodes": 5328,
+     "episodes": 6052,
      "futureDatedDropped": 361
     },
     "2013": {
      "channels": 25,
-     "episodes": 5423,
+     "episodes": 6147,
      "futureDatedDropped": 266
     }
    }
   },
-  "finished": "2026-11-28T03:06:43.433Z"
+  "finished": "2026-11-28T03:25:45.070Z"
+ },
+ {
+  "cmd": "arabic-archive",
+  "arg": null,
+  "started": "2026-11-28T03:25:27.432Z",
+  "arabicArchive": {
+   "shows": 141,
+   "episodes": 990,
+   "skipped": 0
+  },
+  "finished": "2026-11-28T03:25:43.655Z"
  },
  {
   "cmd": "build",

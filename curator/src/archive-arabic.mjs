@@ -16,6 +16,14 @@ const ITEMS = [
   { id: 'www.arabp-2p.net-space-toon-part-6', ch: 'planet-toon', max: 200 },
   { id: 'www.arabp-2p.net-space-toon-part-4', ch: 'planet-toon', max: 200 },
   // broadcast recordings: bumpers, idents and period ads (short clips, used as channel fill)
+  // the rest of the Spacetoon dump: parts 1, 2, 3 and 5 (both .net and .com uploads)
+  { id: 'www.arabp-2p.net-space-toon-part-1_202306', ch: 'planet-toon', max: 200 },
+  { id: 'www.arabp-2p.net-space-toon-part-2_202308', ch: 'planet-toon', max: 200 },
+  { id: 'www.arabp-2p.net-space-toon-part-3_202306', ch: 'planet-toon', max: 200 },
+  { id: 'www.arabp-2p.net-space-toon-part-5', ch: 'planet-toon', max: 200 },
+  { id: 'www.arabp-2p.com-space-toon-part-1', ch: 'planet-toon', max: 200 },
+  { id: 'www.arabp-2p.com-space-toon-part-2', ch: 'planet-toon', max: 200 },
+  { id: 'www.arabp-2p.com-space-toon-part-5', ch: 'planet-toon', max: 200 },
   { id: 'sbys-ton-daaayat-mnoaa-2006-1', ch: 'planet-toon', fill: true, maxShort: 120 }
 ];
 
