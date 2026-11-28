@@ -109,6 +109,20 @@
     // Native HTTP (Capacitor) can read it; a web page cannot: the site sends no CORS headers and X-Frame-Options: SAMEORIGIN,
     arabic: function (s, cb) {
       var page = s.r;
+      // when the Supabase gateway is configured it does the fetch (no CORS in the way)
+      var gcfg = root.NOConfig ? root.NOConfig() : {};
+      if (gcfg.gatewayUrl) {
+        var gurl = gcfg.gatewayUrl.replace(/\/+$/, '') + '?key=' + encodeURIComponent(gcfg.gatewayKey || '') +
+          '&what=at&page=' + encodeURIComponent(page);
+        var gx = new XMLHttpRequest(); gx.open('GET', gurl, true); gx.timeout = 12000;
+        gx.onload = function () {
+          try { var j = JSON.parse(gx.responseText); if (j && j.url) { return cb(null, j.url); } } catch (e) {}
+          var e2 = new Error('arabic-gateway'); e2.permanent = false; cb(e2);
+        };
+        gx.onerror = gx.ontimeout = function () { var e3 = new Error('arabic-gateway'); e3.permanent = false; cb(e3); };
+        gx.send();
+        return;
+      }
       function done(txt) {
         var m = /videoSrc\s*=\s*"([^"]+)"/.exec(txt || '');
         if (!m) { var e = new Error('arabic-nosrc'); e.permanent = false; return cb(e); }

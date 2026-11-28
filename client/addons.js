@@ -162,10 +162,36 @@
    * resolve(catalog, episode, cb) -> cb(source|null)
    * source looks like a catalogue source: {p:'mp4', u:url, k:'file'|'hls', ...}
    */
+  function gateway() {
+    var c = cfg();
+    if (!c.gatewayUrl) { return null; }
+    return c.gatewayUrl.replace(/\/+$/, '') + '?key=' + encodeURIComponent(c.gatewayKey || '');
+  }
+
+  /* The Supabase gateway holds the debrid tokens, so family devices never see them. */
+  function viaGateway(gw, catalog, ep, cb) {
+    imdbFor(catalog, ep, function (tt) {
+      if (!tt || tt.indexOf('reject:') === 0) { return cb(null); }
+      numFor(catalog, ep, tt, function (sn, en) {
+        if (sn == null || en == null) { return cb(null); }
+        xhr('GET', gw + '&what=stream&tt=' + tt + '&s=' + sn + '&e=' + en, { timeout: 12000 }, function (err, j) {
+          if (err || !j || !j.streams || !j.streams.length) { return cb(null); }
+          var b = j.streams[0];
+          var src = { p: 'mp4', u: b.url, k: b.k === 'hls' ? 'hls' : 'file', q: '1080',
+            a: 'debrid', rel: 1, r: ('gw:' + (b.url || '')).slice(0, 120), addonTag: b.tag };
+          RESOLVED[ep.id] = { src: src, exp: Date.now() + 8 * 60000 };
+          cb(src);
+        });
+      });
+    });
+  }
+
   function resolve(catalog, ep, cb) {
     if (!ep) { return cb(null); }
     var hit = RESOLVED[ep.id];
     if (hit && hit.exp > Date.now()) { return cb(hit.src); }
+    var gw = gateway();
+    if (gw) { return viaGateway(gw, catalog, ep, cb); }
 
     addonUrls(function (addons) {
       if (!addons.length) { return cb(null); }

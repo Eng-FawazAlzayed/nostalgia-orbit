@@ -18,6 +18,7 @@
     crt: 'light', lowperf: P.env.tizen, lang: 'en', names: 'ours', lastCh: null, prevCh: null, favs: [],
     catalogUrl: window.NO_CATALOG_URL || '', jfUrl: '', jfToken: '', embyUrl: '', embyToken: '',
     plexUrl: '', plexToken: '', davUrl: '', rdToken: '', torboxToken: '', rdAuth: null,
+    gatewayUrl: '', gatewayKey: '',
     modes: {}, breaks: 'auto', hevc: false, follow: [], seqPos: {}, seqTurn: 0, dog: true
   };
   var cfg = load('settings', {});
@@ -378,6 +379,8 @@
     { k: 'tbLogin', label: 'TorBox: sign in (optional, paid)', act: function () { debridLogin('tb'); }, info2: function () { return cfg.torboxToken ? 'CONNECTED' : ''; } },
     { k: 'torboxToken', label: 'TorBox API key (or paste one)', text: true, secret: true },
     { k: 'debridAddons', label: 'Debrid streams on 002/006/007', opts: [true, false], after: function () { tune(chIdx, true); } },
+    { k: 'gatewayUrl', label: 'Debrid gateway URL (optional)', text: true },
+    { k: 'gatewayKey', label: 'Gateway passphrase', text: true, secret: true },
     { k: 'hevc', label: 'This device plays HEVC/10-bit files', opts: [false, true] },
     { k: 'dbScan', label: 'Scan my Real-Debrid / TorBox files', act: function () { debridScan(); } },
     { k: 'dbForget', label: 'Disconnect Real-Debrid / TorBox', act: function () { cfg.rdToken = ''; cfg.rdAuth = null; cfg.torboxToken = ''; saveCfg(); save('debridOverlay', null); save('debridFiles', null); buildIndex(); toast('OK'); } },
