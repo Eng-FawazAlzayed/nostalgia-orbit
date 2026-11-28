@@ -17,9 +17,9 @@
   var defaults = {
     crt: 'light', lowperf: P.env.tizen, lang: 'en', names: 'ours', lastCh: null, prevCh: null, favs: [],
     catalogUrl: window.NO_CATALOG_URL || '', jfUrl: '', jfToken: '', embyUrl: '', embyToken: '',
-    plexUrl: '', plexToken: '', davUrl: '', rdToken: '', torboxToken: '', rdAuth: null,
+    plexUrl: '', plexToken: '', davUrl: '',
     // not a secret: the gateway refuses every request without the passphrase
-    era: 'live', debridAddons: false,
+    era: 'live',
     gatewayUrl: 'https://yhjqxymuujcmbrlocamk.supabase.co/functions/v1/gateway', gatewayKey: '',
     modes: {}, breaks: 'auto', hevc: false, follow: [], seqPos: {}, seqTurn: 0, dog: true
   };
@@ -58,7 +58,7 @@
       for (k in c.series) { if (!c.series.hasOwnProperty(k)) { continue; } var sy = c.series[k].y;
         if (sy && sy > era) { delete c.series[k]; } }
     }
-    var overlays = [local, load('debridOverlay', null)], hasLib = false;
+    var overlays = [local], hasLib = false;
     for (i = 0; i < overlays.length; i++) {
       var ov = overlays[i]; if (!ov) { continue; }
       if (ov.extra) { // your own copies of episodes already on the channels: offered first
@@ -73,7 +73,7 @@
       if (ov.episodes && ov.episodes.length) { c.episodes = c.episodes.concat(ov.episodes); }
       for (k in ov.series || {}) { if (ov.series.hasOwnProperty(k)) { c.series[k] = ov.series[k]; hasLib = true; } }
     }
-    if (hasLib) { c.channels.push((local && local.channel) || (load('debridOverlay', {}) || {}).channel); }
+    if (hasLib && local && local.channel) { c.channels.push(local.channel); }
     c.channels.push(MY_SHOWS);
     idx = new S.Index(c, { modes: cfg.modes });
   }
@@ -96,7 +96,6 @@
       if (err || !c || !c.episodes) { if (force) { toast(T('updateFail')); } return; }
       if (c.generated && c.generated <= (catalog.generated || '')) { if (force) { toast(T('upToDate')); } return; }
       catalog = c;
-      if (window.NODebrid) { NODebrid.rematch(catalog, { hevc: cfg.hevc, lang: cfg.lang === 'ar' ? 'ar' : 'en' }); }
       if (!save('catalog', c)) { try { localStorage.removeItem('no.catalog'); } catch (e) {} }
       var keep = channels()[chIdx] && channels()[chIdx].id;
       buildIndex();
@@ -167,7 +166,7 @@
     $('bNextT').textContent = r && r.next ? S.kuwaitClock(r.next.s) : '';
     $('bBar').style.width = r ? Math.min(100, Math.max(1, (now() - r.item.s) / (r.item.e - r.item.s) * 100)) + '%' : '0';
     $('bClock').textContent = S.kuwaitClock(now());
-    $('bSrc').textContent = playingSrc ? ({ rd: 'REAL-DEBRID', torbox: 'TORBOX', ia: 'ARCHIVE', yt: 'YT' }[playingSrc.p] || playingSrc.p.toUpperCase()) + (playingSrc.q ? ' · ' + playingSrc.q + 'p' : '') + (playingSrc.mb ? ' · ' + playingSrc.mb + ' MB' : '') : '';
+    $('bSrc').textContent = playingSrc ? ({ ia: 'ARCHIVE', yt: 'YT' }[playingSrc.p] || playingSrc.p.toUpperCase()) + (playingSrc.q ? ' · ' + playingSrc.q + 'p' : '') + (playingSrc.mb ? ' · ' + playingSrc.mb + ' MB' : '') : '';
     document.querySelector('.now-lbl').textContent = T('now');
     document.querySelector('.next-lbl').textContent = T('next');
   }
@@ -274,7 +273,7 @@
     var p = plays[ep.id] || { n: 0, last: 0 }; p.n++; p.last = now(); plays[ep.id] = p;
     if (!playsDirty) { playsDirty = true; setTimeout(function () { playsDirty = false; save('plays', plays); }, 30000); }
   }
-  // Each copy is tried in turn; your own Real-Debrid/TorBox copy gets a second try with a fresh link.
+  // Each copy is tried in turn; a copy that times out gets a second try.
   function trySource(my, c, item, srcs, k, onDone, refreshed) {
     if (my !== tuneToken) { return; }
     if (k >= srcs.length) { // every copy failed
@@ -290,7 +289,7 @@
       fresh: !!refreshed,
       onPlaying: function () { if (my !== tuneToken) { return; } playingSrc = src; markOk(src); show($('black'), false); hideCard(); if (!item.inter) { notePlay(item.ep); } },
       onError: function (code, permanent) {
-        if (!refreshed && !permanent && (code === 'timeout' || src.p === 'rd' || src.p === 'torbox')) { return trySource(my, c, item, srcs, k, onDone, true); } // one more try
+        if (!refreshed && !permanent && code === 'timeout') { return trySource(my, c, item, srcs, k, onDone, true); } // one more try
         if (code !== 'timeout') { markFailed(src, permanent); } // a slow start isn't a broken link
         trySource(my, c, item, srcs, k + 1, onDone);
       },
@@ -400,27 +399,6 @@
     if (row && (row.offsetTop < box.scrollTop || row.offsetTop + row.offsetHeight > box.scrollTop + box.clientHeight)) {
       box.scrollTop = row.offsetTop - box.clientHeight / 2;
     }
-  }
-  /* ---------------- Real-Debrid / TorBox ---------------- */
-  function debridLogin(which) {
-    if (!window.NODebrid) { return; }
-    closeAll();
-    NODebrid.login(which, function (url, code) {
-      showCard(code, T('signIn') + ' ' + url.replace(/^https?:\/\//, '') + ' ' + T('enterCode'));
-    }, function (err) {
-      hideCard();
-      if (err) { toast('Sign-in failed: ' + err.message); } else { toast('Connected. Scanning your files…'); debridScan(); }
-    });
-  }
-  function debridScan() {
-    if (!window.NODebrid) { return; }
-    toast('Reading your Real-Debrid / TorBox files…');
-    NODebrid.scan(catalog, { hevc: cfg.hevc, lang: cfg.lang === 'ar' ? 'ar' : 'en' }, function (err, ov, warn) {
-      if (err) { toast('Library scan failed: ' + err.message); return; }
-      buildIndex();
-      var st = ov.stats;
-      toast(st.chosen + ' episodes from your library · ' + st.matched + ' on the channels · ' + st.library + ' on 099' + (warn && warn.length ? ' · ' + warn[0] : ''));
-    });
   }
   function openSetup() { mode = 'setup'; show($('list'), false); show($('banner'), false); renderSetup(); show($('setup'), true); }
   function changeSetup(dir) {
