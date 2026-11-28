@@ -19,6 +19,7 @@
     catalogUrl: window.NO_CATALOG_URL || '', jfUrl: '', jfToken: '', embyUrl: '', embyToken: '',
     plexUrl: '', plexToken: '', davUrl: '', rdToken: '', torboxToken: '', rdAuth: null,
     // not a secret: the gateway refuses every request without the passphrase
+    debridAddons: false,
     gatewayUrl: 'https://yhjqxymuujcmbrlocamk.supabase.co/functions/v1/gateway', gatewayKey: '',
     modes: {}, breaks: 'auto', hevc: false, follow: [], seqPos: {}, seqTurn: 0, dog: true
   };

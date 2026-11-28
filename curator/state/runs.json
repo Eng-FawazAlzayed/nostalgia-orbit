@@ -2,8 +2,19 @@
  {
   "cmd": "build",
   "arg": null,
-  "started": "2026-11-28T02:50:04.506Z",
-  "finished": "2026-11-28T02:50:04.583Z"
+  "started": "2026-11-28T02:58:59.690Z",
+  "finished": "2026-11-28T02:58:59.738Z"
+ },
+ {
+  "cmd": "arabic-archive",
+  "arg": null,
+  "started": "2026-11-28T02:58:45.844Z",
+  "arabicArchive": {
+   "shows": 70,
+   "episodes": 828,
+   "skipped": 0
+  },
+  "finished": "2026-11-28T02:58:51.516Z"
  },
  {
   "cmd": "build",

@@ -10,6 +10,9 @@
 const ITEMS = [
   { id: 'www.arabp-2p.com-mbc-3', ch: 'najma-3', max: 300 },
   { id: 'www.arabp-2p.com-mbc-3-part-2', ch: 'najma-3', max: 420 },
+  { id: 'www.arabp-2p.net-mbc-3-part-1', ch: 'najma-3', max: 300 },
+  { id: 'www.arabp-2p.net-mbc-3-part-2', ch: 'najma-3', max: 420 },
+  { id: 'www.arabp-2p.net-mbc-3-part-4', ch: 'najma-3', max: 110 },
   { id: 'www.arabp-2p.net-space-toon-part-6', ch: 'planet-toon', max: 200 },
   { id: 'www.arabp-2p.net-space-toon-part-4', ch: 'planet-toon', max: 200 },
   // broadcast recordings: bumpers, idents and period ads (short clips, used as channel fill)
