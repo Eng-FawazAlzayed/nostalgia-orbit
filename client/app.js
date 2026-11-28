@@ -198,7 +198,24 @@
     }
     if (r.item.type === 'filler') { show($('black'), false); identCard(c, r); return; }
     var srcs = S.pickSources(r.item.ep, P.caps(), failed, now());
-    trySource(my, c, r.item, srcs, 0);
+    var begun = false;
+    var begin = function () {
+      if (begun || my !== tuneToken) { return; }
+      begun = true;
+      if (!srcs.length) { show($('black'), false); showCard(chName(c), T('noSignal')); return; }
+      trySource(my, c, r.item, srcs, 0);
+    };
+    if (window.NOAddons && !r.item.inter && r.item.ep && window.NOAddons.wants(c.id)) {
+      // 002/006/007: a cached debrid stream wins; the catalogue copies stay as the fallback.
+      var guard = setTimeout(begin, 7000);
+      window.NOAddons.resolve(catalog, r.item.ep, function (src) {
+        clearTimeout(guard);
+        if (src) { srcs.unshift(src); }
+        begin();
+      });
+    } else {
+      begin();
+    }
     // get the next programme's link ready a minute before it starts (one video buffers at a time)
     if (r.next && r.next.type === 'ep') {
       prefetchTimer = setTimeout(function () {
@@ -360,6 +377,7 @@
     { k: 'rdToken', label: 'Real-Debrid token (or paste one)', text: true, secret: true },
     { k: 'tbLogin', label: 'TorBox: sign in (optional, paid)', act: function () { debridLogin('tb'); }, info2: function () { return cfg.torboxToken ? 'CONNECTED' : ''; } },
     { k: 'torboxToken', label: 'TorBox API key (or paste one)', text: true, secret: true },
+    { k: 'debridAddons', label: 'Debrid streams on 002/006/007', opts: [true, false], after: function () { tune(chIdx, true); } },
     { k: 'hevc', label: 'This device plays HEVC/10-bit files', opts: [false, true] },
     { k: 'dbScan', label: 'Scan my Real-Debrid / TorBox files', act: function () { debridScan(); } },
     { k: 'dbForget', label: 'Disconnect Real-Debrid / TorBox', act: function () { cfg.rdToken = ''; cfg.rdAuth = null; cfg.torboxToken = ''; saveCfg(); save('debridOverlay', null); save('debridFiles', null); buildIndex(); toast('OK'); } },

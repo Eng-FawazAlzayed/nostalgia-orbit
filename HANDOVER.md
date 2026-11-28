@@ -91,7 +91,9 @@ These came from Fazeen across the planning thread. Later rules override earlier 
     - Add-on URLs hold the API key. They live on the device (localStorage, or an ignored `secrets.local.js`) and are
       never committed, published or logged.
     - Fallback to free sources stays on unless Fazeen turns it off, so a channel never goes dark.
-    - Reference implementation: `pilot/index.html`, published at `/pilot/` by `curator/src/build.mjs`.
+    - Implementation: `client/addons.js`, called from `client/app.js` (`tune()` → `NOAddons.resolve`). The
+      Setup menu has the debrid credentials (`Real-Debrid token`, `TorBox API key`) and a toggle
+      `Debrid streams on 002/006/007`. Unresolvable episodes fall back to the catalogue source after 7 s.
 
 **Working style**
 - Fazeen writes casually and often by voice, in several quick messages. Expect lineup and content changes on the fly.
