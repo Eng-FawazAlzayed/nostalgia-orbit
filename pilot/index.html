@@ -103,7 +103,7 @@
 <body>
 
 <div id="top">
-  <div id="brand">NOSTALGIA ORBIT <span>live · pilot</span></div>
+  <div id="brand">NOSTALGIA ORBIT <span>live · pilot v3</span></div>
   <div id="clock">--:--</div>
   <div id="status">loading catalog…</div>
   <button class="btn" id="btnAddons">ADD-ONS</button>
@@ -142,23 +142,18 @@
   <p>Paste a Stremio add-on manifest URL. Torrentio with your own debrid key serves cached
      streams from Real-Debrid or TorBox. The URL holds the key: it stays in this browser.</p>
 
-  <label>Real-Debrid add-on URL</label>
-  <input type="text" id="addonRD" placeholder="https://torrentio.strem.fun/realdebrid=…/manifest.json" />
+  <label>Real-Debrid — API token, or a full add-on URL</label>
+  <input type="text" id="addonRD" placeholder="paste the token from real-debrid.com/apitoken" />
 
-  <label>TorBox add-on URL</label>
-  <input type="text" id="addonTB" placeholder="https://torrentio.strem.fun/torbox=…/manifest.json" />
-
-  <label>…or paste the tokens and let the page build the URLs</label>
-  <input type="text" id="tokRD" placeholder="Real-Debrid API token (real-debrid.com/apitoken)" />
-  <input type="text" id="tokTB" placeholder="TorBox API key (torbox.app/settings)" style="margin-top:6px" />
-  <div style="margin-top:8px"><button class="mini" id="btnBuild">BUILD URLS</button></div>
+  <label>TorBox — API key, or a full add-on URL</label>
+  <input type="text" id="addonTB" placeholder="paste the key from torbox.app/settings" />
 
   <div class="chk"><label style="display:inline;text-transform:none;letter-spacing:0">
     <input type="checkbox" id="chkFallback" checked /> fall back to YouTube/Archive when nothing is cached
   </label></div>
 
-  <div class="note">Only streams that come back with a resolved <b>url</b> are played. A stream with
-     only an infoHash would make your account download the torrent, so cached-only is enforced.</div>
+  <div class="note">Only streams Torrentio marks <b>[RD+]</b> / <b>[TB+]</b> (cached) are played.
+     <b>[RD download]</b> entries would download the torrent into your account, so they are never played.</div>
 
   <div style="margin-top:14px">
     <button class="mini" id="btnSaveAddons">SAVE</button>
@@ -677,8 +672,8 @@ function normaliseUrl(v, provider) {
 function openDrawer() {
   $("addonRD").value = ADDONS.rd || "";
   $("addonTB").value = ADDONS.tb || "";
-  $("tokRD").value = tokenFromUrl(ADDONS.rd, "realdebrid");
-  $("tokTB").value = tokenFromUrl(ADDONS.tb, "torbox");
+  $("addonRD").value = ADDONS.rd || "";
+  $("addonTB").value = ADDONS.tb || "";
   $("drawer").className = "open"; $("veil").className = "open";
 }
 function closeDrawer() { $("drawer").className = ""; $("veil").className = ""; }
@@ -748,13 +743,8 @@ $("btnAddons").onclick = function () {
 };
 $("drawerX").onclick = closeDrawer;
 $("veil").onclick = closeDrawer;
-$("btnBuild").onclick = function () {
-  var rd = $("tokRD").value, tb = $("tokTB").value;
-  if (rd) $("addonRD").value = normaliseUrl(rd, "realdebrid");
-  if (tb) $("addonTB").value = normaliseUrl(tb, "torbox");
-  saveAddons();
-  testAddons();
-};
+$("addonRD").onchange = function () { saveAddons(); testAddons(); };
+$("addonTB").onchange = function () { saveAddons(); testAddons(); };
 $("btnSaveAddons").onclick = saveAddons;
 $("btnTestAddons").onclick = testAddons;
 $("btnRetry").onclick = function () { NOW.key = null; tick(true); };
