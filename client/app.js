@@ -18,7 +18,8 @@
     crt: 'light', lowperf: P.env.tizen, lang: 'en', names: 'ours', lastCh: null, prevCh: null, favs: [],
     catalogUrl: window.NO_CATALOG_URL || '', jfUrl: '', jfToken: '', embyUrl: '', embyToken: '',
     plexUrl: '', plexToken: '', davUrl: '', rdToken: '', torboxToken: '', rdAuth: null,
-    gatewayUrl: '', gatewayKey: '',
+    // not a secret: the gateway refuses every request without the passphrase
+    gatewayUrl: 'https://yhjqxymuujcmbrlocamk.supabase.co/functions/v1/gateway', gatewayKey: '',
     modes: {}, breaks: 'auto', hevc: false, follow: [], seqPos: {}, seqTurn: 0, dog: true
   };
   var cfg = load('settings', {});
