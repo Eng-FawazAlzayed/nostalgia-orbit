@@ -32,6 +32,7 @@ async function main() {
     if (cmd === 'arabic-archive') run.arabicArchive = await importArchiveArabic(lib, { log: (m) => log(m) });
     if (cmd === 'validate') run.validation = validate(lib, (m) => log(m));
     if (cmd === 'probe' || cmd === 'nightly') run.probe = await probe(lib, { max: cmd === 'probe' ? 800 : 200 });
+    if (cmd === 'build' || cmd === 'nightly') { try { run.validation = validate(lib, () => {}); } catch (e) { log('validation failed: ' + e.message); } }
     lib.save();
     run.finished = nowIso();
     const runs = readJSON(runFile, []);
