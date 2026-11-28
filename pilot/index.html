@@ -148,6 +148,11 @@
   <label>TorBox add-on URL</label>
   <input type="text" id="addonTB" placeholder="https://torrentio.strem.fun/torbox=…/manifest.json" />
 
+  <label>…or paste the tokens and let the page build the URLs</label>
+  <input type="text" id="tokRD" placeholder="Real-Debrid API token (real-debrid.com/apitoken)" />
+  <input type="text" id="tokTB" placeholder="TorBox API key (torbox.app/settings)" style="margin-top:6px" />
+  <div style="margin-top:8px"><button class="mini" id="btnBuild">BUILD URLS</button></div>
+
   <div class="chk"><label style="display:inline;text-transform:none;letter-spacing:0">
     <input type="checkbox" id="chkFallback" checked /> fall back to YouTube/Archive when nothing is cached
   </label></div>
@@ -443,10 +448,13 @@ function debridFirst(ep, offset) {
       if (--pending > 0) return;
       renderStreamList(all);
       all.sort(rankStreams);
+      var bad = 0, i;
+      for (i = 0; i < all.length; i++) if (isError(all[i])) bad++;
       var pick = null;
-      for (var i = 0; i < all.length; i++) {
-        if (all[i].url) { pick = all[i]; break; }
+      for (i = 0; i < all.length; i++) {
+        if (isCached(all[i]) && all[i].url && !isError(all[i])) { pick = all[i]; break; }
       }
+      if (bad && !pick) logline("add-on says the key is rejected — fix the token in ADD-ONS");
       if (pick) {
         logline("debrid " + pick._tag + " hit: " + (pick.title || "").split("\n")[0].substring(0, 60));
         playUrl(pick.url, "debrid " + pick._tag, offset);
@@ -460,8 +468,18 @@ function debridFirst(ep, offset) {
   });
 }
 
+/* Torrentio labels every debrid stream in the name:
+   "[RD+] Torrentio" = cached and instant, "[RD download] Torrentio" = would download,
+   "Torrentio / RD error + Invalid RealDebrid ApiKey/Token!" = key rejected. */
+function isCached(s) { return /\[(RD|TB|PM|AD|DL|ED|OC|PU|HW)\+\]/i.test(s.name || ""); }
+function isDownload(s) { return /download/i.test(s.name || ""); }
+function isError(s) {
+  return /error|invalid/i.test((s.name || "") + " " + (s.title || "")) ||
+    /failed_access/.test(s.url || "");
+}
+
 function rankStreams(a, b) {
-  var c = (a.url ? 0 : 1) - (b.url ? 0 : 1);
+  var c = (isCached(a) ? 0 : 1) - (isCached(b) ? 0 : 1);
   if (c) return c;
   var ha = /h\.?26[45]|hevc|x265/i.test(a.title || "") ? 1 : 0;
   var hb = /h\.?26[45]|hevc|x265/i.test(b.title || "") ? 1 : 0;
@@ -475,7 +493,8 @@ function renderStreamList(streams) {
     var s = streams[i];
     html += '<div class="srcrow" data-u="' + esc(s.url || "") + '" data-t="' +
       esc((s.title || "").split("\n")[0].substring(0, 60)) + '">' +
-      '<span class="tg' + (s.url ? " c" : "") + '">' + (s.url ? "C" : "—") + '</span>' +
+      '<span class="tg' + (isCached(s) ? " c" : "") + '">' +
+      (isCached(s) ? "CACHED" : isError(s) ? "ERR" : isDownload(s) ? "DL" : "—") + '</span>' +
       '<span class="lb">' + esc(s._tag + " · " + (s.title || "").split("\n")[0].substring(0, 52)) + "</span></div>";
   }
   $("sideSrc").innerHTML = html || '<div class="kv">no streams</div>';
@@ -643,14 +662,33 @@ function IMDBFOR(sid, ep, cb) {
 }
 
 /* ---------------------------------------------------------------- drawer */
+function tokenFromUrl(u, provider) {
+  var m = new RegExp(provider + "=([^/|]+)").exec(String(u || ""));
+  return m ? m[1] : "";
+}
+function normaliseUrl(v, provider) {
+  v = String(v || "").replace(/^\s+|\s+$/g, "");
+  if (!v) return "";
+  if (v.indexOf("://") < 0 && v.indexOf("/") < 0) {
+    return "https://torrentio.strem.fun/" + provider + "=" + v + "/manifest.json";
+  }
+  return v;
+}
 function openDrawer() {
   $("addonRD").value = ADDONS.rd || "";
   $("addonTB").value = ADDONS.tb || "";
+  $("tokRD").value = tokenFromUrl(ADDONS.rd, "realdebrid");
+  $("tokTB").value = tokenFromUrl(ADDONS.tb, "torbox");
   $("drawer").className = "open"; $("veil").className = "open";
 }
 function closeDrawer() { $("drawer").className = ""; $("veil").className = ""; }
 function saveAddons() {
-  ADDONS = { rd: $("addonRD").value, tb: $("addonTB").value };
+  ADDONS = {
+    rd: normaliseUrl($("addonRD").value, "realdebrid"),
+    tb: normaliseUrl($("addonTB").value, "torbox")
+  };
+  $("addonRD").value = ADDONS.rd;
+  $("addonTB").value = ADDONS.tb;
   store(LS_ADDONS, ADDONS);
   FALLBACK = $("chkFallback").checked;
   store("no.live.fallback", FALLBACK);
@@ -662,16 +700,44 @@ function testAddons() {
   var l = addonList();
   if (!l.length) { $("addonLog").textContent = "no URLs"; return; }
   var out = "", left = l.length;
+  $("addonLog").textContent = "testing…";
   for (var i = 0; i < l.length; i++) {
     (function (a) {
       xhrJson(a.base + "/manifest.json", function (d) {
         out += a.tag + ": " + (d.name || "?") + "\n";
-        if (--left === 0) { $("addonLog").textContent = out; tick(true); }
+        if (--left === 0) probeAll(out);
       }, function (e) {
         out += a.tag + ": FAILED " + e + "\n";
-        if (--left === 0) $("addonLog").textContent = out;
+        if (--left === 0) probeAll(out);
       });
     })(l[i]);
+  }
+  /* the manifest does not validate the key, so ask for a real episode:
+     Courage the Cowardly Dog S2E1 — a title that is usually cached. */
+  function probeAll(head) {
+    var list = addonList(), k = 0, lines = head;
+    if (!list.length) { $("addonLog").textContent = lines; return; }
+    (function step() {
+      if (k >= list.length) {
+        $("addonLog").textContent = lines;
+        logline("add-on test: " + lines.replace(/\n/g, " "));
+        return;
+      }
+      var a = list[k++];
+      xhrJson(a.base + "/stream/series/tt0220880:2:1.json", function (d) {
+        var st = d.streams || [], c = 0, err = 0, i;
+        for (i = 0; i < st.length; i++) {
+          if (isError(st[i])) { err++; continue; }
+          if (isCached(st[i])) c++;
+        }
+        lines += a.tag + " probe: " + st.length + " streams, " + c + " cached" +
+          (err ? " — KEY REJECTED" : (st.length && !c ? " — key ok, nothing cached for this show" : "")) + "\n";
+        step();
+      }, function (e) {
+        lines += a.tag + " probe failed: " + e + "\n";
+        step();
+      });
+    })();
   }
 }
 
@@ -682,6 +748,13 @@ $("btnAddons").onclick = function () {
 };
 $("drawerX").onclick = closeDrawer;
 $("veil").onclick = closeDrawer;
+$("btnBuild").onclick = function () {
+  var rd = $("tokRD").value, tb = $("tokTB").value;
+  if (rd) $("addonRD").value = normaliseUrl(rd, "realdebrid");
+  if (tb) $("addonTB").value = normaliseUrl(tb, "torbox");
+  saveAddons();
+  testAddons();
+};
 $("btnSaveAddons").onclick = saveAddons;
 $("btnTestAddons").onclick = testAddons;
 $("btnRetry").onclick = function () { NOW.key = null; tick(true); };

@@ -2,7 +2,14 @@
 
 Generated 2026-11-28 03:03 from the published `catalog.json` (2026-11-27) by resolving each show with Cinemeta and asking Torrentio for the first numbered episode.
 
-**What this measures:** a show is *READY* when the catalog has an IMDb id for it, the episode carries a season/episode number (in the catalog or parseable from the title), and Torrentio returns at least one stream. **Cached status is not measured** — that needs the owner's debrid key.
+**What this measures:** a show is *READY* when the catalog has an IMDb id for it, the episode carries a
+season/episode number (in the catalog or parseable from the title), and Torrentio returns at least one torrent.
+
+**The "Streams" column is torrents offered, not cache hits.** Torrentio labels each debrid stream:
+`[RD+] …` or `[TB+] …` means cached and instant; `[RD download] …` means playback would download the
+torrent into the account; a stream named `… error` with `Invalid RealDebrid ApiKey/Token!` means the key
+was refused. The pilot plays `+` streams only and falls back to the free source otherwise, so real cache
+counts are only visible with a key in place.
 
 ## 002 CARTOON NETWORK
 
