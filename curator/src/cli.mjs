@@ -12,6 +12,7 @@ import { discover } from './discover.mjs';
 import { publish } from './build.mjs';
 import { probe } from './probe.mjs';
 import { importArabic } from './arabic.mjs';
+import { importArchiveArabic } from './archive-arabic.mjs';
 import { persist } from './budget.mjs';
 import { log, nowIso, writeJSON, readJSON, STATE } from './util.mjs';
 import path from 'node:path';
@@ -27,6 +28,7 @@ async function main() {
     if (cmd === 'heal' || cmd === 'nightly') run.heal = await heal(lib);
     if (cmd === 'discover' || cmd === 'nightly') run.discover = await discover(lib, { channel: arg || null, maxNew: cmd === 'nightly' ? 1500 : undefined });
     if (cmd === 'arabic') run.arabic = await importArabic(lib, { log: (m) => log(m) });
+    if (cmd === 'arabic-archive') run.arabicArchive = await importArchiveArabic(lib, { log: (m) => log(m) });
     if (cmd === 'probe' || cmd === 'nightly') run.probe = await probe(lib, { max: cmd === 'probe' ? 800 : 200 });
     lib.save();
     run.finished = nowIso();

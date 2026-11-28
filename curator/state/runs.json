@@ -2,8 +2,30 @@
  {
   "cmd": "build",
   "arg": null,
-  "started": "2026-11-28T02:18:45.937Z",
-  "finished": "2026-11-28T02:18:46.001Z"
+  "started": "2026-11-28T02:27:02.651Z",
+  "finished": "2026-11-28T02:27:02.694Z"
+ },
+ {
+  "cmd": "arabic-archive",
+  "arg": null,
+  "started": "2026-11-28T02:26:59.224Z",
+  "arabicArchive": {
+   "shows": 42,
+   "episodes": 260,
+   "skipped": 0
+  },
+  "finished": "2026-11-28T02:27:02.483Z"
+ },
+ {
+  "cmd": "arabic-archive",
+  "arg": null,
+  "started": "2026-11-28T02:26:41.180Z",
+  "arabicArchive": {
+   "shows": 41,
+   "episodes": 1062,
+   "skipped": 0
+  },
+  "finished": "2026-11-28T02:26:44.754Z"
  },
  {
   "cmd": "build",
